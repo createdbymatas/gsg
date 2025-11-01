@@ -409,6 +409,7 @@ function downloadScenarijus() {
     setTimeout(() => {
         document.getElementById("atsisiunciamasScenarijusBg").style.width = "100%";
         document.getElementById("atsisiunciamasScenarijusBg").style.height = "100%";
+        document.getElementById("atsisiunciamasScenarijusBg").style.borderRadius = "0";
         document.getElementById("atsisiunciamasScenarijusBg").style.backgroundColor = "transparent";
         document.getElementById("atsisiunciamasScenarijusBg").style.top = "0";
         document.getElementById("atsisiunciamasScenarijusBg").style.right = "0";
@@ -426,6 +427,7 @@ function downloadScenarijus() {
         document.getElementById("atsisiunciamasScenarijusBg").style.opacity = "0";
         document.getElementById("atsisiunciamasScenarijusBg").style.width = "30px";
         document.getElementById("atsisiunciamasScenarijusBg").style.height = "30px";
+        document.getElementById("atsisiunciamasScenarijusBg").style.borderRadius = "25px";
         document.getElementById("atsisiunciamasScenarijusBg").style.top = "15px";
         document.getElementById("atsisiunciamasScenarijusBg").style.right = "60px";
         document.getElementById("pinnedBackground").style.opacity = "1";
@@ -523,153 +525,183 @@ progressBg.addEventListener("click", (e)=>{
     soundPlayPauseIcon.classList.remove("fa-play");
 });
 
+// function downloadAudio() {
+//     setTimeout(() => {
+//         document.getElementById("download_audio").click();
+//     }, 1010);
+// }
+
+function positionAudioDownloadBtn(){
+    document.getElementById("atsisiunciamasAudioBg").style.transition = "none";
+    let bodyRect = document.body.getBoundingClientRect(),
+    elemRect = document.getElementById('downloadAudioBtn').getBoundingClientRect(),
+    kaire = elemRect.left - bodyRect.left;
+    document.getElementById("atsisiunciamasAudioBg").style.left = kaire + "px";
+}
 
 function playSound1(){
+    document.getElementById('spin-loader3').classList.add("spinNow");
+    document.getElementById('loadingAudio').style.display = "flex";
     sound.src = 'sounds/pradzia.mp3';
     sound.currentTime = 0;
     sound.play();
+    document.getElementById('download_audio').href = 'sounds/pradzia.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'pradzia.mp3';
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'pradzia.mp3';
     document.getElementById("soundDuration").innerText = '0:27';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('spin-loader3').classList.remove("spinNow");
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
 }
 function playSound2(){
+    document.getElementById('spin-loader3').classList.add("spinNow");
+    document.getElementById('loadingAudio').style.display = "flex";
     sound.src = 'sounds/rap.mp3';
     sound.currentTime = 0;
     sound.play();
+    document.getElementById('download_audio').href = 'sounds/rap.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'rap.mp3';
+    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'rap.mp3';
     document.getElementById("soundDuration").innerText = '0:22';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('spin-loader3').classList.remove("spinNow");
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
 }
 function playSound3(){
+    document.getElementById('spin-loader3').classList.add("spinNow");
+    document.getElementById('loadingAudio').style.display = "flex";
     sound.src = 'sounds/burtai.mp3';
     sound.currentTime = 0;
     sound.play();
+    document.getElementById('download_audio').href = 'sounds/burtai.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'burtai.mp3';
+    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'burtai.mp3';
     document.getElementById("soundDuration").innerText = '0:47';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('spin-loader3').classList.remove("spinNow");
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
 }
 function playSound4(){
+    document.getElementById('spin-loader3').classList.add("spinNow");
+    document.getElementById('loadingAudio').style.display = "flex";
     sound.src = 'sounds/seseliai.mp3';
     sound.currentTime = 0;
     sound.play();
+    document.getElementById('download_audio').href = 'sounds/seseliai.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'seseliai.mp3';
+    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'seseliai.mp3';
     document.getElementById("soundDuration").innerText = '0:07';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('spin-loader3').classList.remove("spinNow");
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
 }
 function playSound5(){
+    document.getElementById('spin-loader3').classList.add("spinNow");
+    document.getElementById('loadingAudio').style.display = "flex";
     sound.src = 'sounds/sokis.mp3';
     sound.currentTime = 0;
     sound.play();
+    document.getElementById('download_audio').href = 'sounds/sokis.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'sokis.mp3';
+    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'sokis.mp3';
     document.getElementById("soundDuration").innerText = '02:21';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('spin-loader3').classList.remove("spinNow");
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
 }
 
-function atsisiustiAudio1() {
+function downloadAudio() {
     document.getElementById("pinnedBackground").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
+    document.getElementById("atsisiunciamasAudioBg").style.display = "none";
+    document.getElementById("atsisiunciamasAudio").style.display = "none";
     setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio1").style.bottom = "15px";
+        document.getElementById("atsisiunciamasAudioBg").style.display = "flex";
+        document.getElementById("atsisiunciamasAudio").style.display = "flex";
+        document.getElementById("atsisiunciamasAudioBg").style.transition = "0.3s";
+    }, 1);
+    setTimeout(() => {
+        document.getElementById("atsisiunciamasAudioBg").style.opacity = "1";
+    }, 2);
+    setTimeout(() => {
+        document.getElementById("atsisiunciamasAudioBg").style.width = "100%";
+        document.getElementById("atsisiunciamasAudioBg").style.height = "100%";
+        document.getElementById("atsisiunciamasAudioBg").style.borderRadius = "0";
+        document.getElementById("atsisiunciamasAudioBg").style.backgroundColor = "transparent";
+        document.getElementById("atsisiunciamasAudioBg").style.bottom = "0";
+        document.getElementById("atsisiunciamasAudioBg").style.left = "0";
         document.getElementById("pinnedBackground").style.opacity = "1";
     }, 10);
     setTimeout(() => {
-        document.getElementById("download_audio1").click();
+        document.getElementById("download_audio").click();
     }, 1010);
     setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio1").style.bottom = "-100%";
+        document.getElementById("atsisiunciamasAudioBg").style.opacity = "0";
         document.getElementById("pinnedBackground").style.opacity = "0";
     }, 6010);
     setTimeout(() => {
+        document.getElementById("atsisiunciamasAudioBg").style.display = "none";
+        document.getElementById("atsisiunciamasAudioBg").style.opacity = "0";
+        document.getElementById("atsisiunciamasAudioBg").style.width = "20px";
+        document.getElementById("atsisiunciamasAudioBg").style.height = "20px";
+        document.getElementById("atsisiunciamasAudioBg").style.borderRadius = "25px";
+        document.getElementById("atsisiunciamasAudioBg").style.bottom = "65px";
+        document.getElementById("atsisiunciamasAudioBg").style.left = "0";
+        document.getElementById("pinnedBackground").style.opacity = "1";
         document.getElementById("pinnedBackground").style.display = "none";
         document.getElementById("body").style.overflowY = "scroll";
     }, 6310);
 }
-function atsisiustiAudio2() {
-    document.getElementById("pinnedBackground").style.display = "block";
-    document.getElementById("body").style.overflowY = "hidden";
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio2").style.bottom = "15px";
-        document.getElementById("pinnedBackground").style.opacity = "1";
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("download_audio2").click();
-    }, 1010);
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio2").style.bottom = "-100%";
-        document.getElementById("pinnedBackground").style.opacity = "0";
-    }, 6010);
-    setTimeout(() => {
-        document.getElementById("pinnedBackground").style.display = "none";
-        document.getElementById("body").style.overflowY = "scroll";
-    }, 6310);
-}
-function atsisiustiAudio3() {
-    document.getElementById("pinnedBackground").style.display = "block";
-    document.getElementById("body").style.overflowY = "hidden";
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio3").style.bottom = "15px";
-        document.getElementById("pinnedBackground").style.opacity = "1";
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("download_audio3").click();
-    }, 1010);
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio3").style.bottom = "-100%";
-        document.getElementById("pinnedBackground").style.opacity = "0";
-    }, 6010);
-    setTimeout(() => {
-        document.getElementById("pinnedBackground").style.display = "none";
-        document.getElementById("body").style.overflowY = "scroll";
-    }, 6310);
-}
-function atsisiustiAudio4() {
-    document.getElementById("pinnedBackground").style.display = "block";
-    document.getElementById("body").style.overflowY = "hidden";
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio4").style.bottom = "15px";
-        document.getElementById("pinnedBackground").style.opacity = "1";
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("download_audio4").click();
-    }, 1010);
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio4").style.bottom = "-100%";
-        document.getElementById("pinnedBackground").style.opacity = "0";
-    }, 6010);
-    setTimeout(() => {
-        document.getElementById("pinnedBackground").style.display = "none";
-        document.getElementById("body").style.overflowY = "scroll";
-    }, 6310);
-}
-function atsisiustiAudio5() {
-    document.getElementById("pinnedBackground").style.display = "block";
-    document.getElementById("body").style.overflowY = "hidden";
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio5").style.bottom = "15px";
-        document.getElementById("pinnedBackground").style.opacity = "1";
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("download_audio5").click();
-    }, 1010);
-    setTimeout(() => {
-        document.getElementById("atsisiunciamasAudio5").style.bottom = "-100%";
-        document.getElementById("pinnedBackground").style.opacity = "0";
-    }, 6010);
-    setTimeout(() => {
-        document.getElementById("pinnedBackground").style.display = "none";
-        document.getElementById("body").style.overflowY = "scroll";
-    }, 6310);
-}
+
 
 
 

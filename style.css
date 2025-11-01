@@ -129,6 +129,43 @@ hr{
     z-index: 1;
     background: #f2f2f2;
 }
+#spin-loader3{
+    border-radius: 80%;
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    background: lightgrey;
+}
+#spin-loader3:before, #spin-loader3:after{
+    content: "";
+    display: block;
+    position: absolute;
+}
+#spin-loader3:before{
+    border-radius: 0 90px 90px 0;
+    height: 50px;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: black;
+    background-image: linear-gradient(lightgrey, black);
+}
+#spin-loader3:after{
+    border-radius: 80%;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #f2f2f2;
+}
+.spinNow{
+    animation: spin 0.65s linear infinite;
+    -webkit-animation: spin 0.65s linear infinite;
+}
 @keyframes spin {
     0%{
         transform: rotate(0);
@@ -1389,6 +1426,18 @@ hr{
 #playingTrackName i {
     padding-right: 5px;
 }
+#loadingAudio{
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.6);
+    position: absolute;
+    top: 17.5px;
+    right: 5px;
+    z-index: 1;
+}
 #playBtn{
     font-size: 15px;
     transition: 0.15s;
@@ -1411,6 +1460,23 @@ hr{
 #playBtn:active{
     opacity: 0.2;
 }
+#downloadAudioBtn{
+    font-size: 12px;
+    transition: 0.15s;
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #DEDEDE;
+    color: black;
+    text-align: center;
+    padding: 4px;
+    margin-left: 5px;
+}
+#downloadAudioBtn:active{
+    opacity: 0.2;
+}
 #progressBg{
     width: 100%;
     height: 5px;
@@ -1418,12 +1484,14 @@ hr{
     border-radius: 25px;
     cursor: pointer;
     overflow: hidden;
+    transition: 0.1s;
 }
 #playProgress{
     width: 0;
     height: 5px;
     background-color: darkgrey;
     cursor: pointer;
+    transition: 0.1s;
 }
 #timePlayed {
     font-size: 13px;
@@ -1564,87 +1632,37 @@ hr{
     padding-bottom: 15px;
     padding-left: 15px;
 }
-#atsisiunciamasAudio1{
-    width: 95%;
-    height: 50px;
+#atsisiunciamasAudioBg{
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    bottom: 65px;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 25px;
+}
+#atsisiunciamasAudio{
+    width: auto;
+    max-width: 95%;
+    height: 100px;
     font-size: 15px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: #f2f2f2;
     box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    z-index: 20;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-#atsisiunciamasAudio2{
-    width: 95%;
-    height: 50px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    z-index: 20;
-}
-#atsisiunciamasAudio3{
-    width: 95%;
-    height: 50px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    z-index: 20;
-}
-#atsisiunciamasAudio4{
-    width: 95%;
-    height: 50px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    z-index: 20;
-}
-#atsisiunciamasAudio5{
-    width: 95%;
-    height: 50px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    z-index: 20;
-}
-.pinnedBg{
+.pinnedBottom{
     width: 95%;
     height: auto;
     background-color: rgba(242, 242, 242, 0.75);
@@ -2047,6 +2065,16 @@ hr{
     .spin-loader2:after{
         background: #141414;
     }
+    #spin-loader3{
+        background: #464646;
+    }
+    #spin-loader3:before{
+        background: white;
+        background-image: linear-gradient(#464646, white);
+    }
+    #spin-loader3:after{
+        background: #141414;
+    }
     #screenSize{
         background-color: #141414;
     }
@@ -2230,6 +2258,10 @@ hr{
         background-color: #282828;
         color: white;
     }
+    #downloadAudioBtn{
+        background-color: #282828;
+        color: white;
+    }
     #progressBg{
         background-color: #191919;
     }
@@ -2254,6 +2286,11 @@ hr{
         color: white;
     }
     #rodomaInformacija{
+        background-color: #141414;
+        box-shadow: 0 0 10px #464646;
+        color: white;
+    }
+    #atsisiunciamasAudio{
         background-color: #141414;
         box-shadow: 0 0 10px #464646;
         color: white;
@@ -2283,7 +2320,7 @@ hr{
         box-shadow: 0 0 10px #464646;
         color: white;
     }
-    .pinnedBg{
+    .pinnedBottom{
         background-color: rgba(20, 20, 20, 0.75);
         box-shadow: 0 0 10px #464646;
     }

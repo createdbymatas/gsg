@@ -265,27 +265,22 @@
         <div class="soundTrackDiv" ontouchstart onclick="playSound5()"><p class="trackName"><i class="fa-solid fa-5 trackNo"></i> sokis.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 02:21</p></div>
 
         <div id="soundPlayer">
-            <p id="playingTrackName"><i class="fa-solid fa-music"></i> <span id="currentTrackName">Garso takelio pavadinimas</span></p>
+            <p id="playingTrackName"><i class="fa-solid fa-music"></i> <span id="currentTrackName">Garso takelio pavadinimas</span> <i id="downloadAudioBtn" ontouchstart onclick="downloadAudio()" class="fa-solid fa-download"></i></p>
             <div id="playBtn" ontouchstart onclick="playPause()"><i id="soundPlayPauseIcon" class="fa-solid fa-play"></i></div>
-            <!-- <i ontouchstart class="fa-solid fa-pause" id="pauseBtn"></i> -->
+            <div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div>
             <audio id="sound"></audio>
             <div id="progressBg">
                 <div id="playProgress"></div>
             </div>
-            <!-- <input type="range" value="0" id="playProgress"> -->
             <span id="timePlayed">0:00</span>
             <span id="soundDuration">0:00</span>
         </div>
     </div>
 
     <div id="pinnedBackground" onclick="uzdarytiInfo()" ontouchstart></div>
-    <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.7);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „scenarijus.pdf“</div></div>
+    <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.7);"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „scenarijus.pdf“</p></div></div>
     <div id="rodomaInformacija"><i>Informacija:</i><br><b style="font-weight: 600;">Karnavalo data:</b> 2024-12-20 (pn)<br><b style="font-weight: 600;">Pasirodymo laikas:</b> 14:00</div>
-    <div id="atsisiunciamasAudio1"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.5);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „pradzia.mp3“</div>
-    <div id="atsisiunciamasAudio2"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.5);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „rap.mp3“</div>
-    <div id="atsisiunciamasAudio3"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.5);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „burtai.mp3“</div>
-    <div id="atsisiunciamasAudio4"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.5);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „seseliai.mp3“</div>
-    <div id="atsisiunciamasAudio5"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.5);"><div class="spin-loader2" aria-hidden="true"></div></div> Atsisiunčiama „sokis.mp3“</div>
+    <div id="atsisiunciamasAudioBg"><div id="atsisiunciamasAudio"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.7);"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „<span id="downloadingAudioName"></span>“</p></div></div>
 
 
 
@@ -297,7 +292,7 @@
     <div id="infoSimtadienis"><i class="fa-solid fa-chevron-down" onclick="closeSimtadienis()" id="simtadienisUzdarymas" ontouchstart></i><p id="simtadienisTekstas">Šimtadienis</p></div>
 
     <div id="simtadienis">
-        <div class="pinnedBg">
+        <div class="pinnedBottom">
             <button onclick="scenarijus()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
             <button onclick="informacija()" class="informacija" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-circle-info" style="margin-right: 5px; cursor: pointer;"></i> Informacija</p></button>
         </div>
@@ -346,12 +341,9 @@
             <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
         </div>
     </div>
-    <a id="download_script" href="others/scenarijus.pdf" download style="display: none;">download_script</a>
-    <a id="download_audio1" href="sounds/pradzia.mp3" download style="display: none;">download_audio1</a>
-    <a id="download_audio2" href="sounds/rap.mp3" download style="display: none;">download_audio2</a>
-    <a id="download_audio3" href="sounds/burtai.mp3" download style="display: none;">download_audio3</a>
-    <a id="download_audio4" href="sounds/seseliai.mp3" download style="display: none;">download_audio4</a>
-    <a id="download_audio5" href="sounds/sokis.mp3" download style="display: none;">download_audio5</a>
+
+    <a id="download_script" href="files/scenarijus.pdf" download style="display: none;">download_script</a>
+    <a id="download_audio" download style="display: none;">download_audio</a>
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
