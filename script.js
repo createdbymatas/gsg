@@ -385,14 +385,14 @@ function scenarijus() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
         document.getElementById("scenarijusDocs").style.bottom = "0";
-        document.getElementById("simtadienis").style.opacity = "0";
+        document.querySelector(".langas").style.opacity = "0";
     }, 10);
 }
 function closeScenarijus() {
     document.getElementById("body").style.overflowY = "scroll";
     setTimeout(() => {
         document.getElementById("scenarijusDocs").style.bottom = "-100%";
-        document.getElementById("simtadienis").style.opacity = "1";
+        document.querySelector(".langas").style.opacity = "1";
     }, 10);
 }
 
@@ -461,13 +461,13 @@ function openSoundTracks() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
         document.getElementById("soundManager").style.bottom = "0";
-        document.getElementById("simtadienis").style.opacity = "0";
+        document.querySelector(".langas").style.opacity = "0";
     }, 10);
 }
 function closeSoundTracks() {
     document.getElementById("body").style.overflowY = "scroll";
     setTimeout(() => {
-        document.getElementById("simtadienis").style.opacity = "1";
+        document.querySelector(".langas").style.opacity = "1";
         document.getElementById("soundManager").style.bottom = "-100%";
         document.getElementById("soundPlayer").style.bottom = '-100%';
         sound.pause();
