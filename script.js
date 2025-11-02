@@ -59,8 +59,9 @@ function loadFunction() {
         document.getElementById("raide1").style.opacity = "0";
     }, 2300);
     setTimeout(() => {
-            document.getElementById("loading").style.opacity = "0";
-            document.getElementById("createdByMatas").style.display = "none";
+        document.getElementById("loading").style.opacity = "0";
+        document.getElementById("createdByMatas").style.display = "none";
+        document.querySelector(".langas").style.opacity = "1";
     }, 2400);
     setTimeout(() => {
         document.getElementById("loading").style.display = "none";
@@ -916,6 +917,7 @@ if (simtadienis != "") {
     document.getElementById("simtadienis").style.display = "block";
     document.getElementById("simtadienis").style.paddingTop = "0";
     document.getElementById("infoSimtadienis").style.display = "flex";
+    document.querySelector(".langas").style.opacity = "0";
     setTimeout(() => {
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
         behavior: 'smooth'});
