@@ -548,12 +548,6 @@ progressBg.addEventListener("click", (e)=>{
     soundPlayPauseIcon.classList.remove("fa-play");
 });
 
-// function downloadAudio() {
-//     setTimeout(() => {
-//         document.getElementById("download_audio").click();
-//     }, 1010);
-// }
-
 function positionAudioDownloadBtn(){
     document.getElementById("atsisiunciamasAudioBg").style.transition = "none";
     let bodyRect = document.body.getBoundingClientRect(),
