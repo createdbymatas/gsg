@@ -129,6 +129,24 @@ function deny(){
     }, 10000);
 }
 
+let isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+navigator.userAgent &&
+navigator.userAgent.indexOf('CriOS') == -1 &&
+navigator.userAgent.indexOf('FxiOS') == -1;
+
+if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
+else if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
+else if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Safari/605.1.15"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
+
 // scroll'inimo animacijos, dark mode
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
