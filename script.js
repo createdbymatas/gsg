@@ -134,20 +134,20 @@ navigator.userAgent &&
 navigator.userAgent.indexOf('CriOS') == -1 &&
 navigator.userAgent.indexOf('FxiOS') == -1;
 
-// if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Safari/605.1.15"){
-//     document.querySelector(".pinnedBottom").style.bottom = "0";
-//     // alert('true');
-// }
-// else if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15"){
-//     document.querySelector(".pinnedBottom").style.bottom = "0";
-//     // alert('true');
-// }
-// else if(isSafari == true && self.navigator.appVersion == "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Safari/605.1.15"){
-//     document.querySelector(".pinnedBottom").style.bottom = "0";
-//     // alert('true');
-// }
+if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
+else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
+else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1"){
+    document.querySelector(".pinnedBottom").style.bottom = "0";
+    // alert('true');
+}
 
-alert(self.navigator.appVersion);
+// alert(self.navigator.appVersion);
 
 // scroll'inimo animacijos, dark mode
 window.onscroll = function() {scrollFunction()};
