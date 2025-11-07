@@ -135,15 +135,15 @@ navigator.userAgent.indexOf('CriOS') == -1 &&
 navigator.userAgent.indexOf('FxiOS') == -1;
 
 if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "1px";
+    document.querySelector(".pinnedBottom").style.bottom = "5px";
     // alert('true');
 }
 else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "1px";
+    document.querySelector(".pinnedBottom").style.bottom = "5px";
     // alert('true');
 }
 else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "1px";
+    document.querySelector(".pinnedBottom").style.bottom = "5px";
     // alert('true');
 }
 
