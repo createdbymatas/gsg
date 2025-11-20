@@ -248,10 +248,18 @@
 
     <div id="scenarijusDocs">
         <h1>Scenarijus</h1>
-        <i id="downloadScenarijus" class="fa-solid fa-download" onclick="downloadScenarijus()" ontouchstart></i>
-        <i id="closeScenarijusDocs" class="fa-solid fa-chevron-down" onclick="closeScenarijus()" ontouchstart></i>
+        <i id="downloadScenarijus" class="fa-solid fa-download" onclick="downloadScript()" ontouchstart></i>
+        <i id="closeScenarijusDocs" class="fa-solid fa-chevron-down" onclick="closeScript()" ontouchstart></i>
         <div></div>
-        <iframe src="https://docs.google.com/document/d/10xyD2tvKW05QmZrnZVBO3WIuya8NM1-XJdtyTJ8mCUk/edit?usp=sharing" frameborder="0"></iframe>
+        <!-- <iframe src="https://docs.google.com/document/d/10xyD2tvKW05QmZrnZVBO3WIuya8NM1-XJdtyTJ8mCUk/edit?usp=sharing" frameborder="0"></iframe> -->
+         <iframe src="files/scenarijus.pdf" frameborder="0"></iframe>
+    </div>
+
+    <div id="islaidosSheets">
+        <h1>Finansai ir išlaidos</h1>
+        <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
+        <div></div>
+        <iframe src="https://docs.google.com/spreadsheets/d/10u_EV8J6hVNF_F1p4gmY6V5eEhm35ZSe/edit?usp=sharing&ouid=116125665291498421503&rtpof=true&sd=true" frameborder="0"></iframe>
     </div>
 
     <div id="soundManager">
@@ -279,7 +287,11 @@
 
     <div id="pinnedBackground" onclick="uzdarytiInfo()" ontouchstart></div>
     <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.7);"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „scenarijus.pdf“</p></div></div>
-    <div id="rodomaInformacija"><i>Informacija:</i><br><b style="font-weight: 600;">Karnavalo data:</b> 2024-12-20 (pn)<br><b style="font-weight: 600;">Pasirodymo laikas:</b> 14:00</div>
+    <div id="rodomaInformacija">
+        <p>Šimtadienio informacija:</p>
+        <p><b style="font-weight: 600;">Data:</b> 20XX-XX-XX (pn)</p>
+        <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
+    </div>
     <div id="atsisiunciamasAudioBg"><div id="atsisiunciamasAudio"><div style="width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; transform: scale(0.7);"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „<span id="downloadingAudioName"></span>“</p></div></div>
 
 
@@ -293,7 +305,7 @@
 
     <div id="simtadienis" class="langas">
         <div class="pinnedBottom">
-            <button onclick="scenarijus()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
+            <button onclick="openScript()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
             <button onclick="informacija()" class="informacija" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-circle-info" style="margin-right: 5px; cursor: pointer;"></i> Informacija</p></button>
         </div>
 

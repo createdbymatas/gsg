@@ -18,54 +18,55 @@ setTimeout(() => {
 function loadFunction() {
     setTimeout(() => {
         document.getElementById("raide14").style.opacity = "0";
-    }, 1000);
+    }, 500);
     setTimeout(() => {
         document.getElementById("raide13").style.opacity = "0";
-    }, 1100);
+    }, 600);
     setTimeout(() => {
         document.getElementById("raide12").style.opacity = "0";
-    }, 1200);
+    }, 700);
     setTimeout(() => {
         document.getElementById("raide11").style.opacity = "0";
-    }, 1300);
+    }, 800);
     setTimeout(() => {
         document.getElementById("raide10").style.opacity = "0";
-    }, 1400);
+    }, 900);
     setTimeout(() => {
         document.getElementById("raide9").style.opacity = "0";
-    }, 1500);
+    }, 1000);
     setTimeout(() => {
         document.getElementById("raide8").style.opacity = "0";
-    }, 1600);
+    }, 1100);
     setTimeout(() => {
         document.getElementById("raide7").style.opacity = "0";
-    }, 1700);
+    }, 1200);
     setTimeout(() => {
         document.getElementById("raide6").style.opacity = "0";
-    }, 1800);
+    }, 1300);
     setTimeout(() => {
         document.getElementById("raide5").style.opacity = "0";
-    }, 1900);
+    }, 1400);
     setTimeout(() => {
         document.getElementById("raide4").style.opacity = "0";
-    }, 2000);
+    }, 1500);
     setTimeout(() => {
         document.getElementById("raide3").style.opacity = "0";
-    }, 2100);
+    }, 1600);
     setTimeout(() => {
         document.getElementById("raide2").style.opacity = "0";
-    }, 2200);
+    }, 1700);
     setTimeout(() => {
         document.getElementById("raide1").style.opacity = "0";
-    }, 2300);
+        document.getElementById("loading").style.transition = "0.3s";
+    }, 1800);
     setTimeout(() => {
         document.getElementById("loading").style.opacity = "0";
         document.getElementById("createdByMatas").style.display = "none";
         document.querySelector(".langas").style.opacity = "1";
-    }, 2400);
+    }, 1900);
     setTimeout(() => {
         document.getElementById("loading").style.display = "none";
-    }, 2700);
+    }, 2200);
 }
 
 // išjungti right-click
@@ -405,14 +406,14 @@ function openMaps() {
 
 
 
-function scenarijus() {
+function openScript() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
         document.getElementById("scenarijusDocs").style.bottom = "0";
         document.querySelector(".langas").style.opacity = "0";
     }, 10);
 }
-function closeScenarijus() {
+function closeScript() {
     document.getElementById("body").style.overflowY = "scroll";
     setTimeout(() => {
         document.getElementById("scenarijusDocs").style.bottom = "-100%";
@@ -420,7 +421,7 @@ function closeScenarijus() {
     }, 10);
 }
 
-function downloadScenarijus() {
+function downloadScript() {
     document.getElementById("pinnedBackground").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
     document.getElementById("atsisiunciamasScenarijusBg").style.display = "none";
@@ -462,17 +463,32 @@ function downloadScenarijus() {
     }, 6310);
 }
 
+function openExpenses() {
+    document.getElementById("body").style.overflowY = "hidden";
+    setTimeout(() => {
+        document.getElementById("islaidosSheets").style.bottom = "0";
+        document.querySelector(".langas").style.opacity = "0";
+    }, 10);
+}
+function closeExpenses() {
+    document.getElementById("body").style.overflowY = "scroll";
+    setTimeout(() => {
+        document.getElementById("islaidosSheets").style.bottom = "-100%";
+        document.querySelector(".langas").style.opacity = "1";
+    }, 10);
+}
+
 function informacija() {
     document.getElementById("pinnedBackground").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
-        document.getElementById("rodomaInformacija").style.bottom = "0";
+        document.getElementById("rodomaInformacija").style.bottom = "15px";
         document.getElementById("pinnedBackground").style.opacity = "1";
         document.getElementById("pinnedBackground").style.pointerEvents = "all";
     }, 10);
 }
 function uzdarytiInfo() {
-    document.getElementById("rodomaInformacija").style.bottom = "-300px";
+    document.getElementById("rodomaInformacija").style.bottom = "-100%";
     document.getElementById("pinnedBackground").style.opacity = "0";
     document.getElementById("pinnedBackground").style.pointerEvents = "none";
     setTimeout(() => {
