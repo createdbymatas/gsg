@@ -105,8 +105,8 @@ hr{
     height: 50px;
     width: 50px;
     position: relative;
-    animation: spin 0.65s linear infinite;
-    -webkit-animation: spin 0.65s linear infinite;
+    /* animation: spin 0.65s linear infinite; */
+    /* -webkit-animation: spin 0.65s linear infinite; */
     background: lightgrey;
 }
 .spin-loader2:before, .spin-loader2:after{
@@ -167,10 +167,6 @@ hr{
     z-index: 1;
     background: #f2f2f2;
 }
-.spinNow{
-    animation: spin 0.65s linear infinite;
-    -webkit-animation: spin 0.65s linear infinite;
-}
 @keyframes spin {
     0%{
         transform: rotate(0);
@@ -186,6 +182,30 @@ hr{
     100%{
         transform: rotate(360deg);
     }
+}
+@keyframes spin2 {
+    0%{
+        transform: scale(0.7) rotate(0);
+    }
+    100%{
+        transform: scale(0.7) rotate(360deg);
+    }
+}
+#downloadScriptSpinnerDiv{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.7);
+}
+#downloadAudioSpinnerDiv{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.7);
 }
 
 /* ekrano ispejimas */
@@ -1280,7 +1300,7 @@ hr{
     left: 0;
     right: 0;
     bottom: -100%;
-    z-index: 21;
+    z-index: 18;
     background-color: #f2f2f2;
     transition: 0.2s;
 }
@@ -1358,7 +1378,7 @@ hr{
     left: 0;
     right: 0;
     bottom: -100%;
-    z-index: 21;
+    z-index: 18;
     background-color: #f2f2f2;
     transition: 0.2s;
 }
@@ -1650,6 +1670,22 @@ hr{
     opacity: 0;
     display: none;
 }
+#pinnedBackgroundInfo{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 16;
+    background-color: rgba(211, 211, 211, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    display: none;
+}
 #atsisiunciamasScenarijusBg{
     width: 30px;
     height: 30px;
@@ -1691,7 +1727,7 @@ hr{
     bottom: -100%;
     left: 2.5%;
     right: 2.5%;
-    z-index: 20;
+    z-index: 17;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
@@ -1760,7 +1796,7 @@ hr{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 17;
+    z-index: 15;
     box-shadow: 0 0 10px lightgrey;
     border-radius: 25px;
 }
@@ -2372,6 +2408,9 @@ hr{
         border: 2px solid white;
     }
     #pinnedBackground{
+        background-color: rgba(44, 44, 44, 0.75);
+    }
+    #pinnedBackgroundInfo{
         background-color: rgba(44, 44, 44, 0.75);
     }
     #atsisiunciamasScenarijus{

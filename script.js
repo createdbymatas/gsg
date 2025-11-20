@@ -424,11 +424,10 @@ function closeScript() {
 function downloadScript() {
     document.getElementById("pinnedBackground").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
-    document.getElementById("atsisiunciamasScenarijusBg").style.display = "none";
-    document.getElementById("atsisiunciamasScenarijus").style.display = "none";
     setTimeout(() => {
         document.getElementById("atsisiunciamasScenarijusBg").style.display = "flex";
         document.getElementById("atsisiunciamasScenarijus").style.display = "flex";
+        document.getElementById("downloadScriptSpinnerDiv").style.animation = "spin2 0.65s linear infinite";
     }, 1);
     setTimeout(() => {
         document.getElementById("atsisiunciamasScenarijusBg").style.opacity = "1";
@@ -479,20 +478,20 @@ function closeExpenses() {
 }
 
 function informacija() {
-    document.getElementById("pinnedBackground").style.display = "block";
+    document.getElementById("pinnedBackgroundInfo").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
         document.getElementById("rodomaInformacija").style.bottom = "15px";
-        document.getElementById("pinnedBackground").style.opacity = "1";
-        document.getElementById("pinnedBackground").style.pointerEvents = "all";
+        document.getElementById("pinnedBackgroundInfo").style.opacity = "1";
+        document.getElementById("pinnedBackgroundInfo").style.pointerEvents = "all";
     }, 10);
 }
 function uzdarytiInfo() {
     document.getElementById("rodomaInformacija").style.bottom = "-100%";
-    document.getElementById("pinnedBackground").style.opacity = "0";
-    document.getElementById("pinnedBackground").style.pointerEvents = "none";
+    document.getElementById("pinnedBackgroundInfo").style.opacity = "0";
+    document.getElementById("pinnedBackgroundInfo").style.pointerEvents = "none";
     setTimeout(() => {
-        document.getElementById("pinnedBackground").style.display = "none";
+        document.getElementById("pinnedBackgroundInfo").style.display = "none";
         document.getElementById("body").style.overflowY = "scroll";
     }, 300);
 }
@@ -700,12 +699,11 @@ function playSound5(){
 function downloadAudio() {
     document.getElementById("pinnedBackground").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
-    document.getElementById("atsisiunciamasAudioBg").style.display = "none";
-    document.getElementById("atsisiunciamasAudio").style.display = "none";
     setTimeout(() => {
         document.getElementById("atsisiunciamasAudioBg").style.display = "flex";
         document.getElementById("atsisiunciamasAudio").style.display = "flex";
         document.getElementById("atsisiunciamasAudioBg").style.transition = "0.3s";
+        document.getElementById("downloadAudioSpinnerDiv").style.animation = "spin2 0.65s linear infinite";
     }, 1);
     setTimeout(() => {
         document.getElementById("atsisiunciamasAudioBg").style.opacity = "1";
