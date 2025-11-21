@@ -577,8 +577,8 @@ function positionAudioDownloadBtn(){
 }
 
 function playSound1(){
-    document.getElementById('spin-loader3').classList.add("spinNow");
     document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/pradzia.mp3';
     sound.currentTime = 0;
     sound.play();
@@ -594,14 +594,13 @@ function playSound1(){
     }, 1);
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('spin-loader3').classList.remove("spinNow");
             document.getElementById('loadingAudio').style.display = "none";
         }, 300);
     });
 }
 function playSound2(){
-    document.getElementById('spin-loader3').classList.add("spinNow");
     document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/rap.mp3';
     sound.currentTime = 0;
     sound.play();
@@ -618,14 +617,13 @@ function playSound2(){
     }, 1);
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('spin-loader3').classList.remove("spinNow");
             document.getElementById('loadingAudio').style.display = "none";
         }, 300);
     });
 }
 function playSound3(){
-    document.getElementById('spin-loader3').classList.add("spinNow");
     document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/burtai.mp3';
     sound.currentTime = 0;
     sound.play();
@@ -642,14 +640,13 @@ function playSound3(){
     }, 1);
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('spin-loader3').classList.remove("spinNow");
             document.getElementById('loadingAudio').style.display = "none";
         }, 300);
     });
 }
 function playSound4(){
-    document.getElementById('spin-loader3').classList.add("spinNow");
     document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/seseliai.mp3';
     sound.currentTime = 0;
     sound.play();
@@ -666,14 +663,13 @@ function playSound4(){
     }, 1);
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('spin-loader3').classList.remove("spinNow");
             document.getElementById('loadingAudio').style.display = "none";
         }, 300);
     });
 }
 function playSound5(){
-    document.getElementById('spin-loader3').classList.add("spinNow");
     document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/sokis.mp3';
     sound.currentTime = 0;
     sound.play();
@@ -690,7 +686,6 @@ function playSound5(){
     }, 1);
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('spin-loader3').classList.remove("spinNow");
             document.getElementById('loadingAudio').style.display = "none";
         }, 300);
     });
