@@ -78,166 +78,6 @@
             </div>
         </form>
     </div>
-    <div id="kelioneI---">
-        <div id="topInfo"></div>
-        <div id="info"><i class="fa-solid fa-chevron-down" onclick="closeKelione()" id="kelioneUzdarymas" ontouchstart></i><p id="kelionesMarsrutasTekstas2">Kelionės į ----- maršrutas</p><p class="kaina">~00,00€</p></div>
-        <p id="kelionesMarsrutasTekstas">Kelionės į ----- maršrutas</p>
-
-
-
-        <div id="openingMapsBg"></div>
-        <div id="openingMaps" style="display: flex;"><div class="centerLoader2" style="display: flex;"><div class="spin-loader2" aria-hidden="true"></div></div> Atidaroma <img src="images/maps.png" alt="Google Maps" class="atidaromaImg"> <span style="color: #34a852;">Google Maps</span></div>
-
-        <div id="ticketActivationBg" onclick="closeTicket()"></div>
-        <div id="ticketActivation" style="display: flex;">
-            <p class="ticketActivationTekstas1">Bilieto aktyvavimas</p>
-            <p class="ticketActivationTekstas2">Pasirink, kur nori aktyvuoti savo bilietą:</p>
-            <div class="ticketActivationButtons" style="display: flex;"><button onclick="trafi()" id="trafiButton" style="display: flex;" class="mygtukas" ontouchstart><img src="images/trafi.png" alt="Trafi" class="ticketActivationButtonImg">Trafi</button><button onclick="mticket()" id="mticketButton" style="display: flex;" class="mygtukas" ontouchstart><img src="images/mticket.png" alt="m. Ticket"  class="ticketActivationButtonImg">m. Ticket</button></div>
-        </div>
-        <div id="trafiPhone" style="display: flex;">
-            <p class="ticketActivationTekstas1">Bilieto aktyvavimas</p>
-            <p class="ticketActivationTekstas2">Pasirink savo telefoną:</p>
-            <div class="ticketActivationButtons" style="display: flex;"><button onclick="trafiGP()" style="display: flex;" class="mygtukas androidButton" ontouchstart><img src="images/android.png" alt="Android" class="ticketActivationButtonImg" style="background-color: transparent;">Android</button><button onclick="trafiAS()" style="display: flex;" class="mygtukas iphoneButton" ontouchstart><i class="fa-brands fa-apple ticketActivationButtonIphone"></i>iPhone</button></div>
-        </div>
-        <div id="mticketPhone" style="display: flex;">
-            <p class="ticketActivationTekstas1">Bilieto aktyvavimas</p>
-            <p class="ticketActivationTekstas2">Pasirink savo telefoną:</p>
-            <div class="ticketActivationButtons" style="display: flex;"><button onclick="mticketGP()" style="display: flex;" class="mygtukas androidButton" ontouchstart><img src="images/android.png" alt="Android" class="ticketActivationButtonImg" style="background-color: transparent;">Android</button><button onclick="mticketAS()" style="display: flex;" class="mygtukas iphoneButton" ontouchstart><i class="fa-brands fa-apple ticketActivationButtonIphone"></i>iPhone</button></div>
-        </div>
-        <div id="openingPlay" style="display: flex;"><div class="centerLoader2" style="display: flex;"><div class="spin-loader2" aria-hidden="true"></div></div> Atidaroma <img src="images/googleplay.png" alt="Google Play" class="atidaromaImg"> <span style="color: #2da951;">Google Play</span></div>
-        <div id="openingStore" style="display: flex;"><div class="centerLoader2" style="display: flex;"><div class="spin-loader2" aria-hidden="true"></div></div> Atidaroma <img src="images/appstore.png" alt="App Store" class="atidaromaImg"> <span style="color: #0c83f8;">App Store</span></div>
-
-        <div id="visosStotelesBg" onclick="closeStops()"></div>
-        <div id="visosStoteles">
-            <p class="visosStotelesTransportas"><span class="visosStotelesAutobusoNr">00</span> -----</p>
-            <p class="visosStotelesSkaicius">Važiuok -- st. 00 min</p>
-            <div class="visosStotelesDiv">
-                <div style="width: 5px; height: 100%; position: absolute; top: 0; left: 22.5px; padding-top: 25px; padding-bottom: 25px;"><div style="position: absolute; top: 20px; left: -5px; background-color: #0073ac; width: 15px; height: 15px; border-radius: 100%;"></div><div style="width: 100%; height: 100%; background-color: #0073ac; border-radius: 15px;"></div><div style="position: absolute; bottom: 20px; left: -5px; background-color: #0073ac; width: 15px; height: 15px; border-radius: 100%;"></div></div>
-                <p class="visosPagrindineStotele1">Stotelė A</p>
-                <p class="visosSalutineStotele">C stotelė</p>
-                <p class="visosSalutineStotele">D stotelė</p>
-                <p class="visosSalutineStotele">E stotelė</p>
-                <p class="visosSalutineStotele">F stotelė</p>
-                <p class="visosSalutineStotele">G stotelė</p>
-                <p class="visosPagrindineStotele2">Stotelė B</p>
-            </div>
-        </div>
-        <div id="visosStotys">
-            <p class="visosStotelesTransportas"><span class="visosStotelesTraukinioNr">000</span> -----</p>
-            <p class="visosStotelesSkaicius">Važiuok -- st. 00 min</p>
-            <div class="visosStotelesDiv">
-                <div style="width: 5px; height: 100%; position: absolute; top: 0; left: 22.5px; padding-top: 25px; padding-bottom: 25px;"><div style="position: absolute; top: 20px; left: -5px; background-color: black; width: 15px; height: 15px; border-radius: 100%; box-shadow: 0 0 3px white;"></div><div style="width: 100%; height: 100%; background-color: black; border-radius: 15px; box-shadow: 0 0 3px white;"></div><div style="position: absolute; bottom: 20px; left: -5px; background-color: black; width: 15px; height: 15px; border-radius: 100%; box-shadow: 0 0 3px white;"></div></div>
-                <p class="visosPagrindineStotele1">Stotelė A</p>
-                <p class="visosSalutineStotele">C stotelė</p>
-                <p class="visosSalutineStotele">D stotelė</p>
-                <p class="visosSalutineStotele">E stotelė</p>
-                <p class="visosSalutineStotele">F stotelė</p>
-                <p class="visosSalutineStotele">G stotelė</p>
-                <p class="visosPagrindineStotele2">Stotelė B</p>
-            </div>
-        </div>
-
-
-
-        <div class="startas">
-            <i class="fa-solid fa-circle kelionesIcon1" style="display: flex;"></i>
-            <p class="kelionesTekstas1">Maršruto pradžia</p>
-            <p class="kelionesTekstas2">Išvyk 00:00</p>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="ejimas">
-            <div style="width: 5px; height: 100%; position: absolute; top: -50%; left: 37.5px;"><div class="ejimoTaskelis" style="width: 5px; height: 5px; border-radius: 100%;"></div><div class="ejimoTaskelis" style="width: 5px; height: 5px; border-radius: 100%; margin-top: 5px;"></div></div>
-            <div style="width: 5px; height: 100%; position: absolute; top: 100%; left: 37.5px;"><div class="ejimoTaskelis" style="width: 5px; height: 5px; border-radius: 100%;"></div><div class="ejimoTaskelis" style="width: 5px; height: 5px; border-radius: 100%; margin-top: 5px; margin-bottom: 5px;"></div><div class="ejimoTaskelis" style="width: 5px; height: 5px; border-radius: 100%;"></div></div>
-
-            <i class="fa-solid fa-person-walking kelionesIcon2" style="display: flex;"></i>
-            <p class="kelionesTekstas3">Eik 00 min (00 km 000 m)</p>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="autobusas">
-            <div style="width: 5px; height: 100%; position: absolute; top: 0; left: 37.5px; padding-top: 25px; padding-bottom: 25px;"><div style="position: absolute; top: 20px; left: -5px; background-color: #0073ac; width: 15px; height: 15px; border-radius: 100%;"></div><div style="width: 100%; height: 100%; background-color: #0073ac; border-radius: 15px;"></div><div style="position: absolute; bottom: 20px; left: -5px; background-color: #0073ac; width: 15px; height: 15px; border-radius: 100%;"></div></div>
-
-            <div class="transportasDiv1" style="display: flex;">
-                <p class="kelionesTekstas1" style="padding-right: 50px;">Stotelė A</p>
-                <p class="kelionesTekstas2" style="padding-right: 50px;">Atvyksi 00:00</p>
-                <i class="fa-solid fa-location-dot maps" style="display: flex;" onclick="openMaps()" ontouchstart></i>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv2" style="display: flex;">
-                <p class="autobusasIcon" style="display: flex;"><i class="fa-solid fa-bus"></i></p>
-                <p class="kelionesTekstas1"><span class="autobusoNr">00</span> ----- <i class="fa-regular fa-snowflake snaige"></i><i class="fa-solid fa-wheelchair neigaliesiems"></i><i class="fa-solid fa-wifi internetas"></i></p>
-                <p class="kelionesTekstas2">Išvyksta 00:00</p>
-                <p class="bilietaiTekstas" onclick="activateTicket()" ontouchstart>E. bilietai <i class="fa-solid fa-chevron-right" style="cursor: pointer;"></i></p>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv3" style="display: flex;">
-                <p class="stotelesTekstas" onclick="openStops()" ontouchstart>Važiuok -- st. 00 min <i class="fa-solid fa-chevron-right" style="cursor: pointer;"></i></p>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv4" style="display: flex;">
-                <p class="kelionesTekstas1" style="padding-right: 50px;">Stotelė B</p>
-                <p class="kelionesTekstas2" style="padding-right: 50px;">Atvyksi 00:00</p>
-                <i class="fa-solid fa-location-dot maps" style="display: flex;" ontouchstart></i>
-            </div>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="laukimas">
-            <i class="fa-regular fa-clock kelionesIcon2" style="display: flex;"></i>
-            <p class="kelionesTekstas3">Palauk 00 min</p>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="traukinys">
-            <div style="width: 5px; height: 100%; position: absolute; top: 0; left: 37.5px; padding-top: 25px; padding-bottom: 25px;"><div style="position: absolute; top: 20px; left: -5px; background-color: black; width: 15px; height: 15px; border-radius: 100%; box-shadow: 0 0 3px white;"></div><div style="width: 100%; height: 100%; background-color: black; border-radius: 15px; box-shadow: 0 0 3px white;"></div><div style="position: absolute; bottom: 20px; left: -5px; background-color: black; width: 15px; height: 15px; border-radius: 100%; box-shadow: 0 0 3px white;"></div></div>
-
-            <div class="transportasDiv1" style="display: flex;">
-                <p class="kelionesTekstas1" style="padding-right: 50px;">Stotelė A</p>
-                <p class="kelionesTekstas2" style="padding-right: 50px;">Atvyksi 00:00</p>
-                <i class="fa-solid fa-location-dot maps" style="display: flex;" ontouchstart></i>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv5" style="display: flex;">
-                <p class="traukinysIcon" style="display: flex;"><i class="fa-solid fa-train-subway"></i></p>
-                <p class="kelionesTekstas1"><span class="traukinioNr">000</span> -----</p>
-                <p class="kelionesTekstas2">Išvyksta 00:00</p>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv3" style="display: flex;">
-                <p class="stotelesTekstas" onclick="openTracks()" ontouchstart>Važiuok -- st. 00 min <i class="fa-solid fa-chevron-right" style="cursor: pointer;"></i></p>
-            </div>
-            <div class="separationLine2"><hr></div>
-            <div class="transportasDiv4" style="display: flex;">
-                <p class="kelionesTekstas1" style="padding-right: 50px;">Stotelė B</p>
-                <p class="kelionesTekstas2" style="padding-right: 50px;">Atvyksi 00:00</p>
-                <i class="fa-solid fa-location-dot maps" style="display: flex;" ontouchstart></i>
-            </div>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="lankymasis">
-            <i class="fa-solid fa-building-columns kelionesIcon3" style="display: flex;"></i>
-            <p class="kelionesTekstas1" style="padding-right: 50px;">Lankymosi objektas</p>
-            <p class="kelionesTekstas2">Atvyksi 00:00</p>
-            <p class="kelionesTekstas2">Išvyk 00:00</p>
-            <i class="fa-solid fa-location-dot maps maps2" style="display: flex;" ontouchstart></i>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <div class="finisas">
-            <i class="fa-regular fa-circle-check kelionesIcon1" style="display: flex;"></i>
-            <p class="kelionesTekstas1">Maršruto pabaiga</p>
-            <p class="kelionesTekstas2">Atvyksi 00:00</p>
-        </div>
-        <div class="separationLine1"><hr></div>
-        <p class="travelInfoBottom" style="margin-top: 15px;">Informacija gali būti netiksli</p>
-        <p class="travelInfoBottom" style="margin-top: 5px; margin-bottom: 15px;">Maršruto laikai nurodyti pagal <img src="images/judu.png" alt="judu.lt" style="height: 10px; background-color: white; padding: 1px; border-radius: 1px;"> ir <img src="images/ltg.png" alt="ltglink.lt" style="height: 10px; background-color: white; padding: 1px; border-radius: 1px;"></p>
-        <div style="width: 115px; height: 1500px; outline: 1px solid red; margin-left: 15px; color: red;">testing_object</div>
-    </div>
-
-
-
-
-
-
-
-
-
 
     <div id="accessDenied">
         <i class="fa-solid fa-ban" id="ban"></i>
@@ -245,6 +85,12 @@
         <p style="font-size: 17px;">Tinklalapyje negalima atlikti veiksmų, susijusių su programos kodo peržiūra ir apžiūrėjimo įrankio (angl.: Inspect Tool) naudojimu</p>
         <div><p>Tinklalapis bus perkrautas... </p><span id="uzdraustaRestart"></span></div>
     </div>
+
+
+
+
+
+    
 
     <div id="scenarijusDocs">
         <h1>Scenarijus</h1>
@@ -258,12 +104,14 @@
         <h1>Finansai ir išlaidos</h1>
         <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
         <div></div>
-        <iframe src="https://docs.google.com/spreadsheets/d/10u_EV8J6hVNF_F1p4gmY6V5eEhm35ZSe/edit?usp=sharing&ouid=116125665291498421503&rtpof=true&sd=true" frameborder="0"></iframe>
+        <iframe src="https://docs.google.com/spreadsheets/d/11ZO2qFMKdTPMzKyFi-yv-244f3XOedgMELxoV-SuVAA/edit?usp=sharing" frameborder="0"></iframe>
     </div>
 
     <div id="soundManager">
-        <h1>Garso takeliai</h1>
-        <i id="closeSoundManager" class="fa-solid fa-chevron-down" onclick="closeSoundTracks()" ontouchstart></i>
+        <div id="soundManagerNav">
+            <h1>Garso takeliai</h1>
+            <i id="closeSoundManager" class="fa-solid fa-chevron-down" onclick="closeSoundTracks()" ontouchstart></i>
+        </div>
 
         <div class="soundTrackDiv" ontouchstart onclick="playSound1()"><p class="trackName"><i class="fa-solid fa-1 trackNo"></i> pradzia.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 00:27</p></div>
         <div class="soundTrackDiv" ontouchstart onclick="playSound2()"><p class="trackName"><i class="fa-solid fa-2 trackNo"></i> rap.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 00:22</p></div>
@@ -289,7 +137,7 @@
     <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div id="downloadScriptSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „scenarijus.pdf“</p></div></div>
     <div id="rodomaInformacija">
         <p>Šimtadienio informacija:</p>
-        <p><b style="font-weight: 600;">Data:</b> 20XX-XX-XX (pn)</p>
+        <p><b style="font-weight: 600;">Data:</b> 2026-02-XX (pn)</p>
         <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
     </div>
     <div id="atsisiunciamasAudioBg"><div id="atsisiunciamasAudio"><div id="downloadAudioSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „<span id="downloadingAudioName"></span>“</p></div></div>

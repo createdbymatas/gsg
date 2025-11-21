@@ -157,17 +157,7 @@ else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhon
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-        document.getElementById("kelionesMarsrutasTekstas").style.opacity = "0";
-        document.getElementById("kelionesMarsrutasTekstas2").style.opacity = "1";
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById("info").style.boxShadow = "0 0 10px #464646";
-            document.getElementById("info").style.backgroundColor = "rgba(20, 20, 20, 0.75)";
-            document.getElementById("info").style.width = "95%";
-            document.getElementById("info").style.top = "15px";
-            document.getElementById("info").style.left = "2.5%";
-            document.getElementById("info").style.left = "2.5%";
-            document.getElementById("info").style.borderRadius = "25px";
-
             document.getElementById("infoSimtadienis").style.boxShadow = "0 0 10px #464646";
             document.getElementById("infoSimtadienis").style.width = "95%";
             document.getElementById("infoSimtadienis").style.top = "15px";
@@ -176,14 +166,6 @@ function scrollFunction() {
             document.getElementById("infoSimtadienis").style.borderRadius = "25px";
         }
         else{
-            document.getElementById("info").style.boxShadow = "0 0 10px lightgrey";
-            document.getElementById("info").style.backgroundColor = "rgba(242, 242, 242, 0.75)";
-            document.getElementById("info").style.width = "95%";
-            document.getElementById("info").style.top = "15px";
-            document.getElementById("info").style.left = "2.5%";
-            document.getElementById("info").style.left = "2.5%";
-            document.getElementById("info").style.borderRadius = "25px";
-
             document.getElementById("infoSimtadienis").style.boxShadow = "0 0 10px lightgrey";
             document.getElementById("infoSimtadienis").style.width = "95%";
             document.getElementById("infoSimtadienis").style.top = "15px";
@@ -193,18 +175,8 @@ function scrollFunction() {
         }
     }
     else {
-        document.getElementById("kelionesMarsrutasTekstas").style.opacity = "1";
-        document.getElementById("kelionesMarsrutasTekstas2").style.opacity = "0";
-        document.getElementById("info").style.boxShadow = "none";
         document.getElementById("infoSimtadienis").style.boxShadow = "none";
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.getElementById("info").style.backgroundColor = "rgba(20, 20, 20, 1)";
-            document.getElementById("info").style.width = "100%";
-            document.getElementById("info").style.top = "0";
-            document.getElementById("info").style.left = "0";
-            document.getElementById("info").style.left = "0";
-            document.getElementById("info").style.borderRadius = "0";
-            
             document.getElementById("infoSimtadienis").style.width = "100%";
             document.getElementById("infoSimtadienis").style.top = "0";
             document.getElementById("infoSimtadienis").style.left = "0";
@@ -212,13 +184,6 @@ function scrollFunction() {
             document.getElementById("infoSimtadienis").style.borderRadius = "0";
         }
         else{
-            document.getElementById("info").style.backgroundColor = "rgba(242, 242, 242, 1)";
-            document.getElementById("info").style.width = "100%";
-            document.getElementById("info").style.top = "0";
-            document.getElementById("info").style.left = "0";
-            document.getElementById("info").style.left = "0";
-            document.getElementById("info").style.borderRadius = "0";
-
             document.getElementById("infoSimtadienis").style.width = "100%";
             document.getElementById("infoSimtadienis").style.top = "0";
             document.getElementById("infoSimtadienis").style.left = "0";
@@ -500,6 +465,7 @@ function openSoundTracks() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
         document.getElementById("soundManager").style.bottom = "0";
+        document.getElementById("soundManagerNav").style.top = "0";
         document.querySelector(".langas").style.opacity = "0";
     }, 10);
 }
@@ -508,6 +474,7 @@ function closeSoundTracks() {
     setTimeout(() => {
         document.querySelector(".langas").style.opacity = "1";
         document.getElementById("soundManager").style.bottom = "-100%";
+        document.getElementById("soundManagerNav").style.top = "100%";
         document.getElementById("soundPlayer").style.bottom = '-100%';
         sound.pause();
         soundPlayPauseIcon.classList.remove("fa-pause");
@@ -515,6 +482,7 @@ function closeSoundTracks() {
         sound.currentTime = 0;
         document.getElementById("currentTrackName").innerText = 'Garso takelio pavadinimas';
         document.getElementById("soundDuration").innerText = '0:00';
+        document.getElementById("soundManager").style.paddingBottom = '0';
     }, 10);
 }
 
@@ -589,6 +557,7 @@ function playSound1(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'pradzia.mp3';
     document.getElementById("soundDuration").innerText = '0:27';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
@@ -612,6 +581,7 @@ function playSound2(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'rap.mp3';
     document.getElementById("soundDuration").innerText = '0:22';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
@@ -635,6 +605,7 @@ function playSound3(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'burtai.mp3';
     document.getElementById("soundDuration").innerText = '0:47';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
@@ -658,6 +629,7 @@ function playSound4(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'seseliai.mp3';
     document.getElementById("soundDuration").innerText = '0:07';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
@@ -681,6 +653,7 @@ function playSound5(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'sokis.mp3';
     document.getElementById("soundDuration").innerText = '02:21';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
@@ -828,38 +801,7 @@ function checkCommon() {
 }
 function check(form)
 {
-    if(form.pin.value === "897867") {
-        document.cookie = "kelioneI=adminas";
-        checkCommon();
-        document.querySelector('#topInfo').scrollIntoView({
-            behavior: 'smooth'
-        });
-        setTimeout(() => {
-            document.getElementById("keypad").style.opacity = "1";
-            document.getElementById("ivestiKoda").style.opacity = "1";
-            document.getElementById("screen").style.top = "-100%";
-            document.getElementById("screen").style.backgroundColor = "transparent";
-            document.getElementById("display").style.top = "-100%";
-            document.getElementById("kelioneI---").style.display = "block";
-        }, 3600);
-        setTimeout(() => {
-            document.getElementById("kelioneI---").style.paddingTop = "0";
-        }, 3620);
-        setTimeout(() => {
-            inputas = ""
-            document.getElementById("kodas").value = '';
-            document.getElementById("taskelis1").style.backgroundColor = "transparent";
-            document.getElementById("taskelis2").style.backgroundColor = "transparent";
-            document.getElementById("taskelis3").style.backgroundColor = "transparent";
-            document.getElementById("taskelis4").style.backgroundColor = "transparent";
-            document.getElementById("taskelis5").style.backgroundColor = "transparent";
-            document.getElementById("taskelis6").style.backgroundColor = "transparent";
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("body").style.overflowX = "hidden";
-            document.getElementById("body").style.overflowY = "scroll";
-        }, 3900);
-    }
-    else if(form.pin.value === "000000") { // simtadienis
+    if(form.pin.value === "000000") { // simtadienis
         document.cookie = "simtadienis=true";
         checkCommon();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -921,23 +863,7 @@ function check(form)
         }, 4000);
     }
 }
-let kelioneI = getCookie("kelioneI");
-if (kelioneI != "") {
-    document.getElementById("kelioneI---").style.display = "block";
-    document.getElementById("kelioneI---").style.paddingTop = "0";
-    setTimeout(() => {
-        document.querySelector('#topInfo').scrollIntoView({
-        behavior: 'smooth'});
-    }, 500);
-}
-else {
-    document.getElementById("kelioneI---").style.display = "none";
-    document.getElementById("kelioneI---").style.paddingTop = "100vh";
-    if (kelioneI != "" && kelioneI != null) {
-        document.getElementById("kelioneI---").style.display = "none";
-        document.getElementById("kelioneI---").style.paddingTop = "100vh";
-    }
-}
+
 simtadienis = getCookie("simtadienis");
 if (simtadienis != "") {
     document.getElementById("simtadienis").style.display = "block";
@@ -960,7 +886,7 @@ else {
     }
 }
 
-if (kelioneI != "" || simtadienis != "") {
+if (simtadienis != "") {
     document.getElementById("screen").style.top = "-100%";
     document.getElementById("screen").style.backgroundColor = "transparent";
     document.getElementById("display").style.top = "-100%";
@@ -975,7 +901,7 @@ else {
     document.getElementById("display").style.top = "0";
     document.getElementById("body").style.overflowX = "hidden";
     document.getElementById("body").style.overflowY = "hidden";
-    if (kelioneI != "" && kelioneI != null || simtadienis != "" && simtadienis != null) {
+    if (simtadienis != "" && simtadienis != null) {
         document.getElementById("screen").style.top = "0";
         document.getElementById("screen").style.backgroundColor = "rgba(0, 0, 0, 0.75)";
         document.getElementById("display").style.top = "0";
@@ -984,21 +910,6 @@ else {
     }
 }
 
-function closeKelione() {
-    document.cookie = "kelioneI=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
-    document.getElementById("kelioneUzdarymas").style.pointerEvents = "none";
-    setTimeout(() => {
-        document.getElementById("screen").style.top = "0";
-        document.getElementById("screen").style.backgroundColor = "rgba(0, 0, 0, 0.75)";
-        document.getElementById("display").style.top = "0";
-        document.getElementById("kelioneI---").style.paddingTop = "100vh";
-    }, 10);
-    setTimeout(() => {
-        document.getElementById("kelioneUzdarymas").style.pointerEvents = "all";
-        document.getElementById("body").style.overflow = "hidden";
-        document.getElementById("kelioneI---").style.display = "none";
-    }, 310);
-}
 function closeSimtadienis() {
     document.cookie = "simtadienis=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.getElementById("simtadienisUzdarymas").style.pointerEvents = "none";
