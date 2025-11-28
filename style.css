@@ -256,11 +256,12 @@ hr{
     align-items: center;
     cursor: not-allowed;
 }
-#phoneIcon{
+#computerIcon{
     font-size: 70px;
     position: absolute;
     color: black;
     cursor: not-allowed;
+    margin-right: 120px;
 }
 #xIcon{
     font-size: 30px;
@@ -269,9 +270,27 @@ hr{
     border-radius: 100%;
     margin-top: 60px;
     z-index: 2;
-    margin-left: 45px;
+    margin-left: 70px;
     cursor: not-allowed;
 }
+#phoneIcon{
+    font-size: 70px;
+    position: absolute;
+    color: black;
+    cursor: not-allowed;
+    margin-left: 120px;
+}
+#checkIcon{
+    font-size: 30px;
+    color: green;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+    margin-top: 60px;
+    z-index: 2;
+    margin-left: 70px;
+    cursor: not-allowed;
+}
+
 
 /* inspect tool uzblokavimas */
 #accessDenied{
@@ -359,7 +378,7 @@ hr{
     left: 0;
     right: 0;
     z-index: 79;
-    background-image: url(images/ruduo.jpeg);
+    background-image: url(images/ziema.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -847,7 +866,7 @@ hr{
     }
 }
 .atsisiustiScenariju{
-    width: 49%;
+    width: 49.5%;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -857,14 +876,14 @@ hr{
     background-color: transparent;
     color: black;
     border: 2px solid black;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
 }
 .atsisiustiScenariju:active{
     transform: scale(0.95);
 }
 .informacija{
-    width: 50%;
+    width: 49.5%;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -874,7 +893,7 @@ hr{
     background-color: transparent;
     color: black;
     border: 2px solid black;
-    font-size: 15px;
+    font-size: 16px;
     cursor: pointer;
 }
 .informacija:active{
@@ -945,7 +964,7 @@ hr{
 #rodomaInformacija{
     width: 95%;
     height: auto;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 25px;
     background-color: #f2f2f2;
     box-shadow: 0 0 10px lightgrey;
@@ -970,7 +989,7 @@ hr{
     background-color: transparent;
     color: black;
     border: 1.5px solid black;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 5px;
     padding: 9px;
     cursor: pointer;
@@ -1081,7 +1100,7 @@ hr{
     color: black;
 }
 #simtadienisTekstas{
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 600;
     color: black;
     overflow: hidden;
@@ -1129,7 +1148,7 @@ hr{
 }
 .antrTekstas{
     color: grey;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     width: 100%;
 }
@@ -1256,7 +1275,7 @@ hr{
 }
 .vardasAntrTekstas{
     color: grey;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     width: 100%;
     overflow: hidden;
@@ -1355,7 +1374,7 @@ hr{
     padding-bottom: 7px;
 }
 .papildomai button{
-    width: 95%;
+    width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -1365,7 +1384,7 @@ hr{
     background-color: transparent;
     color: black;
     border: 1.5px solid black;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 5px;
     padding: 9px;
     cursor: pointer;
@@ -1430,10 +1449,16 @@ hr{
     #screenSizeTekstas2{
         color: white;
     }
-    #phoneIcon{
+    #computerIcon{
         color: white;
     }
     #xIcon{
+        background-color: #141414;
+    }
+    #phoneIcon{
+        color: white;
+    }
+    #checkIcon{
         background-color: #141414;
     }
     #accessDenied{
@@ -1537,31 +1562,6 @@ hr{
         color: white;
     }
     #atsisiunciamasAudio{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio1{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio2{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio3{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio4{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio5{
         background-color: #141414;
         box-shadow: 0 0 10px #464646;
         color: white;
