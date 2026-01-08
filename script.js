@@ -16,6 +16,7 @@ setTimeout(() => {
     document.getElementById("createdByMatas").style.opacity = "1";
 }, 100);
 function loadFunction() {
+    document.getElementById("barForIos").style.bottom = "0";
     setTimeout(() => {
         document.getElementById("raide14").style.opacity = "0";
         document.getElementById("barForIos").style.bottom = "-100px";
@@ -90,8 +91,6 @@ if (
     return false; 
 }
 };
-
-
 
 function deny(){
     sound.pause();
