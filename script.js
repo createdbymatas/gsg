@@ -15,8 +15,18 @@ function getCookie(cname) {
 setTimeout(() => {
     document.getElementById("createdByMatas").style.opacity = "1";
 }, 100);
+function adjustPinnedBottom() {
+    let bodyRect = document.body.getBoundingClientRect(),
+    elemRect = document.querySelector(".pinnedBottom").getBoundingClientRect(),
+    kaire = elemRect.left - bodyRect.left;
+    document.querySelector(".pinnedBottom").style.bottom = kaire + "px";
+    document.querySelector(".langas").style.paddingBottom = (kaire + 75) + "px";
+}
+window.onresize = adjustPinnedBottom;
+
 function loadFunction() {
     document.getElementById("barForIos").style.bottom = "0";
+    adjustPinnedBottom();
     setTimeout(() => {
         document.getElementById("raide14").style.opacity = "0";
         document.getElementById("barForIos").style.bottom = "-100%";
