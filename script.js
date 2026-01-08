@@ -18,6 +18,7 @@ setTimeout(() => {
 function loadFunction() {
     setTimeout(() => {
         document.getElementById("raide14").style.opacity = "0";
+        document.getElementById("barForIos").style.bottom = "-100px";
     }, 500);
     setTimeout(() => {
         document.getElementById("raide13").style.opacity = "0";
@@ -129,29 +130,6 @@ function deny(){
         location.replace("index.html");
     }, 10000);
 }
-
-let isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
-navigator.userAgent &&
-navigator.userAgent.indexOf('CriOS') == -1 &&
-navigator.userAgent.indexOf('FxiOS') == -1;
-
-if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0.1 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "5px";
-    document.querySelector(".langas").style.paddingBottom = "80px";
-    // alert('true');
-}
-else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "5px";
-    document.querySelector(".langas").style.paddingBottom = "80px";
-    // alert('true');
-}
-else if(isSafari == true && self.navigator.appVersion == "5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.1 Mobile/15E148 Safari/604.1"){
-    document.querySelector(".pinnedBottom").style.bottom = "5px";
-    document.querySelector(".langas").style.paddingBottom = "80px";
-    // alert('true');
-}
-
-// alert(self.navigator.appVersion);
 
 // scroll'inimo animacijos, dark mode
 window.onscroll = function() {scrollFunction()};
@@ -442,21 +420,21 @@ function closeExpenses() {
     }, 10);
 }
 
-function informacija() {
-    document.getElementById("pinnedBackgroundInfo").style.display = "block";
+function daugiau() {
+    document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
-        document.getElementById("rodomaInformacija").style.bottom = "15px";
-        document.getElementById("pinnedBackgroundInfo").style.opacity = "1";
-        document.getElementById("pinnedBackgroundInfo").style.pointerEvents = "all";
+        document.getElementById("rodomaDaugiau").style.bottom = "15px";
+        document.getElementById("pinnedBackgroundDaugiau").style.opacity = "1";
+        document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "all";
     }, 10);
 }
-function uzdarytiInfo() {
-    document.getElementById("rodomaInformacija").style.bottom = "-100%";
-    document.getElementById("pinnedBackgroundInfo").style.opacity = "0";
-    document.getElementById("pinnedBackgroundInfo").style.pointerEvents = "none";
+function uzdarytiDaugiau() {
+    document.getElementById("rodomaDaugiau").style.bottom = "-100%";
+    document.getElementById("pinnedBackgroundDaugiau").style.opacity = "0";
+    document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "none";
     setTimeout(() => {
-        document.getElementById("pinnedBackgroundInfo").style.display = "none";
+        document.getElementById("pinnedBackgroundDaugiau").style.display = "none";
         document.getElementById("body").style.overflowY = "scroll";
     }, 300);
 }

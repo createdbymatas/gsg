@@ -368,6 +368,17 @@ hr{
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
+#barForIos{
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #f2f2f2;
+}
+
 /* klaviaturos backgroundas */
 #display{
     width: 100%;
@@ -866,7 +877,7 @@ hr{
     }
 }
 .atsisiustiScenariju{
-    width: 49.5%;
+    width: 100%;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -882,8 +893,8 @@ hr{
 .atsisiustiScenariju:active{
     transform: scale(0.95);
 }
-.informacija{
-    width: 49.5%;
+.daugiau{
+    width: auto;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -895,8 +906,11 @@ hr{
     border: 2px solid black;
     font-size: 16px;
     cursor: pointer;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 7px;
 }
-.informacija:active{
+.daugiau:active{
     transform: scale(0.95);
 }
 #pinnedBackground{
@@ -915,7 +929,7 @@ hr{
     opacity: 0;
     display: none;
 }
-#pinnedBackgroundInfo{
+#pinnedBackgroundDaugiau{
     width: 100%;
     height: 100%;
     pointer-events: none;
@@ -961,7 +975,7 @@ hr{
     padding-left: 20px;
     padding-right: 20px;
 }
-#rodomaInformacija{
+#rodomaDaugiau{
     width: 95%;
     height: auto;
     font-size: 16px;
@@ -978,7 +992,7 @@ hr{
     padding-left: 15px;
     padding-right: 15px;
 }
-#rodomaInformacija button{
+#rodomaDaugiau button{
     width: 100%;
     height: auto;
     display: flex;
@@ -994,7 +1008,7 @@ hr{
     padding: 9px;
     cursor: pointer;
 }
-#rodomaInformacija button:active{
+#rodomaDaugiau button:active{
     transform: scale(0.95);
 }
 #atsisiunciamasAudioBg{
@@ -1123,7 +1137,7 @@ hr{
 
 
 
-/* spektaklio informacija/objektai */
+/* simtadienio informacija/objektai */
 .simtadienisIcon{
     position: absolute;
     width: 25px;
@@ -1471,6 +1485,9 @@ hr{
     #uzdraustaRestart::before {
         border-color:white;
     }
+    #barForIos{
+        background-color: #141414;
+    }
 
     hr{
         border-top: 1px solid #464646;
@@ -1541,14 +1558,14 @@ hr{
         color: white;
         border: 2px solid white;
     }
-    .informacija{
+    .daugiau{
         color: white;
         border: 2px solid white;
     }
     #pinnedBackground{
         background-color: rgba(44, 44, 44, 0.75);
     }
-    #pinnedBackgroundInfo{
+    #pinnedBackgroundDaugiau{
         background-color: rgba(44, 44, 44, 0.75);
     }
     #atsisiunciamasScenarijus{
@@ -1556,7 +1573,7 @@ hr{
         box-shadow: 0 0 10px #464646;
         color: white;
     }
-    #rodomaInformacija{
+    #rodomaDaugiau{
         background-color: #141414;
         box-shadow: 0 0 10px #464646;
         color: white;
@@ -1608,7 +1625,7 @@ hr{
         color: white;
         border: 1.5px solid white;
     }
-    #rodomaInformacija button {
+    #rodomaDaugiau button {
         color: white;
         border: 1.5px solid white;
     }

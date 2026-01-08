@@ -88,6 +88,8 @@
         <div><p>Tinklalapis bus perkrautas... </p><span id="uzdraustaRestart"></span></div>
     </div>
 
+    <div id="barForIos"></div>
+
 
 
 
@@ -135,10 +137,11 @@
     </div>
 
     <div id="pinnedBackground" ontouchstart></div>
-    <div id="pinnedBackgroundInfo" onclick="uzdarytiInfo()" ontouchstart></div>
+    <div id="pinnedBackgroundDaugiau" onclick="uzdarytiDaugiau()" ontouchstart></div>
     <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div id="downloadScriptSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „scenarijus.pdf“</p></div></div>
-    <div id="rodomaInformacija">
+    <div id="rodomaDaugiau">
         <p>Šimtadienio informacija:</p>
+        <p><b style="font-weight: 600;">Tema:</b> TV laidos</p>
         <p><b style="font-weight: 600;">Data:</b> 2026-02-27 (pn)</p>
         <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
     </div>
@@ -156,7 +159,7 @@
     <div id="simtadienis" class="langas">
         <div class="pinnedBottom">
             <button onclick="openScript()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
-            <button onclick="informacija()" class="informacija" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-circle-info" style="margin-right: 5px; cursor: pointer;"></i> Informacija</p></button>
+            <button onclick="daugiau()" class="daugiau" ontouchstart><p style="cursor: pointer; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-ellipsis" style="margin-right: 5px; cursor: pointer;"></i> Daugiau</p></button>
         </div>
 
         <div class="vardas">
