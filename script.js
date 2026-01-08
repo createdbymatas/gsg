@@ -29,7 +29,7 @@ function loadFunction() {
     adjustPinnedBottom();
     setTimeout(() => {
         document.getElementById("raide14").style.opacity = "0";
-        document.getElementById("barForIos").style.bottom = "-100%";
+        document.getElementById("barForIos").style.bottom = "-99.999999%";
     }, 500);
     setTimeout(() => {
         document.getElementById("raide13").style.opacity = "0";
