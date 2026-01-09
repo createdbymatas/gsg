@@ -325,17 +325,23 @@ function cancelReportError() {
 }
 
 function sendError(){
-    document.getElementById('user').value =  document.getElementById('errorName').value;
-    document.getElementById('message').value =  document.getElementById('pranesimas').value;
-    document.getElementById('errorSend').style.opacity =  "0";
-    setTimeout(() => {
-        document.getElementById('errorSend').style.display =  "none";
-        document.getElementById('errorSending').style.opacity =  "1";
-    }, 300);
+    if(document.getElementById('pranesimas').value == ''){
+        document.getElementById('emptyField').style.display = "block";
+    }
+    else{
+        document.getElementById('emptyField').style.display = "none";
+        document.getElementById('user').value =  document.getElementById('errorName').value;
+        document.getElementById('message').value =  document.getElementById('pranesimas').value;
+        document.getElementById('errorSend').style.opacity =  "0";
+        setTimeout(() => {
+            document.getElementById('errorSend').style.display =  "none";
+            document.getElementById('errorSending').style.opacity =  "1";
+        }, 300);
 
-    setTimeout(() => {
-        submitFormBtn.click();
-    }, 1000);
+        setTimeout(() => {
+            submitFormBtn.click();
+        }, 1000);
+    }
 }
 
 
