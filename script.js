@@ -333,9 +333,9 @@ function sendError(){
         document.getElementById('errorSending').style.opacity =  "1";
     }, 300);
 
-    // setTimeout(() => {
-    //     submitFormBtn.click();
-    // }, 1000);
+    setTimeout(() => {
+        submitFormBtn.click();
+    }, 1000);
 }
 
 
