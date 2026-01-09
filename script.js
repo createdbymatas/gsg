@@ -47,8 +47,10 @@ window.onload = ()=>{
         document.getElementById("badConnectionI").style.animation = "none";
     }
     function offline(){
-        document.getElementById("badConnectionBg").style.bottom = "25px";
-        document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
+        setTimeout(() => {
+            document.getElementById("badConnectionBg").style.bottom = "25px";
+            document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
+        }, 200);
     }
 
     setInterval(()=>{
