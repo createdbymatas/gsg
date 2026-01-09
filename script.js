@@ -25,59 +25,97 @@ function adjustPinnedBottom() {
 window.onresize = adjustPinnedBottom;
 
 function loadFunction() {
-    document.getElementById("barForIos").style.bottom = "0";
-    adjustPinnedBottom();
-    setTimeout(() => {
-        document.getElementById("raide14").style.opacity = "0";
-    }, 300);
-    setTimeout(() => {
-        document.getElementById("raide13").style.opacity = "0";
-    }, 400);
-    setTimeout(() => {
-        document.getElementById("raide12").style.opacity = "0";
-    }, 500);
-    setTimeout(() => {
-        document.getElementById("raide11").style.opacity = "0";
-    }, 600);
-    setTimeout(() => {
-        document.getElementById("raide10").style.opacity = "0";
-    }, 700);
-    setTimeout(() => {
-        document.getElementById("raide9").style.opacity = "0";
-    }, 800);
-    setTimeout(() => {
-        document.getElementById("raide8").style.opacity = "0";
-    }, 900);
-    setTimeout(() => {
-        document.getElementById("raide7").style.opacity = "0";
-    }, 1000);
-    setTimeout(() => {
-        document.getElementById("raide6").style.opacity = "0";
-    }, 1100);
-    setTimeout(() => {
-        document.getElementById("raide5").style.opacity = "0";
-    }, 1200);
-    setTimeout(() => {
-        document.getElementById("raide4").style.opacity = "0";
-    }, 1300);
-    setTimeout(() => {
-        document.getElementById("raide3").style.opacity = "0";
-    }, 1400);
-    setTimeout(() => {
-        document.getElementById("raide2").style.opacity = "0";
-    }, 1500);
-    setTimeout(() => {
-        document.getElementById("raide1").style.opacity = "0";
-        document.getElementById("loading").style.transition = "0.3s";
-    }, 1600);
-    setTimeout(() => {
-        document.getElementById("loading").style.opacity = "0";
-        document.getElementById("createdByMatas").style.display = "none";
-        document.querySelector(".langas").style.opacity = "1";
-    }, 1700);
-    setTimeout(() => {
-        document.getElementById("loading").style.display = "none";
-    }, 2000);
+    
+}
+
+window.onload = ()=>{
+    function ajax(){
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+        xhr.onload = ()=>{
+            if(xhr.status == 200 && xhr.status < 300){
+                online();
+            }
+            else{
+                offline();
+            }
+        }
+        xhr.onerror = ()=>{
+            offline();
+        }
+        xhr.send();
+    }
+
+    function online(){
+        document.getElementById("badConnectionBg").style.bottom = "-70px";
+        document.getElementById("badConnectionI").style.animation = "none";
+    }
+    function offline(){
+        document.getElementById("badConnectionBg").style.bottom = "25px";
+        document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
+    }
+
+    setInterval(()=>{
+        ajax();
+    }, 100);
+
+    function loaded(){
+        document.getElementById("barForIos").style.bottom = "0";
+        adjustPinnedBottom();
+        setTimeout(() => {
+            document.getElementById("raide14").style.opacity = "0";
+        }, 300);
+        setTimeout(() => {
+            document.getElementById("raide13").style.opacity = "0";
+        }, 400);
+        setTimeout(() => {
+            document.getElementById("raide12").style.opacity = "0";
+        }, 500);
+        setTimeout(() => {
+            document.getElementById("raide11").style.opacity = "0";
+        }, 600);
+        setTimeout(() => {
+            document.getElementById("raide10").style.opacity = "0";
+        }, 700);
+        setTimeout(() => {
+            document.getElementById("raide9").style.opacity = "0";
+        }, 800);
+        setTimeout(() => {
+            document.getElementById("raide8").style.opacity = "0";
+        }, 900);
+        setTimeout(() => {
+            document.getElementById("raide7").style.opacity = "0";
+        }, 1000);
+        setTimeout(() => {
+            document.getElementById("raide6").style.opacity = "0";
+        }, 1100);
+        setTimeout(() => {
+            document.getElementById("raide5").style.opacity = "0";
+        }, 1200);
+        setTimeout(() => {
+            document.getElementById("raide4").style.opacity = "0";
+        }, 1300);
+        setTimeout(() => {
+            document.getElementById("raide3").style.opacity = "0";
+        }, 1400);
+        setTimeout(() => {
+            document.getElementById("raide2").style.opacity = "0";
+        }, 1500);
+        setTimeout(() => {
+            document.getElementById("raide1").style.opacity = "0";
+            document.getElementById("loading").style.transition = "0.3s";
+        }, 1600);
+        setTimeout(() => {
+            document.getElementById("loading").style.opacity = "0";
+            document.getElementById("createdByMatas").style.display = "none";
+            document.querySelector(".langas").style.opacity = "1";
+        }, 1700);
+        setTimeout(() => {
+            document.getElementById("loading").style.display = "none";
+        }, 2000);
+    }
+    
+    loaded();
 }
 
 // išjungti right-click
