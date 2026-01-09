@@ -290,6 +290,21 @@ function closeExpenses() {
     }, 10);
 }
 
+function reportError() {
+    document.getElementById("body").style.overflowY = "hidden";
+    setTimeout(() => {
+        document.getElementById("klaidosPranesimas").style.bottom = "0";
+        document.querySelector(".langas").style.opacity = "0";
+    }, 10);
+}
+function cancelReportError() {
+    document.getElementById("body").style.overflowY = "scroll";
+    setTimeout(() => {
+        document.getElementById("klaidosPranesimas").style.bottom = "-100%";
+        document.querySelector(".langas").style.opacity = "1";
+    }, 10);
+}
+
 function daugiau() {
     document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
     document.getElementById("body").style.overflowY = "hidden";

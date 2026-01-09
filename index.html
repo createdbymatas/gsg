@@ -118,6 +118,14 @@
         <iframe src="https://docs.google.com/spreadsheets/d/11ZO2qFMKdTPMzKyFi-yv-244f3XOedgMELxoV-SuVAA/edit?usp=sharing" frameborder="0"></iframe>
     </div>
 
+    <div id="klaidosPranesimas">
+        <h1>Pranešti apie klaidą</h1>
+        <i id="closeKlaidosPranesimas" class="fa-solid fa-chevron-down" onclick="cancelReportError()" ontouchstart></i>
+        <p style="margin-top: 20px;">Naudotojas</p>
+        <input type="text" id="errorName" value="Vardas Pavarde">
+        <p><span>Naudotojo vardas ir pavardė bus rodomi administratoriui pranešant apie klaidą.</span></p>
+    </div>
+
     <div id="soundManager">
         <div id="soundManagerNav">
             <h1>Garso takeliai</h1>
@@ -151,6 +159,7 @@
         <p><b style="font-weight: 600;">Tema:</b> TV laidos</p>
         <p><b style="font-weight: 600;">Data:</b> 2026-02-27 (pn)</p>
         <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
+        <button onclick="reportError()" ontouchstart><i class="fa-regular fa-message" style="margin-right: 5px; cursor: pointer;"></i>Pranešti apie klaidą</button>
     </div>
     <div id="atsisiunciamasAudioBg"><div id="atsisiunciamasAudio"><div id="downloadAudioSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „<span id="downloadingAudioName"></span>“</p></div></div>
 
@@ -161,7 +170,7 @@
 
 
     <div id="topInfoSimtadienis"></div>
-    <div id="infoSimtadienis"><i class="fa-solid fa-chevron-down" onclick="closeSimtadienis()" id="simtadienisUzdarymas" ontouchstart></i><p id="simtadienisTekstas">Šimtadienis</p></div>
+    <div id="infoSimtadienis"><i class="fa-solid fa-xmark" onclick="closeSimtadienis()" id="simtadienisUzdarymas" ontouchstart></i><p id="simtadienisTekstas">Šimtadienis</p></div>
 
     <div id="simtadienis" class="langas">
         <div class="pinnedBottom">

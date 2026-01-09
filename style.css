@@ -370,7 +370,7 @@ hr{
 
 #barForIos{
     width: 100%;
-    height: 5px;
+    height: 1px;
     position: fixed;
     bottom: -1px;
     left: 0;
@@ -730,6 +730,69 @@ hr{
 }
 #closeIslaidosSheets:active{
     opacity: 0.2;
+}
+#klaidosPranesimas{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    /* bottom: 0; */
+    z-index: 18;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+}
+#klaidosPranesimas h1{
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 16px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+#klaidosPranesimas p{
+    color: black;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+#klaidosPranesimas span{
+    color: darkgrey;
+    font-size: 13px;
+}
+#closeKlaidosPranesimas{
+    font-size: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 11;
+    transition: 0.15s;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #DEDEDE;
+    color: black;
+}
+#closeKlaidosPranesimas:active{
+    opacity: 0.2;
+}
+#klaidosPranesimas input{
+    width: 95%;
+    height: 40px;
+    margin-left: 2.5%;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid black;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    pointer-events: none;
+    opacity: 0.6;
 }
 #soundManager{
     width: 100%;
@@ -1155,7 +1218,7 @@ hr{
     z-index: 10;
 }
 #infoSimtadienis i{
-    font-size: 15px;
+    font-size: 1špx;
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1575,6 +1638,23 @@ hr{
     }
     #closeIslaidosSheets{
         background-color: #282828;
+        color: white;
+    }
+     #klaidosPranesimas{
+        background-color: #141414;
+    }
+    #klaidosPranesimas h1{
+        color: white;
+    }
+    #klaidosPranesimas p{
+        color: white;
+    }
+    #closeKlaidosPranesimas{
+        background-color: #282828;
+        color: white;
+    }
+    #klaidosPranesimas input{
+        border-color: white;
         color: white;
     }
     #soundManager{
