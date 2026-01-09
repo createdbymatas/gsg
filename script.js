@@ -15,6 +15,12 @@ function getCookie(cname) {
 setTimeout(() => {
     document.getElementById("createdByMatas").style.opacity = "1";
 }, 100);
+setTimeout(() => {
+    if(document.getElementById("raide14").style.opacity != "0"){
+        document.getElementById("badConnectionBg").style.bottom = "25px";
+        document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
+    }
+}, 10000);
 function adjustPinnedBottom() {
     let bodyRect = document.body.getBoundingClientRect(),
     elemRect = document.querySelector(".pinnedBottom").getBoundingClientRect(),
@@ -43,13 +49,13 @@ window.onload = ()=>{
     }
 
     function online(){
-        document.getElementById("badConnectionBg").style.bottom = "-70px";
-        document.getElementById("badConnectionI").style.animation = "none";
+        document.getElementById("noConnectionBg").style.bottom = "-70px";
+        document.getElementById("noConnectionI").style.animation = "none";
     }
     function offline(){
         setTimeout(() => {
-            document.getElementById("badConnectionBg").style.bottom = "25px";
-            document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
+            document.getElementById("noConnectionBg").style.bottom = "25px";
+            document.getElementById("noConnectionI").style.animation = "connectionBlink 3s infinite";
         }, 200);
     }
 
@@ -62,9 +68,13 @@ window.onload = ()=>{
         adjustPinnedBottom();
         setTimeout(() => {
             document.getElementById("raide14").style.opacity = "0";
+            document.getElementById("badConnectionBg").style.bottom = "-70px";
+            document.getElementById("badConnectionI").style.animation = "none";
         }, 300);
         setTimeout(() => {
             document.getElementById("raide13").style.opacity = "0";
+            document.getElementById("badConnectionBg").style.bottom = "-70px";
+            document.getElementById("badConnectionI").style.animation = "none";
         }, 400);
         setTimeout(() => {
             document.getElementById("raide12").style.opacity = "0";
@@ -118,7 +128,7 @@ window.onload = ()=>{
 }
 
 // išjungti right-click
-// document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('contextmenu', (e) => e.preventDefault());
 
 // išjungti f12, ctrl+shift+i, ctrl+shift+j, ctrl+u (inspect tool)
 function ctrlShiftKey(e, keyCode) {

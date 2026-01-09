@@ -388,6 +388,42 @@ hr{
     outline: 1px solid red;
 }
 
+#noConnectionBg{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#noConnection{
+    width: 135px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 0;
+    border-radius: 25px;
+    box-shadow: 0 0 5px red;
+}
+#noConnectionI{
+    font-size: 20px;
+    animation: none;
+}
+#noConnection p{
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+}
+
 #badConnectionBg{
     width: 100%;
     height: 60px;
@@ -402,7 +438,7 @@ hr{
     pointer-events: none;
 }
 #badConnection{
-    width: 135px;
+    width: 175px;
     height: 50px;
     background-color: red;
     color: white;
@@ -419,7 +455,7 @@ hr{
     animation: none;
 }
 #badConnection p{
-    width: 100px;
+    width: 150px;
     text-align: center;
     font-size: 15px;
 }
