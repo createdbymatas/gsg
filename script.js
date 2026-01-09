@@ -64,12 +64,15 @@ window.onload = ()=>{
     }, 100);
 
     function loaded(){
-        document.getElementById("barForIos").style.bottom = "0";
         adjustPinnedBottom();
+        document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
         setTimeout(() => {
             document.getElementById("raide14").style.opacity = "0";
             document.getElementById("badConnectionBg").style.bottom = "-70px";
             document.getElementById("badConnectionI").style.animation = "none";
+            document.getElementById("rodomaDaugiau").style.bottom = "15px";
+            document.getElementById("pinnedBackgroundDaugiau").style.opacity = "1";
+            document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "all";
         }, 300);
         setTimeout(() => {
             document.getElementById("raide13").style.opacity = "0";
@@ -105,7 +108,9 @@ window.onload = ()=>{
         }, 1300);
         setTimeout(() => {
             document.getElementById("raide3").style.opacity = "0";
-            document.getElementById("barForIos").style.bottom = "-100%";
+            document.getElementById("rodomaDaugiau").style.bottom = "-100%";
+            document.getElementById("pinnedBackgroundDaugiau").style.opacity = "0";
+            document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "none";
         }, 1400);
         setTimeout(() => {
             document.getElementById("raide2").style.opacity = "0";
@@ -118,6 +123,7 @@ window.onload = ()=>{
             document.getElementById("loading").style.opacity = "0";
             document.getElementById("createdByMatas").style.display = "none";
             document.querySelector(".langas").style.opacity = "1";
+            document.getElementById("pinnedBackgroundDaugiau").style.display = "none";
         }, 1700);
         setTimeout(() => {
             document.getElementById("loading").style.display = "none";
