@@ -275,6 +275,25 @@ function downloadScript() {
     }, 6310);
 }
 
+function daugiau() {
+    document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
+    document.getElementById("body").style.overflowY = "hidden";
+    setTimeout(() => {
+        document.getElementById("rodomaDaugiau").style.bottom = "15px";
+        document.getElementById("pinnedBackgroundDaugiau").style.opacity = "1";
+        document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "all";
+    }, 10);
+}
+function uzdarytiDaugiau() {
+    document.getElementById("rodomaDaugiau").style.bottom = "-100%";
+    document.getElementById("pinnedBackgroundDaugiau").style.opacity = "0";
+    document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "none";
+    setTimeout(() => {
+        document.getElementById("pinnedBackgroundDaugiau").style.display = "none";
+        document.getElementById("body").style.overflowY = "scroll";
+    }, 300);
+}
+
 function openExpenses() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {
@@ -305,24 +324,21 @@ function cancelReportError() {
     }, 10);
 }
 
-function daugiau() {
-    document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
-    document.getElementById("body").style.overflowY = "hidden";
+function sendError(){
+    document.getElementById('user').value =  document.getElementById('errorName').value;
+    document.getElementById('message').value =  document.getElementById('pranesimas').value;
+    document.getElementById('errorSend').style.opacity =  "0";
     setTimeout(() => {
-        document.getElementById("rodomaDaugiau").style.bottom = "15px";
-        document.getElementById("pinnedBackgroundDaugiau").style.opacity = "1";
-        document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "all";
-    }, 10);
-}
-function uzdarytiDaugiau() {
-    document.getElementById("rodomaDaugiau").style.bottom = "-100%";
-    document.getElementById("pinnedBackgroundDaugiau").style.opacity = "0";
-    document.getElementById("pinnedBackgroundDaugiau").style.pointerEvents = "none";
-    setTimeout(() => {
-        document.getElementById("pinnedBackgroundDaugiau").style.display = "none";
-        document.getElementById("body").style.overflowY = "scroll";
+        document.getElementById('errorSend').style.display =  "none";
+        document.getElementById('errorSending').style.opacity =  "1";
     }, 300);
+
+    // setTimeout(() => {
+    //     submitFormBtn.click();
+    // }, 1000);
 }
+
+
 
 function openSoundTracks() {
     document.getElementById("body").style.overflowY = "hidden";
@@ -677,6 +693,7 @@ function check(form)
             document.getElementById("screen").style.backgroundColor = "transparent";
             document.getElementById("display").style.top = "-100%";
             document.getElementById("simtadienis").style.display = "block";
+            document.getElementById("errorName").value = 'Vardas Pavardė';
         }, 3600);
         setTimeout(() => {
             document.getElementById("simtadienis").style.paddingTop = "0";
@@ -753,10 +770,11 @@ if (simtadienis != "") {
     document.getElementById("screen").style.top = "-100%";
     document.getElementById("screen").style.backgroundColor = "transparent";
     document.getElementById("display").style.top = "-100%";
+    document.getElementById("errorName").value = 'Vardas Pavardė';
     setTimeout(() => {
         document.getElementById("body").style.overflowX = "hidden";
         document.getElementById("body").style.overflowY = "scroll";
-    }, 3000);
+    }, 2500);
 }
 else {
     document.getElementById("screen").style.top = "0";

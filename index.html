@@ -122,8 +122,23 @@
         <h1>Pranešti apie klaidą</h1>
         <i id="closeKlaidosPranesimas" class="fa-solid fa-chevron-down" onclick="cancelReportError()" ontouchstart></i>
         <p style="margin-top: 20px;">Naudotojas</p>
-        <input type="text" id="errorName" value="Vardas Pavarde">
+        <input type="text" id="errorName" value="...">
         <p><span>Naudotojo vardas ir pavardė bus rodomi administratoriui pranešant apie klaidą.</span></p>
+        <p style="margin-top: 20px;">Pranešimas</p>
+        <textarea name="pranesimas" id="pranesimas" placeholder="rašyti čia..."></textarea>
+        <button onclick="sendError()" id="errorSend" ontouchstart><i class="fa-regular fa-paper-plane"></i> Siųsti</button>
+        <button id="errorSending" style="pointer-events: none; border: none; opacity: 0;"><i class="fa-solid fa-hourglass-half"></i> Siunčiama...</button>
+
+        <form id="forma" action="https://formsubmit.co/a62b43c00bf0241936f4ccc5f1f3a2fe" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://createdbymatas.github.io/gsg/error/sent">
+        <input type="hidden" name="_subject" value="GŠG | Pranešimas apie klaidą">
+
+        <input required type="text" id="user" name="Naudotojas">
+        <textarea required type="text" id="message" name="Pranešimas"></textarea>
+        <button id="submitFormBtn" type="submit">submit</button>
+    </form>
     </div>
 
     <div id="soundManager">

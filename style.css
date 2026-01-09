@@ -16,6 +16,14 @@
 ::-webkit-scrollbar {
     width: 0;
 }
+::placeholder {
+  color: darkgrey;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: darkgrey;
+}
 body{
     background-color: #f2f2f2;
     overflow-x: hidden;
@@ -392,7 +400,6 @@ hr{
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    transition: 0.3s;
 }
 #badConnection{
     width: 135px;
@@ -738,7 +745,7 @@ hr{
     left: 0;
     right: 0;
     bottom: -100%;
-    /* bottom: 0; */
+    bottom: 0;
     z-index: 18;
     background-color: #f2f2f2;
     transition: 0.2s;
@@ -793,6 +800,38 @@ hr{
     margin-top: 5px;
     pointer-events: none;
     opacity: 0.6;
+}
+#klaidosPranesimas textarea{
+    width: 95%;
+    height: 100px;
+    margin-left: 2.5%;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    padding: 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    resize: none;
+}
+#klaidosPranesimas button{
+    width: 95%;
+    height: 40px;
+    margin-left: 2.5%;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#klaidosPranesimas button:active{
+    transform: scale(0.95);
+}
+#klaidosPranesimas form{
+    display: none;
 }
 #soundManager{
     width: 100%;
@@ -1654,6 +1693,14 @@ hr{
         color: white;
     }
     #klaidosPranesimas input{
+        border-color: white;
+        color: white;
+    }
+    #klaidosPranesimas textarea{
+        border-color: white;
+        color: white;
+    }
+    #klaidosPranesimas button{
         border-color: white;
         color: white;
     }
