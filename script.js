@@ -24,10 +24,6 @@ function adjustPinnedBottom() {
 }
 window.onresize = adjustPinnedBottom;
 
-function loadFunction() {
-    
-}
-
 window.onload = ()=>{
     function ajax(){
         let xhr = new XMLHttpRequest();
@@ -97,6 +93,7 @@ window.onload = ()=>{
         }, 1300);
         setTimeout(() => {
             document.getElementById("raide3").style.opacity = "0";
+            document.getElementById("barForIos").style.bottom = "-100%";
         }, 1400);
         setTimeout(() => {
             document.getElementById("raide2").style.opacity = "0";
