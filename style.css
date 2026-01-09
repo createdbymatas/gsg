@@ -376,18 +376,6 @@ hr{
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
-#barForIos{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    background-color: #f2f2f2;
-    outline: 1px solid red;
-}
-
 #noConnectionBg{
     width: 100%;
     height: 60px;
@@ -1679,9 +1667,6 @@ hr{
     }
     #uzdraustaRestart::before {
         border-color:white;
-    }
-    #barForIos{
-        background-color: #141414;
     }
 
     hr{
