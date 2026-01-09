@@ -628,7 +628,7 @@ hr{
     top: 60px;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: transparent;
 }
 #scenarijusDocs iframe{
     width: 100%;
