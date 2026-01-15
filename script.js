@@ -28,7 +28,7 @@ function adjustPinnedBottom() {
     document.querySelector(".pinnedBottom").style.bottom = kaire + "px";
     document.querySelector(".langas").style.paddingBottom = (kaire + 75) + "px";
 }
-window.onresize = adjustPinnedBottom;
+window.onresize = adjustPinnedBottom();
 
 window.onload = ()=>{
     function ajax(){
@@ -127,10 +127,12 @@ window.onload = ()=>{
         }, 1700);
         setTimeout(() => {
             document.getElementById("loading").style.display = "none";
+            adjustPinnedBottom();
         }, 2000);
     }
     
     loaded();
+    adjustPinnedBottom();
 }
 
 // išjungti right-click
