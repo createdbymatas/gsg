@@ -336,6 +336,7 @@ function cancelReportError() {
     setTimeout(() => {
         document.getElementById("klaidosPranesimas").style.bottom = "-100%";
         document.querySelector(".langas").style.opacity = "1";
+        document.getElementById('emptyField').style.display = "none";
     }, 10);
 }
 
