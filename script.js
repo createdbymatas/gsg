@@ -28,7 +28,10 @@ function adjustPinnedBottom() {
     document.querySelector(".pinnedBottom").style.bottom = kaire + "px";
     document.querySelector(".langas").style.paddingBottom = (kaire + 75) + "px";
 }
-window.onresize = adjustPinnedBottom();
+setInterval(()=>{
+    adjustPinnedBottom()
+}, 100);
+// window.onresize = adjustPinnedBottom();
 
 window.onload = ()=>{
     function ajax(){
@@ -64,7 +67,6 @@ window.onload = ()=>{
     }, 100);
 
     function loaded(){
-        adjustPinnedBottom();
         document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
         setTimeout(() => {
             document.getElementById("raide14").style.opacity = "0";
@@ -127,12 +129,10 @@ window.onload = ()=>{
         }, 1700);
         setTimeout(() => {
             document.getElementById("loading").style.display = "none";
-            adjustPinnedBottom();
         }, 2000);
     }
     
     loaded();
-    adjustPinnedBottom();
 }
 
 // išjungti right-click
