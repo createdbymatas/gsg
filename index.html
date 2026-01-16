@@ -114,14 +114,14 @@
         <i id="downloadScenarijus" class="fa-solid fa-download" onclick="downloadScript()" ontouchstart></i>
         <i id="closeScenarijusDocs" class="fa-solid fa-chevron-down" onclick="closeScript()" ontouchstart></i>
         <div></div>
-        <iframe src="https://docs.google.com/file/d/1ua-Nz9Ul_FwWwA_c_ZTLu0tSxGIk0rV5/preview" frameborder="0"></iframe>
+        <iframe src="*****" id="docsIframe" frameborder="0"></iframe>
     </div>
 
     <div id="islaidosSheets">
         <h1>Finansai ir išlaidos</h1>
         <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
         <div></div>
-        <iframe src="https://docs.google.com/file/d/11ZO2qFMKdTPMzKyFi-yv-244f3XOedgMELxoV-SuVAA/preview" frameborder="0"></iframe>
+        <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe>
     </div>
 
     <div id="klaidosPranesimas">
@@ -178,7 +178,7 @@
     <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div id="downloadScriptSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „scenarijus.pdf“</p></div></div>
     <div id="rodomaDaugiau">
         <p>Šimtadienio informacija:</p>
-        <p><b style="font-weight: 600;">Tema:</b> TV laidos</p>
+        <p><b style="font-weight: 600;">Tema:</b> <span id="theme">*****</span></p>
         <p><b style="font-weight: 600;">Data:</b> 2026-02-27 (pn)</p>
         <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
         <button onclick="reportError()" ontouchstart><i class="fa-regular fa-message" style="margin-right: 5px; cursor: pointer;"></i>Pranešti apie klaidą</button>
@@ -193,17 +193,35 @@
 
     <div id="topInfoSimtadienis"></div>
     <div id="infoSimtadienis"><i class="fa-solid fa-xmark" onclick="closeSimtadienis()" id="simtadienisUzdarymas" ontouchstart></i><p id="simtadienisTekstas">Šimtadienis</p></div>
+    <div id="pinnedBottom">
+        <button onclick="openScript()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
+        <button onclick="daugiau()" class="daugiau" ontouchstart><p style="cursor: pointer; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-ellipsis" style="margin-right: 5px; cursor: pointer;"></i> Daugiau</p></button>
+    </div>
 
-    <div id="simtadienis" class="langas">
-        <div class="pinnedBottom">
-            <button onclick="openScript()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
-            <button onclick="daugiau()" class="daugiau" ontouchstart><p style="cursor: pointer; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-ellipsis" style="margin-right: 5px; cursor: pointer;"></i> Daugiau</p></button>
-        </div>
-
+    <div id="svecias" class="langas">
         <div class="vardas">
             <i class="fa-regular fa-user-circle vardasIcon"></i>
-            <p class="pagrTekstas">Rolė</p>
-            <p class="vardasAntrTekstas">Vardas Pavardė</p>
+            <p class="pagrTekstas">Svečias</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Stebėtojas</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="adrianaBikevic" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="adrianaBikevicRole">*****</p>
+            <p class="vardasAntrTekstas">Adriana Bikevič</p>
         </div>
         <div class="separationLine1"><hr></div>
         <div class="apie">
@@ -237,15 +255,430 @@
             <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
             <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
         </div>
-        <div class="separationLine1"><hr></div>
+        <!-- <div class="separationLine1"><hr></div>
         <div class="papildomai">
             <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
             <p class="pagrTekstas">Papildomai</p>
             <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
-        </div>
+        </div> -->
     </div>
 
-    <a id="download_script" href="files/scenarijus.pdf" download style="display: none;">download_script</a>
+    <div id="adrianaCerepokaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="adrianaCerepokaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Adriana Čerepokaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="agnieskaValantaviciute" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="agnieskaValantaviciuteRole">*****</p>
+            <p class="vardasAntrTekstas">Agnieška Valantavičiūtė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="agotaKieraite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="agotaKieraiteRole">*****</p>
+            <p class="vardasAntrTekstas">Agota Kieraitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="aleksandraKravcionok" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="aleksandraKravcionokRole">*****</p>
+            <p class="vardasAntrTekstas">Aleksandra Kravčionok</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="algirdasKraujutis" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="algirdasKraujutisRole">*****</p>
+            <p class="vardasAntrTekstas">Algirdas Kraujutis</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="armandasJakubauskas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="armandasJakubauskasRole">*****</p>
+            <p class="vardasAntrTekstas">Armandas Jakubauskas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="arnasLapenas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="arnasLapenasRole">*****</p>
+            <p class="vardasAntrTekstas">Arnas Lapėnas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="rugileKaniusaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="rugileKaniusaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Rugilė Kaniušaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="justinaCepaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="justinaCepaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Justina Čepaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas">Voluptatibus sit autem delectus? Sequi, quisquam culpa eaque unde autem quasi ipsum aperiam laborum explicabo.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Dicta soluta quos eius ipsum culpa.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>• Qui distinctio nemo ipsum quisquam omnis aliquid eos eligendi! Totam, accusantium.<br>• Error accusamus enim facere deleniti dolore laborum fugit culpa. Commodi, deleniti.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>• Tempora rem alias assumenda culpa impedit, eum veritatis!<br>• Molestias consequatur fuga nemo! Iste necessitatibus ipsam dignissimos pariatur voluptas sit vel ea veniam?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+
+    <a id="download_script" href="*****" download style="display: none;">download_script</a>
     <a id="download_audio" download style="display: none;">download_audio</a>
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
