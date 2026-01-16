@@ -1158,6 +1158,7 @@ hr{
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
 }
 #rodomaDaugiau{
     width: 95%;
@@ -1224,6 +1225,7 @@ hr{
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
+    text-align: center;
 }
 #pinnedBottom{
     width: 95%;
