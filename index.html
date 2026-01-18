@@ -127,9 +127,9 @@
     <div id="klaidosPranesimas">
         <h1>Pranešti apie klaidą</h1>
         <i id="closeKlaidosPranesimas" class="fa-solid fa-chevron-down" onclick="cancelReportError()" ontouchstart></i>
-        <p style="margin-top: 20px;">Naudotojas</p>
+        <p style="margin-top: 20px;">Naudotoja(s)</p>
         <input type="text" id="errorName" value="...">
-        <p><span>Naudotojo vardas bus rodomas administratoriui pranešant apie klaidą.</span></p>
+        <p><span>Naudotojo(s) vardas bus rodomas administratoriui pranešant apie klaidą.</span></p>
         <p style="margin-top: 20px;">Pranešimas</p>
         <textarea name="pranesimas" id="pranesimas" placeholder="rašyti čia..."></textarea>
         <p id="emptyField" style="display: none;"><span style="color: red;">Privalomas teksto laukas</span></p>
@@ -820,6 +820,558 @@
             <i class="fa-regular fa-user-circle vardasIcon"></i>
             <p class="pagrTekstas" id="danieliusVorotnikovasRole">*****</p>
             <p class="vardasAntrTekstas">Danielius Vorotnikovas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="darjaLobac" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="darjaLobacRole">*****</p>
+            <p class="vardasAntrTekstas">Darja Lobač</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="dominikaAndruskevic" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="dominikaAndruskevicRole">*****</p>
+            <p class="vardasAntrTekstas">Dominika Andruškevič</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="dovileRobacevskyte" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="dovileRobacevskyteRole">*****</p>
+            <p class="vardasAntrTekstas">Dovilė Robačevskytė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="dovydasGlinevicius" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="dovydasGlineviciusRole">*****</p>
+            <p class="vardasAntrTekstas">Dovydas Glinevičius</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="edvinMagazejev" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="edvinMagazejevRole">*****</p>
+            <p class="vardasAntrTekstas">Edvin Magazejev</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="emilijaMolyte" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="emilijaMolyteRole">*****</p>
+            <p class="vardasAntrTekstas">Emilija Molytė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="emilijaSergatiukaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="emilijaSergatiukaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Emilija Sergatiukaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="emilijusSemenas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="emilijusSemenasRole">*****</p>
+            <p class="vardasAntrTekstas">Emilijus Semėnas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="erikasSvirka" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="erikasSvirkaRole">*****</p>
+            <p class="vardasAntrTekstas">Erikas Svirka</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="evaGusakovska" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="evaGusakovskaRole">*****</p>
+            <p class="vardasAntrTekstas">Eva Gusakovska</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+    <div id="faustasRimavicius" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="faustasRimaviciusRole">*****</p>
+            <p class="vardasAntrTekstas">Faustas Rimavičius</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Pasiruošti</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-arrows simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Vaidinimo eiga</p>
+            <p class="antrTekstas">• <i>bus papildyta...</i></p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <!-- <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-music" style="margin-right: 5px; cursor: pointer;"></i>Garso takelių valdymas</button>
+        </div> -->
+    </div>
+
+     <div id="gabijaJuskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="gabijaJuskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Gabija Juškaitė</p>
         </div>
         <div class="separationLine1"><hr></div>
         <div class="apie">
