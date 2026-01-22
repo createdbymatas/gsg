@@ -133,14 +133,6 @@ window.onload = ()=>{
     }
     
     loaded();
-    setInterval(()=>{
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.querySelector(".chatgpt").src = "images/chatgpt-black.png";
-        }
-        else{
-            document.querySelector(".chatgpt").src = "images/chatgpt-white.png";
-        }
-    }, 100);
     document.getElementById("sheetsIframe").src = atob('aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZmlsZS9kLzExWk8ycUZNS2RUUE16S3lGaS15di0yNDRmM1hPZWRnTUVMeG9WLVN1VkFBL3ByZXZpZXc=');
     document.getElementById("docsIframe").src = atob('aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vZmlsZS9kLzF4RnRwcjBvY0NXNTI1TDNqVGdNZzRoc3ZXU05RUkttaC9wcmV2aWV3');
     document.getElementById("theme").innerHTML = atob('VFYgbGFpZG9z');
@@ -167,9 +159,9 @@ window.onload = ()=>{
     document.getElementById("matasKasparaviciusRole").innerHTML = atob('QmVhdG9zIGFzaXN0ZW50YXMgJiBFa3N0cmFzZW5zYXMgMw==');
     document.getElementById("metaMelisaBukauskaiteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMQ==');
     document.getElementById("metaPanavaiteRole").innerHTML = atob('RWtzdHJhc2Vucw==') + 'ė' + atob('IDI=');
+    document.getElementById("neivydasPleskovasRole").innerHTML = atob('RmFyYXMgbnIuIDI=');
     document.getElementById("nikitaSimovicRole").innerHTML = atob('RG9tYW50byBwYXJvZGlqYQ==');
     document.getElementById("norbertasBorovskisRole").innerHTML = atob('QXVrc2luaW8gcHJvdG8gdmVk') + 'ė' + atob('amFz');
-    document.getElementById("pijusSpakauskasRole").innerHTML = atob('RmFyYXMgbnIuIDI=');
     document.getElementById("rugileKaniusaiteRole").innerHTML = atob('U3RhbmQgdXAnZXI=') + 'ė';
     document.getElementById("samantaKurecRole").innerHTML = atob('UGF1bGlub3MgcGFyb2RpamE=');
     document.getElementById("sauleBabaliauskaiteRole").innerHTML = atob('VmllbnVvbGlrdG9r') + 'ė';
@@ -279,34 +271,34 @@ function scrollFunction() {
 let passSvecias = atob('MDAwMDAw'); // 000000
 
 let passAgotaKieraite = atob('NTAwNDc4');
-let passAleksandraKravcionok = atob('MTgyNjE2');
+let passAleksandraKravcionok = atob('NDkzNzkz');
 let passArmandasJakubauskas = atob('OTU0NTE4');
-let passArturVelicko = atob('NzkxMzkw');
-let passAruneBanuskeviciute = atob('OTUwNzU3');
-let passAugiusBacinskas = atob('NjMwNTc0');
-let passBerzunaSimaityte = atob('NjgwOTcw');
+let passArturVelicko = atob('MTkxMzkw');
+let passAruneBanuskeviciute = atob('ODI3NDgy');
+let passAugiusBacinskas = atob('ODMwNTc0');
+let passBerzunaSimaityte = atob('NjQ1NzUx');
 let passDanieliusKurockin = atob('MjA4NTcx');
 let passDomasLenartavicius = atob('MzI1Njc0');
-let passDominikaAndruskevic = atob('MzExOTcy');
+let passDominikaAndruskevic = atob('NDY2NDA3');
 let passEdvinMagazejev = atob('MTA0MDYy');
-let passEmilijaSergatiukaite = atob('NDU5ODc2');
-let passGabrieleRagosko = atob('Mjg5NTc2');
-let passGretaRimsaite = atob('NzU0NTYw');
+let passEmilijaSergatiukaite = atob('NzU5ODc2');
+let passGabrieleRagosko = atob('MDM5NTg2');
+let passGretaRimsaite = atob('MDU0MTYw');
 let passIlahaDadashova = atob('OTkxMDY3');
-let passJustinaCepaite = atob('NjY1MDA5');
-let passKamileVaranauskaite = atob('OTgzMjc1');
-let passLijanaRadkeviciute = atob('OTgzNzM0');
-let passMatasKasparavicius = atob('ODk3OTE4');
-let passMetaMelisaBukauskaite = atob('OTEwMTM2');
+let passJustinaCepaite = atob('NTM4MjA0');
+let passKamileVaranauskaite = atob('ODkzMjc1');
+let passLijanaRadkeviciute = atob('MDgzNzM0');
+let passMatasKasparavicius = atob('NzQyMDk0');
+let passMetaMelisaBukauskaite = atob('MDI4NDgy');
 let passMetaPanavaite = atob('NTQ5Mjcy');
+let passNeivydasPleskovas = atob('MzY2NDU5');
 let passNikitaSimovic = atob('NDQwMjk3');
-let passNorbertasBorovskis = atob('NTU0OTE1');
-let passPijusSpakauskas = atob('MzY2NDU5');
-let passRugileKaniusaite = atob('NDIxMzYy');
-let passSamantaKurec = atob('MTgyNjkz');
-let passSauleBabaliauskaite = atob('OTU2Njgy');
+let passNorbertasBorovskis = atob('MTgzNzQ4');
+let passRugileKaniusaite = atob('NDIxMzY5');
+let passSamantaKurec = atob('MjgyNzM5');
+let passSauleBabaliauskaite = atob('OTA2Njg1');
 let passSimonaSmatauskaite = atob('NzM5MzAy');
-let passSmilteBazeviciute = atob('NTUzMzE0');
+let passSmilteBazeviciute = atob('MDEwNDcz');
 
 function openScript() {
     document.getElementById("body").style.overflowY = "hidden";
@@ -1380,6 +1372,33 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
+    else if(form.pin.value === passNeivydasPleskovas) {
+        document.cookie = "neivydasPleskovas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
+        checkOnCommand();
+        document.querySelector('#topInfoSimtadienis').scrollIntoView({
+            behavior: 'smooth'
+        });
+        setTimeout(() => {
+            document.getElementById("keypad").style.opacity = "1";
+            document.getElementById("ivestiKoda").style.opacity = "1";
+            document.getElementById("screen").style.top = "-100%";
+            document.getElementById("screen").style.backgroundColor = "transparent";
+            document.getElementById("display").style.top = "-100%";
+            document.getElementById("neivydasPleskovas").style.display = "block";
+            document.getElementById("errorName").value = 'Neivydas Pleškovas';
+        }, 3600);
+        setTimeout(() => {
+            document.getElementById("neivydasPleskovas").style.paddingTop = "0";
+            document.getElementById("infoSimtadienis").style.display = "flex";
+            document.getElementById("pinnedBottom").style.display = "flex";
+        }, 3610);
+        setTimeout(() => {
+            checkOffCommand();
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("body").style.overflowX = "hidden";
+            document.getElementById("body").style.overflowY = "scroll";
+        }, 3900);
+    }
     else if(form.pin.value === passNikitaSimovic) {
         document.cookie = "nikitaSimovic=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
@@ -1424,33 +1443,6 @@ function check(form)
         }, 3600);
         setTimeout(() => {
             document.getElementById("norbertasBorovskis").style.paddingTop = "0";
-            document.getElementById("infoSimtadienis").style.display = "flex";
-            document.getElementById("pinnedBottom").style.display = "flex";
-        }, 3610);
-        setTimeout(() => {
-            checkOffCommand();
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("body").style.overflowX = "hidden";
-            document.getElementById("body").style.overflowY = "scroll";
-        }, 3900);
-    }
-    else if(form.pin.value === passPijusSpakauskas) {
-        document.cookie = "pijusSpakauskas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
-        checkOnCommand();
-        document.querySelector('#topInfoSimtadienis').scrollIntoView({
-            behavior: 'smooth'
-        });
-        setTimeout(() => {
-            document.getElementById("keypad").style.opacity = "1";
-            document.getElementById("ivestiKoda").style.opacity = "1";
-            document.getElementById("screen").style.top = "-100%";
-            document.getElementById("screen").style.backgroundColor = "transparent";
-            document.getElementById("display").style.top = "-100%";
-            document.getElementById("pijusSpakauskas").style.display = "block";
-            document.getElementById("errorName").value = 'Pijus Špakauskas';
-        }, 3600);
-        setTimeout(() => {
-            document.getElementById("pijusSpakauskas").style.paddingTop = "0";
             document.getElementById("infoSimtadienis").style.display = "flex";
             document.getElementById("pinnedBottom").style.display = "flex";
         }, 3610);
@@ -2038,6 +2030,25 @@ else {
     }
 }
 
+neivydasPleskovas = getCookie("neivydasPleskovas");
+if (neivydasPleskovas != "") {
+    document.getElementById("neivydasPleskovas").style.display = "block";
+    document.getElementById("neivydasPleskovas").style.paddingTop = "0";
+    document.getElementById("errorName").value = 'Neivydas Pleškovas';
+    setTimeout(() => {
+        document.querySelector('#topInfoSimtadienis').scrollIntoView({
+        behavior: 'smooth'});
+    }, 500);
+}
+else {
+    document.getElementById("neivydasPleskovas").style.display = "none";
+    document.getElementById("neivydasPleskovas").style.paddingTop = "100vh";
+    if (neivydasPleskovas != "" && neivydasPleskovas != null) {
+        document.getElementById("neivydasPleskovas").style.display = "none";
+        document.getElementById("neivydasPleskovas").style.paddingTop = "100vh";
+    }
+}
+
 nikitaSimovic = getCookie("nikitaSimovic");
 if (nikitaSimovic != "") {
     document.getElementById("nikitaSimovic").style.display = "block";
@@ -2073,25 +2084,6 @@ else {
     if (norbertasBorovskis != "" && norbertasBorovskis != null) {
         document.getElementById("norbertasBorovskis").style.display = "none";
         document.getElementById("norbertasBorovskis").style.paddingTop = "100vh";
-    }
-}
-
-pijusSpakauskas = getCookie("pijusSpakauskas");
-if (pijusSpakauskas != "") {
-    document.getElementById("pijusSpakauskas").style.display = "block";
-    document.getElementById("pijusSpakauskas").style.paddingTop = "0";
-    document.getElementById("errorName").value = 'Pijus Špakauskas';
-    setTimeout(() => {
-        document.querySelector('#topInfoSimtadienis').scrollIntoView({
-        behavior: 'smooth'});
-    }, 500);
-}
-else {
-    document.getElementById("pijusSpakauskas").style.display = "none";
-    document.getElementById("pijusSpakauskas").style.paddingTop = "100vh";
-    if (pijusSpakauskas != "" && pijusSpakauskas != null) {
-        document.getElementById("pijusSpakauskas").style.display = "none";
-        document.getElementById("pijusSpakauskas").style.paddingTop = "100vh";
     }
 }
 
@@ -2190,7 +2182,7 @@ else {
     }
 }
 
-if (svecias != "" || agotaKieraite != "" || aleksandraKravcionok != "" || armandasJakubauskas != "" || arturVelicko != "" || aruneBanuskeviciute != "" || augiusBacinskas != "" || berzunaSimaityte != "" || danieliusKurockin != "" || domasLenartavicius != "" || dominikaAndruskevic != "" || edvinMagazejev != "" || emilijaSergatiukaite != "" || gabrieleRagosko != "" || gretaRimsaite != "" || ilahaDadashova != "" || justinaCepaite != "" || kamileVaranauskaite != "" || lijanaRadkeviciute != "" || matasKasparavicius != "" || metaMelisaBukauskaite != "" || metaPanavaite != "" || nikitaSimovic != "" || norbertasBorovskis != "" || pijusSpakauskas != "" || rugileKaniusaite != "" || samantaKurec != "" || sauleBabaliauskaite != "" || simonaSmatauskaite != "" || smilteBazeviciute != "") {
+if (svecias != "" || agotaKieraite != "" || aleksandraKravcionok != "" || armandasJakubauskas != "" || arturVelicko != "" || aruneBanuskeviciute != "" || augiusBacinskas != "" || berzunaSimaityte != "" || danieliusKurockin != "" || domasLenartavicius != "" || dominikaAndruskevic != "" || edvinMagazejev != "" || emilijaSergatiukaite != "" || gabrieleRagosko != "" || gretaRimsaite != "" || ilahaDadashova != "" || justinaCepaite != "" || kamileVaranauskaite != "" || lijanaRadkeviciute != "" || matasKasparavicius != "" || metaMelisaBukauskaite != "" || metaPanavaite != "" || neivydasPleskovas != "" || nikitaSimovic != "" || norbertasBorovskis != "" || rugileKaniusaite != "" || samantaKurec != "" || sauleBabaliauskaite != "" || simonaSmatauskaite != "" || smilteBazeviciute != "") {
     document.getElementById("screen").style.top = "-100%";
     document.getElementById("screen").style.backgroundColor = "transparent";
     document.getElementById("display").style.top = "-100%";
@@ -2210,7 +2202,7 @@ else {
     document.getElementById("body").style.overflowY = "hidden";
     document.getElementById("infoSimtadienis").style.display = "none";
     document.getElementById("pinnedBottom").style.display = "none";
-    if (svecias != "" && svecias != null || agotaKieraite != "" && agotaKieraite != null || aleksandraKravcionok != "" && aleksandraKravcionok != null || armandasJakubauskas != "" && armandasJakubauskas != null || arturVelicko != "" && arturVelicko != null || aruneBanuskeviciute != "" && aruneBanuskeviciute != null || augiusBacinskas != "" && augiusBacinskas != null || berzunaSimaityte != "" && berzunaSimaityte != null || danieliusKurockin != "" && danieliusKurockin != null || domasLenartavicius != "" && domasLenartavicius != null || dominikaAndruskevic != "" && dominikaAndruskevic != null || edvinMagazejev != "" && edvinMagazejev != null || emilijaSergatiukaite != "" && emilijaSergatiukaite != null || gabrieleRagosko != "" && gabrieleRagosko != null || gretaRimsaite != "" && gretaRimsaite != null || ilahaDadashova != "" && ilahaDadashova != null || justinaCepaite != "" && justinaCepaite != null || kamileVaranauskaite != "" && kamileVaranauskaite != null || lijanaRadkeviciute != "" && lijanaRadkeviciute != null || matasKasparavicius != "" && matasKasparavicius != null || metaMelisaBukauskaite != "" && metaMelisaBukauskaite != null || metaPanavaite != "" && metaPanavaite != null || nikitaSimovic != "" && nikitaSimovic != null || norbertasBorovskis != "" && norbertasBorovskis != null || pijusSpakauskas != "" && pijusSpakauskas != null || rugileKaniusaite != "" && rugileKaniusaite != null || samantaKurec != "" && samantaKurec != null || sauleBabaliauskaite != "" && sauleBabaliauskaite != null || simonaSmatauskaite != "" && simonaSmatauskaite != null || smilteBazeviciute != "" && smilteBazeviciute != null) {
+    if (svecias != "" && svecias != null || agotaKieraite != "" && agotaKieraite != null || aleksandraKravcionok != "" && aleksandraKravcionok != null || armandasJakubauskas != "" && armandasJakubauskas != null || arturVelicko != "" && arturVelicko != null || aruneBanuskeviciute != "" && aruneBanuskeviciute != null || augiusBacinskas != "" && augiusBacinskas != null || berzunaSimaityte != "" && berzunaSimaityte != null || danieliusKurockin != "" && danieliusKurockin != null || domasLenartavicius != "" && domasLenartavicius != null || dominikaAndruskevic != "" && dominikaAndruskevic != null || edvinMagazejev != "" && edvinMagazejev != null || emilijaSergatiukaite != "" && emilijaSergatiukaite != null || gabrieleRagosko != "" && gabrieleRagosko != null || gretaRimsaite != "" && gretaRimsaite != null || ilahaDadashova != "" && ilahaDadashova != null || justinaCepaite != "" && justinaCepaite != null || kamileVaranauskaite != "" && kamileVaranauskaite != null || lijanaRadkeviciute != "" && lijanaRadkeviciute != null || matasKasparavicius != "" && matasKasparavicius != null || metaMelisaBukauskaite != "" && metaMelisaBukauskaite != null || metaPanavaite != "" && metaPanavaite != null || neivydasPleskovas != "" && neivydasPleskovas != null || nikitaSimovic != "" && nikitaSimovic != null || norbertasBorovskis != "" && norbertasBorovskis != null || rugileKaniusaite != "" && rugileKaniusaite != null || samantaKurec != "" && samantaKurec != null || sauleBabaliauskaite != "" && sauleBabaliauskaite != null || simonaSmatauskaite != "" && simonaSmatauskaite != null || smilteBazeviciute != "" && smilteBazeviciute != null) {
         document.getElementById("screen").style.top = "0";
         document.getElementById("screen").style.backgroundColor = "rgba(0, 0, 0, 0.75)";
         document.getElementById("display").style.top = "0";
@@ -2243,9 +2235,9 @@ function closeSimtadienis() {
     document.cookie = "matasKasparavicius=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "metaMelisaBukauskaite=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "metaPanavaite=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
+    document.cookie = "neivydasPleskovas=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "nikitaSimovic=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "norbertasBorovskis=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
-    document.cookie = "pijusSpakauskas=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "rugileKaniusaite=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "samantaKurec=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "sauleBabaliauskaite=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
@@ -2278,9 +2270,9 @@ function closeSimtadienis() {
         document.getElementById("matasKasparavicius").style.paddingTop = "100vh";
         document.getElementById("metaMelisaBukauskaite").style.paddingTop = "100vh";
         document.getElementById("metaPanavaite").style.paddingTop = "100vh";
+        document.getElementById("neivydasPleskovas").style.paddingTop = "100vh";
         document.getElementById("nikitaSimovic").style.paddingTop = "100vh";
         document.getElementById("norbertasBorovskis").style.paddingTop = "100vh";
-        document.getElementById("pijusSpakauskas").style.paddingTop = "100vh";
         document.getElementById("rugileKaniusaite").style.paddingTop = "100vh";
         document.getElementById("samantaKurec").style.paddingTop = "100vh";
         document.getElementById("sauleBabaliauskaite").style.paddingTop = "100vh";
@@ -2313,9 +2305,9 @@ function closeSimtadienis() {
         document.getElementById("matasKasparavicius").style.display = "none";
         document.getElementById("metaMelisaBukauskaite").style.display = "none";
         document.getElementById("metaPanavaite").style.display = "none";
+        document.getElementById("neivydasPleskovas").style.display = "none";
         document.getElementById("nikitaSimovic").style.display = "none";
         document.getElementById("norbertasBorovskis").style.display = "none";
-        document.getElementById("pijusSpakauskas").style.display = "none";
         document.getElementById("rugileKaniusaite").style.display = "none";
         document.getElementById("samantaKurec").style.display = "none";
         document.getElementById("sauleBabaliauskaite").style.display = "none";

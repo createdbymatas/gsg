@@ -1502,11 +1502,17 @@ hr{
     width: 15px;
     height: 15px;
     position: absolute;
-    margin-top: -35px;
+    top: 10px;
     margin-left: 83px;
     background-color: black;
     border-radius: 5px;
     padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chatgpt img{
+    width: 100%;
 }
 .pasiruosimas{
     width: 100%;
