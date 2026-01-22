@@ -1498,6 +1498,16 @@ hr{
     padding-top: 7px;
     padding-bottom: 7px;
 }
+.chatgpt{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 83px;
+    background-color: black;
+    border-radius: 5px;
+    padding: 2px;
+}
 .pasiruosimas{
     width: 100%;
     height: auto;
@@ -1822,6 +1832,9 @@ hr{
     }
     .vardasIcon{
         color: white;
+    }
+    .chatgpt{
+        background-color: white;
     }
     .pastabaTekstas{
         color: white;
