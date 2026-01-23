@@ -511,19 +511,19 @@ function positionAudioDownloadBtn(){
     document.getElementById("atsisiunciamasAudioBg").style.left = kaire + "px";
 }
 
-function playSound1(){
+function playSoundZioguGarsas(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/pradzia.mp3';
+    sound.src = 'sounds/ziogu-garsas.mp3';
     sound.currentTime = 0;
     sound.play();
-    document.getElementById('download_audio').href = 'sounds/pradzia.mp3';
-    document.getElementById('downloadingAudioName').innerHTML = 'pradzia.mp3';
+    document.getElementById('download_audio').href = 'sounds/ziogu-garsas.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'ziogu-garsas.mp3';
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
-    document.getElementById("currentTrackName").innerText = 'pradzia.mp3';
-    document.getElementById("soundDuration").innerText = '0:27';
+    document.getElementById("currentTrackName").innerText = 'ziogu-garsas.mp3';
+    document.getElementById("soundDuration").innerText = '0:10';
     document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
