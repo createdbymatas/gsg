@@ -511,6 +511,30 @@ function positionAudioDownloadBtn(){
     document.getElementById("atsisiunciamasAudioBg").style.left = kaire + "px";
 }
 
+function playSoundVaikinuSokis(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/vaikinu-sokis.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    document.getElementById('download_audio').href = 'sounds/vaikinu-sokis.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'vaikinu-sokis.mp3';
+    positionAudioDownloadBtn()
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("soundPlayer").style.bottom = '15px';
+    document.getElementById("currentTrackName").innerText = 'vaikinu-sokis.mp3';
+    document.getElementById("soundDuration").innerText = '1:25';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
+}
 function playSoundZioguGarsas(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
@@ -524,30 +548,6 @@ function playSoundZioguGarsas(){
     document.getElementById("soundPlayer").style.bottom = '15px';
     document.getElementById("currentTrackName").innerText = 'ziogu-garsas.mp3';
     document.getElementById("soundDuration").innerText = '0:10';
-    document.getElementById("soundManager").style.paddingBottom = '100px';
-    setTimeout(() => {
-        positionAudioDownloadBtn();
-    }, 1);
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-        }, 300);
-    });
-}
-function playSound2(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/rap.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    document.getElementById('download_audio').href = 'sounds/rap.mp3';
-    document.getElementById('downloadingAudioName').innerHTML = 'rap.mp3';
-    positionAudioDownloadBtn()
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("soundPlayer").style.bottom = '15px';
-    document.getElementById("currentTrackName").innerText = 'rap.mp3';
-    document.getElementById("soundDuration").innerText = '0:22';
     document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
