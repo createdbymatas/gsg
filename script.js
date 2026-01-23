@@ -52,7 +52,7 @@ window.onload = ()=>{
     }
 
     function online(){
-        document.getElementById("noConnectionBg").style.bottom = "-100px";
+        document.getElementById("noConnectionBg").style.bottom = "-50%";
         document.getElementById("noConnectionI").style.animation = "none";
     }
     function offline(){
@@ -70,7 +70,7 @@ window.onload = ()=>{
         document.getElementById("pinnedBackgroundDaugiau").style.display = "block";
         setTimeout(() => {
             document.getElementById("raide14").style.opacity = "0";
-            document.getElementById("badConnectionBg").style.bottom = "-100px";
+            document.getElementById("badConnectionBg").style.bottom = "-50%";
             document.getElementById("badConnectionI").style.animation = "none";
             document.getElementById("rodomaDaugiau").style.bottom = "15px";
             document.getElementById("pinnedBackgroundDaugiau").style.opacity = "1";
@@ -78,7 +78,7 @@ window.onload = ()=>{
         }, 300);
         setTimeout(() => {
             document.getElementById("raide13").style.opacity = "0";
-            document.getElementById("badConnectionBg").style.bottom = "-100px";
+            document.getElementById("badConnectionBg").style.bottom = "-50%";
             document.getElementById("badConnectionI").style.animation = "none";
         }, 400);
         setTimeout(() => {
