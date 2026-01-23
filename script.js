@@ -375,6 +375,23 @@ function uzdarytiDaugiau() {
     }, 300);
 }
 
+function openRehearsalList() {
+    document.getElementById("body").style.overflowY = "hidden";
+    setTimeout(() => {
+        document.getElementById("repeticijuDatos").style.bottom = "0";
+        document.getElementById("repeticijuDatosNav").style.top = "0";
+        document.querySelector(".langas").style.opacity = "0";
+    }, 10);
+}
+function closeRehearsalList() {
+    document.getElementById("body").style.overflowY = "scroll";
+    setTimeout(() => {
+        document.querySelector(".langas").style.opacity = "1";
+        document.getElementById("repeticijuDatos").style.bottom = "-100%";
+        document.getElementById("repeticijuDatosNav").style.top = "100%";
+    }, 10);
+}
+
 function openExpenses() {
     document.getElementById("body").style.overflowY = "hidden";
     setTimeout(() => {

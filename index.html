@@ -112,6 +112,102 @@
         <iframe src="*****" id="docsIframe" frameborder="0"></iframe>
     </div>
 
+    <div id="repeticijuDatos">
+        <div id="repeticijuDatosNav">
+            <h1>Repeticijų datos</h1>
+            <i id="closeRepeticijuDatos" class="fa-solid fa-chevron-down" onclick="closeRehearsalList()" ontouchstart></i>
+        </div>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 15</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 16</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 19</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 22</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 23</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> sausio 29</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> sausio 30</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 2</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 3</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 5</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 6</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 9</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 10</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 12</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 13</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 23</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 24</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 26</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+    </div>
+
     <div id="islaidosSheets">
         <h1>Finansai ir išlaidos</h1>
         <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
@@ -132,15 +228,15 @@
         <button id="errorSending" style="pointer-events: none; border: none; opacity: 0;"><i class="fa-solid fa-hourglass-half"></i> Siunčiama...</button>
 
         <form id="forma" action="https://formsubmit.co/a62b43c00bf0241936f4ccc5f1f3a2fe" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_next" value="https://createdbymatas.github.io/gsg/error/sent">
-        <input type="hidden" name="_subject" value="GŠG | Pranešimas apie klaidą">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://createdbymatas.github.io/gsg/error/sent">
+            <input type="hidden" name="_subject" value="GŠG | Pranešimas apie klaidą">
 
-        <input required type="text" id="user" name="Naudotojas">
-        <textarea required type="text" id="message" name="Pranešimas"></textarea>
-        <button id="submitFormBtn" type="submit">submit</button>
-    </form>
+            <input required type="text" id="user" name="Naudotojas">
+            <textarea required type="text" id="message" name="Pranešimas"></textarea>
+            <button id="submitFormBtn" type="submit">submit</button>
+        </form>
     </div>
 
     <div id="soundManager">
@@ -175,6 +271,7 @@
         <p>Šimtadienio informacija:</p>
         <p><b style="font-weight: 600;">Tema:</b> <span id="theme">*****</span></p>
         <p><b style="font-weight: 600;">Data:</b> 2026-02-27 (pn)</p>
+        <button onclick="openRehearsalList()" ontouchstart><i class="fa-regular fa-calendar-days" style="margin-right: 5px; cursor: pointer;"></i>Repeticijų datos</button>
         <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
         <button onclick="reportError()" ontouchstart><i class="fa-regular fa-message" style="margin-right: 5px; cursor: pointer;"></i>Pranešti apie klaidą</button>
     </div>

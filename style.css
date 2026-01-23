@@ -704,6 +704,75 @@ hr{
 #closeScenarijusDocs:active{
     opacity: 0.2;
 }
+#repeticijuDatos{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    z-index: 18;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+    padding: 15px;
+    padding-top: 65px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#repeticijuDatosNav{
+    width: 100%;
+    min-height: 60px;
+    height: 60px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 20;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+    /* outline: 1px solid red; */
+    display: block;
+}
+#repeticijuDatos h1{
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 16px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+#repeticijuDatos div{
+    color: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#repeticijuDatos hr{
+    width: 100%;
+    height: 1px;
+}
+#closeRepeticijuDatos{
+    font-size: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 11;
+    transition: 0.15s;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #DEDEDE;
+    color: black;
+}
+#closeRepeticijuDatos:active{
+    opacity: 0.2;
+}
 #islaidosSheets{
     width: 100%;
     height: 100%;
@@ -1705,6 +1774,22 @@ hr{
         color: white;
     }
     #downloadScenarijus{
+        background-color: #282828;
+        color: white;
+    }
+    #repeticijuDatos{
+        background-color: #141414;
+    }
+    #repeticijuDatosNav{
+        background-color: #141414;
+    }
+    #repeticijuDatos h1{
+        color: white;
+    }
+    #repeticijuDatos div{
+        color: white;
+    }
+    #closeRepeticijuDatos{
         background-color: #282828;
         color: white;
     }
