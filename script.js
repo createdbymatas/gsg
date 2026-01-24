@@ -553,6 +553,29 @@ function playSoundVaikinuSokis(){
         }, 300);
     });
 }
+function playSoundRepas(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/repas.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    document.getElementById('download_audio').href = 'sounds/repas.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'repas.mp3';
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("soundPlayer").style.bottom = '15px';
+    document.getElementById("currentTrackName").innerText = 'repas.mp3';
+    document.getElementById("soundDuration").innerText = '1:15';
+    document.getElementById("soundManager").style.paddingBottom = '100px';
+    setTimeout(() => {
+        positionAudioDownloadBtn();
+    }, 1);
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+        }, 300);
+    });
+}
 function playSoundZioguGarsas(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
