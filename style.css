@@ -1660,6 +1660,21 @@ hr{
     padding-top: 7px;
     padding-bottom: 7px;
 }
+.songLyrics{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 5px;
+    padding-left: 67.5px;
+    padding-right: 15px;
+    position: relative;
+    margin-bottom: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
 .papildomai{
     width: 100%;
     height: auto;

@@ -268,7 +268,7 @@ function scrollFunction() {
     }
 }
 
-let passSvecias = atob('MDAwMDAw'); // 000000
+let passSvecias = atob('MDg1MjU4');
 
 let passAdrianaCerepokaite = atob('NzU5ODc2');
 let passAgotaKieraite = atob('NTAwNDc4');
@@ -623,20 +623,20 @@ function playSoundVejoGarsas(){
         }, 300);
     });
 }
-function playSound4(){
+function playSoundDaina(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/seseliai.mp3';
+    sound.src = 'sounds/daina.mp3';
     sound.currentTime = 0;
     sound.play();
-    document.getElementById('download_audio').href = 'sounds/seseliai.mp3';
-    document.getElementById('downloadingAudioName').innerHTML = 'seseliai.mp3';
+    document.getElementById('download_audio').href = 'sounds/daina.mp3';
+    document.getElementById('downloadingAudioName').innerHTML = 'daina.mp3';
     positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
-    document.getElementById("currentTrackName").innerText = 'seseliai.mp3';
-    document.getElementById("soundDuration").innerText = '0:07';
+    document.getElementById("currentTrackName").innerText = 'daina.mp3';
+    document.getElementById("soundDuration").innerText = '2:41';
     document.getElementById("soundManager").style.paddingBottom = '100px';
     setTimeout(() => {
         positionAudioDownloadBtn();
