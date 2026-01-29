@@ -545,6 +545,9 @@ hr{
     background-color: rgba(255,255,255,0.7);
     transform: scale(1.1);
 }
+#paste:active{
+    opacity: 0.5;
+}
 #istrynimas:active{
     opacity: 0.5;
 }
@@ -568,6 +571,7 @@ hr{
 #gerai{
     pointer-events: none;
     opacity: 0;
+    display: none;
 }
 #taskeliai{
     width: 80%;
@@ -586,6 +590,110 @@ hr{
 }
 .mygtukas:active{
     transform: scale(0.9);
+}
+
+#pasteBg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 82;
+    opacity: 0;
+    overflow: hidden;
+    border-radius: 25px;
+}
+#pasteCode{
+    width: 70%;
+    height: auto;
+    font-size: 15px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px lightgrey;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transform: scale(1.2);
+}
+#pasteCode button{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+#pasteCode button:active{
+    transform: scale(0.95);
+}
+#pasteCode button i{
+    margin-right: 5px;
+}
+#pinnedBackgroundPaste{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 81;
+    background-color: rgba(211, 211, 211, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    display: none;
+}
+#failedToPasteBg{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#failedToPaste{
+    width: 200px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 0;
+    border-radius: 25px;
+    box-shadow: 0 0 5px red;
+}
+#failedToPasteI{
+    font-size: 25px;
+}
+#failedToPaste p{
+    width: 160px;
+    text-align: center;
+    font-size: 15px;
 }
 
 
@@ -1787,6 +1895,19 @@ hr{
     }
     #uzdraustaRestart::before {
         border-color:white;
+    }
+
+    #pasteCode{
+        background-color: #141414;
+        box-shadow: 0 0 10px #464646;
+        color: white;
+    }
+    #pasteCode button{
+        color: white;
+        border: 2px solid white;
+    }
+    #pinnedBackgroundPaste{
+        background-color: rgba(44, 44, 44, 0.75);
     }
 
     hr{

@@ -142,9 +142,9 @@ window.onload = ()=>{
     document.getElementById("agotaKieraiteRole").innerHTML = atob('TGlldHV2b3MgdGFsZW50') + 'ų' + atob('IHZlZA==') + 'ė' + atob('amE=');
     document.getElementById("aleksandraKravcionokRole").innerHTML = atob('VmlrdG9yaWpvcyBwYXJvZGlqYQ==');
     document.getElementById("armandasJokubauskasRole").innerHTML = atob('TWV0') + 'ų' + atob('IGFwZG92YW5vamlt') + 'ų' + atob('IHZlZA==') + 'ė' + atob('amFz');
+    document.getElementById("arnasLapenasRole").innerHTML = atob('RWtzdHJhc2Vuc2FzIDQ=');
     document.getElementById("arturVelickoRole").innerHTML = atob('S29taWthcw==');
     document.getElementById("aruneBanuskeviciuteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMg==');
-    document.getElementById("augiusBacinskasRole").innerHTML = atob('RWtzdHJhc2Vuc2FzIDQ=');
     document.getElementById("berzunaSimaityteRole").innerHTML = atob('R2FicmllbA==') + 'ė' + atob('cyBwYXJvZGlqYQ==');
     document.getElementById("domasLenartaviciusRole").innerHTML = atob('RmFyYXMgbnIuIDE=');
     document.getElementById("dominikaAndruskevicRole").innerHTML = atob('QWRlbGlqb3MgcGFyb2RpamE=');
@@ -274,9 +274,9 @@ let passAdrianaCerepokaite = atob('NzU5ODc2');
 let passAgotaKieraite = atob('NTAwNDc4');
 let passAleksandraKravcionok = atob('NDkzNzkz');
 let passArmandasJokubauskas = atob('OTU0NTE4');
+let passArnasLapenas = atob('ODMwNTc0');
 let passArturVelicko = atob('MTkxMzkw');
 let passAruneBanuskeviciute = atob('ODI3NDgy');
-let passAugiusBacinskas = atob('ODMwNTc0');
 let passBerzunaSimaityte = atob('NjQ1NzUx');
 let passDomasLenartavicius = atob('MzI1Njc0');
 let passDominikaAndruskevic = atob('NDY2NDA3');
@@ -443,6 +443,8 @@ function sendError(){
         }, 1000);
     }
 }
+
+
 
 
 
@@ -722,6 +724,8 @@ function keypadPress() {
     document.getElementById("kodas").value = inputas;
     document.getElementById("istrynimas").style.color = "white";
     document.getElementById("istrynimas").style.pointerEvents = "all";
+    document.getElementById("paste").style.color = "transparent";
+    document.getElementById("paste").style.pointerEvents = "none";
     if(inputas.length === 1)
         {
             document.getElementById("taskelis1").style.backgroundColor = "white";
@@ -788,11 +792,66 @@ function nulinis() {
     inputas = inputas + 0;
     keypadPress();
 }
+function iklijuotiKoda() {
+    document.getElementById("pasteBg").style.display = "flex";
+    document.getElementById("pinnedBackgroundPaste").style.display = "block";
+    setTimeout(() => {
+        document.getElementById("pasteBg").style.opacity = "1";
+        document.getElementById("pasteCode").style.transform = "scale(1)";
+        document.getElementById("pinnedBackgroundPaste").style.opacity = "1";
+    }, 10);
+}
+function atsauktiIklijavima() {
+    document.getElementById("pasteBg").style.opacity = "0";
+    document.getElementById("pinnedBackgroundPaste").style.opacity = "0";
+    setTimeout(() => {
+        document.getElementById("pasteBg").style.display = "none";
+        document.getElementById("pasteCode").style.transform = "scale(1.2)";
+        document.getElementById("pinnedBackgroundPaste").style.display = "none";
+    }, 300);
+}
+const pasteButton = document.getElementById("pasteBtn");
+function patvirtintiIklijavima() {   
+    const pasteButton = document.querySelector('#pasteBtn');
+    pasteButton.addEventListener('click', async () => {
+    try {
+        const text = await navigator.clipboard.readText()
+        document.querySelector('#kodas').value = text;
+        console.log('Kodas buvo įklijuotas sėkmingai.');
+        document.getElementById("pasteBg").style.opacity = "0";
+        document.getElementById("pinnedBackgroundPaste").style.opacity = "0";
+        document.getElementById("paste").style.color = "white";
+        document.getElementById("paste").style.pointerEvents = "all";
+        document.getElementById("taskelis1").style.backgroundColor = "white";
+        document.getElementById("taskelis2").style.backgroundColor = "white";
+        document.getElementById("taskelis3").style.backgroundColor = "white";
+        document.getElementById("taskelis4").style.backgroundColor = "white";
+        document.getElementById("taskelis5").style.backgroundColor = "white";
+        document.getElementById("taskelis6").style.backgroundColor = "white";
+        document.getElementById("gerai").click();
+        setTimeout(() => {
+            document.getElementById("pasteBg").style.display = "none";
+            document.getElementById("pasteCode").style.transform = "scale(1.2)";
+            document.getElementById("pinnedBackgroundPaste").style.display = "none";
+        }, 300);
+    } catch (error) {
+        console.log('Nepavyko nuskaityti iškarpinės.');
+        document.getElementById("failedToPasteBg").style.bottom = "25px";
+        setTimeout(() => {
+            document.getElementById("failedToPasteBg").style.bottom = "-50%";
+        }, 3000);
+    }
+    });
+        
+    
+}
 function istrinti() {
     inputas = "";
     document.getElementById("kodas").value = '';
     document.getElementById("istrynimas").style.color = "transparent";
     document.getElementById("istrynimas").style.pointerEvents = "none";
+    document.getElementById("paste").style.color = "white";
+    document.getElementById("paste").style.pointerEvents = "all";
     document.getElementById("taskelis1").style.backgroundColor = "transparent";
     document.getElementById("taskelis2").style.backgroundColor = "transparent";
     document.getElementById("taskelis3").style.backgroundColor = "transparent";
@@ -816,10 +875,12 @@ function checkOffCommand(){
     document.getElementById("taskelis4").style.backgroundColor = "transparent";
     document.getElementById("taskelis5").style.backgroundColor = "transparent";
     document.getElementById("taskelis6").style.backgroundColor = "transparent";
+    document.getElementById("paste").style.color = "white";
+    document.getElementById("paste").style.pointerEvents = "all";
 }
 function check(form)
 {
-    if(form.pin.value === passSvecias) {
+    if(form.pin.value.includes(passSvecias) == true) {
         document.cookie = "svecias=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -846,7 +907,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passAdrianaCerepokaite) {
+    else if(form.pin.value.includes(passAdrianaCerepokaite) == true) {
         document.cookie = "adrianaCerepokaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -873,7 +934,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passAgotaKieraite) {
+    else if(form.pin.value.includes(passAgotaKieraite) == true) {
         document.cookie = "agotaKieraite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -900,7 +961,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passAleksandraKravcionok) {
+    else if(form.pin.value.includes(passAleksandraKravcionok) == true) {
         document.cookie = "aleksandraKravcionok=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -927,7 +988,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passArmandasJokubauskas) {
+    else if(form.pin.value.includes(passArmandasJokubauskas) == true) {
         document.cookie = "armandasJokubauskas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -954,7 +1015,34 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passArturVelicko) {
+    else if(form.pin.value.includes(passArnasLapenas) == true) {
+        document.cookie = "arnasLapenas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
+        checkOnCommand();
+        document.querySelector('#topInfoSimtadienis').scrollIntoView({
+            behavior: 'smooth'
+        });
+        setTimeout(() => {
+            document.getElementById("keypad").style.opacity = "1";
+            document.getElementById("ivestiKoda").style.opacity = "1";
+            document.getElementById("screen").style.top = "-100%";
+            document.getElementById("screen").style.backgroundColor = "transparent";
+            document.getElementById("display").style.top = "-100%";
+            document.getElementById("arnasLapenas").style.display = "block";
+            document.getElementById("errorName").value = 'Arnas Lapėnas';
+        }, 3600);
+        setTimeout(() => {
+            document.getElementById("arnasLapenas").style.paddingTop = "0";
+            document.getElementById("infoSimtadienis").style.display = "flex";
+            document.getElementById("pinnedBottom").style.display = "flex";
+        }, 3610);
+        setTimeout(() => {
+            checkOffCommand();
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("body").style.overflowX = "hidden";
+            document.getElementById("body").style.overflowY = "scroll";
+        }, 3900);
+    }
+    else if(form.pin.value.includes(passArturVelicko) == true) {
         document.cookie = "arturVelicko=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -981,7 +1069,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passAruneBanuskeviciute) {
+    else if(form.pin.value.includes(passAruneBanuskeviciute) == true) {
         document.cookie = "aruneBanuskeviciute=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1008,34 +1096,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passAugiusBacinskas) {
-        document.cookie = "augiusBacinskas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
-        checkOnCommand();
-        document.querySelector('#topInfoSimtadienis').scrollIntoView({
-            behavior: 'smooth'
-        });
-        setTimeout(() => {
-            document.getElementById("keypad").style.opacity = "1";
-            document.getElementById("ivestiKoda").style.opacity = "1";
-            document.getElementById("screen").style.top = "-100%";
-            document.getElementById("screen").style.backgroundColor = "transparent";
-            document.getElementById("display").style.top = "-100%";
-            document.getElementById("augiusBacinskas").style.display = "block";
-            document.getElementById("errorName").value = 'Augius Bačinskas';
-        }, 3600);
-        setTimeout(() => {
-            document.getElementById("augiusBacinskas").style.paddingTop = "0";
-            document.getElementById("infoSimtadienis").style.display = "flex";
-            document.getElementById("pinnedBottom").style.display = "flex";
-        }, 3610);
-        setTimeout(() => {
-            checkOffCommand();
-            document.getElementById("loading").style.display = "none";
-            document.getElementById("body").style.overflowX = "hidden";
-            document.getElementById("body").style.overflowY = "scroll";
-        }, 3900);
-    }
-    else if(form.pin.value === passBerzunaSimaityte) {
+    else if(form.pin.value.includes(passBerzunaSimaityte) == true) {
         document.cookie = "berzunaSimaityte=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1062,7 +1123,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passDomasLenartavicius) {
+    else if(form.pin.value.includes(passDomasLenartavicius) == true) {
         document.cookie = "domasLenartavicius=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1089,7 +1150,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passDominikaAndruskevic) {
+    else if(form.pin.value.includes(passDominikaAndruskevic) == true) {
         document.cookie = "dominikaAndruskevic=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1116,7 +1177,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passEdvinMagazejev) {
+    else if(form.pin.value.includes(passEdvinMagazejev) == true) {
         document.cookie = "edvinMagazejev=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1143,7 +1204,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passErikasSvirka) {
+    else if(form.pin.value.includes(passErikasSvirka) == true) {
         document.cookie = "erikasSvirka=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1170,7 +1231,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passGabrieleRagosko) {
+    else if(form.pin.value.includes(passGabrieleRagosko) == true) {
         document.cookie = "gabrieleRagosko=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1197,7 +1258,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passJurgisMuntrimas) {
+    else if(form.pin.value.includes(passJurgisMuntrimas) == true) {
         document.cookie = "jurgisMuntrimas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1224,7 +1285,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passJustinaCepaite) {
+    else if(form.pin.value.includes(passJustinaCepaite) == true) {
         document.cookie = "justinaCepaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1251,7 +1312,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passKamileVaranauskaite) {
+    else if(form.pin.value.includes(passKamileVaranauskaite) == true) {
         document.cookie = "kamileVaranauskaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1278,7 +1339,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passLijanaRadkeviciute) {
+    else if(form.pin.value.includes(passLijanaRadkeviciute) == true) {
         document.cookie = "lijanaRadkeviciute=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1305,7 +1366,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passMatasKasparavicius) {
+    else if(form.pin.value.includes(passMatasKasparavicius) == true) {
         document.cookie = "matasKasparavicius=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1332,7 +1393,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passMetaMelisaBukauskaite) {
+    else if(form.pin.value.includes(passMetaMelisaBukauskaite) == true) {
         document.cookie = "metaMelisaBukauskaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1359,7 +1420,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passMetaPanavaite) {
+    else if(form.pin.value.includes(passMetaPanavaite) == true) {
         document.cookie = "metaPanavaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1386,7 +1447,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passNeivydasPleskovas) {
+    else if(form.pin.value.includes(passNeivydasPleskovas) == true) {
         document.cookie = "neivydasPleskovas=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1413,7 +1474,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passNikitaSimovic) {
+    else if(form.pin.value.includes(passNikitaSimovic) == true) {
         document.cookie = "nikitaSimovic=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1440,7 +1501,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passNorbertasBorovskis) {
+    else if(form.pin.value.includes(passNorbertasBorovskis) == true) {
         document.cookie = "norbertasBorovskis=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1467,7 +1528,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passRugileKaniusaite) {
+    else if(form.pin.value.includes(passRugileKaniusaite) == true) {
         document.cookie = "rugileKaniusaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1494,7 +1555,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passRugileTamasauskaite) {
+    else if(form.pin.value.includes(passRugileTamasauskaite) == true) {
         document.cookie = "rugileTamasauskaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1521,7 +1582,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passSamantaKurec) {
+    else if(form.pin.value.includes(passSamantaKurec) == true) {
         document.cookie = "samantaKurec=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1548,7 +1609,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passSauleBabaliauskaite) {
+    else if(form.pin.value.includes(passSauleBabaliauskaite) == true) {
         document.cookie = "sauleBabaliauskaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1575,7 +1636,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passSimonaSmatauskaite) {
+    else if(form.pin.value.includes(passSimonaSmatauskaite) == true) {
         document.cookie = "simonaSmatauskaite=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1602,7 +1663,7 @@ function check(form)
             document.getElementById("body").style.overflowY = "scroll";
         }, 3900);
     }
-    else if(form.pin.value === passSmilteBazeviciute) {
+    else if(form.pin.value.includes(passSmilteBazeviciute) == true) {
         document.cookie = "smilteBazeviciute=true; expires=Sat, 01 Jan 2027 00:00:00 UTC";
         checkOnCommand();
         document.querySelector('#topInfoSimtadienis').scrollIntoView({
@@ -1748,6 +1809,25 @@ else {
     }
 }
 
+arnasLapenas = getCookie("arnasLapenas");
+if (arnasLapenas != "") {
+    document.getElementById("arnasLapenas").style.display = "block";
+    document.getElementById("arnasLapenas").style.paddingTop = "0";
+    document.getElementById("errorName").value = 'Arnas Lapėnas';
+    setTimeout(() => {
+        document.querySelector('#topInfoSimtadienis').scrollIntoView({
+        behavior: 'smooth'});
+    }, 500);
+}
+else {
+    document.getElementById("arnasLapenas").style.display = "none";
+    document.getElementById("arnasLapenas").style.paddingTop = "100vh";
+    if (arnasLapenas != "" && arnasLapenas != null) {
+        document.getElementById("arnasLapenas").style.display = "none";
+        document.getElementById("arnasLapenas").style.paddingTop = "100vh";
+    }
+}
+
 arturVelicko = getCookie("arturVelicko");
 if (arturVelicko != "") {
     document.getElementById("arturVelicko").style.display = "block";
@@ -1783,25 +1863,6 @@ else {
     if (aruneBanuskeviciute != "" && aruneBanuskeviciute != null) {
         document.getElementById("aruneBanuskeviciute").style.display = "none";
         document.getElementById("aruneBanuskeviciute").style.paddingTop = "100vh";
-    }
-}
-
-augiusBacinskas = getCookie("augiusBacinskas");
-if (augiusBacinskas != "") {
-    document.getElementById("augiusBacinskas").style.display = "block";
-    document.getElementById("augiusBacinskas").style.paddingTop = "0";
-    document.getElementById("errorName").value = 'Augius Bačinskas';
-    setTimeout(() => {
-        document.querySelector('#topInfoSimtadienis').scrollIntoView({
-        behavior: 'smooth'});
-    }, 500);
-}
-else {
-    document.getElementById("augiusBacinskas").style.display = "none";
-    document.getElementById("augiusBacinskas").style.paddingTop = "100vh";
-    if (augiusBacinskas != "" && augiusBacinskas != null) {
-        document.getElementById("augiusBacinskas").style.display = "none";
-        document.getElementById("augiusBacinskas").style.paddingTop = "100vh";
     }
 }
 
@@ -2223,7 +2284,7 @@ else {
     }
 }
 
-if (svecias != "" || adrianaCerepokaite != "" || agotaKieraite != "" || aleksandraKravcionok != "" || armandasJokubauskas != "" || arturVelicko != "" || aruneBanuskeviciute != "" || augiusBacinskas != "" || berzunaSimaityte != "" || domasLenartavicius != "" || dominikaAndruskevic != "" || edvinMagazejev != "" || erikasSvirka != "" || gabrieleRagosko != "" || jurgisMuntrimas != "" || justinaCepaite != "" || kamileVaranauskaite != "" || lijanaRadkeviciute != "" || matasKasparavicius != "" || metaMelisaBukauskaite != "" || metaPanavaite != "" || neivydasPleskovas != "" || nikitaSimovic != "" || norbertasBorovskis != "" || rugileKaniusaite != "" || rugileTamasauskaite != "" || samantaKurec != "" || sauleBabaliauskaite != "" || simonaSmatauskaite != "" || smilteBazeviciute != "") {
+if (svecias != "" || adrianaCerepokaite != "" || agotaKieraite != "" || aleksandraKravcionok != "" || armandasJokubauskas != "" || arnasLapenas != "" || arturVelicko != "" || aruneBanuskeviciute != "" || berzunaSimaityte != "" || domasLenartavicius != "" || dominikaAndruskevic != "" || edvinMagazejev != "" || erikasSvirka != "" || gabrieleRagosko != "" || jurgisMuntrimas != "" || justinaCepaite != "" || kamileVaranauskaite != "" || lijanaRadkeviciute != "" || matasKasparavicius != "" || metaMelisaBukauskaite != "" || metaPanavaite != "" || neivydasPleskovas != "" || nikitaSimovic != "" || norbertasBorovskis != "" || rugileKaniusaite != "" || rugileTamasauskaite != "" || samantaKurec != "" || sauleBabaliauskaite != "" || simonaSmatauskaite != "" || smilteBazeviciute != "") {
     document.getElementById("screen").style.top = "-100%";
     document.getElementById("screen").style.backgroundColor = "transparent";
     document.getElementById("display").style.top = "-100%";
@@ -2243,7 +2304,7 @@ else {
     document.getElementById("body").style.overflowY = "hidden";
     document.getElementById("infoSimtadienis").style.display = "none";
     document.getElementById("pinnedBottom").style.display = "none";
-    if (svecias != "" && svecias != null || adrianaCerepokaite != "" && adrianaCerepokaite != null || agotaKieraite != "" && agotaKieraite != null || aleksandraKravcionok != "" && aleksandraKravcionok != null || armandasJokubauskas != "" && armandasJokubauskas != null || arturVelicko != "" && arturVelicko != null || aruneBanuskeviciute != "" && aruneBanuskeviciute != null || augiusBacinskas != "" && augiusBacinskas != null || berzunaSimaityte != "" && berzunaSimaityte != null || domasLenartavicius != "" && domasLenartavicius != null || dominikaAndruskevic != "" && dominikaAndruskevic != null || edvinMagazejev != "" && edvinMagazejev != null || erikasSvirka != "" && erikasSvirka != null || gabrieleRagosko != "" && gabrieleRagosko != null || jurgisMuntrimas != "" && jurgisMuntrimas != null || justinaCepaite != "" && justinaCepaite != null || kamileVaranauskaite != "" && kamileVaranauskaite != null || lijanaRadkeviciute != "" && lijanaRadkeviciute != null || matasKasparavicius != "" && matasKasparavicius != null || metaMelisaBukauskaite != "" && metaMelisaBukauskaite != null || metaPanavaite != "" && metaPanavaite != null || neivydasPleskovas != "" && neivydasPleskovas != null || nikitaSimovic != "" && nikitaSimovic != null || norbertasBorovskis != "" && norbertasBorovskis != null || rugileKaniusaite != "" && rugileKaniusaite != null || rugileTamasauskaite != "" && rugileTamasauskaite != null || samantaKurec != "" && samantaKurec != null || sauleBabaliauskaite != "" && sauleBabaliauskaite != null || simonaSmatauskaite != "" && simonaSmatauskaite != null || smilteBazeviciute != "" && smilteBazeviciute != null) {
+    if (svecias != "" && svecias != null || adrianaCerepokaite != "" && adrianaCerepokaite != null || agotaKieraite != "" && agotaKieraite != null || aleksandraKravcionok != "" && aleksandraKravcionok != null || armandasJokubauskas != "" && armandasJokubauskas != null || arnasLapenas != "" && arnasLapenas != null || arturVelicko != "" && arturVelicko != null || aruneBanuskeviciute != "" && aruneBanuskeviciute != null || berzunaSimaityte != "" && berzunaSimaityte != null || domasLenartavicius != "" && domasLenartavicius != null || dominikaAndruskevic != "" && dominikaAndruskevic != null || edvinMagazejev != "" && edvinMagazejev != null || erikasSvirka != "" && erikasSvirka != null || gabrieleRagosko != "" && gabrieleRagosko != null || jurgisMuntrimas != "" && jurgisMuntrimas != null || justinaCepaite != "" && justinaCepaite != null || kamileVaranauskaite != "" && kamileVaranauskaite != null || lijanaRadkeviciute != "" && lijanaRadkeviciute != null || matasKasparavicius != "" && matasKasparavicius != null || metaMelisaBukauskaite != "" && metaMelisaBukauskaite != null || metaPanavaite != "" && metaPanavaite != null || neivydasPleskovas != "" && neivydasPleskovas != null || nikitaSimovic != "" && nikitaSimovic != null || norbertasBorovskis != "" && norbertasBorovskis != null || rugileKaniusaite != "" && rugileKaniusaite != null || rugileTamasauskaite != "" && rugileTamasauskaite != null || samantaKurec != "" && samantaKurec != null || sauleBabaliauskaite != "" && sauleBabaliauskaite != null || simonaSmatauskaite != "" && simonaSmatauskaite != null || smilteBazeviciute != "" && smilteBazeviciute != null) {
         document.getElementById("screen").style.top = "0";
         document.getElementById("screen").style.backgroundColor = "rgba(0, 0, 0, 0.75)";
         document.getElementById("display").style.top = "0";
@@ -2259,9 +2320,9 @@ function closeSimtadienis() {
     document.cookie = "agotaKieraite=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "aleksandraKravcionok=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "armandasJokubauskas=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
+    document.cookie = "arnasLapenas=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "arturVelicko=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "aruneBanuskeviciute=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
-    document.cookie = "augiusBacinskas=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "berzunaSimaityte=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "domasLenartavicius=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
     document.cookie = "dominikaAndruskevic=; expires=Sat, 01 Jan 2000 00:00:00 UTC";
@@ -2294,9 +2355,9 @@ function closeSimtadienis() {
         document.getElementById("agotaKieraite").style.paddingTop = "100vh";
         document.getElementById("aleksandraKravcionok").style.paddingTop = "100vh";
         document.getElementById("armandasJokubauskas").style.paddingTop = "100vh";
+        document.getElementById("arnasLapenas").style.paddingTop = "100vh";
         document.getElementById("arturVelicko").style.paddingTop = "100vh";
         document.getElementById("aruneBanuskeviciute").style.paddingTop = "100vh";
-        document.getElementById("augiusBacinskas").style.paddingTop = "100vh";
         document.getElementById("berzunaSimaityte").style.paddingTop = "100vh";
         document.getElementById("domasLenartavicius").style.paddingTop = "100vh";
         document.getElementById("dominikaAndruskevic").style.paddingTop = "100vh";
@@ -2329,9 +2390,9 @@ function closeSimtadienis() {
         document.getElementById("agotaKieraite").style.display = "none";
         document.getElementById("aleksandraKravcionok").style.display = "none";
         document.getElementById("armandasJokubauskas").style.display = "none";
+        document.getElementById("arnasLapenas").style.display = "none";
         document.getElementById("arturVelicko").style.display = "none";
         document.getElementById("aruneBanuskeviciute").style.display = "none";
-        document.getElementById("augiusBacinskas").style.display = "none";
         document.getElementById("berzunaSimaityte").style.display = "none";
         document.getElementById("domasLenartavicius").style.display = "none";
         document.getElementById("dominikaAndruskevic").style.display = "none";
