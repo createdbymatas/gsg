@@ -909,7 +909,13 @@ hr{
     top: 60px;
     left: 0;
     right: 0;
-    background-color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: white; */
+    /* display: none; */
 }
 #islaidosSheets iframe{
     width: 100%;
@@ -920,6 +926,7 @@ hr{
     right: 0;
     bottom: 0;
     padding-top: 60px;
+    display: none;
 }
 #closeIslaidosSheets{
     font-size: 15px;
