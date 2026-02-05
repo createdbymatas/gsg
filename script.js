@@ -144,7 +144,7 @@ window.onload = ()=>{
     document.getElementById("armandasJokubauskasRole").innerHTML = atob('TWV0') + 'ų' + atob('IGFwZG92YW5vamlt') + 'ų' + atob('IHZlZA==') + 'ė' + atob('amFz');
     document.getElementById("arnasLapenasRole").innerHTML = atob('RWtzdHJhc2Vuc2FzIDQ=');
     document.getElementById("arturVelickoRole").innerHTML = atob('S29taWthcw==');
-    document.getElementById("aruneBanuskeviciuteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMg==');
+    document.getElementById("aruneBanuskeviciuteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMQ==');
     document.getElementById("berzunaSimaityteRole").innerHTML = atob('R2FicmllbA==') + 'ė' + atob('cyBwYXJvZGlqYQ==');
     document.getElementById("domasLenartaviciusRole").innerHTML = atob('RmFyYXMgbnIuIDE=');
     document.getElementById("dominikaAndruskevicRole").innerHTML = atob('QWRlbGlqb3MgcGFyb2RpamE=');
@@ -156,7 +156,7 @@ window.onload = ()=>{
     document.getElementById("kamileVaranauskaiteRole").innerHTML = atob('RWtzdHJhc2Vucw==') + 'ų' + atob('IHZlZA==') + 'ė' + atob('amE=');
     document.getElementById("lijanaRadkeviciuteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMw==');
     document.getElementById("matasKasparaviciusRole").innerHTML = atob('QmVhdG9zIGFzaXN0ZW50YXMgJiBFa3N0cmFzZW5zYXMgMw==');
-    document.getElementById("metaMelisaBukauskaiteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMQ==');
+    document.getElementById("metaMelisaBukauskaiteRole").innerHTML = atob('VGVpcw==') + 'ė' + atob('amEgMg==');
     document.getElementById("metaPanavaiteRole").innerHTML = atob('RWtzdHJhc2Vucw==') + 'ė' + atob('IDI=');
     document.getElementById("neivydasPleskovasRole").innerHTML = atob('RmFyYXMgbnIuIDI=');
     document.getElementById("nikitaSimovicRole").innerHTML = atob('RG9tYW50byBwYXJvZGlqYQ==');
