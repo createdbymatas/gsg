@@ -243,13 +243,13 @@
     <div id="islaidosSheets">
         <h1>Finansai ir išlaidos</h1>
         <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
-        <!-- <div></div> -->
-        <!-- <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe> -->
-        <div>
+        <div></div>
+        <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe>
+        <!-- <div>
             <i style="font-size: 50px;" class="fa-solid fa-circle-exclamation"></i>
             <p style="margin-top: 10px; font-size: 20px; font-weight: 600;">Išlaidų peržiūra laikinai negalima</p>
             <p style="font-size: 17px; margin-top: 5px;">Vykdomi atnaujinimo darbai</p>
-        </div>
+        </div> -->
     </div>
 
     <div id="klaidosPranesimas">
@@ -293,7 +293,7 @@
             <p id="playingTrackName"><i class="fa-solid fa-music"></i> <span id="currentTrackName">Garso takelio pavadinimas</span> <i id="downloadAudioBtn" ontouchstart onclick="downloadAudio()" class="fa-solid fa-download"></i></p>
             <div id="playBtn" ontouchstart onclick="playPause()"><i id="soundPlayPauseIcon" class="fa-solid fa-play"></i></div>
             <div id="endBtn" ontouchstart onclick="endPlay()"><i class="fa-solid fa-square"></i></div>
-            <div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div>
+            <div id="loadingAudioBg"><div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div></div>
             <audio id="sound"></audio>
             <div id="progressBg">
                 <div id="playProgress"></div>
@@ -301,6 +301,7 @@
             <span id="timePlayed">0:00</span>
             <span id="soundDuration">0:00</span>
         </div>
+        <input type="text" value="0" id="soundsInput" style="display: none;">
     </div>
 
     <div id="pinnedBackground" ontouchstart></div>

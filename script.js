@@ -21,12 +21,22 @@ setTimeout(() => {
         document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
     }
 }, 10000);
+let sounds = document.getElementById("soundsInput");
 function adjustPinnedBottom() {
-    let bodyRect = document.body.getBoundingClientRect(),
-    elemRect = document.getElementById("pinnedBottom").getBoundingClientRect(),
-    kaire = elemRect.left - bodyRect.left;
-    document.getElementById("pinnedBottom").style.bottom = kaire + "px";
-    document.getElementById("body").style.paddingBottom = (kaire + 75) + "px";
+    if(sounds == 0){
+        let bodyRect = document.body.getBoundingClientRect(),
+        elemRect = document.getElementById("pinnedBottom").getBoundingClientRect(),
+        kaire = elemRect.left - bodyRect.left;
+        document.getElementById("pinnedBottom").style.bottom = kaire + "px";
+        document.getElementById("body").style.paddingBottom = (kaire + 75) + "px";
+    }
+    else{
+        let bodyRect = document.body.getBoundingClientRect(),
+        elemRect = document.getElementById("pinnedBottom").getBoundingClientRect(),
+        kaire = elemRect.left - bodyRect.left;
+        document.getElementById("pinnedBottom").style.bottom = kaire + "px";
+        document.getElementById("body").style.paddingBottom = (kaire + 90) + "px";
+    }
 }
 setInterval(()=>{
     adjustPinnedBottom()
@@ -462,15 +472,18 @@ function closeSoundTracks() {
         document.querySelector(".langas").style.opacity = "1";
         document.getElementById("soundManager").style.bottom = "-100%";
         document.getElementById("soundManagerNav").style.top = "100%";
-        document.getElementById("soundPlayer").style.bottom = '-100%';
-        sound.pause();
-        soundPlayPauseIcon.classList.remove("fa-pause");
-        soundPlayPauseIcon.classList.add("fa-play");
-        sound.currentTime = 0;
-        document.getElementById("currentTrackName").innerText = 'Garso takelio pavadinimas';
-        document.getElementById("soundDuration").innerText = '0:00';
-        document.getElementById("soundManager").style.paddingBottom = '0';
     }, 10);
+}
+function endPlay() {
+    sounds = 0;
+    document.getElementById("soundPlayer").style.bottom = '-100%';
+    sound.pause();
+    soundPlayPauseIcon.classList.remove("fa-pause");
+    soundPlayPauseIcon.classList.add("fa-play");
+    sound.currentTime = 0;
+    document.getElementById("currentTrackName").innerText = 'Garso takelio pavadinimas';
+    document.getElementById("soundDuration").innerText = '0:00';
+    document.getElementById("soundManager").style.paddingBottom = '0';
 }
 
 let progress = document.getElementById('playProgress');
@@ -532,7 +545,7 @@ function positionAudioDownloadBtn(){
 }
 
 function playSoundVaikinuSokis(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/vaikinu-sokis.mp3';
     sound.currentTime = 0;
@@ -549,14 +562,15 @@ function playSoundVaikinuSokis(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
 function playSoundRepas(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/repas.mp3';
     sound.currentTime = 0;
@@ -572,14 +586,15 @@ function playSoundRepas(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
 function playSoundZioguGarsas(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/ziogu-garsas.mp3';
     sound.currentTime = 0;
@@ -595,14 +610,15 @@ function playSoundZioguGarsas(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
 function playSoundVejoGarsas(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/vejo-garsas.mp3';
     sound.currentTime = 0;
@@ -619,14 +635,15 @@ function playSoundVejoGarsas(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
 function playSoundDaina(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/daina.mp3';
     sound.currentTime = 0;
@@ -643,14 +660,15 @@ function playSoundDaina(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
 function playSound5(){
-    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudioBg').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     sound.src = 'sounds/sokis.mp3';
     sound.currentTime = 0;
@@ -667,9 +685,10 @@ function playSound5(){
     setTimeout(() => {
         positionAudioDownloadBtn();
     }, 1);
+    sounds = 1;
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById('loadingAudioBg').style.display = "none";
         }, 300);
     });
 }
