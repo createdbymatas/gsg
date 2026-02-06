@@ -199,7 +199,7 @@
             <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
         </div>
         <hr>
-        <div>
+        <div style="opacity: 0.3;">
             <p><i class="fa-regular fa-calendar"></i> vasario 6 (pn)</p>
             <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
         </div>
@@ -243,13 +243,13 @@
     <div id="islaidosSheets">
         <h1>Finansai ir išlaidos</h1>
         <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
-        <div></div>
-        <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe>
-        <!-- <div>
+        <!-- <div></div> -->
+        <!-- <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe> -->
+        <div>
             <i style="font-size: 50px;" class="fa-solid fa-circle-exclamation"></i>
             <p style="margin-top: 10px; font-size: 20px; font-weight: 600;">Išlaidų peržiūra laikinai negalima</p>
             <p style="font-size: 17px; margin-top: 5px;">Vykdomi atnaujinimo darbai</p>
-        </div> -->
+        </div>
     </div>
 
     <div id="klaidosPranesimas">
@@ -292,6 +292,7 @@
         <div id="soundPlayer">
             <p id="playingTrackName"><i class="fa-solid fa-music"></i> <span id="currentTrackName">Garso takelio pavadinimas</span> <i id="downloadAudioBtn" ontouchstart onclick="downloadAudio()" class="fa-solid fa-download"></i></p>
             <div id="playBtn" ontouchstart onclick="playPause()"><i id="soundPlayPauseIcon" class="fa-solid fa-play"></i></div>
+            <div id="endBtn" ontouchstart onclick="endPlay()"><i class="fa-solid fa-square"></i></div>
             <div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div>
             <audio id="sound"></audio>
             <div id="progressBg">
@@ -3045,7 +3046,7 @@
             <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
             <p class="pagrTekstas">Žodžiai</p>
             <p class="antrTekstas">• „Ponios ir Ponai, sveiki atvykę į iškilmingiausią metų vakarą.“
-                <br>• „Šį vakarą abiturientai grumsis tarp pačių karščiausių nominacijų. Delsti nėra ko, tad kviečiame į scena pirmuosius nominantus: 1. Adrija Garnatkevičiūtė; 2. Titas Garnatkevičius. Nominantai kovos dėl metų dvynio nominacijos.“
+                <br>• „Šį vakarą abiturientai grumsis tarp pačių karščiausių nominacijų. Delsti nėra ko, tad kviečiame į sceną pirmuosius nominantus: 1. Adrija Garnatkevičiūtė; 2. Titas Garnatkevičius. Nominantai kovos dėl metų dvynio nominacijos.“
                 <br>• Metų apdovanojimų vedėja: „Na, tikėkimės, dvyniai namuose nesusimuš, o dabar į sceną kviečiame: 1. Nojus Šukys; 2. Nikita Skibickij; 3. Mikas Titas Jakubonis; 4. Karolis Rudys“
                 <br>• „Šį lemtingą vakarą metų sportininko nominaciją iškovojo: …“
                 <br>• „Suskaičiavę taškus, galime paskelbti, kad protingiausio dvyliktoko nominaciją iškovojo: …“
