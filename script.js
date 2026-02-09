@@ -552,7 +552,6 @@ function playSoundVaikinuSokis(){
     sound.play();
     document.getElementById('download_audio').href = 'sounds/vaikinu-sokis.mp3';
     document.getElementById('downloadingAudioName').innerHTML = 'vaikinu-sokis.mp3';
-    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
@@ -625,7 +624,6 @@ function playSoundVejoGarsas(){
     sound.play();
     document.getElementById('download_audio').href = 'sounds/vejo-garsas.mp3';
     document.getElementById('downloadingAudioName').innerHTML = 'vejo-garsas.mp3';
-    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
@@ -650,7 +648,6 @@ function playSoundDaina(){
     sound.play();
     document.getElementById('download_audio').href = 'sounds/daina.mp3';
     document.getElementById('downloadingAudioName').innerHTML = 'daina.mp3';
-    positionAudioDownloadBtn()
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("soundPlayer").style.bottom = '15px';
