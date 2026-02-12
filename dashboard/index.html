@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:image" content="https://raw.githubusercontent.com/createdbymatas/gsgIIb/main/images/thumbnail.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="471">
+    <meta property="og:title" content="GŠG IIIabc">
+    <meta property="og:description" content="Created by Matas">
+    <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
+    <title>GŠG IIIabc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/app.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+    <div id="loading">
+        <div class="spin-loader" aria-hidden="true"></div>
+        <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
+    </div>
+    <div id="screenSize">
+        <p id="screenSizeTekstas1">Ekranas per didelis</p>
+        <p id="screenSizeTekstas2">Tinklalapis pritaikytas telefonui</p>
+        <div id="sizeDiv">
+            <i class="fa-solid fa-computer" id="computerIcon"></i>
+            <i class="fa-regular fa-circle-xmark" id="xIcon"></i>
+            <i class="fa-solid fa-mobile-screen-button" id="phoneIcon"></i>
+            <i class="fa-regular fa-circle-check" id="checkIcon"></i>
+        </div>
+    </div>
+
+    <div id="accessDenied">
+        <i class="fa-solid fa-ban" id="ban"></i>
+        <p style="font-size: 25px; font-weight: 600;">Prieiga uždrausta</p>
+        <p style="font-size: 17px;">Tinklalapyje negalima atlikti veiksmų, susijusių su programos kodo peržiūra ir apžiūrėjimo įrankio (angl.: Inspect Tool) naudojimu</p>
+        <div><p>Tinklalapis bus perkrautas... </p><span id="uzdraustaRestart"></span></div>
+    </div>
+
+    <div id="noConnectionBg">
+        <div id="noConnection">
+            <i id="noConnectionI" class="fa-solid fa-tower-broadcast"></i>
+            <p>Nėra ryšio</p>
+        </div>
+    </div>
+    <div id="badConnectionBg">
+        <div id="badConnection">
+            <i id="badConnectionI" class="fa-solid fa-tower-broadcast"></i>
+            <p>Nėra ryšio arba ryšys prastas</p>
+        </div>
+    </div>
+
+    <div id="dashboard">
+        <div id="dashboardNav">
+            <h1>Garso takelių valdymas</h1>
+            <hr>
+            <div>
+                <p style="left: 30px;"><i class="fa-solid fa-hashtag"></i></p>
+                <p style="left: 59px;">Pavadinimas</p>
+                <p style="right: 40px;"><i class="fa-regular fa-clock"></i></p>
+            </div>
+        </div>
+
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundVaikinuSokis()"><p class="trackNo">1</p><p class="trackName">vaikinu-sokis.mp3</p><p class="trackDuration">01:25</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundRepas()"><p class="trackNo">2</p><p class="trackName">repas.mp3</p><p class="trackDuration">01:15</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundZioguGarsas()"><p class="trackNo">3</p><p class="trackName">ziogu-garsas.mp3</p><p class="trackDuration">00:10</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundVejoGarsas()"><p class="trackNo">4</p><p class="trackName">vejo-garsas.mp3</p><p class="trackDuration">00:19</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">5</p><p class="trackName">daina.mp3</p><p class="trackDuration">02:41</p></div>
+        <!-- <div class="soundTrackDiv" ontouchstart onclick="playSound5()"><p class="trackName"><i class="fa-solid fa-6 trackNo"></i> sokis.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 02:21</p></div> -->
+
+        <div id="soundPlayer">
+            <i class="fa-solid fa-music" id="playingTrackI"></i>
+            <p id="playingTrackName"><span id="currentTrackName">neleidžiama</span></p>
+            <div id="controls">
+                <div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div>
+                <div id="playBtn" ontouchstart onclick="playPause()"><i id="soundPlayPauseIcon" class="fa-solid fa-play"></i></div>
+                <button onclick="pauseWithMute()" id="pauseWithMute"><i class="fa-solid fa-pause"></i><i class="fa-solid fa-volume-off"></i><i class="fa-solid fa-arrow-trend-down"></i></button>
+            </div>
+            <audio id="sound"></audio>
+            <div id="progressWindow">
+                <span id="timePlayed">0:00</span>
+                <div id="progressBg">
+                    <div id="playProgress"></div>
+                </div>
+                <span id="soundDuration">0:00</span>
+            </div>
+            <!-- <button onclick="bgSound()" id="bgSound"><i class="fa-solid fa-volume-low"></i>30 %</button> -->
+            <button onclick="maxSound()" id="maxSound"><i class="fa-solid fa-volume-high"></i>100 %</button>
+            <i id="volumeIcon" class="fa-solid fa-volume-high"></i>
+            <input min="0" max="100" type="range" value="100" id="volume">
+            <progress min="0" max="100" value="100" id="volume-progress"></progress>
+        </div>
+        <input type="text" value="0" id="soundsInput" style="display: none;">
+    </div>
+
+    <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

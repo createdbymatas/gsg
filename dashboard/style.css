@@ -1,0 +1,976 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+body{
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+img{
+    pointer-events: none;
+}
+button{
+    touch-action: manipulation;
+}
+hr{
+    border: none;
+    border-top: 1px solid lightgrey;
+    width: 100%;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+/* krovimas */
+#loading{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transform: scale(1);
+    background-color: #f2f2f2;
+    cursor: wait;
+    transition: none;
+}
+#createdByMatas{
+    position: absolute;
+    bottom: 30px;
+    opacity: 0;
+    color: black;
+    text-align: center;
+    cursor: wait;
+}
+.spin-loader{
+    border-radius: 80%;
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    animation: spin 0.65s linear infinite;
+    -webkit-animation: spin 0.65s linear infinite;
+    background: lightgrey;
+    cursor: wait;
+}
+.spin-loader:before, .spin-loader:after{
+    content: "";
+    display: block;
+    position: absolute;
+}
+.spin-loader:before{
+    border-radius: 0 90px 90px 0;
+    height: 50px;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: black;
+    background-image: linear-gradient(lightgrey, black);
+}
+.spin-loader:after{
+    border-radius: 80%;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #f2f2f2;
+}
+.spin-loader2{
+    border-radius: 80%;
+    display: block;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    /* animation: spin 0.65s linear infinite; */
+    /* -webkit-animation: spin 0.65s linear infinite; */
+    background: lightgrey;
+}
+.spin-loader2:before, .spin-loader2:after{
+    content: "";
+    display: block;
+    position: absolute;
+}
+.spin-loader2:before{
+    border-radius: 0 90px 90px 0;
+    height: 50px;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: black;
+    background-image: linear-gradient(lightgrey, black);
+}
+.spin-loader2:after{
+    border-radius: 80%;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #f2f2f2;
+}
+#spin-loader3{
+    border-radius: 80%;
+    display: block;
+    height: 83.34px;
+    width: 83.34px;
+    position: relative;
+    background: lightgrey;
+}
+#spin-loader3:before, #spin-loader3:after{
+    content: "";
+    display: block;
+    position: absolute;
+}
+#spin-loader3:before{
+    border-radius: 0 90px 90px 0;
+    height: 83.34px;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: black;
+    background-image: linear-gradient(lightgrey, black);
+}
+#spin-loader3:after{
+    border-radius: 80%;
+    height: 66px;
+    width: 66px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #f2f2f2;
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin2 {
+    0%{
+        transform: scale(0.7) rotate(0);
+    }
+    100%{
+        transform: scale(0.7) rotate(360deg);
+    }
+}
+@keyframes spin3 {
+    0%{
+        transform: scale(0.6) rotate(0);
+    }
+    100%{
+        transform: scale(0.6) rotate(360deg);
+    }
+}
+
+/* ekrano ispejimas */
+#screenSize{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 90;
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+}
+#screenSizeTekstas1{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+    cursor: not-allowed;
+    font-weight: 600;
+}
+#screenSizeTekstas2{
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+    cursor: not-allowed;
+}
+#sizeDiv{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: not-allowed;
+}
+#computerIcon{
+    font-size: 70px;
+    position: absolute;
+    color: black;
+    cursor: not-allowed;
+    margin-right: 120px;
+}
+#xIcon{
+    font-size: 30px;
+    color: red;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+    margin-top: 60px;
+    z-index: 2;
+    margin-left: 70px;
+    cursor: not-allowed;
+}
+#phoneIcon{
+    font-size: 70px;
+    position: absolute;
+    color: black;
+    cursor: not-allowed;
+    margin-left: 120px;
+}
+#checkIcon{
+    font-size: 30px;
+    color: green;
+    background-color: #f2f2f2;
+    border-radius: 100%;
+    margin-top: 60px;
+    z-index: 2;
+    margin-left: 70px;
+    cursor: not-allowed;
+}
+
+
+/* inspect tool uzblokavimas */
+#accessDenied{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 95;
+    background-color: #f2f2f2;
+    color: black;
+    transition: 0.2s;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    cursor: not-allowed;
+    transform: scale(1.1);
+    opacity: 0;
+}
+.fa-ban{
+    color: red;
+    font-size: 70px;
+    cursor: not-allowed;
+    transition: none;
+}
+#accessDenied p{
+    margin-top: 20px;
+    cursor: not-allowed;
+}
+#accessDenied div{
+    font-size: 15px;
+    width: 275px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    /* outline: 1px solid red; */
+}
+#accessDenied div p{
+    margin-top: 0;
+}
+#uzdraustaRestart {
+    width: 50px;
+    height: 50px;
+    border:7px solid black;
+    border-radius: 50%;
+    position: relative;
+    transform:rotate(45deg);
+    box-sizing: border-box;
+    }
+#uzdraustaRestart::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    inset:-7px;
+    border-radius: 50%;
+    border:7px solid black;
+    /* animation: prixClipFix 10s linear; */
+    animation: none;
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+#noConnectionBg{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#noConnection{
+    width: 135px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 0;
+    border-radius: 25px;
+    box-shadow: 0 0 5px red;
+}
+#noConnectionI{
+    font-size: 20px;
+    animation: none;
+}
+#noConnection p{
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#badConnectionBg{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#badConnection{
+    width: 175px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 0;
+    border-radius: 25px;
+    box-shadow: 0 0 5px red;
+}
+#badConnectionI{
+    font-size: 20px;
+    animation: none;
+}
+#badConnection p{
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+}
+
+@keyframes connectionBlink{
+    0%{
+        opacity: 1;
+    }
+    10%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+#dashboard{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 18;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 105px;
+    padding-top: 95px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#dashboardNav{
+    width: 100%;
+    height: 80px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 20;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+}
+#dashboardNav hr{
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    position: absolute;
+    top: 55px;
+}
+#dashboardNav div{
+    width: 100%;
+    height: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 20;
+    background-color: #f2f2f2;
+    transition: 0.2s;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+#dashboardNav div p{
+    position: absolute;
+}
+#dashboard h1{
+    font-weight: 600;
+    font-size: 22px;
+    padding-top: 14px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+.soundTrackDiv{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+.soundTrackDiv:hover{
+    opacity: 0.5;
+}
+.soundTrackDiv:active{
+    opacity: 0.2;
+}
+.trackNo{
+    padding-right: 5px;
+    font-weight: 600;
+    font-size: 23px;
+    position: absolute;
+    left: 15px;
+}
+.trackName{
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-right: 60px;
+    cursor: pointer;
+}
+.trackDuration{
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+#soundPlayer{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    /* box-shadow: 0 0 10px lightgrey; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* border-radius: 25px; */
+    padding: 15px;
+    padding-right: 60px;
+    z-index: 21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#playingTrackName{
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: black;
+    position: absolute;
+    left: 55px;
+    top: 40px;
+}
+#playingTrackI {
+    padding-right: 5px;
+    background: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding-left: 2px;
+    top: 35px;
+    left: 15px;
+}
+#pauseWithMute{
+    font-size: 15px;
+    transition: 0.15s;
+    cursor: pointer;
+    width: 65px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #DEDEDE;
+    color: black;
+    border: none;
+    padding-right: 5px;
+    transform: scale(0);
+    transition: 0.2s;
+    position: absolute;
+    margin-left: 150px;
+}
+#pauseWithMute i{
+    margin-left: 5px;
+    cursor: pointer;
+}
+#pauseWithMute:hover{
+    transform: scale(1.03);
+}
+#pauseWithMute:active{
+    opacity: 0.2;
+}
+#loadingAudio{
+    width: 83.34px;
+    height: 83.34px;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    border-radius: 25px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.6);
+    border-radius: 100%;
+}
+#controls{
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#playBtn{
+    font-size: 22px;
+    transition: 0.15s;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #DEDEDE;
+    color: black;
+}
+#playBtn i{
+    cursor: pointer;
+}
+#playBtn:hover{
+    transform: scale(1.03);
+}
+#playBtn:active{
+    opacity: 0.2;
+}
+#progressWindow{
+    width: 40%;
+    height: auto;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#progressBg{
+    width: 100%;
+    height: 7px;
+    background-color: #e6e6e6;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.1s;
+}
+#playProgress{
+    width: 0;
+    height: 7px;
+    background-color: darkgrey;
+    cursor: pointer;
+    transition: 0.1s;
+}
+#timePlayed {
+    font-size: 13px;
+    color: darkgrey;
+    margin-right: 7px;
+}
+#soundDuration {
+    font-size: 13px;
+    color: darkgrey;
+    margin-left: 7px;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#maxSound{
+    font-size: 15px;
+    transition: 0.15s;
+    cursor: pointer;
+    width: 85px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #DEDEDE;
+    color: black;
+    border: none;
+    transition: 0.2s;
+    position: absolute;
+    right: 22.5px;
+    bottom: 20px;
+}
+#maxSound i{
+    margin-right: 5px;
+    cursor: pointer;
+}
+#maxSound:hover{
+    transform: scale(1.03);
+}
+#maxSound:active{
+    opacity: 0.2;
+}
+#volumeIcon{
+    position: absolute;
+    right: 130px;
+    color: black;
+    top: 20px;
+    font-size: 17px;
+}
+#volume{
+    width: 100px;
+    height: 15px;
+    
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    position: absolute;
+    border-radius: 25px;
+    right: 15px;
+    top: 21px;
+}
+#volume::-webkit-slider-runnable-track{
+    background-color: transparent;
+    height: 7px;
+    border-radius: 25px;
+}
+#volume::-webkit-slider-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: black;
+    margin-top: -2.5px;
+    opacity: 1;
+    z-index: 20;
+    position: relative;
+}
+#volume::-moz-range-track{
+    background-color: #e6e6e6;
+    height: 7px;
+    border-radius: 25px;
+}
+#volume::-moz-range-thumb{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: darkgrey;
+    margin-top: -2.5px;
+    opacity: 1;
+    box-shadow: 0 0 5px darkgrey;
+}
+#volume-progress{
+    width: 100px;
+    height: 7px;
+    
+    appearance: none;
+    background: #e6e6e6;
+    cursor: pointer;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    position: absolute;
+    top: 25px;
+    border-radius: 25px;
+    right: 15px;
+    overflow: hidden;
+}
+#volume-progress::-webkit-progress-bar{
+    background-color: #e6e6e6;
+}
+#volume-progress::-webkit-progress-value{
+    background-color: darkgrey;
+}
+
+
+/* @media only screen and (max-width: 750px){
+    #screenSize{
+        display: none;
+    }
+} */
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #141414;
+    }
+    #loading{
+        background-color: #141414;
+    }
+    #createdByMatas{
+        color: white;
+    }
+    .spin-loader{
+        background: #464646;
+    }
+    .spin-loader:before{
+        background: white;
+        background-image: linear-gradient(#464646, white);
+    }
+    .spin-loader:after{
+        background: #141414;
+    }
+    .spin-loader2{
+        background: #464646;
+    }
+    .spin-loader2:before{
+        background: white;
+        background-image: linear-gradient(#464646, white);
+    }
+    .spin-loader2:after{
+        background: #141414;
+    }
+    #spin-loader3{
+        background: #464646;
+    }
+    #spin-loader3:before{
+        background: white;
+        background-image: linear-gradient(#464646, white);
+    }
+    #spin-loader3:after{
+        background: #141414;
+    }
+    #screenSize{
+        background-color: #141414;
+    }
+    #screenSizeTekstas1{
+        color: white;
+    }
+    #screenSizeTekstas2{
+        color: white;
+    }
+    #computerIcon{
+        color: white;
+    }
+    #xIcon{
+        background-color: #141414;
+    }
+    #phoneIcon{
+        color: white;
+    }
+    #checkIcon{
+        background-color: #141414;
+    }
+    #accessDenied{
+        background-color: #141414;
+        color: white;
+    }
+    #uzdraustaRestart {
+        border-color:white;
+    }
+    #uzdraustaRestart::before {
+        border-color:white;
+    }
+
+    hr{
+        border-top: 1px solid #464646;
+    }
+
+
+
+    #dashboard{
+        background-color: #141414;
+    }
+    #dashboardNav{
+        background-color: #141414;
+    }
+    #dashboardNav hr{
+        border-top: 1px solid #464646;
+    }
+    #dashboardNav div{
+        background-color: #141414;
+        color: white;
+    }
+    #dashboard h1{
+        color: white;
+    }
+    .soundTrackDiv{
+        background-color: black;
+        color: white;
+    }
+    #soundPlayer{
+        background-color: black;
+        box-shadow: 0 0 10px #464646;
+    }
+    #playingTrackName{
+        color: white;
+    }
+    #pauseWithMute{
+        background-color: #282828;
+        color: white;
+    }
+    #maxSound{
+        background-color: #282828;
+        color: white;
+    }
+    #loadingAudioBg{
+        background-color: black;
+    }
+    #playBtn{
+        background-color: #282828;
+        color: white;
+    }
+    #progressBg{
+        background-color: #191919;
+    }
+    #volumeIcon{
+        color: white;
+    }
+    #volume::-webkit-slider-thumb{
+        background-color: white;
+    }
+    #volume-progress::-webkit-progress-bar{
+        background-color: #191919;
+    }
+    #volume-progress::-webkit-progress-value{
+        background-color: darkgrey;
+    }
+    #closeSoundManager{
+        background-color: #282828;
+        color: white;
+    }
+}
