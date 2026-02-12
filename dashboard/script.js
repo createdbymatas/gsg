@@ -221,9 +221,9 @@ function playPause(){
 
 let intervalId;
 function maxSound(){
-    volume.value = 100;
-    progressBarVol.value = volume.value;
-    sound.volume = volume.value / 100;
+    vol.value = 100;
+    progressBarVol.value = vol.value;
+    sound.volume = vol.value / 100;
     changeVolumeIcon();
 }
 function pauseWithMute(){
@@ -232,17 +232,45 @@ function pauseWithMute(){
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
 }
 function lowerVolumeGradually(){
-    volume.value = volume.value - 1;
-    progressBarVol.value = volume.value;
-    sound.volume = volume.value / 100;
+    vol.value = vol.value - 1;
+    progressBarVol.value = vol.value;
+    sound.volume = vol.value / 100;
     changeVolumeIcon();
     finishLoweringVolume();
 }
 function finishLoweringVolume(){
-    if(volume.value == 0){
+    if(vol.value == 0){
         clearInterval(intervalId);
         intervalId = null;
         playPause();
+        document.getElementById('loadingAudio').style.display = "none";
+    }
+}
+function backgroundSound(){
+    intervalId ??= setInterval(changeVolumeGraduallyBg, 10);
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+}
+function changeVolumeGraduallyBg(){
+    if(vol.value>30){
+        vol.value = vol.value - 1;
+        progressBarVol.value = vol.value;
+        sound.volume = vol.value / 100;
+        changeVolumeIcon();
+        finishChangingVolumeBg();
+    }
+    else{
+        vol.value = 30;
+        progressBarVol.value = vol.value;
+        sound.volume = vol.value / 100;
+        changeVolumeIcon();
+        finishChangingVolumeBg();
+    }
+}
+function finishChangingVolumeBg(){
+    if(vol.value == 30){
+        clearInterval(intervalId);
+        intervalId = null;
         document.getElementById('loadingAudio').style.display = "none";
     }
 }
@@ -279,42 +307,42 @@ progressBg.addEventListener("click", (e)=>{
     soundPlayPauseIcon.classList.remove("fa-play");
 });
 
-let volume = document.getElementById('volume');
+let vol = document.getElementById('vol');
 progressBarVol = document.getElementById('volume-progress');
-volume.oninput = function() {
-    progressBarVol.value = volume.value;
-    sound.volume = volume.value / 100;
+vol.oninput = function() {
+    progressBarVol.value = vol.value;
+    sound.volume = vol.value / 100;
     changeVolumeIcon();
 }
 progressBarVol.addEventListener("click", (e)=>{
     let progressWidthval = progressBarVol.clientWidth;
     let clickedOffSetX = e.offsetX;
 
-    volume.value = (clickedOffSetX / progressWidthval) * 100;
-    progressBarVol.value = volume.value;
-    sound.volume = volume.value / 100;
+    vol.value = (clickedOffSetX / progressWidthval) * 100;
+    progressBarVol.value = vol.value;
+    sound.volume = vol.value / 100;
     changeVolumeIcon();
 });
 function changeVolumeIcon(){
-    if(volume.value>=40){
+    if(vol.value>=40){
         document.getElementById('volumeIcon').classList.add("fa-volume-high");
         document.getElementById('volumeIcon').classList.remove("fa-volume-low");
         document.getElementById('volumeIcon').classList.remove("fa-volume-off");
         document.getElementById('volumeIcon').classList.remove("fa-volume-xmark");
     }
-    else if(volume.value>=20){
+    else if(vol.value>=20){
         document.getElementById('volumeIcon').classList.remove("fa-volume-high");
         document.getElementById('volumeIcon').classList.add("fa-volume-low");
         document.getElementById('volumeIcon').classList.remove("fa-volume-off");
         document.getElementById('volumeIcon').classList.remove("fa-volume-xmark");
     }
-    else if(volume.value>0){
+    else if(vol.value>0){
         document.getElementById('volumeIcon').classList.remove("fa-volume-high");
         document.getElementById('volumeIcon').classList.remove("fa-volume-low");
         document.getElementById('volumeIcon').classList.add("fa-volume-off");
         document.getElementById('volumeIcon').classList.remove("fa-volume-xmark");
     }
-    else if(volume.value==0){
+    else if(vol.value==0){
         document.getElementById('volumeIcon').classList.remove("fa-volume-high");
         document.getElementById('volumeIcon').classList.remove("fa-volume-low");
         document.getElementById('volumeIcon').classList.remove("fa-volume-off");
