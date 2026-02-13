@@ -244,6 +244,7 @@ function finishLoweringVolume(){
         intervalId = null;
         playPause();
         document.getElementById('loadingAudio').style.display = "none";
+        mute();
     }
 }
 function backgroundSound(){
@@ -272,6 +273,15 @@ function finishChangingVolumeBg(){
         clearInterval(intervalId);
         intervalId = null;
         document.getElementById('loadingAudio').style.display = "none";
+        mute();
+    }
+}
+function mute(){
+    if(vol.value == 0){
+        sound.muted = true;
+    }
+    else{
+        sound.muted = false;
     }
 }
 
@@ -313,6 +323,7 @@ vol.oninput = function() {
     progressBarVol.value = vol.value;
     sound.volume = vol.value / 100;
     changeVolumeIcon();
+    mute();
 }
 progressBarVol.addEventListener("click", (e)=>{
     let progressWidthval = progressBarVol.clientWidth;
@@ -322,6 +333,7 @@ progressBarVol.addEventListener("click", (e)=>{
     progressBarVol.value = vol.value;
     sound.volume = vol.value / 100;
     changeVolumeIcon();
+    mute();
 });
 function changeVolumeIcon(){
     if(vol.value>=40){
