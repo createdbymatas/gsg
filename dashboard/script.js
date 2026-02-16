@@ -223,8 +223,9 @@ let intervalId;
 function maxSound(){
     vol.value = 100;
     progressBarVol.value = vol.value;
-    sound.volume = vol.value / 100;
+    sound.volume = 1;
     changeVolumeIcon();
+    mute();
 }
 function pauseWithMute(){
     intervalId ??= setInterval(lowerVolumeGradually, 10);
@@ -304,6 +305,493 @@ sound.addEventListener("timeupdate", (e)=>{
         currentSec = `0${currentSec}`;
     }
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
+
+    if(document.getElementById("currentTrackName").innerText == 'daina.mp3'){
+        if(musicCurrentTime.innerText == "0:01"){
+            document.getElementById('l0').innerHTML = '27...';
+        }
+        else if(musicCurrentTime.innerText == "0:02"){
+            document.getElementById('l0').innerHTML = '26...';
+        }
+        else if(musicCurrentTime.innerText == "0:03"){
+            document.getElementById('l0').innerHTML = '25...';
+        }
+        else if(musicCurrentTime.innerText == "0:04"){
+            document.getElementById('l0').innerHTML = '24...';
+        }
+        else if(musicCurrentTime.innerText == "0:05"){
+            document.getElementById('l0').innerHTML = '23...';
+        }
+        else if(musicCurrentTime.innerText == "0:06"){
+            document.getElementById('l0').innerHTML = '22...';
+        }
+        else if(musicCurrentTime.innerText == "0:07"){
+            document.getElementById('l0').innerHTML = '21...';
+        }
+        else if(musicCurrentTime.innerText == "0:08"){
+            document.getElementById('l0').innerHTML = '20...';
+        }
+        else if(musicCurrentTime.innerText == "0:09"){
+            document.getElementById('l0').innerHTML = '19...';
+        }
+        else if(musicCurrentTime.innerText == "0:10"){
+            document.getElementById('l0').innerHTML = '18...';
+        }
+        else if(musicCurrentTime.innerText == "0:11"){
+            document.getElementById('l0').innerHTML = '17...';
+        }
+        else if(musicCurrentTime.innerText == "0:12"){
+            document.getElementById('l0').innerHTML = '16...';
+        }
+        else if(musicCurrentTime.innerText == "0:13"){
+            document.getElementById('l0').innerHTML = '15...';
+        }
+        else if(musicCurrentTime.innerText == "0:14"){
+            document.getElementById('l0').innerHTML = '14...';
+        }
+        else if(musicCurrentTime.innerText == "0:15"){
+            document.getElementById('l0').innerHTML = '13...';
+        }
+        else if(musicCurrentTime.innerText == "0:16"){
+            document.getElementById('l0').innerHTML = '12...';
+        }
+        else if(musicCurrentTime.innerText == "0:17"){
+            document.getElementById('l0').innerHTML = '11...';
+        }
+        else if(musicCurrentTime.innerText == "0:18"){
+            document.getElementById('l0').innerHTML = '10...';
+        }
+        else if(musicCurrentTime.innerText == "0:19"){
+            document.getElementById('l0').innerHTML = '9...';
+        }
+        else if(musicCurrentTime.innerText == "0:20"){
+            document.getElementById('l0').innerHTML = '8...';
+        }
+        else if(musicCurrentTime.innerText == "0:21"){
+            document.getElementById('l0').innerHTML = '7...';
+        }
+        else if(musicCurrentTime.innerText == "0:22"){
+            document.getElementById('l0').innerHTML = '6...';
+        }
+        else if(musicCurrentTime.innerText == "0:23"){
+            document.getElementById('l0').innerHTML = '5...';
+        }
+        else if(musicCurrentTime.innerText == "0:24"){
+            document.getElementById('l0').innerHTML = '4...';
+        }
+        else if(musicCurrentTime.innerText == "0:25"){
+            document.getElementById('l0').innerHTML = '3...';
+        }
+        else if(musicCurrentTime.innerText == "0:26"){
+            document.getElementById('l0').innerHTML = '2...';
+        }
+        else if(musicCurrentTime.innerText == "0:27"){
+            document.getElementById('l0').innerHTML = '1...';
+        }
+        else if(musicCurrentTime.innerText == "0:28"){
+            document.getElementById('l0').innerHTML = '0';
+            document.getElementById('l0').style.marginTop = '-100%';
+            document.getElementById('l0').style.transform = 'scale(1)';
+            document.getElementById('l0').style.fontWeight = '400';
+            document.getElementById('l1').style.marginTop = '0';
+            document.getElementById('l1').style.transform = 'scale(1.8)';
+            document.getElementById('l1').style.fontWeight = '600';
+            document.getElementById('l2').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:32"){
+            document.getElementById('l1').style.marginTop = '-25%';
+            document.getElementById('l1').style.transform = 'scale(1)';
+            document.getElementById('l1').style.fontWeight = '400';
+            document.getElementById('l2').style.marginTop = '0';
+            document.getElementById('l2').style.transform = 'scale(1.8)';
+            document.getElementById('l2').style.fontWeight = '600';
+            document.getElementById('l3').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:35"){
+            document.getElementById('l1').style.marginTop = '-100%';
+            document.getElementById('l2').style.marginTop = '-25%';
+            document.getElementById('l2').style.transform = 'scale(1)';
+            document.getElementById('l2').style.fontWeight = '400';
+            document.getElementById('l3').style.marginTop = '0';
+            document.getElementById('l3').style.transform = 'scale(1.8)';
+            document.getElementById('l3').style.fontWeight = '600';
+            document.getElementById('l4').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:39"){
+            document.getElementById('l2').style.marginTop = '-100%';
+            document.getElementById('l3').style.marginTop = '-25%';
+            document.getElementById('l3').style.transform = 'scale(1)';
+            document.getElementById('l3').style.fontWeight = '400';
+            document.getElementById('l4').style.marginTop = '0';
+            document.getElementById('l4').style.transform = 'scale(1.8)';
+            document.getElementById('l4').style.fontWeight = '600';
+            document.getElementById('l5').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:42"){
+            document.getElementById('l3').style.marginTop = '-100%';
+            document.getElementById('l4').style.marginTop = '-25%';
+            document.getElementById('l4').style.transform = 'scale(1)';
+            document.getElementById('l4').style.fontWeight = '400';
+            document.getElementById('l5').style.marginTop = '0';
+            document.getElementById('l5').style.transform = 'scale(1.8)';
+            document.getElementById('l5').style.fontWeight = '600';
+            document.getElementById('l6').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:46"){
+            document.getElementById('l4').style.marginTop = '-100%';
+            document.getElementById('l5').style.marginTop = '-25%';
+            document.getElementById('l5').style.transform = 'scale(1)';
+            document.getElementById('l5').style.fontWeight = '400';
+            document.getElementById('l6').style.marginTop = '0';
+            document.getElementById('l6').style.transform = 'scale(1.8)';
+            document.getElementById('l6').style.fontWeight = '600';
+            document.getElementById('l7').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:49"){
+            document.getElementById('l5').style.marginTop = '-100%';
+            document.getElementById('l6').style.marginTop = '-25%';
+            document.getElementById('l6').style.transform = 'scale(1)';
+            document.getElementById('l6').style.fontWeight = '400';
+            document.getElementById('l7').style.marginTop = '0';
+            document.getElementById('l7').style.transform = 'scale(1.8)';
+            document.getElementById('l7').style.fontWeight = '600';
+            document.getElementById('l8').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:53"){
+            document.getElementById('l6').style.marginTop = '-100%';
+            document.getElementById('l7').style.marginTop = '-25%';
+            document.getElementById('l7').style.transform = 'scale(1)';
+            document.getElementById('l7').style.fontWeight = '400';
+            document.getElementById('l8').style.marginTop = '0';
+            document.getElementById('l8').style.transform = 'scale(1.8)';
+            document.getElementById('l8').style.fontWeight = '600';
+            document.getElementById('l9').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:56"){
+            document.getElementById('l7').style.marginTop = '-100%';
+            document.getElementById('l8').style.marginTop = '-25%';
+            document.getElementById('l8').style.transform = 'scale(1)';
+            document.getElementById('l8').style.fontWeight = '400';
+            document.getElementById('l9').style.marginTop = '0';
+            document.getElementById('l9').style.transform = 'scale(1.8)';
+            document.getElementById('l9').style.fontWeight = '600';
+            document.getElementById('l9').innerHTML = '3...';
+            document.getElementById('l10').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "0:57"){
+            document.getElementById('l9').innerHTML = '2...';
+        }
+        else if(musicCurrentTime.innerText == "0:58"){
+            document.getElementById('l9').innerHTML = '1...';
+        }
+        else if(musicCurrentTime.innerText == "0:59"){
+            document.getElementById('l8').style.marginTop = '-100%';
+            document.getElementById('l9').style.marginTop = '-25%';
+            document.getElementById('l9').style.transform = 'scale(1)';
+            document.getElementById('l9').style.fontWeight = '400';
+            document.getElementById('l9').innerHTML = '   ';
+            document.getElementById('l10').style.marginTop = '0';
+            document.getElementById('l10').style.transform = 'scale(1.8)';
+            document.getElementById('l10').style.fontWeight = '600';
+            document.getElementById('l11').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:03"){
+            document.getElementById('l9').style.marginTop = '-100%';
+            document.getElementById('l10').style.marginTop = '-25%';
+            document.getElementById('l10').style.transform = 'scale(1)';
+            document.getElementById('l10').style.fontWeight = '400';
+            document.getElementById('l11').style.marginTop = '0';
+            document.getElementById('l11').style.transform = 'scale(1.8)';
+            document.getElementById('l11').style.fontWeight = '600';
+            document.getElementById('l12').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:06"){
+            document.getElementById('l10').style.marginTop = '-100%';
+            document.getElementById('l11').style.marginTop = '-25%';
+            document.getElementById('l11').style.transform = 'scale(1)';
+            document.getElementById('l11').style.fontWeight = '400';
+            document.getElementById('l12').style.marginTop = '0';
+            document.getElementById('l12').style.transform = 'scale(1.8)';
+            document.getElementById('l12').style.fontWeight = '600';
+            document.getElementById('l13').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:10"){
+            document.getElementById('l11').style.marginTop = '-100%';
+            document.getElementById('l12').style.marginTop = '-25%';
+            document.getElementById('l12').style.transform = 'scale(1)';
+            document.getElementById('l12').style.fontWeight = '400';
+            document.getElementById('l13').style.marginTop = '0';
+            document.getElementById('l13').style.transform = 'scale(1.8)';
+            document.getElementById('l13').style.fontWeight = '600';
+            document.getElementById('l14').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:14"){
+            document.getElementById('l12').style.marginTop = '-100%';
+            document.getElementById('l13').style.marginTop = '-25%';
+            document.getElementById('l13').style.transform = 'scale(1)';
+            document.getElementById('l13').style.fontWeight = '400';
+            document.getElementById('l14').style.marginTop = '0';
+            document.getElementById('l14').style.transform = 'scale(1.8)';
+            document.getElementById('l14').style.fontWeight = '600';
+            document.getElementById('l15').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:17"){
+            document.getElementById('l13').style.marginTop = '-100%';
+            document.getElementById('l14').style.marginTop = '-25%';
+            document.getElementById('l14').style.transform = 'scale(1)';
+            document.getElementById('l14').style.fontWeight = '400';
+            document.getElementById('l15').style.marginTop = '0';
+            document.getElementById('l15').style.transform = 'scale(1.8)';
+            document.getElementById('l15').style.fontWeight = '600';
+            document.getElementById('l16').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:21"){
+            document.getElementById('l14').style.marginTop = '-100%';
+            document.getElementById('l15').style.marginTop = '-25%';
+            document.getElementById('l15').style.transform = 'scale(1)';
+            document.getElementById('l15').style.fontWeight = '400';
+            document.getElementById('l16').style.marginTop = '0';
+            document.getElementById('l16').style.transform = 'scale(1.8)';
+            document.getElementById('l16').style.fontWeight = '600';
+            document.getElementById('l17').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:24"){
+            document.getElementById('l15').style.marginTop = '-100%';
+            document.getElementById('l16').style.marginTop = '-25%';
+            document.getElementById('l16').style.transform = 'scale(1)';
+            document.getElementById('l16').style.fontWeight = '400';
+            document.getElementById('l17').style.marginTop = '0';
+            document.getElementById('l17').style.transform = 'scale(1.8)';
+            document.getElementById('l17').style.fontWeight = '600';
+            document.getElementById('l18').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:27"){
+            document.getElementById('l16').style.marginTop = '-100%';
+            document.getElementById('l17').style.marginTop = '-25%';
+            document.getElementById('l17').style.transform = 'scale(1)';
+            document.getElementById('l17').style.fontWeight = '400';
+            document.getElementById('l18').style.marginTop = '0';
+            document.getElementById('l18').style.transform = 'scale(1.8)';
+            document.getElementById('l18').style.fontWeight = '600';
+            document.getElementById('l18').innerHTML = '29...';
+            document.getElementById('l19').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:28"){
+            document.getElementById('l18').innerHTML = '28...';
+        }
+        else if(musicCurrentTime.innerText == "1:29"){
+            document.getElementById('l18').innerHTML = '27...';
+        }
+        else if(musicCurrentTime.innerText == "1:30"){
+            document.getElementById('l18').innerHTML = '26...';
+        }
+        else if(musicCurrentTime.innerText == "1:31"){
+            document.getElementById('l18').innerHTML = '25...';
+        }
+        else if(musicCurrentTime.innerText == "1:32"){
+            document.getElementById('l18').innerHTML = '24...';
+        }
+        else if(musicCurrentTime.innerText == "1:33"){
+            document.getElementById('l18').innerHTML = '23...';
+        }
+        else if(musicCurrentTime.innerText == "1:34"){
+            document.getElementById('l18').innerHTML = '22...';
+        }
+        else if(musicCurrentTime.innerText == "1:35"){
+            document.getElementById('l18').innerHTML = '21...';
+        }
+        else if(musicCurrentTime.innerText == "1:36"){
+            document.getElementById('l18').innerHTML = '20...';
+        }
+        else if(musicCurrentTime.innerText == "1:37"){
+            document.getElementById('l18').innerHTML = '19...';
+        }
+        else if(musicCurrentTime.innerText == "1:38"){
+            document.getElementById('l18').innerHTML = '18...';
+        }
+        else if(musicCurrentTime.innerText == "1:39"){
+            document.getElementById('l18').innerHTML = '17...';
+        }
+        else if(musicCurrentTime.innerText == "1:40"){
+            document.getElementById('l18').innerHTML = '16...';
+        }
+        else if(musicCurrentTime.innerText == "1:41"){
+            document.getElementById('l18').innerHTML = '15...';
+        }
+        else if(musicCurrentTime.innerText == "1:42"){
+            document.getElementById('l18').innerHTML = '14...';
+        }
+        else if(musicCurrentTime.innerText == "1:43"){
+            document.getElementById('l18').innerHTML = '13...';
+        }
+        else if(musicCurrentTime.innerText == "1:44"){
+            document.getElementById('l18').innerHTML = '12...';
+        }
+        else if(musicCurrentTime.innerText == "1:45"){
+            document.getElementById('l18').innerHTML = '11...';
+        }
+        else if(musicCurrentTime.innerText == "1:46"){
+            document.getElementById('l18').innerHTML = '10...';
+        }
+        else if(musicCurrentTime.innerText == "1:47"){
+            document.getElementById('l18').innerHTML = '9...';
+        }
+        else if(musicCurrentTime.innerText == "1:48"){
+            document.getElementById('l18').innerHTML = '8...';
+        }
+        else if(musicCurrentTime.innerText == "1:49"){
+            document.getElementById('l18').innerHTML = '7...';
+        }
+        else if(musicCurrentTime.innerText == "1:50"){
+            document.getElementById('l18').innerHTML = '6...';
+        }
+        else if(musicCurrentTime.innerText == "1:51"){
+            document.getElementById('l18').innerHTML = '5...';
+        }
+        else if(musicCurrentTime.innerText == "1:52"){
+            document.getElementById('l18').innerHTML = '4...';
+        }
+        else if(musicCurrentTime.innerText == "1:53"){
+            document.getElementById('l18').innerHTML = '3...';
+        }
+        else if(musicCurrentTime.innerText == "1:54"){
+            document.getElementById('l18').innerHTML = '2...';
+        }
+        else if(musicCurrentTime.innerText == "1:55"){
+            document.getElementById('l18').innerHTML = '1...';
+        }
+        else if(musicCurrentTime.innerText == "1:56"){
+            document.getElementById('l17').style.marginTop = '-100%';
+            document.getElementById('l18').style.marginTop = '-25%';
+            document.getElementById('l18').style.transform = 'scale(1)';
+            document.getElementById('l18').style.fontWeight = '400';
+            document.getElementById('l18').innerHTML = '   ';
+            document.getElementById('l19').style.marginTop = '0';
+            document.getElementById('l19').style.transform = 'scale(1.8)';
+            document.getElementById('l19').style.fontWeight = '600';
+            document.getElementById('l20').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "1:59"){
+            document.getElementById('l18').style.marginTop = '-100%';
+            document.getElementById('l19').style.marginTop = '-25%';
+            document.getElementById('l19').style.transform = 'scale(1)';
+            document.getElementById('l19').style.fontWeight = '400';
+            document.getElementById('l20').style.marginTop = '0';
+            document.getElementById('l20').style.transform = 'scale(1.8)';
+            document.getElementById('l20').style.fontWeight = '600';
+            document.getElementById('l21').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:03"){
+            document.getElementById('l19').style.marginTop = '-100%';
+            document.getElementById('l20').style.marginTop = '-25%';
+            document.getElementById('l20').style.transform = 'scale(1)';
+            document.getElementById('l20').style.fontWeight = '400';
+            document.getElementById('l21').style.marginTop = '0';
+            document.getElementById('l21').style.transform = 'scale(1.8)';
+            document.getElementById('l21').style.fontWeight = '600';
+            document.getElementById('l22').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:06"){
+            document.getElementById('l20').style.marginTop = '-100%';
+            document.getElementById('l21').style.marginTop = '-25%';
+            document.getElementById('l21').style.transform = 'scale(1)';
+            document.getElementById('l21').style.fontWeight = '400';
+            document.getElementById('l22').style.marginTop = '0';
+            document.getElementById('l22').style.transform = 'scale(1.8)';
+            document.getElementById('l22').style.fontWeight = '600';
+            document.getElementById('l23').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:10"){
+            document.getElementById('l21').style.marginTop = '-100%';
+            document.getElementById('l22').style.marginTop = '-25%';
+            document.getElementById('l22').style.transform = 'scale(1)';
+            document.getElementById('l22').style.fontWeight = '400';
+            document.getElementById('l23').style.marginTop = '0';
+            document.getElementById('l23').style.transform = 'scale(1.8)';
+            document.getElementById('l23').style.fontWeight = '600';
+            document.getElementById('l24').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:14"){
+            document.getElementById('l22').style.marginTop = '-100%';
+            document.getElementById('l23').style.marginTop = '-25%';
+            document.getElementById('l23').style.transform = 'scale(1)';
+            document.getElementById('l23').style.fontWeight = '400';
+            document.getElementById('l24').style.marginTop = '0';
+            document.getElementById('l24').style.transform = 'scale(1.8)';
+            document.getElementById('l24').style.fontWeight = '600';
+            document.getElementById('l25').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:17"){
+            document.getElementById('l23').style.marginTop = '-100%';
+            document.getElementById('l24').style.marginTop = '-25%';
+            document.getElementById('l24').style.transform = 'scale(1)';
+            document.getElementById('l24').style.fontWeight = '400';
+            document.getElementById('l25').style.marginTop = '0';
+            document.getElementById('l25').style.transform = 'scale(1.8)';
+            document.getElementById('l25').style.fontWeight = '600';
+            document.getElementById('l26').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:21"){
+            document.getElementById('l24').style.marginTop = '-100%';
+            document.getElementById('l25').style.marginTop = '-25%';
+            document.getElementById('l25').style.transform = 'scale(1)';
+            document.getElementById('l25').style.fontWeight = '400';
+            document.getElementById('l26').style.marginTop = '0';
+            document.getElementById('l26').style.transform = 'scale(1.8)';
+            document.getElementById('l26').style.fontWeight = '600';
+            document.getElementById('l27').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:24"){
+            document.getElementById('l25').style.marginTop = '-100%';
+            document.getElementById('l26').style.marginTop = '-25%';
+            document.getElementById('l26').style.transform = 'scale(1)';
+            document.getElementById('l26').style.fontWeight = '400';
+            document.getElementById('l27').style.marginTop = '0';
+            document.getElementById('l27').style.transform = 'scale(1.8)';
+            document.getElementById('l27').style.fontWeight = '600';
+            document.getElementById('l28').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:28"){
+            document.getElementById('l26').style.marginTop = '-100%';
+            document.getElementById('l27').style.marginTop = '-25%';
+            document.getElementById('l27').style.transform = 'scale(1)';
+            document.getElementById('l27').style.fontWeight = '400';
+            document.getElementById('l28').style.marginTop = '0';
+            document.getElementById('l28').style.transform = 'scale(1.8)';
+            document.getElementById('l28').style.fontWeight = '600';
+            document.getElementById('l29').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:31"){
+            document.getElementById('l27').style.marginTop = '-100%';
+            document.getElementById('l28').style.marginTop = '-25%';
+            document.getElementById('l28').style.transform = 'scale(1)';
+            document.getElementById('l28').style.fontWeight = '400';
+            document.getElementById('l29').style.marginTop = '0';
+            document.getElementById('l29').style.transform = 'scale(1.8)';
+            document.getElementById('l29').style.fontWeight = '600';
+            document.getElementById('l30').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:35"){
+            document.getElementById('l28').style.marginTop = '-100%';
+            document.getElementById('l29').style.marginTop = '-25%';
+            document.getElementById('l29').style.transform = 'scale(1)';
+            document.getElementById('l29').style.fontWeight = '400';
+            document.getElementById('l30').style.marginTop = '0';
+            document.getElementById('l30').style.transform = 'scale(1.8)';
+            document.getElementById('l30').style.fontWeight = '600';
+            document.getElementById('l31').style.marginTop = '25%';
+        }
+        else if(musicCurrentTime.innerText == "2:38"){
+            document.getElementById('l29').style.marginTop = '-100%';
+            document.getElementById('l30').style.marginTop = '-25%';
+            document.getElementById('l30').style.transform = 'scale(1)';
+            document.getElementById('l30').style.fontWeight = '400';
+            document.getElementById('l31').style.marginTop = '0';
+            document.getElementById('l31').style.transform = 'scale(1.8)';
+            document.getElementById('l31').style.fontWeight = '600';
+            document.getElementById('l32').style.marginTop = '25%';
+        }
+    }
 });
 
 progressBg.addEventListener("click", (e)=>{
@@ -373,6 +861,7 @@ function playSoundVaikinuSokis(){
     document.getElementById("currentTrackName").innerText = 'vaikinu-sokis.mp3';
     document.getElementById("soundDuration").innerText = '1:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -391,6 +880,7 @@ function playSoundRepas(){
     document.getElementById("currentTrackName").innerText = 'repas.mp3';
     document.getElementById("soundDuration").innerText = '1:15';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -409,6 +899,7 @@ function playSoundZioguGarsas(){
     document.getElementById("currentTrackName").innerText = 'ziogu-garsas.mp3';
     document.getElementById("soundDuration").innerText = '0:10';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -427,6 +918,7 @@ function playSoundVejoGarsas(){
     document.getElementById("currentTrackName").innerText = 'vejo-garsas.mp3';
     document.getElementById("soundDuration").innerText = '0:19';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -445,6 +937,7 @@ function playSoundDaina(){
     document.getElementById("currentTrackName").innerText = 'daina.mp3';
     document.getElementById("soundDuration").innerText = '2:41';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -463,10 +956,37 @@ function playSound5(){
     document.getElementById("currentTrackName").innerText = 'sokis.mp3';
     document.getElementById("soundDuration").innerText = '02:21';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
             document.getElementById("pauseWithMute").style.transform = "scale(1)";
         }, 300);
     });
+}
+
+function openScript() {
+    document.getElementById("scenarijus").style.bottom = "0";
+    document.getElementById("dashboard").style.width = "70%";
+    document.getElementById("scriptBtn").style.opacity = "0";
+    document.getElementById("scriptBtn").style.pointerEvents = "none";
+    document.getElementById("barBelowNav").style.width = "70%";
+    document.getElementById("soundPlayer").style.width = "70%";
+    document.getElementById("playingTrackName").style.width = "18%";
+}
+function closeScript() {
+    document.getElementById("scenarijus").style.bottom = "-100%";
+    document.getElementById("dashboard").style.width = "100%";
+    document.getElementById("scriptBtn").style.opacity = "1";
+    document.getElementById("scriptBtn").style.pointerEvents = "all";
+    document.getElementById("barBelowNav").style.width = "100%";
+    document.getElementById("soundPlayer").style.width = "100%";
+    document.getElementById("playingTrackName").style.width = "20%";
+}
+
+function openLyrics() {
+    document.getElementById("lyrics").style.bottom = "0";
+}
+function closeLyrics() {
+    document.getElementById("lyrics").style.bottom = "-100%";
 }

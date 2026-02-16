@@ -56,15 +56,15 @@
             <p>Nėra ryšio arba ryšys prastas</p>
         </div>
     </div>
-
     <div id="dashboard">
         <div id="dashboardNav">
             <h1>Garso takelių valdymas</h1>
+            <button id="scriptBtn" onclick="openScript()"><i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i> Scenarijus</button>
             <hr>
-            <div>
+            <div id="barBelowNav">
                 <p style="left: 30px;"><i class="fa-solid fa-hashtag"></i></p>
                 <p style="left: 59px;">Pavadinimas</p>
-                <p style="right: 40px;"><i class="fa-regular fa-clock"></i></p>
+                <p style="right: 43px;"><i class="fa-regular fa-clock"></i></p>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
         <div class="soundTrackDiv" ontouchstart onclick="playSoundRepas()"><p class="trackNo">2</p><p class="trackName">repas.mp3</p><p class="trackDuration">01:15</p></div>
         <div class="soundTrackDiv" ontouchstart onclick="playSoundZioguGarsas()"><p class="trackNo">3</p><p class="trackName">ziogu-garsas.mp3</p><p class="trackDuration">00:10</p></div>
         <div class="soundTrackDiv" ontouchstart onclick="playSoundVejoGarsas()"><p class="trackNo">4</p><p class="trackName">vejo-garsas.mp3</p><p class="trackDuration">00:19</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">5</p><p class="trackName">daina.mp3</p><p class="trackDuration">02:41</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">5</p><p class="trackName">daina.mp3</p><i id="lyricsBtn" class="fa-solid fa-quote-right" onclick="openLyrics()" ontouchstart></i><p class="trackDuration">02:41</p></div>
         <!-- <div class="soundTrackDiv" ontouchstart onclick="playSound5()"><p class="trackName"><i class="fa-solid fa-6 trackNo"></i> sokis.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 02:21</p></div> -->
 
         <div id="soundPlayer">
@@ -98,6 +98,49 @@
             <progress min="0" max="100" value="100" id="volume-progress"></progress>
         </div>
         <input type="text" value="0" id="soundsInput" style="display: none;">
+    </div>
+
+    <div id="scenarijus">
+        <h1>Scenarijus</h1>
+        <i id="closeScenarijus" class="fa-solid fa-chevron-down" onclick="closeScript()" ontouchstart></i>
+        <div></div>
+        <iframe src="https://docs.google.com/file/d/1xFtpr0ocCW525L3jTgMg4hsvWSNQRKmh/preview" id="docsIframe" frameborder="0"></iframe>
+    </div>
+    <div id="lyrics">
+        <h1>Dainos žodžiai</h1>
+        <i id="closeLyrics" class="fa-solid fa-xmark" onclick="closeLyrics()" ontouchstart></i>
+        <p id="l0" style="margin-top: 0; font-weight: 600; transform: scale(1.8);">28...</p>
+        <p id="l1" style="margin-top: 25%;">Tą vakarą tamsų aš ant stogo lipau</p>
+        <p id="l2">Norėjau išvysti, ką seniai užmiršau</p>
+        <p id="l3">Norėjau pajusti svaigų orą dangaus</p>
+        <p id="l4">Nuo jo užsimerkti ir savęs paklaust</p>
+        <p id="l5">Klausyk, žmogau</p>
+        <p id="l6">Klausyk, nenusisuk</p>
+        <p id="l7">Ko ieškai čia?</p>
+        <p id="l8">Vaikystė baigės juk</p>
+        <p id="l9">   </p>
+        <p id="l10">Dar būdamas vaikas aš užlipdavau čia</p>
+        <p id="l11">Ir kojas nukaręs svajojau nakčia</p>
+        <p id="l12">Džiaugiaus, kad esu taip arti prie dangaus</p>
+        <p id="l13">Kad ranką prie čerpių galiu priglaust</p>
+        <p id="l14">Klausyk, žmogau</p>
+        <p id="l15">Klausyk, nenusisuk</p>
+        <p id="l16">Ko ieškai čia?</p>
+        <p id="l17">Vaikystė baigės juk</p>
+        <p id="l18">   </p>
+        <p id="l19">Tą vakarą tamsų aš ant stogo lipau</p>
+        <p id="l20">Norėjau išvysti, ką seniai užmiršau</p>
+        <p id="l21">Džiaugiaus, kad esu vėl čionai</p>
+        <p id="l22">Vaikystė sugrįžo lyg seni sapnai</p>
+        <p id="l23">Klausyk, žmogau</p>
+        <p id="l24">Klausyk, nenusisuk</p>
+        <p id="l25">Ko ieškai čia?</p>
+        <p id="l26">Vaikystė baigės juk</p>
+        <p id="l27">Klausyk, žmogau</p>
+        <p id="l28">Klausyk, nenusisuk</p>
+        <p id="l29">Ko ieškai čia?</p>
+        <p id="l30">Vaikystė baigės juk</p>
+        <p id="l31">   </p>
     </div>
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
