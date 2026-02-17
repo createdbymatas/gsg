@@ -102,6 +102,33 @@ window.onload = ()=>{
     loaded();
 }
 
+function fullScreen() {
+    if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+    document.getElementById('fullScreenBtnI').classList.remove("fa-expand");
+    document.getElementById('fullScreenBtnI').classList.add("fa-compress");
+  } else {
+    document.exitFullscreen?.();
+    document.getElementById('fullScreenBtnI').classList.add("fa-expand");
+    document.getElementById('fullScreenBtnI').classList.remove("fa-compress");
+  }
+}
+if (document.addEventListener)
+{
+    document.addEventListener('fullscreenchange', exitHandler, false);
+    document.addEventListener('mozfullscreenchange', exitHandler, false);
+    document.addEventListener('MSFullscreenChange', exitHandler, false);
+    document.addEventListener('webkitfullscreenchange', exitHandler, false);
+}
+function exitHandler()
+{
+    if (!document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement)
+    {
+        document.getElementById('fullScreenBtnI').classList.add("fa-expand");
+        document.getElementById('fullScreenBtnI').classList.remove("fa-compress");
+    }
+}
+
 // išjungti right-click
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
@@ -1047,6 +1074,7 @@ function playSoundDaina(){
     document.getElementById('l31').style.marginTop = '100%';
     document.getElementById('l31').style.transform = 'scale(1)';
     document.getElementById('l31').style.fontWeight = '400';
+    openLyrics();
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";

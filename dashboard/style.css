@@ -469,10 +469,66 @@ hr{
     background-color: #f2f2f2;
     transition: 0.2s;
 }
+#fullScreenBtnOpen{
+    font-size: 15px;
+    position: absolute;
+    top: 12px;
+    left: 290px;
+    z-index: 11;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #DEDEDE;
+    color: black;
+    border: none;
+}
+#fullScreenBtnOpen i{
+    cursor: pointer;
+}
+#fullScreenBtnOpen:hover{
+    opacity: 0.5;
+    transform: scale(1.03);
+}
+#fullScreenBtnOpen:active{
+    opacity: 0.2;
+}
+#fullScreenBtn{
+    font-size: 15px;
+    position: absolute;
+    top: 12.5px;
+    left: 290px;
+    z-index: 11;
+    transition: 0.2s;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #DEDEDE;
+    color: black;
+    border: none;
+}
+#fullScreenBtn i{
+    cursor: pointer;
+}
+#fullScreenBtn:hover{
+    opacity: 0.5;
+    transform: scale(1.03);
+}
+#fullScreenBtn:active{
+    opacity: 0.2;
+}
 #scriptBtn{
     font-size: 15px;
     position: absolute;
-    top: 10px;
+    top: 12.5px;
     right: 15px;
     z-index: 11;
     transition: 0.2s;
@@ -486,6 +542,9 @@ hr{
     background-color: #DEDEDE;
     color: black;
     border: none;
+}
+#scriptBtn i{
+    cursor: pointer;
 }
 #scriptBtn:hover{
     opacity: 0.5;
@@ -1024,13 +1083,6 @@ hr{
     background-color: #DEDEDE;
     color: black;
 }
-#lyricsBtn:hover{
-    opacity: 0.5;
-    transform: scale(1.03);
-}
-#lyricsBtn:active{
-    opacity: 0.2;
-}
 
 
 @media only screen and (max-width: 600px){
@@ -1121,6 +1173,10 @@ hr{
     }
     #dashboardNav{
         background-color: #141414;
+    }
+    #fullScreenBtn{
+        background-color: #282828;
+        color: white;
     }
     #scriptBtn{
         background-color: #282828;

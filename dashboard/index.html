@@ -59,6 +59,7 @@
     <div id="dashboard">
         <div id="dashboardNav">
             <h1>Garso takelių valdymas</h1>
+            <button id="fullScreenBtn" onclick="fullScreen()"><i id="fullScreenBtnI" class="fa-solid fa-expand"></i></button>
             <button id="scriptBtn" onclick="openScript()"><i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i> Scenarijus</button>
             <hr>
             <div id="barBelowNav">
@@ -72,7 +73,7 @@
         <div class="soundTrackDiv" ontouchstart onclick="playSoundRepas()"><p class="trackNo">2</p><p class="trackName">repas.mp3</p><p class="trackDuration">01:15</p></div>
         <div class="soundTrackDiv" ontouchstart onclick="playSoundZioguGarsas()"><p class="trackNo">3</p><p class="trackName">ziogu-garsas.mp3</p><p class="trackDuration">00:10</p></div>
         <div class="soundTrackDiv" ontouchstart onclick="playSoundVejoGarsas()"><p class="trackNo">4</p><p class="trackName">vejo-garsas.mp3</p><p class="trackDuration">00:19</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">5</p><p class="trackName">daina.mp3</p><i id="lyricsBtn" class="fa-solid fa-quote-right" onclick="openLyrics()" ontouchstart></i><p class="trackDuration">02:41</p></div>
+        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">5</p><p class="trackName">daina.mp3</p><i id="lyricsBtn" class="fa-solid fa-quote-right"></i><p class="trackDuration">02:41</p></div>
         <!-- <div class="soundTrackDiv" ontouchstart onclick="playSound5()"><p class="trackName"><i class="fa-solid fa-6 trackNo"></i> sokis.mp3</p><p class="trackDuration"><i class="fa-regular fa-clock"></i> 02:21</p></div> -->
 
         <div id="soundPlayer">
