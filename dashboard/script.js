@@ -307,7 +307,10 @@ sound.addEventListener("timeupdate", (e)=>{
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 
     if(document.getElementById("currentTrackName").innerText == 'daina.mp3'){
-        if(musicCurrentTime.innerText == "0:01"){
+        if(musicCurrentTime.innerText == "0:00"){
+            document.getElementById('l0').innerHTML = '28...';
+        }
+        else if(musicCurrentTime.innerText == "0:01"){
             document.getElementById('l0').innerHTML = '27...';
         }
         else if(musicCurrentTime.innerText == "0:02"){
@@ -381,6 +384,7 @@ sound.addEventListener("timeupdate", (e)=>{
         }
         else if(musicCurrentTime.innerText == "0:25"){
             document.getElementById('l0').innerHTML = '3...';
+            document.getElementById('l0').style.color = 'red';
         }
         else if(musicCurrentTime.innerText == "0:26"){
             document.getElementById('l0').innerHTML = '2...';
@@ -389,8 +393,8 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l0').innerHTML = '1...';
         }
         else if(musicCurrentTime.innerText == "0:28"){
-            document.getElementById('l0').innerHTML = '0';
-            document.getElementById('l0').style.marginTop = '-100%';
+            document.getElementById('l0').innerHTML = '   ';
+            document.getElementById('l0').style.marginTop = '-25%';
             document.getElementById('l0').style.transform = 'scale(1)';
             document.getElementById('l0').style.fontWeight = '400';
             document.getElementById('l1').style.marginTop = '0';
@@ -399,6 +403,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l2').style.marginTop = '25%';
         }
         else if(musicCurrentTime.innerText == "0:32"){
+            document.getElementById('l0').style.marginTop = '-100%';
             document.getElementById('l1').style.marginTop = '-25%';
             document.getElementById('l1').style.transform = 'scale(1)';
             document.getElementById('l1').style.fontWeight = '400';
@@ -476,6 +481,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l9').style.transform = 'scale(1.8)';
             document.getElementById('l9').style.fontWeight = '600';
             document.getElementById('l9').innerHTML = '3...';
+            document.getElementById('l9').style.color = 'red';
             document.getElementById('l10').style.marginTop = '25%';
         }
         else if(musicCurrentTime.innerText == "0:57"){
@@ -653,6 +659,7 @@ sound.addEventListener("timeupdate", (e)=>{
         }
         else if(musicCurrentTime.innerText == "1:53"){
             document.getElementById('l18').innerHTML = '3...';
+            document.getElementById('l18').style.color = 'red';
         }
         else if(musicCurrentTime.innerText == "1:54"){
             document.getElementById('l18').innerHTML = '2...';
@@ -938,6 +945,108 @@ function playSoundDaina(){
     document.getElementById("soundDuration").innerText = '2:41';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById('l0').innerHTML = '   ';
+    document.getElementById('l9').innerHTML = '   ';
+    document.getElementById('l18').innerHTML = '   ';
+    document.getElementById('l0').style.marginTop = '0';
+    document.getElementById('l0').style.color = 'black';
+    document.getElementById('l0').style.transform = 'scale(1.8)';
+    document.getElementById('l0').style.fontWeight = '600';
+    document.getElementById('l1').style.marginTop = '25%';
+    document.getElementById('l1').style.transform = 'scale(1)';
+    document.getElementById('l1').style.fontWeight = '400';
+    document.getElementById('l2').style.marginTop = '100%';
+    document.getElementById('l2').style.transform = 'scale(1)';
+    document.getElementById('l2').style.fontWeight = '400';
+    document.getElementById('l3').style.marginTop = '100%';
+    document.getElementById('l3').style.transform = 'scale(1)';
+    document.getElementById('l3').style.fontWeight = '400';
+    document.getElementById('l4').style.marginTop = '100%';
+    document.getElementById('l4').style.transform = 'scale(1)';
+    document.getElementById('l4').style.fontWeight = '400';
+    document.getElementById('l5').style.marginTop = '100%';
+    document.getElementById('l5').style.transform = 'scale(1)';
+    document.getElementById('l5').style.fontWeight = '400';
+    document.getElementById('l6').style.marginTop = '100%';
+    document.getElementById('l6').style.transform = 'scale(1)';
+    document.getElementById('l6').style.fontWeight = '400';
+    document.getElementById('l7').style.marginTop = '100%';
+    document.getElementById('l7').style.transform = 'scale(1)';
+    document.getElementById('l7').style.fontWeight = '400';
+    document.getElementById('l8').style.marginTop = '100%';
+    document.getElementById('l8').style.transform = 'scale(1)';
+    document.getElementById('l8').style.fontWeight = '400';
+    document.getElementById('l9').style.marginTop = '100%';
+    document.getElementById('l9').style.transform = 'scale(1)';
+    document.getElementById('l9').style.fontWeight = '400';
+    document.getElementById('l9').style.color = 'black';
+    document.getElementById('l10').style.marginTop = '100%';
+    document.getElementById('l10').style.transform = 'scale(1)';
+    document.getElementById('l10').style.fontWeight = '400';
+    document.getElementById('l11').style.marginTop = '100%';
+    document.getElementById('l11').style.transform = 'scale(1)';
+    document.getElementById('l11').style.fontWeight = '400';
+    document.getElementById('l12').style.marginTop = '100%';
+    document.getElementById('l12').style.transform = 'scale(1)';
+    document.getElementById('l12').style.fontWeight = '400';
+    document.getElementById('l13').style.marginTop = '100%';
+    document.getElementById('l13').style.transform = 'scale(1)';
+    document.getElementById('l13').style.fontWeight = '400';
+    document.getElementById('l14').style.marginTop = '100%';
+    document.getElementById('l14').style.transform = 'scale(1)';
+    document.getElementById('l14').style.fontWeight = '400';
+    document.getElementById('l15').style.marginTop = '100%';
+    document.getElementById('l15').style.transform = 'scale(1)';
+    document.getElementById('l15').style.fontWeight = '400';
+    document.getElementById('l16').style.marginTop = '100%';
+    document.getElementById('l16').style.transform = 'scale(1)';
+    document.getElementById('l16').style.fontWeight = '400';
+    document.getElementById('l17').style.marginTop = '100%';
+    document.getElementById('l17').style.transform = 'scale(1)';
+    document.getElementById('l17').style.fontWeight = '400';
+    document.getElementById('l18').style.marginTop = '100%';
+    document.getElementById('l18').style.transform = 'scale(1)';
+    document.getElementById('l18').style.fontWeight = '400';
+    document.getElementById('l18').style.color = 'black';
+    document.getElementById('l19').style.marginTop = '100%';
+    document.getElementById('l19').style.transform = 'scale(1)';
+    document.getElementById('l19').style.fontWeight = '400';
+    document.getElementById('l20').style.marginTop = '100%';
+    document.getElementById('l20').style.transform = 'scale(1)';
+    document.getElementById('l20').style.fontWeight = '400';
+    document.getElementById('l21').style.marginTop = '100%';
+    document.getElementById('l21').style.transform = 'scale(1)';
+    document.getElementById('l21').style.fontWeight = '400';
+    document.getElementById('l22').style.marginTop = '100%';
+    document.getElementById('l22').style.transform = 'scale(1)';
+    document.getElementById('l22').style.fontWeight = '400';
+    document.getElementById('l23').style.marginTop = '100%';
+    document.getElementById('l23').style.transform = 'scale(1)';
+    document.getElementById('l23').style.fontWeight = '400';
+    document.getElementById('l24').style.marginTop = '100%';
+    document.getElementById('l24').style.transform = 'scale(1)';
+    document.getElementById('l24').style.fontWeight = '400';
+    document.getElementById('l25').style.marginTop = '100%';
+    document.getElementById('l25').style.transform = 'scale(1)';
+    document.getElementById('l25').style.fontWeight = '400';
+    document.getElementById('l26').style.marginTop = '100%';
+    document.getElementById('l26').style.transform = 'scale(1)';
+    document.getElementById('l26').style.fontWeight = '400';
+    document.getElementById('l27').style.marginTop = '100%';
+    document.getElementById('l27').style.transform = 'scale(1)';
+    document.getElementById('l27').style.fontWeight = '400';
+    document.getElementById('l28').style.marginTop = '100%';
+    document.getElementById('l28').style.transform = 'scale(1)';
+    document.getElementById('l28').style.fontWeight = '400';
+    document.getElementById('l29').style.marginTop = '100%';
+    document.getElementById('l29').style.transform = 'scale(1)';
+    document.getElementById('l29').style.fontWeight = '400';
+    document.getElementById('l30').style.marginTop = '100%';
+    document.getElementById('l30').style.transform = 'scale(1)';
+    document.getElementById('l30').style.fontWeight = '400';
+    document.getElementById('l31').style.marginTop = '100%';
+    document.getElementById('l31').style.transform = 'scale(1)';
+    document.getElementById('l31').style.fontWeight = '400';
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -985,8 +1094,14 @@ function closeScript() {
 }
 
 function openLyrics() {
-    document.getElementById("lyrics").style.bottom = "0";
+    document.getElementById("lyrics").style.display = "flex";
+    setTimeout(() => {
+        document.getElementById("lyrics").style.bottom = "0";
+    }, 10);
 }
 function closeLyrics() {
     document.getElementById("lyrics").style.bottom = "-100%";
+    setTimeout(() => {
+        document.getElementById("lyrics").style.display = "none";
+    }, 200);
 }
