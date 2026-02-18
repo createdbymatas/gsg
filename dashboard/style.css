@@ -416,6 +416,42 @@ hr{
     font-size: 15px;
 }
 
+#volumeMutedBg{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+#volumeMuted{
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 0;
+    border-radius: 25px;
+    box-shadow: 0 0 10px red;
+}
+#volumeMutedI{
+    font-size: 20px;
+    color: red;
+}
+#volumeMuted p{
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+}
+
 @keyframes connectionBlink{
     0%{
         opacity: 1;
@@ -635,7 +671,7 @@ hr{
     width: 100%;
     height: 100px;
     background-color: white;
-    /* box-shadow: 0 0 10px lightgrey; */
+    box-shadow: 0 0 10px lightgrey;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -1160,6 +1196,12 @@ hr{
     }
     #uzdraustaRestart::before {
         border-color:white;
+    }
+    #volumeMuted{
+        width: 180px;
+        height: 50px;
+        background-color: black;
+        color: white;
     }
 
     hr{
