@@ -250,6 +250,25 @@ hr{
     color: black;
     cursor: not-allowed;
 }
+#screenSize button{
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+#screenSize button:hover{
+    opacity: 0.5;
+    transform: scale(1.03);
+}
+#screenSize button:active{
+    opacity: 0.2;
+}
 #sizeDiv{
     width: 100px;
     height: 100px;
@@ -1646,6 +1665,10 @@ hr{
         color: white;
     }
     #screenSizeTekstas2{
+        color: white;
+    }
+    #screenSize button{
+        border-color: white;
         color: white;
     }
     #computerIcon{
