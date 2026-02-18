@@ -173,7 +173,7 @@ document.body.onkeydown = function(e){
     if (e.keyCode === 49) {
         maxSound();
     }
-    if (e.keyCode === 51) {
+    if (e.keyCode === 50) {
         backgroundSound();
     }
 }
@@ -990,7 +990,7 @@ function playSoundFaruSokis(){
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'Farų šokis';
-    document.getElementById("soundDuration").innerText = '4:18';
+    document.getElementById("soundDuration").innerText = '4:09';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
