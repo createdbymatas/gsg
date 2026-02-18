@@ -1337,6 +1337,8 @@ function openScript() {
     document.getElementById("barBelowNav").style.width = "70%";
     document.getElementById("soundPlayer").style.width = "70%";
     document.getElementById("playingTrackName").style.width = "18%";
+    document.getElementById("visualsBtn").style.opacity = "0";
+    document.getElementById("visualsBtn").style.pointerEvents = "none";
 }
 function closeScript() {
     document.getElementById("scenarijus").style.bottom = "-100%";
@@ -1346,6 +1348,45 @@ function closeScript() {
     document.getElementById("barBelowNav").style.width = "100%";
     document.getElementById("soundPlayer").style.width = "100%";
     document.getElementById("playingTrackName").style.width = "20%";
+    document.getElementById("visualsBtn").style.opacity = "1";
+    document.getElementById("visualsBtn").style.pointerEvents = "all";
+}
+
+function openVisuals() {
+    document.getElementById("vizualai").style.bottom = "0";
+    document.getElementById("dashboard").style.width = "70%";
+    document.getElementById("visualsBtn").style.opacity = "0";
+    document.getElementById("visualsBtn").style.pointerEvents = "none";
+    document.getElementById("vizualaiNav").style.top = "4.9%";
+    document.getElementById("barBelowNav").style.width = "70%";
+    document.getElementById("soundPlayer").style.width = "70%";
+    document.getElementById("playingTrackName").style.width = "18%";
+    document.getElementById("scriptBtn").style.opacity = "0";
+    document.getElementById("scriptBtn").style.pointerEvents = "none";
+}
+function closeVisuals() {
+    document.getElementById("vizualai").style.bottom = "-100%";
+    document.getElementById("dashboard").style.width = "100%";
+    document.getElementById("visualsBtn").style.opacity = "1";
+    document.getElementById("visualsBtn").style.pointerEvents = "all";
+    document.getElementById("vizualaiNav").style.top = "100%";
+    document.getElementById("barBelowNav").style.width = "100%";
+    document.getElementById("soundPlayer").style.width = "100%";
+    document.getElementById("playingTrackName").style.width = "20%";
+    document.getElementById("scriptBtn").style.opacity = "1";
+    document.getElementById("scriptBtn").style.pointerEvents = "all";
+}
+
+function auksinisProtas(){
+    document.getElementById("auksinisProtasDiv").style.pointerEvents = "none";
+    document.getElementById("auksinisProtasWait").style.display = "flex";
+    setTimeout(() => {
+        document.getElementById("download_auksinis-protas").click();
+    }, 1000);
+    setTimeout(() => {
+        document.getElementById("auksinisProtasDiv").style.pointerEvents = "all";
+        document.getElementById("auksinisProtasWait").style.display = "none";
+    }, 3000);
 }
 
 function openLyrics() {
