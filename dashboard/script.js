@@ -333,7 +333,7 @@ sound.addEventListener("timeupdate", (e)=>{
     }
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 
-    if(document.getElementById("currentTrackName").innerText == 'daina.mp3'){
+    if(document.getElementById("currentTrackName").innerText == 'Daina'){
         if(musicCurrentTime.innerText == "0:00"){
             document.getElementById('l0').innerHTML = '29...';
         }
