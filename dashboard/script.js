@@ -335,91 +335,94 @@ sound.addEventListener("timeupdate", (e)=>{
 
     if(document.getElementById("currentTrackName").innerText == 'daina.mp3'){
         if(musicCurrentTime.innerText == "0:00"){
-            document.getElementById('l0').innerHTML = '28...';
+            document.getElementById('l0').innerHTML = '29...';
         }
         else if(musicCurrentTime.innerText == "0:01"){
-            document.getElementById('l0').innerHTML = '27...';
+            document.getElementById('l0').innerHTML = '28...';
         }
         else if(musicCurrentTime.innerText == "0:02"){
-            document.getElementById('l0').innerHTML = '26...';
+            document.getElementById('l0').innerHTML = '27...';
         }
         else if(musicCurrentTime.innerText == "0:03"){
-            document.getElementById('l0').innerHTML = '25...';
+            document.getElementById('l0').innerHTML = '26...';
         }
         else if(musicCurrentTime.innerText == "0:04"){
-            document.getElementById('l0').innerHTML = '24...';
+            document.getElementById('l0').innerHTML = '25...';
         }
         else if(musicCurrentTime.innerText == "0:05"){
-            document.getElementById('l0').innerHTML = '23...';
+            document.getElementById('l0').innerHTML = '24...';
         }
         else if(musicCurrentTime.innerText == "0:06"){
-            document.getElementById('l0').innerHTML = '22...';
+            document.getElementById('l0').innerHTML = '23...';
         }
         else if(musicCurrentTime.innerText == "0:07"){
-            document.getElementById('l0').innerHTML = '21...';
+            document.getElementById('l0').innerHTML = '22...';
         }
         else if(musicCurrentTime.innerText == "0:08"){
-            document.getElementById('l0').innerHTML = '20...';
+            document.getElementById('l0').innerHTML = '21...';
         }
         else if(musicCurrentTime.innerText == "0:09"){
-            document.getElementById('l0').innerHTML = '19...';
+            document.getElementById('l0').innerHTML = '20...';
         }
         else if(musicCurrentTime.innerText == "0:10"){
-            document.getElementById('l0').innerHTML = '18...';
+            document.getElementById('l0').innerHTML = '19...';
         }
         else if(musicCurrentTime.innerText == "0:11"){
-            document.getElementById('l0').innerHTML = '17...';
+            document.getElementById('l0').innerHTML = '18...';
         }
         else if(musicCurrentTime.innerText == "0:12"){
-            document.getElementById('l0').innerHTML = '16...';
+            document.getElementById('l0').innerHTML = '17...';
         }
         else if(musicCurrentTime.innerText == "0:13"){
-            document.getElementById('l0').innerHTML = '15...';
+            document.getElementById('l0').innerHTML = '16...';
         }
         else if(musicCurrentTime.innerText == "0:14"){
-            document.getElementById('l0').innerHTML = '14...';
+            document.getElementById('l0').innerHTML = '15...';
         }
         else if(musicCurrentTime.innerText == "0:15"){
-            document.getElementById('l0').innerHTML = '13...';
+            document.getElementById('l0').innerHTML = '14...';
         }
         else if(musicCurrentTime.innerText == "0:16"){
-            document.getElementById('l0').innerHTML = '12...';
+            document.getElementById('l0').innerHTML = '13...';
         }
         else if(musicCurrentTime.innerText == "0:17"){
-            document.getElementById('l0').innerHTML = '11...';
+            document.getElementById('l0').innerHTML = '12...';
         }
         else if(musicCurrentTime.innerText == "0:18"){
-            document.getElementById('l0').innerHTML = '10...';
+            document.getElementById('l0').innerHTML = '11...';
         }
         else if(musicCurrentTime.innerText == "0:19"){
-            document.getElementById('l0').innerHTML = '9...';
+            document.getElementById('l0').innerHTML = '10...';
         }
         else if(musicCurrentTime.innerText == "0:20"){
-            document.getElementById('l0').innerHTML = '8...';
+            document.getElementById('l0').innerHTML = '9...';
         }
         else if(musicCurrentTime.innerText == "0:21"){
-            document.getElementById('l0').innerHTML = '7...';
+            document.getElementById('l0').innerHTML = '8...';
         }
         else if(musicCurrentTime.innerText == "0:22"){
-            document.getElementById('l0').innerHTML = '6...';
+            document.getElementById('l0').innerHTML = '7...';
         }
         else if(musicCurrentTime.innerText == "0:23"){
-            document.getElementById('l0').innerHTML = '5...';
+            document.getElementById('l0').innerHTML = '6...';
         }
         else if(musicCurrentTime.innerText == "0:24"){
-            document.getElementById('l0').innerHTML = '4...';
+            document.getElementById('l0').innerHTML = '5...';
         }
         else if(musicCurrentTime.innerText == "0:25"){
+            document.getElementById('l0').innerHTML = '4...';
+        }
+        else if(musicCurrentTime.innerText == "0:26"){
             document.getElementById('l0').innerHTML = '3...';
             document.getElementById('l0').style.color = 'red';
         }
-        else if(musicCurrentTime.innerText == "0:26"){
+        else if(musicCurrentTime.innerText == "0:27"){
             document.getElementById('l0').innerHTML = '2...';
         }
-        else if(musicCurrentTime.innerText == "0:27"){
+        else if(musicCurrentTime.innerText == "0:28"){
             document.getElementById('l0').innerHTML = '1...';
         }
-        else if(musicCurrentTime.innerText == "0:28"){
+        else if(musicCurrentTime.innerText == "0:29"){
             document.getElementById('l0').innerHTML = '   ';
             document.getElementById('l0').style.marginTop = '-25%';
             document.getElementById('l0').style.transform = 'scale(1)';
@@ -429,7 +432,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l1').style.fontWeight = '600';
             document.getElementById('l2').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:32"){
+        else if(musicCurrentTime.innerText == "0:33"){
             document.getElementById('l0').style.marginTop = '-100%';
             document.getElementById('l1').style.marginTop = '-25%';
             document.getElementById('l1').style.transform = 'scale(1)';
@@ -439,7 +442,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l2').style.fontWeight = '600';
             document.getElementById('l3').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:35"){
+        else if(musicCurrentTime.innerText == "0:37"){
             document.getElementById('l1').style.marginTop = '-100%';
             document.getElementById('l2').style.marginTop = '-25%';
             document.getElementById('l2').style.transform = 'scale(1)';
@@ -449,7 +452,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l3').style.fontWeight = '600';
             document.getElementById('l4').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:39"){
+        else if(musicCurrentTime.innerText == "0:40"){
             document.getElementById('l2').style.marginTop = '-100%';
             document.getElementById('l3').style.marginTop = '-25%';
             document.getElementById('l3').style.transform = 'scale(1)';
@@ -459,7 +462,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l4').style.fontWeight = '600';
             document.getElementById('l5').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:42"){
+        else if(musicCurrentTime.innerText == "0:44"){
             document.getElementById('l3').style.marginTop = '-100%';
             document.getElementById('l4').style.marginTop = '-25%';
             document.getElementById('l4').style.transform = 'scale(1)';
@@ -469,7 +472,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l5').style.fontWeight = '600';
             document.getElementById('l6').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:46"){
+        else if(musicCurrentTime.innerText == "0:48"){
             document.getElementById('l4').style.marginTop = '-100%';
             document.getElementById('l5').style.marginTop = '-25%';
             document.getElementById('l5').style.transform = 'scale(1)';
@@ -479,7 +482,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l6').style.fontWeight = '600';
             document.getElementById('l7').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:49"){
+        else if(musicCurrentTime.innerText == "0:51"){
             document.getElementById('l5').style.marginTop = '-100%';
             document.getElementById('l6').style.marginTop = '-25%';
             document.getElementById('l6').style.transform = 'scale(1)';
@@ -489,7 +492,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l7').style.fontWeight = '600';
             document.getElementById('l8').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:53"){
+        else if(musicCurrentTime.innerText == "0:55"){
             document.getElementById('l6').style.marginTop = '-100%';
             document.getElementById('l7').style.marginTop = '-25%';
             document.getElementById('l7').style.transform = 'scale(1)';
@@ -499,7 +502,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l8').style.fontWeight = '600';
             document.getElementById('l9').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:56"){
+        else if(musicCurrentTime.innerText == "0:58"){
             document.getElementById('l7').style.marginTop = '-100%';
             document.getElementById('l8').style.marginTop = '-25%';
             document.getElementById('l8').style.transform = 'scale(1)';
@@ -507,17 +510,20 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l9').style.marginTop = '0';
             document.getElementById('l9').style.transform = 'scale(1.8)';
             document.getElementById('l9').style.fontWeight = '600';
-            document.getElementById('l9').innerHTML = '3...';
+            document.getElementById('l9').innerHTML = '4...';
             document.getElementById('l9').style.color = 'red';
             document.getElementById('l10').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "0:57"){
+        else if(musicCurrentTime.innerText == "0:59"){
+            document.getElementById('l9').innerHTML = '3...';
+        }
+        else if(musicCurrentTime.innerText == "1:00"){
             document.getElementById('l9').innerHTML = '2...';
         }
-        else if(musicCurrentTime.innerText == "0:58"){
+        else if(musicCurrentTime.innerText == "1:01"){
             document.getElementById('l9').innerHTML = '1...';
         }
-        else if(musicCurrentTime.innerText == "0:59"){
+        else if(musicCurrentTime.innerText == "1:02"){
             document.getElementById('l8').style.marginTop = '-100%';
             document.getElementById('l9').style.marginTop = '-25%';
             document.getElementById('l9').style.transform = 'scale(1)';
@@ -528,7 +534,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l10').style.fontWeight = '600';
             document.getElementById('l11').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:03"){
+        else if(musicCurrentTime.innerText == "1:06"){
             document.getElementById('l9').style.marginTop = '-100%';
             document.getElementById('l10').style.marginTop = '-25%';
             document.getElementById('l10').style.transform = 'scale(1)';
@@ -538,7 +544,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l11').style.fontWeight = '600';
             document.getElementById('l12').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:06"){
+        else if(musicCurrentTime.innerText == "1:09"){
             document.getElementById('l10').style.marginTop = '-100%';
             document.getElementById('l11').style.marginTop = '-25%';
             document.getElementById('l11').style.transform = 'scale(1)';
@@ -548,7 +554,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l12').style.fontWeight = '600';
             document.getElementById('l13').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:10"){
+        else if(musicCurrentTime.innerText == "1:13"){
             document.getElementById('l11').style.marginTop = '-100%';
             document.getElementById('l12').style.marginTop = '-25%';
             document.getElementById('l12').style.transform = 'scale(1)';
@@ -558,7 +564,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l13').style.fontWeight = '600';
             document.getElementById('l14').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:14"){
+        else if(musicCurrentTime.innerText == "1:17"){
             document.getElementById('l12').style.marginTop = '-100%';
             document.getElementById('l13').style.marginTop = '-25%';
             document.getElementById('l13').style.transform = 'scale(1)';
@@ -568,7 +574,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l14').style.fontWeight = '600';
             document.getElementById('l15').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:17"){
+        else if(musicCurrentTime.innerText == "1:21"){
             document.getElementById('l13').style.marginTop = '-100%';
             document.getElementById('l14').style.marginTop = '-25%';
             document.getElementById('l14').style.transform = 'scale(1)';
@@ -578,7 +584,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l15').style.fontWeight = '600';
             document.getElementById('l16').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:21"){
+        else if(musicCurrentTime.innerText == "1:24"){
             document.getElementById('l14').style.marginTop = '-100%';
             document.getElementById('l15').style.marginTop = '-25%';
             document.getElementById('l15').style.transform = 'scale(1)';
@@ -588,7 +594,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l16').style.fontWeight = '600';
             document.getElementById('l17').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:24"){
+        else if(musicCurrentTime.innerText == "1:28"){
             document.getElementById('l15').style.marginTop = '-100%';
             document.getElementById('l16').style.marginTop = '-25%';
             document.getElementById('l16').style.transform = 'scale(1)';
@@ -598,7 +604,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l17').style.fontWeight = '600';
             document.getElementById('l18').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:27"){
+        else if(musicCurrentTime.innerText == "1:31"){
             document.getElementById('l16').style.marginTop = '-100%';
             document.getElementById('l17').style.marginTop = '-25%';
             document.getElementById('l17').style.transform = 'scale(1)';
@@ -606,95 +612,98 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l18').style.marginTop = '0';
             document.getElementById('l18').style.transform = 'scale(1.8)';
             document.getElementById('l18').style.fontWeight = '600';
-            document.getElementById('l18').innerHTML = '29...';
+            document.getElementById('l18').innerHTML = '30...';
             document.getElementById('l19').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:28"){
-            document.getElementById('l18').innerHTML = '28...';
-        }
-        else if(musicCurrentTime.innerText == "1:29"){
-            document.getElementById('l18').innerHTML = '27...';
-        }
-        else if(musicCurrentTime.innerText == "1:30"){
-            document.getElementById('l18').innerHTML = '26...';
-        }
-        else if(musicCurrentTime.innerText == "1:31"){
-            document.getElementById('l18').innerHTML = '25...';
-        }
         else if(musicCurrentTime.innerText == "1:32"){
-            document.getElementById('l18').innerHTML = '24...';
+            document.getElementById('l18').innerHTML = '29...';
         }
         else if(musicCurrentTime.innerText == "1:33"){
-            document.getElementById('l18').innerHTML = '23...';
+            document.getElementById('l18').innerHTML = '28...';
         }
         else if(musicCurrentTime.innerText == "1:34"){
-            document.getElementById('l18').innerHTML = '22...';
+            document.getElementById('l18').innerHTML = '27...';
         }
         else if(musicCurrentTime.innerText == "1:35"){
-            document.getElementById('l18').innerHTML = '21...';
+            document.getElementById('l18').innerHTML = '26...';
         }
         else if(musicCurrentTime.innerText == "1:36"){
-            document.getElementById('l18').innerHTML = '20...';
+            document.getElementById('l18').innerHTML = '25...';
         }
         else if(musicCurrentTime.innerText == "1:37"){
-            document.getElementById('l18').innerHTML = '19...';
+            document.getElementById('l18').innerHTML = '24...';
         }
         else if(musicCurrentTime.innerText == "1:38"){
-            document.getElementById('l18').innerHTML = '18...';
+            document.getElementById('l18').innerHTML = '23...';
         }
         else if(musicCurrentTime.innerText == "1:39"){
-            document.getElementById('l18').innerHTML = '17...';
+            document.getElementById('l18').innerHTML = '22...';
         }
         else if(musicCurrentTime.innerText == "1:40"){
-            document.getElementById('l18').innerHTML = '16...';
+            document.getElementById('l18').innerHTML = '21...';
         }
         else if(musicCurrentTime.innerText == "1:41"){
-            document.getElementById('l18').innerHTML = '15...';
+            document.getElementById('l18').innerHTML = '20...';
         }
         else if(musicCurrentTime.innerText == "1:42"){
-            document.getElementById('l18').innerHTML = '14...';
+            document.getElementById('l18').innerHTML = '19...';
         }
         else if(musicCurrentTime.innerText == "1:43"){
-            document.getElementById('l18').innerHTML = '13...';
+            document.getElementById('l18').innerHTML = '18...';
         }
         else if(musicCurrentTime.innerText == "1:44"){
-            document.getElementById('l18').innerHTML = '12...';
+            document.getElementById('l18').innerHTML = '17...';
         }
         else if(musicCurrentTime.innerText == "1:45"){
-            document.getElementById('l18').innerHTML = '11...';
+            document.getElementById('l18').innerHTML = '16...';
         }
         else if(musicCurrentTime.innerText == "1:46"){
-            document.getElementById('l18').innerHTML = '10...';
+            document.getElementById('l18').innerHTML = '15...';
         }
         else if(musicCurrentTime.innerText == "1:47"){
-            document.getElementById('l18').innerHTML = '9...';
+            document.getElementById('l18').innerHTML = '14...';
         }
         else if(musicCurrentTime.innerText == "1:48"){
-            document.getElementById('l18').innerHTML = '8...';
+            document.getElementById('l18').innerHTML = '13...';
         }
         else if(musicCurrentTime.innerText == "1:49"){
-            document.getElementById('l18').innerHTML = '7...';
+            document.getElementById('l18').innerHTML = '12...';
         }
         else if(musicCurrentTime.innerText == "1:50"){
-            document.getElementById('l18').innerHTML = '6...';
+            document.getElementById('l18').innerHTML = '11...';
         }
         else if(musicCurrentTime.innerText == "1:51"){
-            document.getElementById('l18').innerHTML = '5...';
+            document.getElementById('l18').innerHTML = '10...';
         }
         else if(musicCurrentTime.innerText == "1:52"){
-            document.getElementById('l18').innerHTML = '4...';
+            document.getElementById('l18').innerHTML = '9...';
         }
         else if(musicCurrentTime.innerText == "1:53"){
+            document.getElementById('l18').innerHTML = '8...';
+        }
+        else if(musicCurrentTime.innerText == "1:54"){
+            document.getElementById('l18').innerHTML = '7...';
+        }
+        else if(musicCurrentTime.innerText == "1:55"){
+            document.getElementById('l18').innerHTML = '6...';
+        }
+        else if(musicCurrentTime.innerText == "1:56"){
+            document.getElementById('l18').innerHTML = '5...';
+        }
+        else if(musicCurrentTime.innerText == "1:57"){
+            document.getElementById('l18').innerHTML = '4...';
+        }
+        else if(musicCurrentTime.innerText == "1:58"){
             document.getElementById('l18').innerHTML = '3...';
             document.getElementById('l18').style.color = 'red';
         }
-        else if(musicCurrentTime.innerText == "1:54"){
+        else if(musicCurrentTime.innerText == "1:59"){
             document.getElementById('l18').innerHTML = '2...';
         }
-        else if(musicCurrentTime.innerText == "1:55"){
+        else if(musicCurrentTime.innerText == "2:00"){
             document.getElementById('l18').innerHTML = '1...';
         }
-        else if(musicCurrentTime.innerText == "1:56"){
+        else if(musicCurrentTime.innerText == "2:01"){
             document.getElementById('l17').style.marginTop = '-100%';
             document.getElementById('l18').style.marginTop = '-25%';
             document.getElementById('l18').style.transform = 'scale(1)';
@@ -705,7 +714,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l19').style.fontWeight = '600';
             document.getElementById('l20').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "1:59"){
+        else if(musicCurrentTime.innerText == "2:04"){
             document.getElementById('l18').style.marginTop = '-100%';
             document.getElementById('l19').style.marginTop = '-25%';
             document.getElementById('l19').style.transform = 'scale(1)';
@@ -715,7 +724,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l20').style.fontWeight = '600';
             document.getElementById('l21').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:03"){
+        else if(musicCurrentTime.innerText == "2:08"){
             document.getElementById('l19').style.marginTop = '-100%';
             document.getElementById('l20').style.marginTop = '-25%';
             document.getElementById('l20').style.transform = 'scale(1)';
@@ -725,7 +734,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l21').style.fontWeight = '600';
             document.getElementById('l22').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:06"){
+        else if(musicCurrentTime.innerText == "2:12"){
             document.getElementById('l20').style.marginTop = '-100%';
             document.getElementById('l21').style.marginTop = '-25%';
             document.getElementById('l21').style.transform = 'scale(1)';
@@ -735,7 +744,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l22').style.fontWeight = '600';
             document.getElementById('l23').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:10"){
+        else if(musicCurrentTime.innerText == "2:16"){
             document.getElementById('l21').style.marginTop = '-100%';
             document.getElementById('l22').style.marginTop = '-25%';
             document.getElementById('l22').style.transform = 'scale(1)';
@@ -745,7 +754,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l23').style.fontWeight = '600';
             document.getElementById('l24').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:14"){
+        else if(musicCurrentTime.innerText == "2:20"){
             document.getElementById('l22').style.marginTop = '-100%';
             document.getElementById('l23').style.marginTop = '-25%';
             document.getElementById('l23').style.transform = 'scale(1)';
@@ -755,7 +764,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l24').style.fontWeight = '600';
             document.getElementById('l25').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:17"){
+        else if(musicCurrentTime.innerText == "2:23"){
             document.getElementById('l23').style.marginTop = '-100%';
             document.getElementById('l24').style.marginTop = '-25%';
             document.getElementById('l24').style.transform = 'scale(1)';
@@ -765,7 +774,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l25').style.fontWeight = '600';
             document.getElementById('l26').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:21"){
+        else if(musicCurrentTime.innerText == "2:27"){
             document.getElementById('l24').style.marginTop = '-100%';
             document.getElementById('l25').style.marginTop = '-25%';
             document.getElementById('l25').style.transform = 'scale(1)';
@@ -775,7 +784,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l26').style.fontWeight = '600';
             document.getElementById('l27').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:24"){
+        else if(musicCurrentTime.innerText == "2:30"){
             document.getElementById('l25').style.marginTop = '-100%';
             document.getElementById('l26').style.marginTop = '-25%';
             document.getElementById('l26').style.transform = 'scale(1)';
@@ -785,7 +794,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l27').style.fontWeight = '600';
             document.getElementById('l28').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:28"){
+        else if(musicCurrentTime.innerText == "2:34"){
             document.getElementById('l26').style.marginTop = '-100%';
             document.getElementById('l27').style.marginTop = '-25%';
             document.getElementById('l27').style.transform = 'scale(1)';
@@ -795,7 +804,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l28').style.fontWeight = '600';
             document.getElementById('l29').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:31"){
+        else if(musicCurrentTime.innerText == "2:37"){
             document.getElementById('l27').style.marginTop = '-100%';
             document.getElementById('l28').style.marginTop = '-25%';
             document.getElementById('l28').style.transform = 'scale(1)';
@@ -805,7 +814,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l29').style.fontWeight = '600';
             document.getElementById('l30').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:35"){
+        else if(musicCurrentTime.innerText == "2:41"){
             document.getElementById('l28').style.marginTop = '-100%';
             document.getElementById('l29').style.marginTop = '-25%';
             document.getElementById('l29').style.transform = 'scale(1)';
@@ -815,7 +824,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l30').style.fontWeight = '600';
             document.getElementById('l31').style.marginTop = '25%';
         }
-        else if(musicCurrentTime.innerText == "2:38"){
+        else if(musicCurrentTime.innerText == "2:44"){
             document.getElementById('l29').style.marginTop = '-100%';
             document.getElementById('l30').style.marginTop = '-25%';
             document.getElementById('l30').style.transform = 'scale(1)';
@@ -884,15 +893,72 @@ function changeVolumeIcon(){
     }
 }
 
-function playSoundVaikinuSokis(){
+function playSoundZiniuPradzia(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/vaikinu-sokis.mp3';
+    sound.src = 'sounds/ziniu-pradzia.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'vaikinu-sokis.mp3';
+    document.getElementById("currentTrackName").innerText = 'ziniu-pradzia.mp3';
+    document.getElementById("soundDuration").innerText = '0:14';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundZiniuPabaiga(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/ziniu-pabaiga.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'ziniu-pabaiga.mp3';
+    document.getElementById("soundDuration").innerText = '0:07';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundFarai(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/farai.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'farai.mp3';
+    document.getElementById("soundDuration").innerText = '0:17';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundFaruSokis(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/faru-sokis.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'faru-sokis.mp3';
     document.getElementById("soundDuration").innerText = '1:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -903,54 +969,206 @@ function playSoundVaikinuSokis(){
         }, 300);
     });
 }
-function playSoundRepas(){
+function playSoundAuksinisProtas(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/repas.mp3';
+    sound.src = 'sounds/auksinis-protas.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'repas.mp3';
-    document.getElementById("soundDuration").innerText = '1:15';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundZioguGarsas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/ziogu-garsas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'ziogu-garsas.mp3';
-    document.getElementById("soundDuration").innerText = '0:10';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundVejoGarsas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/vejo-garsas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'vejo-garsas.mp3';
+    document.getElementById("currentTrackName").innerText = 'auksinis-protas.mp3';
     document.getElementById("soundDuration").innerText = '0:19';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundLietuvosTalentai(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/lietuvos-talentai.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'lietuvos-talentai.mp3';
+    document.getElementById("soundDuration").innerText = '0:24';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundMerginuSokis(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/merginu-sokis.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'merginu-sokis.mp3';
+    document.getElementById("soundDuration").innerText = '1:40';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundParodijuSokis(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/parodiju-sokis.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'parodiju-sokis.mp3';
+    document.getElementById("soundDuration").innerText = '2:19';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundGangnamStyle(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/gangnam-style.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'gangnam-style.mp3';
+    document.getElementById("soundDuration").innerText = '4:08';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundBeatosVirtuve(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/beatos-virtuve.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'beatos-virtuve.mp3';
+    document.getElementById("soundDuration").innerText = '12:23';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundEkstrasensuPradzia(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/ekstrasensu-pradzia.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'ekstrasensu-pradzia.mp3';
+    document.getElementById("soundDuration").innerText = '0:25';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundEkstrasensuFonas(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/ekstrasensu-fonas.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'ekstrasensu-fonas.mp3';
+    document.getElementById("soundDuration").innerText = '30:02';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundMetuApdovanojimai(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/metu-apdovanojimai.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'metu-apdovanojimai.mp3';
+    document.getElementById("soundDuration").innerText = '17:21';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundCatwalk(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/catwalk.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'catwalk.mp3';
+    document.getElementById("soundDuration").innerText = '00:34';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundDrumRoll(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    sound.src = 'sounds/drum-roll.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'drum-roll.mp3';
+    document.getElementById("soundDuration").innerText = '0:10';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
@@ -969,7 +1187,7 @@ function playSoundDaina(){
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'daina.mp3';
-    document.getElementById("soundDuration").innerText = '2:41';
+    document.getElementById("soundDuration").innerText = '2:46';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     document.getElementById('l0').innerHTML = '   ';
@@ -1075,25 +1293,6 @@ function playSoundDaina(){
     document.getElementById('l31').style.transform = 'scale(1)';
     document.getElementById('l31').style.fontWeight = '400';
     openLyrics();
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSound5(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    sound.src = 'sounds/sokis.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'sokis.mp3';
-    document.getElementById("soundDuration").innerText = '02:21';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
