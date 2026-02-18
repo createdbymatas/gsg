@@ -14,7 +14,7 @@
     <meta property="og:description" content="Created by Matas">
     <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
-    <title>Valdymo skydas | GŠG šimtadienis</title>
+    <title>GŠG IIIabc</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800&display=swap" rel="stylesheet">
@@ -29,12 +29,71 @@
         <p id="createdByMatas"><span id="raide1">C</span><span id="raide2">r</span><span id="raide3">e</span><span id="raide4">a</span><span id="raide5">t</span><span id="raide6">e</span><span id="raide7">d</span> <span id="raide8">b</span><span id="raide9">y</span> <span id="raide10">M</span><span id="raide11">a</span><span id="raide12">t</span><span id="raide13">a</span><span id="raide14">s</span></p>
     </div>
     <div id="screenSize">
-        <p id="screenSizeTekstas1">Ekranas per mažas</p>
-        <p id="screenSizeTekstas2">Tinklalapis pritaikytas kompiuteriui</p>
-        <i class="fa-solid fa-computer" id="computerIcon"></i>
-        <i class="fa-regular fa-circle-check" id="checkIcon"></i>
-        <i class="fa-solid fa-mobile-screen-button" id="phoneIcon"></i>
-        <i class="fa-regular fa-circle-xmark" id="xIcon"></i>
+        <p id="screenSizeTekstas1">Ekranas per didelis</p>
+        <p id="screenSizeTekstas2">Tinklalapis pritaikytas telefonui</p>
+        <div id="sizeDiv">
+            <i class="fa-solid fa-computer" id="computerIcon"></i>
+            <i class="fa-regular fa-circle-xmark" id="xIcon"></i>
+            <i class="fa-solid fa-mobile-screen-button" id="phoneIcon"></i>
+            <i class="fa-regular fa-circle-check" id="checkIcon"></i>
+        </div>
+        <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+    </div>
+    <div id="display"></div>
+    <div id="screen">
+        <p id="ivestiKoda">Įvesk kodą</p>
+        <form>
+            <div id="keypad">
+                <form style="width: 100%; height: 100%; display: flex; justify-content: space-around; align-items: center; flex-direction: column;">
+                    <input type="text" name="pin" id="kodas">
+                    <div id="taskeliai">
+                        <div id="taskelis1"></div>
+                        <div id="taskelis2"></div>
+                        <div id="taskelis3"></div>
+                        <div id="taskelis4"></div>
+                        <div id="taskelis5"></div>
+                        <div id="taskelis6"></div>
+                    </div>
+                    <div class="keypadSorting" style="display: flex;">
+                        <button type="button" onclick="pirmas()" id="vienasBtn" ontouchstart>1<i class="fa-solid fa-plus buttonLetters" style="opacity: 0; display: block;"></i></button>
+                        <button type="button" onclick="antras()" id="duBtn" ontouchstart>2<p class="buttonLetters">A B C</p></button>
+                        <button type="button" onclick="trecias()" id="trysBtn" ontouchstart>3<p class="buttonLetters">D E F</p></button>
+                    </div>
+                    <div class="keypadSorting" style="display: flex;">
+                        <button type="button" onclick="ketvirtas()" id="keturiBtn" ontouchstart>4<p class="buttonLetters">G H I</p></button>
+                        <button type="button" onclick="penktas()" id="penkiBtn" ontouchstart>5<p class="buttonLetters">J K L</p></button>
+                        <button type="button" onclick="sestas()" id="sesiBtn" ontouchstart>6<p class="buttonLetters">M N O</p></button>
+                    </div>
+                    <div class="keypadSorting" style="display: flex;">
+                        <button type="button" onclick="septintas()" id="septyniBtn" ontouchstart>7<p class="buttonLetters">P Q R S</p></button>
+                        <button type="button" onclick="astuntas()" id="astuoniBtn" ontouchstart>8<p class="buttonLetters">T U V</p></button>
+                        <button type="button" onclick="devintas()" id="devyniBtn" ontouchstart>9<p class="buttonLetters">W X Y Z</p></button>
+                    </div>
+                    <div class="keypadSorting" style="display: flex;">
+                        <button type="button" onclick="check(this.form)" id="gerai" ontouchstart></button>
+                        <button type="button" onclick="iklijuotiKoda()" id="paste" style="background-color: transparent;" ontouchstart><i class="fa-regular fa-paste" style="cursor: pointer; transition: none;"></i></button>
+                        <button type="button" onclick="nulinis()" id="nulisBtn" ontouchstart>0<i class="fa-solid fa-plus buttonLetters" style="display: block;"></i></button>
+                        <button type="button" onclick="istrinti()" id="istrynimas" style="font-size: 18px; background-color: transparent; color: transparent; pointer-events: none;" ontouchstart>Trinti</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
+
+    <div id="pinnedBackgroundPaste"></div>
+    <div id="pasteBg">
+        <div id="pasteCode">
+            <p style="font-weight: 600; font-size: 20px;"><i class="fa-regular fa-clipboard"></i> Įklijuoti kodą</p>
+            <p style="font-size: 15px; margin-top: 10px; margin-bottom: 10px;">Įsitikink, kad nukopijuotame tekste yra kodas.</p>
+            <button ontouchstart id="pasteBtn" onclick="patvirtintiIklijavima()"><i class="fa-regular fa-paste"></i> Įklijuoti</button>
+            <button ontouchstart onclick="atsauktiIklijavima()"><i class="fa-regular fa-circle-xmark"></i> Atšaukti</button>
+        </div>
+    </div>
+    <div id="failedToPasteBg">
+        <div id="failedToPaste">
+            <i id="failedToPasteI" class="fa-solid fa-triangle-exclamation"></i>
+            <p>Įklijuoti nepavyko</p>
+        </div>
     </div>
 
     <div id="accessDenied">
@@ -57,124 +116,2494 @@
         </div>
     </div>
 
-    <div id="volumeMutedBg">
-        <div id="volumeMuted">
-            <i id="volumeMutedI" class="fa-solid fa-volume-xmark"></i>
-            <p>Garsas išjungtas</p>
-        </div>
-    </div>
 
-    <div id="dashboard">
-        <div id="dashboardNav">
-            <h1>Valdymo skydas</h1>
-            <button id="fullScreenBtn" onclick="fullScreen()"><i id="fullScreenBtnI" class="fa-solid fa-expand"></i></button>
-            <button id="visualsBtn" onclick="openVisuals()"><i class="fa-regular fa-file-powerpoint"></i> Vizualai</button>
-            <button id="scriptBtn" onclick="openScript()"><i class="fa-regular fa-file-word"></i> Scenarijus</button>
-            <hr>
-            <div id="barBelowNav">
-                <p style="left: 30px;"><i class="fa-solid fa-hashtag"></i></p>
-                <p style="left: 59px;">Pavadinimas</p>
-                <p style="right: 43px;"><i class="fa-regular fa-clock"></i></p>
-            </div>
-        </div>
 
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundZiniuPradzia()"><p class="trackNo">1</p><p class="trackName">Žinių pradžia</p><p class="trackDuration">00:14</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundZiniuPabaiga()"><p class="trackNo">2</p><p class="trackName">Žinių pabaiga</p><p class="trackDuration">00:07</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundFarai()"><p class="trackNo">3</p><p class="trackName">Farai</p><p class="trackDuration">00:17</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundFaruSokis()"><p class="trackNo">4</p><p class="trackName">Farų šokis</p><p class="trackDuration">04:09</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundAuksinisProtas()"><p class="trackNo">5</p><p class="trackName">Auksinis protas</p><p class="trackDuration">00:19</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundLietuvosTalentai()"><p class="trackNo">6</p><p class="trackName">Lietuvos talentai</p><p class="trackDuration">00:24</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundMerginuSokis()"><p class="trackNo">7</p><p class="trackName">Merginų šokis</p><p class="trackDuration">01:40</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundParodijuSokis()"><p class="trackNo">8</p><p class="trackName">Parodijų šokis</p><p class="trackDuration">02:19</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundGangnamStyle()"><p class="trackNo">9</p><p class="trackName">Gangnam style</p><p class="trackDuration">04:08</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundBeatosVirtuve()"><p class="trackNo">10</p><p class="trackName">Beatos virtuvė</p><p class="trackDuration">12:23</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundEkstrasensuPradzia()"><p class="trackNo">11</p><p class="trackName">Ekstrasensų pradžia</p><p class="trackDuration">00:25</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundEkstrasensuFonas()"><p class="trackNo">12</p><p class="trackName">Ekstrasensų fonas</p><p class="trackDuration">17:25</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundMetuApdovanojimai()"><p class="trackNo">13</p><p class="trackName">Metų apdovanojimai</p><p class="trackDuration">17:21</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundCatwalk()"><p class="trackNo">14</p><p class="trackName">Catwalk</p><p class="trackDuration">00:34</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundDrumRoll()"><p class="trackNo">15</p><p class="trackName">Drum roll</p><p class="trackDuration">00:10</p></div>
-        <div class="soundTrackDiv" ontouchstart onclick="playSoundDaina()"><p class="trackNo">16</p><p class="trackName">Daina</p><i id="lyricsBtn" class="fa-solid fa-quote-right"></i><p class="trackDuration">02:46</p></div>
 
-        <div id="soundPlayer">
-            <i class="fa-solid fa-music" id="playingTrackI"></i>
-            <p id="playingTrackName"><span id="currentTrackName">neleidžiama</span></p>
-            <div id="controls">
-                <div id="loadingAudio"><div id="spin-loader3" aria-hidden="true"></div></div>
-                <div id="playBtn" ontouchstart onclick="playPause()"><i id="soundPlayPauseIcon" class="fa-solid fa-play"></i></div>
-                <button onclick="pauseWithMute()" id="pauseWithMute"><i class="fa-solid fa-pause"></i><i class="fa-solid fa-volume-off"></i><i class="fa-solid fa-arrow-trend-down"></i></button>
-            </div>
-            <audio id="sound"></audio>
-            <div id="progressWindow">
-                <span id="timePlayed">0:00</span>
-                <div id="progressBg">
-                    <div id="playProgress"></div>
-                </div>
-                <span id="soundDuration">0:00</span>
-            </div>
-            <button onclick="backgroundSound()" id="bgSound"><i class="fa-solid fa-volume-low"></i>20 %</button>
-            <button onclick="maxSound()" id="maxSound"><i class="fa-solid fa-volume-high"></i>100 %</button>
-            <i id="volumeIcon" class="fa-solid fa-volume-high"></i>
-            <input min="0" max="100" type="range" value="100" id="vol">
-            <progress min="0" max="100" value="100" id="volume-progress"></progress>
-        </div>
-        <input type="text" value="0" id="soundsInput" style="display: none;">
-    </div>
 
-    <div id="scenarijus">
+    
+
+    <div id="scenarijusDocs">
         <h1>Scenarijus</h1>
-        <i id="closeScenarijus" class="fa-solid fa-chevron-down" onclick="closeScript()" ontouchstart></i>
+        <i id="downloadScenarijus" class="fa-solid fa-download" onclick="downloadScript()" ontouchstart></i>
+        <i id="closeScenarijusDocs" class="fa-solid fa-chevron-down" onclick="closeScript()" ontouchstart></i>
         <div></div>
-        <iframe src="https://docs.google.com/file/d/1xFtpr0ocCW525L3jTgMg4hsvWSNQRKmh/preview" id="docsIframe" frameborder="0"></iframe>
+        <iframe src="*****" id="docsIframe" frameborder="0"></iframe>
     </div>
-    <div id="vizualai">
-        <nav id="vizualaiNav">
-            <h1>Vizualai</h1>
-            <i id="closeVizualai" class="fa-solid fa-chevron-down" onclick="closeVisuals()" ontouchstart></i>
-        </nav>
-        <p style="font-size: 15px;"><i class="fa-solid fa-download"></i> Pasirinkus vizualą, jis bus atsiųstas <b style="font-weight: 600;">.pptx</b> formatu</p>
-        <div onclick="auksinisProtas()" id="auksinisProtasDiv">
-            <section id="auksinisProtasWait"><i class="fa-solid fa-hourglass-half"></i></section>
-            <img src="visuals/auksinis-protas.png" alt="Auksinis protas">
-            <p>Auksinis protas</p>
-            <a id="download_auksinis-protas" href="visuals/auksinis-protas.pptx" download=""></a>
+
+    <div id="repeticijuDatos">
+        <div id="repeticijuDatosNav">
+            <h1>Repeticijų datos</h1>
+            <i id="closeRepeticijuDatos" class="fa-solid fa-chevron-down" onclick="closeRehearsalList()" ontouchstart></i>
+        </div>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 15 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 16 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 19 (pr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 22 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 23 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 26 (pr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 28 (tr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:55-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 29 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 29 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> sausio 30 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 2 (pr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 3 (an)</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 5 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 5 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 6 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 9 (pr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 10 (an)</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 12 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 12 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-13:45</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 13 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-14:40</p>
+        </div>
+        <hr>
+        <div style="opacity: 0.3;">
+            <p><i class="fa-regular fa-calendar"></i> vasario 18 (tr)</p>
+            <p><i class="fa-regular fa-clock"></i> 10:00-15:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 20 (pn)</p>
+            <p><i class="fa-regular fa-clock"></i> 13:00-18:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 23 (pr)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 24 (an)</p>
+            <p><i class="fa-regular fa-clock"></i> 11:30-13:00</p>
+        </div>
+        <hr>
+        <div>
+            <p><i class="fa-regular fa-calendar"></i> vasario 26 (kt)</p>
+            <p><i class="fa-regular fa-clock"></i> 08:00-09:40</p>
         </div>
     </div>
-    <div id="lyrics">
-        <h1>Dainos žodžiai</h1>
-        <i id="closeLyrics" class="fa-solid fa-xmark" onclick="closeLyrics()" ontouchstart></i>
-        <p id="l0" style="margin-top: 0; font-weight: 600; transform: scale(1.8);">   </p>
-        <p id="l1" style="margin-top: 25%;">Tą vakarą tamsų aš ant stogo lipau</p>
-        <p id="l2">Norėjau išvysti, ką seniai užmiršau</p>
-        <p id="l3">Norėjau pajusti svaigų orą dangaus</p>
-        <p id="l4">Nuo jo užsimerkti ir savęs paklaust</p>
-        <p id="l5">Klausyk, žmogau</p>
-        <p id="l6">Klausyk, nenusisuk</p>
-        <p id="l7">Ko ieškai čia?</p>
-        <p id="l8">Vaikystė baigės juk</p>
-        <p id="l9">   </p>
-        <p id="l10">Dar būdamas vaikas aš užlipdavau čia</p>
-        <p id="l11">Ir kojas nukaręs svajojau nakčia</p>
-        <p id="l12">Džiaugiaus, kad esu taip arti prie dangaus</p>
-        <p id="l13">Kad ranką prie čerpių galiu priglaust</p>
-        <p id="l14">Klausyk, žmogau</p>
-        <p id="l15">Klausyk, nenusisuk</p>
-        <p id="l16">Ko ieškai čia?</p>
-        <p id="l17">Vaikystė baigės juk</p>
-        <p id="l18">   </p>
-        <p id="l19">Tą vakarą tamsų aš ant stogo lipau</p>
-        <p id="l20">Norėjau išvysti, ką seniai užmiršau</p>
-        <p id="l21">Džiaugiaus, kad esu vėl čionai</p>
-        <p id="l22">Vaikystė sugrįžo lyg seni sapnai</p>
-        <p id="l23">Klausyk, žmogau</p>
-        <p id="l24">Klausyk, nenusisuk</p>
-        <p id="l25">Ko ieškai čia?</p>
-        <p id="l26">Vaikystė baigės juk</p>
-        <p id="l27">Klausyk, žmogau</p>
-        <p id="l28">Klausyk, nenusisuk</p>
-        <p id="l29">Ko ieškai čia?</p>
-        <p id="l30">Vaikystė baigės juk</p>
-        <p id="l31">   </p>
+
+    <div id="islaidosSheets">
+        <h1>Finansai ir išlaidos</h1>
+        <i id="closeIslaidosSheets" class="fa-solid fa-chevron-down" onclick="closeExpenses()" ontouchstart></i>
+        <div></div>
+        <iframe src="*****" id="sheetsIframe" frameborder="0"></iframe>
+        <!-- <div>
+            <i style="font-size: 50px;" class="fa-solid fa-circle-exclamation"></i>
+            <p style="margin-top: 10px; font-size: 20px; font-weight: 600;">Išlaidų peržiūra laikinai negalima</p>
+            <p style="font-size: 17px; margin-top: 5px;">Vykdomi atnaujinimo darbai</p>
+        </div> -->
     </div>
+
+    <div id="klaidosPranesimas">
+        <h1>Pranešti apie klaidą</h1>
+        <i id="closeKlaidosPranesimas" class="fa-solid fa-chevron-down" onclick="cancelReportError()" ontouchstart></i>
+        <p style="margin-top: 20px;">Naudotoja(s)</p>
+        <input type="text" id="errorName" value="...">
+        <p><span>Naudotojo(s) vardas bus rodomas administratoriui pranešant apie klaidą.</span></p>
+        <p style="margin-top: 20px;">Pranešimas</p>
+        <textarea name="pranesimas" id="pranesimas" placeholder="rašyti čia..."></textarea>
+        <p id="emptyField" style="display: none;"><span style="color: red;">Privalomas teksto laukas</span></p>
+        <button onclick="sendError()" id="errorSend" ontouchstart><i class="fa-regular fa-paper-plane"></i> Siųsti</button>
+        <button id="errorSending" style="pointer-events: none; border: none; opacity: 0;"><i class="fa-solid fa-hourglass-half"></i> Siunčiama...</button>
+
+        <form id="forma" action="https://formsubmit.co/a62b43c00bf0241936f4ccc5f1f3a2fe" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://createdbymatas.github.io/gsg/error/sent">
+            <input type="hidden" name="_subject" value="GŠG | Pranešimas apie klaidą">
+
+            <input required type="text" id="user" name="Naudotoja(s)">
+            <textarea required type="text" id="message" name="Pranešimas"></textarea>
+            <button id="submitFormBtn" type="submit">submit</button>
+        </form>
+    </div>
+
+    <div id="pinnedBackground" ontouchstart></div>
+    <div id="pinnedBackgroundDaugiau" onclick="uzdarytiDaugiau()" ontouchstart></div>
+    <div id="atsisiunciamasScenarijusBg"><div id="atsisiunciamasScenarijus"><div id="downloadScriptSpinnerDiv"><div class="spin-loader2" aria-hidden="true"></div></div> <p>Atsisiunčiama „simtadienio-scenarijus.pdf“</p></div></div>
+    <div id="rodomaDaugiau">
+        <p>Šimtadienio informacija:</p>
+        <p><b style="font-weight: 600;">Tema:</b> <span id="theme">*****</span></p>
+        <p><b style="font-weight: 600;">Data:</b> 2026-02-27 (pn)</p>
+        <button onclick="openRehearsalList()" ontouchstart><i class="fa-regular fa-calendar-days" style="margin-right: 5px; cursor: pointer;"></i>Repeticijų datos</button>
+        <button onclick="openExpenses()" ontouchstart><i class="fa-solid fa-money-bills" style="margin-right: 5px; cursor: pointer;"></i>Finansai ir išlaidos</button>
+        <button onclick="reportError()" ontouchstart><i class="fa-regular fa-message" style="margin-right: 5px; cursor: pointer;"></i>Pranešti apie klaidą</button>
+    </div>
+
+
+
+
+
+
+
+    <div id="topInfoSimtadienis"></div>
+    <div id="infoSimtadienis"><i class="fa-solid fa-xmark" onclick="closeSimtadienis()" id="simtadienisUzdarymas" ontouchstart></i><p id="simtadienisTekstas">Šimtadienis</p></div>
+    <div id="pinnedBottom">
+        <button onclick="openScript()" class="atsisiustiScenariju" ontouchstart><p style="cursor: pointer;"><i class="fa-solid fa-scroll" style="margin-right: 5px; cursor: pointer;"></i> Scenarijus</p></button>
+        <button onclick="daugiau()" class="daugiau" ontouchstart><p style="cursor: pointer; display: flex; justify-content: center; align-items: center;"><i class="fa-solid fa-ellipsis" style="margin-right: 5px; cursor: pointer;"></i> Daugiau</p></button>
+    </div>
+
+    <div id="svecias" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas">Svečias</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Stebėtojas, gali peržiūrėti scenarijų ir kitą informaciją.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="adrianaCerepokaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="adrianaCerepokaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Adriana Čerepokaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Dalija dovanėles dvyliktokams.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+    
+    <div id="agotaKieraite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="agotaKieraiteRole">*****</p>
+            <p class="vardasAntrTekstas">Agota Kieraitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Charizmatiška šou vedėja, jungianti pasirodymus, teisėjus ir publiką, valdanti netikėtas situacijas ir palaikanti profesionalią, bet linksmą laidos eigą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveiki atvykę į šį nuostabųjį šou – „Lietuvos talentus“! Pradėkime mūsų nuostabųjį vakarą nuo teisėjų!“
+                <br>• „Taigi, pristatau jums pirmąją mūsų teisėją!! Pati drąsiausia Lietuvoje! Sunaikins kiekvieną vien tik savo žvilgsniu! Ir tai yra …!!“
+                <br>• „Antroji mūsų teisėja yra Lietuvos žinomiausia, pati linksmiausia ir nuostabiausia … !!“
+                <br>• „Aš taip pat labai laukiu šių pasirodymų, tad pristatau jums paskutinę teisėją! Jai užėjus neįmanoma jos nepastebėti ir tai …!!“
+                <br>• „<i>(nejaukiai nusijuokia)</i> Kaip matote, vienos teisėjos šiandien trūksta – matyt, talentas vėluoti irgi yra talentas. Bet užtenka kalbų – įjunkime šviesas ir pasitikime pirmąją merginų grupę!“
+                <br>• „Ačiū už šį nuostabų pasirodymą, merginos! Emocijų – per akis, scena tikrai įkaito.“
+                <br>• „Ir… panašu, kad emocijos įkaito ne tik scenoje.“
+                <br>• „Jei teisėja sako tragedija – vadinasi, tikrai laikas šaukti mūsų grimo herojus į pagalbą. Merginos, laikykitės – jūsų grožio desantai jau pakeliui. Į sceną kviečiame: 1. Leonardas Sysas; 2. Ernestas Trečiokas; 3. Andrius Versockis; 4. Faustas Rozenbergas“
+                <br>• „Gerai, komanda, metas parodyti, ką mokate! Jūsų misija – pagal nuotrauką atkurti tobulą šokėjos įvaizdį. Vaikinai, nepasiduokite – mes jumis tikime!“
+                <br>• „Dėkojame teisėjoms už pastabas ir žiūrovams už jų pagalbą!“
+                <br>• Vedėja: „Dabar į sceną norėčiau pakviesti du vaikinus, kurie žada mums parodyti tikrąją jaunimo stiprybę – repą! Pasitikime plojimais: 1. Danielius Raižys; 2. Domantas Remeškevičius“
+                <br>• „Dėkojame vaikinams už nuostabų pasirodymą!“
+                <br>• „Po šių talentų, manau, reiktų pakviesti žmogų, kuris mus žada pralinksminti. Scenoje šiltai pasitikime komiką!“
+                <br>• „Ačiū, komike, už pasirodymą.. Na, tai kreipkimės į mūsų teisėjas. Ką manote?“
+                <br>• „Atsiprašome už tokį teisėjų.. pasikarščiavimą.. Bet ačiū komikui!! Taigi, tęsiame mūsų talentų kupiną vakarą ir dabar į sceną norėčiau pakviesti dvi nuostabias merginas, kurios nori mums parodyti savo unikalų šokių stilių! Šiltai pasitikime jas!“
+                <br>• „Į sceną kviečiame: 1. Paulina Bartkevičiūtė; 2. Gabrielė Puodžiūnaitė“
+                <br>• „Na, mielos teisėjos, ką manote dabar?“
+                <br>• „Dėkojame merginoms už pasirodymą ir teisėjoms už vertinimus!“
+                <br>• „Na, o dabar uždarykime mūsų renginį su dviem žaviom merginom, kurios parodys, kad jos ne ką prastesnės už vaikinus. Pasitikime: 1. Viktorija Gživačevskytė; 2. Adelija Kaminskaitė“
+                <br>• „Na, dėkojame, jums merginos! Teisėjos, ką manote?“
+                <br>• „Dar kartą ačiū nuostabiosioms abiturientėms už neįprastą pasirodymą, na, o dabar norėčiau pakalbinti auditoriją“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• TAISYKLĖS: vaikinai turi 2 minutes atkartoti makiažą iš nuotraukos; nugalėtoją išrenka Teisėja 3.
+                <br>• TAISYKLĖS: iš maišelio ištraukiami atsitiktiniai žodžiai ir vaikinai turi sugalvoti posmą; turės 2 minutes laiko.
+                <br>• TAISYKLĖS: parodijos lieka scenoje; merginos susigrupuoja po 2 (parodija + dvyliktokė); yra pratęsiama muzika, kuri grojo pasirodyme ir duodamas kažkoks daiktas, su kuriuo joms reikės sukurti trumpą šokį kartu su savo parodijomis.
+                <br>• TAISYKLĖS: merginos susitiks dvikovoje, kurioje bandys atspėti dainas, išgirdusios vos keletą sekundžių melodijos.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Lietuvos talentų intro)
+                <br>• (Teisėja 3 nepasirodo, vedėja sutrikusi, žvalgosi)
+                <br>• (Vedėja nusikosėja)
+                <br>• (Po paskutinio pasirodymo vedėja išeina į priekį)
+                <br>• (Vedėja teiraujasi žiūrovų, mokinių, mokytojų nuomonės, klausia labiausiai patikusių pasirodymų, pastebėjimų)
+                <br>• (Vedėja išeina)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="armandasJokubauskas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="armandasJokubauskasRole">*****</p>
+            <p class="vardasAntrTekstas">Armandas Jokubauskas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Solidus ir pasitikintis vedėjas, sklandžiai pristatantis nominacijas, valdantis scenos eigą ir palaikantis šventinį toną.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Tai vakaras, kai ryškiausi talentai susitinka vienoje scenoje. Pasiruoškite stebuklams – toks vakaras tik vienas. Scena laukia jūsų, mieli dvyliktokai.“
+                <br>• „2026 metų dvynio nominaciją iškovojo: …“
+                <br>• „Nominantai grumsis dėl garbingos – metų sportininko – nominacijos!“
+                <br>• „Sekančius į sceną kviečiame pačius protingiausius abiturientus, kurie kovos dėl metų proto nominacijos, pasitikime plojimais: 1. Simonas Mačiukas; 2. Žygis Žygimantas Jonas; 3. Rusnė Zujūtė; 4. Armina Siaurukaitė“
+                <br>• „Taigi, tęsiame su metų apdovanojimais ir kviečiame į sceną mūsų nepakartojamas abiturientes, kurios kovos dėl pačios ryškiausios nominacijos, pasitikime plojimais: 1. Emilija Kazlauskaitė; 2. Adriana Rudis“
+                <br>• „Sveikiname ..., laimėjusią šių metų stilingiausios dvyliktokės apdovanojimą ir tikimės pamatyti kitą dizainą ant „Vogue“ viršelio!“
+                <br>• „„Metų dvyliktokas“ – tai ne vienas žmogus, o visų jūsų pastangų, draugystės ir unikalumo simbolis. Juk išrinkti vieną iš tokios nuostabios laidos būtų tiesiog neįmanoma. Jūs visi verti šio titulo.“
+            </p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• 1 UŽDUOTIS: taisyklės: estafetė – kas perneš daugiau kamuoliukų tarp smakro ir alkūnės, nuo vieno taško iki kito; 1 kamuoliukas – 1 taškas; 1 minutė.
+                <br>• 2 UŽDUOTIS: taisyklės: atminties iššūkis – ekrane rodomas daiktų sąrašas, dvyniai nematydami vienas kito lapo turi užrašyti kuo daugiau paminėtų daiktų; sąrašas rodomas 30 s; 1 minutė užrašymui.
+                <br>• 1 UŽDUOTIS: taisyklės: rašymo užduotis – išvardinti kuo daugiau sporto šakų; 30 s; 1 sporto šaka – 1 taškas.
+                <br>• 2 UŽDUOTIS: taisyklės: pusiausvyros užduotis – uždengtom akim kuo ilgiau išstovėti ant vienos kojos; pirmas nukritęs -1 taškas / antras -2 / trečias -3 / ketvirtas -4.
+                <br>• 1 UŽDUOTIS: taisyklės: trivia – vedėjas skaito 10 trumpų klausimų ir dalyviai turi kuo greičiau atsakyti į klausimą; teisingas atsakymas – 1 taškas.
+                <br>• 2 UŽDUOTIS: taisyklės: svorio spėjimas – ant stalo padėti 5 įvairūs daiktai, dvyliktokai užrašo atsakymą ant lapo ir vienu metu parodo savo atsakymus; arčiausias spėjimas – 1 taškas.
+                <br>• 1 UŽDUOTIS: taisyklės: stiliaus mix’as - viduryje scenos padėta dėžė su įvairiais rūbais, aksesuarais ir papuošalais; dalyvės turi kuo gražiau aprengti priskirtą modelį; 1 min 30 s; darbą įvertins Teisėja 3 (iš talentų); laimėtoja gauna tašką.
+                <br>• 2 UŽDUOTIS: taisyklės: stiliaus reakcijos iššūkis – merginoms skaitomi sakiniai su įvairiais scenarijais, jos turi kuo išraiškingiau parodyti emociją atitinkančią situaciją (iš nuotraukų); emocijas įvertins Teisėja 3 (iš talentų); 1 laimėjusi emocija – 1 taškas.
+                <br>• SAKINIAI: „Eini gatve ir pamatai savo ‘ex’ su tokia pačia striuke kaip tavo“; „Ant podiumo paslydai, bet turi suvaidinti, kad taip ir buvo suplanuota“; „Fotografas sako: ‘daugiau dramos!’“; „Tavo draugė ateina į mokyklą apsirengusi identiškai kaip tu… vėl“; „Vėjas tau sugadina šukuoseną, bet tu privalai išlikti elegantiška“.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="arnasLapenas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="arnasLapenasRole">*****</p>
+            <p class="vardasAntrTekstas">Arnas Lapėnas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Rimtas, bet komiškas ekstrasensas, painiojantis kortas ir pranašystes, taip parodantis, kad „galios“ ne visada veikia pagal planą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Taro kortos</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Juodas kostiumas su gobtuvu (užsakytas)</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Čia parašyta… <i>(intriga, garso efektai)</i> Raffaello! Pala čia ne ta korta…“
+                <br>• „Aš jaučiu… jie. Jie turi per stiprią aurą!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Į sceną įžengia ekstrasensų komanda (4), visi atrodo labai rimti, susikaupę)
+                <br>• (Ekstrasensai susėda ratu)
+                <br>• (Ekstrasensas 4 skaito taro kortą ir rimtai sako: „Čia parašyta… <i>(intriga, garso efektai)</i> Raffaello! Pala čia ne ta korta…“)
+                <br>• (Ekstrasensai apsimeta, kad išsigando)
+                <br>• (Ekstrasensai ima vaikščioti ratu, tarsi „skenuotų“ publiką)
+                <br>• (Vienas staiga sustoja ties dvyliktokais)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="arturVelicko" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="arturVelickoRole">*****</p>
+            <p class="vardasAntrTekstas">Artur Veličko</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Tyčia nejuokingas ir nejaukus komikas, kurio pasirodymas paremtas pauzėmis, žiogų garsais ir teisėjų reakcijomis, sukuriančiomis stiprų humoristinį efektą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveiki… Ammm, taigi.. Aš esu komikas, bet mane draugai vadina tiesiog komiku… <i>(žiogų garsas)</i> Taigi… Pradedam?“
+                <br>• „Gerai, taigi.. čia mano pasirodymo pabaiga, ačiū, kad buvote.. na, bent jau neišėjote…“
+                <br>• „Na.. viskas gerai! Ačiū jums už nuomones, kitą kartą tikrai bus geriau!!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Užeina komikas)
+                <br>• (Pasako kelis juokelius, kurie nejuokingi, tarp jų nejaukios tylos ir žiogų garsai)
+                <br>• (Nejaukiai nusijuokia)
+                <br>• (Komikas krūpteli)
+                <br>• (Nusišypso, nusilenkia ir išeina)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="aruneBanuskeviciute" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="aruneBanuskeviciuteRole">*****</p>
+            <p class="vardasAntrTekstas">Arūnė Banuškevičiūtė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Griežta ir reikli teisėja, atidžiai vertinanti pasirodymus, nevengianti kritikos, bet skatinanti dalyvius tobulėti ir siekti geresnio rezultato.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „<i>(nusijuokia)</i> Na taip, esu pakankamai kritiška, tad neišsigąskit, jei kažkam pasakysiu ne, nes tai greičiau bus mano kaltė <i>(vėl nusijuokia)</i>“
+                <br>• „Sutinku,  tikrai neblogai, tačiau man dar trūko energijos! Ar jūs pavargusios ar kaip čia, nesuprantu. Na, bet nieko.. Turite vieną taip!“
+                <br>• „Tai buvo.. SIAUBINGA!“
+                <br>• „Ką tu šneki???“
+                <br>• „Aš irgi galiu išeiti į sceną ir kažką sumalti!“
+                <br>• „Na taip… atsiprašome.. tikrai linkiu pasitaisyti ir pabandyti dar kartą, ne!“
+                <br>• „Aišku, santykius reikia spręsti užkulisiuose, o ne scenoje.. Pats šokis visai nieko, tačiau visada gali būti geriau. Ne.“
+                <br>• „Džiaukitės, jog esate išgelbėtos.. Taip.“
+                <br>• „Stop!! O jums dar neatsibodo tas repas? Tas pats per tą patį, gal paįvairinkim?“
+                <br>• „Sutinku, galėtų būti geriau, bet kadangi pasistengėt, tai duodu dar vieną taip!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Teisėjos 1 ir 3 susižvalgo)
+                <br>• (Teisėjos 1 ir 3 susimąsto)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="berzunaSimaityte" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="berzunaSimaityteRole">*****</p>
+            <p class="vardasAntrTekstas">Beržūna Šimaitytė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Ryški socialinių tinklų žvaigždės parodija, išryškinanti perdėtą pasitikėjimą savimi, dramatizmą ir konfliktus scenoje per humorą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveikučiai!“
+                <br>• „Tiktoko žvaigždės!“
+                <br>• „Hahahah, taip! Leiskite muziką!“
+                <br>• „O, ne!! Padėkite!!! Nusilaužiau nagą!!!!!!! Ir galimai koją..“
+                <br>• „Bent jau pas mane daug sekėjų, ne taip, kaip pas tave!“
+                <br>• „Padėkite mums laimėti!!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Užeina Paulinos ir Gabrielės parodijos)
+                <br>• (Pasileidžia muzika ir merginos šoka, kai staiga, viena iš jų paslysta ir nukrenta)
+                <br>• (Merginos atsisuka į žiūrovus)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="domasLenartavicius" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="domasLenartaviciusRole">*****</p>
+            <p class="vardasAntrTekstas">Domas Lenartavičius</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Ryžtingas ir linksmas faras, vedantis „areštus“, skelbiantis taisykles ir užtikrinantis, kad visi nusikaltimai baigtųsi juoku, aplodismentais ir gera nuotaika.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveiki, visi susirinkusieji. Mes esame – farai!“
+                <br>• „Įspėjame, kad visi areštai yra simboliniai, o bausmė – juokas ir aplodismentai!“
+                <br>• „…juokui, aplodismentams ir linksmiems mokslo metams! Ačiū visiems susirinkusiems!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• Mokinių nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už sakymą „galima į tualetą?“ kas 10 minučių
+                <br>2. ………………………………… areštuojame – už „pamiršau namų darbus namie“ 
+                <br>3. ………………………………… areštuojame – už labai rimtą žadintuvo neklausymą rytais
+                <br>4. ………………………………… areštuojame – už telefono slėpimą po suolu 
+                <br>5. ………………………………… areštuojame – už atsakymą „nežinau“
+                <br>6. ………………………………… areštuojame – už namų darbų darymą per kitas pamokas
+                <br>• Mokytojų nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už tai, kad sakė „čia bus lengva“, bet lengva nebuvo 
+                <br>2. ………………………………… areštuojame – už atsiskaitymus be įspėjimo 
+                <br>3. ………………………………… areštuojame – už frazę „šitą turėtumėt mokėti nuo 5 klasės“
+                <br>4. ………………………………… areštuojame – už namų darbus per atostogas 
+                <br>5. ………………………………… areštuojame – už pažadą „greit patikrinsiu“ ir patikrinimą po mėnesio 
+                <br>6. ………………………………… areštuojame – už per ilgus pasakojimus „iš savo laikų“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Trys pradiniai farai atsistoja į šokio padėtį)
+                <br>• (Prasideda muzika ir sueina likę farai)
+                <br>• (Prasideda vaikinų šokis)</p>
+                <br>• (Farai įteikia lapą su nusikaltimu ir pakviečia nusifotografuoti)
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="edvinMagazejev" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="edvinMagazejevRole">*****</p>
+            <p class="vardasAntrTekstas">Edvin Magazejev</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Rimtu tonu kalbantis, bet ironiškas faras, kuriantis įtampą prieš nuosprendį ir paverčiantis ją bendru juoku bei linksma scenos kulminacija.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „…ir šiandien atėjo diena paskelbti metinių areštų sąrašą.“
+                <br>• „Visi sulaikytieji nuteisiami…“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• Mokinių nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už sakymą „galima į tualetą?“ kas 10 minučių
+                <br>2. ………………………………… areštuojame – už „pamiršau namų darbus namie“ 
+                <br>3. ………………………………… areštuojame – už labai rimtą žadintuvo neklausymą rytais
+                <br>4. ………………………………… areštuojame – už telefono slėpimą po suolu 
+                <br>5. ………………………………… areštuojame – už atsakymą „nežinau“
+                <br>6. ………………………………… areštuojame – už namų darbų darymą per kitas pamokas
+                <br>• Mokytojų nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už tai, kad sakė „čia bus lengva“, bet lengva nebuvo 
+                <br>2. ………………………………… areštuojame – už atsiskaitymus be įspėjimo 
+                <br>3. ………………………………… areštuojame – už frazę „šitą turėtumėt mokėti nuo 5 klasės“
+                <br>4. ………………………………… areštuojame – už namų darbus per atostogas 
+                <br>5. ………………………………… areštuojame – už pažadą „greit patikrinsiu“ ir patikrinimą po mėnesio 
+                <br>6. ………………………………… areštuojame – už per ilgus pasakojimus „iš savo laikų“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Trys pradiniai farai atsistoja į šokio padėtį)
+                <br>• (Prasideda muzika ir sueina likę farai)
+                <br>• (Prasideda vaikinų šokis)</p>
+                <br>• (Farai įteikia lapą su nusikaltimu ir pakviečia nusifotografuoti)
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="gabrieleRagosko" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="gabrieleRagoskoRole">*****</p>
+            <p class="vardasAntrTekstas">Gabrielė Ragoško</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Energijos ir šypsenų kupina vedėja, palaikanti dalyvius, kurianti draugišką atmosferą ir įnešanti gyvumo net sudėtingiausių klausimų metu.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Auksinio proto kortelės</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Žiūriu į žaidėjų sąrašą ir suprantu, kad šis žaidimas žada būti labai įdomus, nes jie yra patys protingiausi, daug žinantys ir daug patyrę. Nieko nelaukę, į sceną kviečiame pirmos komandos atstovus: 1. Redita Marčiulaitytė; 2. Patricija Jociūtė; 3. Urtė Petkutė; 4. Sandra Kaušinytė“
+                <br>• „Po pirmojo turo smegenys turėjo šiek tiek prasimankštinti. Tad galime tęsti mūsų šou, bet šį kartą klausimai bus rimtesni“
+                <br>• „Na, jums visai neblogai sekasi. Atrodo, kad abi komandos nenusiteikusios pasiduoti, galime pradėti trečią ir paskutinįjį turą.“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• 1 TURAS: vedėjas/-a skaito klausimą; komanda paspaudžia skambutį ir laukia, kol bus pakviesta; atsako į klausimą; teisingas atsakymas = 1 taškas.
+                <br>• GREITIEJI KLAUSIMAI (10): 1. Kiek yra 8 × 7? 56; 2. Koks Lietuvos miestas vadinamas laikinąja sostine? Kaunas; 3. Kas parašė „Metus“? Kristijonas Donelaitis; 4. Kaip buvo vadinama Lietuvos nacionalinė valiuta iki euro? Litas; 5. Kiek savaičių yra šimte dienų (apytiksliai)? Apie 14; 6. Kokia vandens virimo temperatūra farenheito laipsniais? 212 °F; 7. Ko negalima pamiršti einant į egzaminą? Asmens dokumento; 8. Kuris mėnuo turi 28 dienas? Visi; 9. Diskriminanto formulė? D = b² – 4ac; 10. Kuri valstybė yra mažiausia pagal plotą? Vatikanas.
+                <br>• 2 TURAS: ekrane rodomi 6 klausimai, po 3 kiekvienai komandai; žaidėjai tarpusavyje gali pasitarti; už teisingą atsakymą – 2 taškai.
+                <br>• 1 KOMANDOS KLAUSIMAI: 1. Kuris gyvūnas gali miegoti stovėdamas ir bėgti greičiau nei žirgas? Strutis; 2. Kuriais metais Lietuva įstojo į ES? 2004 m.; 3. Sumažinus tam tikrą skaičių 20 %, gautas rezultatas yra 40. Koks buvo pradinis skaičius? 50.
+                <br>• 2 KOMANDOS KLAUSIMAI: 1. Kokia yra ilgiausia Lietuvos upė? Nemunas; 2. Kam lygus logaritmas pagrindu 2 skaičiaus 32? 5; 3. Koks yra vienintelis pasaulio žinduolis, galintis skraidyti? Šikšnosparnis.
+                <br>• 3 TURAS: SuperKlausimas; taisyklės: abi komandos gauna tą patį klausimą; atsakymą reikia užrašyti ant lapelio; teisingas atsakymas = 5 taškai; jei abi komandos atsako teisingai – laimi ta, kuri turi daugiau bendrų taškų.
+                <br>• TEKSTAS: Jūs esate autobuso vairuotojas. Rytas mieste ramus: gatvės tuščios, tik retkarčiais pravažiuoja automobiliai. Pirmoje stotelėje įlipa keli keleiviai – studentė su kuprine, pagyvenęs vyras su laikraščiu ir moteris su kava. Autobusas pajuda toliau, lėtai pravažiuoja pro dar uždarytas parduotuves, o parke ankstyvą rytą bėgioja keli sportininkai. Antroje stotelėje keleivių gausėja: keli moksleiviai, skubantis darbuotojas ir turistų pora su žemėlapiu. Vairuotojas rodo posūkį, pravažiuoja sankryžą, sustoja prie šviesoforo, kur formuojasi pirmieji rytinio piko kamščiai. Toliau maršrutas vinguriuoja per senamiestį ir tiltus, o prie didžiosios stoties įlipa dar daugiau žmonių, atsiskaitančių kortelėmis ar ieškančių monetų. Vakare, autobusui pasiekus paskutinę stotelę, visi keleiviai išlipa. Vairuotojas sustoja parke, išjungia variklį, patikrina dokumentus ir užpildo dienos žurnalą.
+                <br>• Klausimas: kokios spalvos yra autobuso vairuotojo plaukai?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="jurgisMuntrimas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="jurgisMuntrimasRole">*****</p>
+            <p class="vardasAntrTekstas">Jurgis Muntrimas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p>
+            <p class="antrTekstas">Dalija dovanėles dvyliktokams.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="justinaCepaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="justinaCepaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Justina Čepaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Šmaikšti ir drąsi stand up atlikėja, užpildanti pertraukas humoru, improvizacija ir palaikanti publikos energiją viso renginio metu.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Rugilės ir Justinos reklama#</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="kamileVaranauskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="kamileVaranauskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Kamilė Varanauskaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Mistiška ir teatrališka vedėja, valdanti ekstrasensų šou eigą, kurianti paslapties atmosferą ir įtraukianti žiūrovus į „antgamtinius“ išbandymus.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveiki atvykę į ypatingą, vienintelį ir nepakartojamą ekstrasensų šou! „Ekstrasensai“ – tai paslaptis, kuri verčia susimąstyti net mus pačius! Šiandien atskleisime paslaptį, kurios nepavyko išaiškinti nei taro kortoms, nei krištoliniam rutuliui.“
+                <br>• „Pradėkime ritualą.“
+                <br>• „Kad atkurtume galios balansą, turime vienintelę išeitį – patikrinti jūsų galias. Tik taip galim tęsti mūsų tyrimą. Pradedam galių testus! Į sceną kviečiame: 1. Aironas Graželis; 2. Danilas Bernatavičius; 3. Karolis Jasionis; 4. Kasparas Ruzgas; 5. Svajūnas Šakevičius“
+                <br>• „Na, o dabar kviečiame antros komandos dalyvius, kurie turės progą įsivertinti savo ekstrasensorinius gebėjimus! Pasitikime plojimais: 1. Augustė Krilavičiūtė; 2. Gabija Lumpickaitė; 3. Andrėja Švedaitė; 4. Aurėja Alašauskytė; 5. Austėja Rakauskaitė“
+                <br>• „Puikiai padirbėjote, abiturientai. Įtampa salėje vis didėja, bet darbai dar nebaigti, metas į sceną pakviesti mūsų nuostabiąsias ir nepakartojamas auklėtojas! Pasitikime aplodismentais: 1. Inga Mikoliūnienė; 2. Ramunė Ščeglinskaitė“
+                <br>• „Įdomu, ar pavyks auklėtojoms įžvelgti nuotraukose pasislėpusias baisiausias paslaptis ir nuodėmės?… O gal kaip tik ras aukso kupinas širdis?“
+                <br>• „Jūs atlikote visas mūsų ekstrasensorines užduotis. Ir… nuostabu! Mūsų galios grįžo!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• 1 GRUPĖS UŽDUOTIS: taisyklės: scenoje: didelė kartoninė „automobilio bagažinė“, kuri atsidaro; viduje – 3 mokytojų vaikystės nuotraukos; dvyliktokai turi atspėti, kokių mokytojų nuotraukos pavaizduotos bagažinėje.
+                <br>• 2 GRUPĖS UŽDUOTIS: taisyklės: scenoje: didelė kartoninė „automobilio bagažinė“, kuri atsidaro; viduje – 3 mokytojų nuotraukos, pakeistos dirbtiniu intelektu; dvyliktokai turi atspėti kokių mokytojų nuotraukos pavaizduotos bagažinėje.
+                <br>• AUKLĖTOJŲ UŽDUOTIS: taisyklės: auklėtojos turi atspėti, kurie auklėtiniai pavaizduoti nuotraukose.</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Į sceną įžengia laidos vedėja, apsivilkusi ekstrasenso apranga)
+                <br>• (Ekstrasensai susėda ratu)
+                <br>• (Laidos vedėja mosteli ranka)
+                <br>• (Ekstrasensai apsimeta, kad išsigando)
+                <br>• (Ekstrasensai ima vaikščioti ratu, tarsi „skenuotų“ publiką)
+                <br>• (Ekstrasensų vedėja įvertina dvyliktokų gebėjimus)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="lijanaRadkeviciute" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="lijanaRadkeviciuteRole">*****</p>
+            <p class="vardasAntrTekstas">Lijana Radkevičiūtė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Dėmesį mėgstanti, savimi pasitikinti „žvaigždė“, kuri vertina per ego prizmę, kuria komiškas situacijas ir tampa ryškiu šou akcentu.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sorry, kad pavėlavau, bet kai atėjau… pirmas dalykas, kurį pamačiau, buvo jūsų make-up’as <i>(apžiūri dalyves)</i>. Merginos, talentas talentu, bet tas grimas…“
+                <br>• „Šįkart pasakysiu taip.. O kas jus grimavo? TAI TRAGEDIJA!!!“
+                <br>• „Padėkite šioms vargšelėms išgražėti!“
+                <br>• „Tai buvo.. SIAUBINGA!“
+                <br>• „Tu pati save girdi??? Tu matai, kad čia nebuvo įdėta pastangų?!“
+                <br>• „Na, manau, gal šiek tiek tikrai pasikarščiavome.. tačiau aš sakau ne!“
+                <br>• „Didesnių žvaigždžių už mane negali būti.. Ne.“
+                <br>• „Aš vis tiek didžiausia žvaigždė, nu bet tiek to.. Taip.“
+                <br>• „Pff, na dėl šito dar pažiūrėsime <i>(nusijuokia)</i>“
+                <br>• „Aišku, gali būti geriau, kaip ir mano naujasis albumas, kuri galite klausyti visose platformose! <i>(atsikosėja)</i> Na, bet nebuvo taip blogai, taip..“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Teisėja 3 nepasirodo, vedėja sutrikusi, žvalgosi)
+                <br>• (Teisėja 3 lėtai ploja tyloje)
+                <br>• (Teisėja 3 atsisuka į 12-okus)
+                <br>• (Teisėja 3 įvertina 12-okų darbą)
+                <br>• (Teisėjos 1 ir 3 susižvalgo)
+                <br>• (Teisėjos 1 ir 3 susimąsto)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="matasKasparavicius" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="matasKasparaviciusRole">*****</p>
+            <p class="vardasAntrTekstas">Matas Kasparavičius</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas"><i>Beatos asistentas: </i>Kantrus ir pasiaukojantis asistentas, ragaujantis Beatos kulinarinius „šedevrus“, kentėdamas dėl skonio ir tapdamas komišku personažu.
+                <br>
+                <br><i>Ekstrasensas 3: </i>Teatrališkas ekstrasensas, kuriantis mistinius garsus, bet pats tampantis savo „ritualų“ auka, taip sustiprindamas humorą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Šviečiančios pirštinės, UNO kortos, žvakės</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>Ekstrasensas 3: </i>Juodas kostiumas su gobtuvu (užsakytas)</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „(dainuoja mistiškai) Ooommm“
+                <br>• „Kažkas šiandien salėje mus slopina. Mūsų ekstrasensorinės galios čia neveikia!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Asistentas ragauja ir apsinuodija nuo per didelio cukraus ir spalvos kiekio)
+                <br>• (Asistentas pasako savo nuomonę ir vėl nukrenta apsinuodijęs)
+                <br>
+                <br>• (Į sceną įžengia ekstrasensų komanda (4), visi atrodo labai rimti, susikaupę)
+                <br>• (Ekstrasensai susėda ratu)
+                <br>• (Ekstrasensas 3 dainuoja mistišką garsą „Ooommm“, bet pradeda kosėti)
+                <br>• (Ekstrasensai apsimeta, kad išsigando)
+                <br>• (Ekstrasensai ima vaikščioti ratu, tarsi „skenuotų“ publiką)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="metaMelisaBukauskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="metaMelisaBukauskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Mėta Melisa Bukauskaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Emocinga ir palaikanti teisėja, visur ieškanti pozityvo, tikinti dalyvių pastangomis ir dažnai tampanti šviesiąja kontrasto puse komisijoje.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Sveikučiai!!! Esu labai laiminga būdama šioje laidoje ir jau laukiu nesulaukiu pamatyti šios dienos talentų!!“
+                <br>• „Na man buvo nuostabu!! Jūs visiškai viena kitai tinkate. Tai vienas iš geriausių pasirodymų, kuriuos esu mačiusi ! TAIP!“
+                <br>• „Palaukit, palaukit… Tai buvo nuostabu!“
+                <br>• „Tu tikrai esi unikalus.. Tavo… na… humoro jausmas tikrai išskirtinis..“
+                <br>• „Aš nesuprantu.. Kodėl jūs nematote pozityvo… Žmogus stengiasi ir netgi turėjo drąsos čia pasirodyti.. Susiraskit savo gyvenime laimės..“
+                <br>• „Pagaliau, ačiū.. <i>(atsidūsta ir atsisuka į komiką)</i> Na, o kad būtų motyvacijos, aš sakau taip!“
+                <br>• „Merginos.. nusiraminkite.. Jūs tikrai gerai pasirodėte ir pradžia tikrai graži, tikiu, jog likęs pasirodymas taip pat gražus, nesipykite.. Aš jums duodu taip!“
+                <br>• „Na, o aš nuomonės nekeičiu, taip!!“
+                <br>• „Sveikos, merginos!!! Tai kaip suprantu dabar jūs mums parepuosit?“
+                <br>• „Tai gal pradėkime?“
+                <br>• „Jūs tikrai esate talentingos merginos.. aš sakau taip!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="metaPanavaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="metaPanavaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Mėta Panavaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Rami ir susikaupusi ekstrasensė, bandanti išlaikyti mistiką net tada, kai situacija tampa absurdiška ir nevaldoma.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Krištolinis rutulys</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Juodas kostiumas su gobtuvu (užsakytas)</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „<i>(paliečia stalą)</i> Čia ne mūsų energija. Čia kažkokia… nepažabota galia!“
+                <br>• „Ir jie! Jų auros tokios galingos, kad mūsų ritualai net sproginėja.“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Į sceną įžengia ekstrasensų komanda (4), visi atrodo labai rimti, susikaupę)
+                <br>• (Ekstrasensai susėda ratu)
+                <br>• (Ekstrasensė 2 ramiai glosto krištolinį rutulį, bet jis apsiverčia, o viduje bulvė)
+                <br>• (Ekstrasensai apsimeta, kad išsigando)
+                <br>• (Ekstrasensai ima vaikščioti ratu, tarsi „skenuotų“ publiką)
+                <br>• (Tada ekstrasensė atsisuka į mokytojus)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="neivydasPleskovas" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="neivydasPleskovasRole">*****</p>
+            <p class="vardasAntrTekstas">Neivydas Pleškovas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Pastabus ir šmaikštus faras, atskleidžiantis mokinių ir mokytojų „nusikaltimus“, palaikantis dinamiką ir nuolat įtraukiantis publiką į veiksmą.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Visus metus stebėjome šią mokyklą, mokytojus ir abiturientus…“
+                <br>• „Na, o dabar prieikime prie įdomesnės mūsų laidos dalies - nusikaltėlių mokytojų!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• Mokinių nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už sakymą „galima į tualetą?“ kas 10 minučių
+                <br>2. ………………………………… areštuojame – už „pamiršau namų darbus namie“ 
+                <br>3. ………………………………… areštuojame – už labai rimtą žadintuvo neklausymą rytais
+                <br>4. ………………………………… areštuojame – už telefono slėpimą po suolu 
+                <br>5. ………………………………… areštuojame – už atsakymą „nežinau“
+                <br>6. ………………………………… areštuojame – už namų darbų darymą per kitas pamokas
+                <br>• Mokytojų nusikaltimų sąrašas:
+                <br>1. ………………………………… areštuojame – už tai, kad sakė „čia bus lengva“, bet lengva nebuvo 
+                <br>2. ………………………………… areštuojame – už atsiskaitymus be įspėjimo 
+                <br>3. ………………………………… areštuojame – už frazę „šitą turėtumėt mokėti nuo 5 klasės“
+                <br>4. ………………………………… areštuojame – už namų darbus per atostogas 
+                <br>5. ………………………………… areštuojame – už pažadą „greit patikrinsiu“ ir patikrinimą po mėnesio 
+                <br>6. ………………………………… areštuojame – už per ilgus pasakojimus „iš savo laikų“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Trys pradiniai farai atsistoja į šokio padėtį)
+                <br>• (Prasideda muzika ir sueina likę farai)
+                <br>• (Prasideda vaikinų šokis)</p>
+                <br>• (Farai įteikia lapą su nusikaltimu ir pakviečia nusifotografuoti)
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="norbertasBorovskis" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="norbertasBorovskisRole">*****</p>
+            <p class="vardasAntrTekstas">Norbertas Borovskis</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Rimtas, bet žaismingas žaidimo vedėjas, valdantis tempą, pristatantis turus ir pabrėžiantis intelektinę konkurenciją tarp abiturientų komandų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Auksinio proto kortelės</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Laba diena, mieli žiūrovai. Smagu jus visus matyti susirinkus mūsų ypatingame šimtadienio renginyje. Jau beliko tik 100 dienų iki egzaminų. Taigi šiame žaidime sužinosime kam geriau seksis laikyti egzaminus – prasideda Auksinis protas: Abiturientų dvikova!“
+                <br>• „…ir antros komandos atstovus: 1. Rytis Stankevičius; 2. Viktorija Miklasevičiūtė; 3. Mangirdas Macijauskas; 4. Julius Bogušas“
+                <br>• „Sveikiname šios dienos nugalėtojus! Jūsų protas – auksinis. Linkime daug sėkmės ir kantrybės ateities iššūkiuose!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• 1 TURAS: vedėjas/-a skaito klausimą; komanda paspaudžia skambutį ir laukia, kol bus pakviesta; atsako į klausimą; teisingas atsakymas = 1 taškas.
+                <br>• GREITIEJI KLAUSIMAI (10): 1. Kiek yra 8 × 7? 56; 2. Koks Lietuvos miestas vadinamas laikinąja sostine? Kaunas; 3. Kas parašė „Metus“? Kristijonas Donelaitis; 4. Kaip buvo vadinama Lietuvos nacionalinė valiuta iki euro? Litas; 5. Kiek savaičių yra šimte dienų (apytiksliai)? Apie 14; 6. Kokia vandens virimo temperatūra farenheito laipsniais? 212 °F; 7. Ko negalima pamiršti einant į egzaminą? Asmens dokumento; 8. Kuris mėnuo turi 28 dienas? Visi; 9. Diskriminanto formulė? D = b² – 4ac; 10. Kuri valstybė yra mažiausia pagal plotą? Vatikanas.
+                <br>• 2 TURAS: ekrane rodomi 6 klausimai, po 3 kiekvienai komandai; žaidėjai tarpusavyje gali pasitarti; už teisingą atsakymą – 2 taškai.
+                <br>• 1 KOMANDOS KLAUSIMAI: 1. Kuris gyvūnas gali miegoti stovėdamas ir bėgti greičiau nei žirgas? Strutis; 2. Kuriais metais Lietuva įstojo į ES? 2004 m.; 3. Sumažinus tam tikrą skaičių 20 %, gautas rezultatas yra 40. Koks buvo pradinis skaičius? 50.
+                <br>• 2 KOMANDOS KLAUSIMAI: 1. Kokia yra ilgiausia Lietuvos upė? Nemunas; 2. Kam lygus logaritmas pagrindu 2 skaičiaus 32? 5; 3. Koks yra vienintelis pasaulio žinduolis, galintis skraidyti? Šikšnosparnis.
+                <br>• 3 TURAS: SuperKlausimas; taisyklės: abi komandos gauna tą patį klausimą; atsakymą reikia užrašyti ant lapelio; teisingas atsakymas = 5 taškai; jei abi komandos atsako teisingai – laimi ta, kuri turi daugiau bendrų taškų.
+                <br>• TEKSTAS: Jūs esate autobuso vairuotojas. Rytas mieste ramus: gatvės tuščios, tik retkarčiais pravažiuoja automobiliai. Pirmoje stotelėje įlipa keli keleiviai – studentė su kuprine, pagyvenęs vyras su laikraščiu ir moteris su kava. Autobusas pajuda toliau, lėtai pravažiuoja pro dar uždarytas parduotuves, o parke ankstyvą rytą bėgioja keli sportininkai. Antroje stotelėje keleivių gausėja: keli moksleiviai, skubantis darbuotojas ir turistų pora su žemėlapiu. Vairuotojas rodo posūkį, pravažiuoja sankryžą, sustoja prie šviesoforo, kur formuojasi pirmieji rytinio piko kamščiai. Toliau maršrutas vinguriuoja per senamiestį ir tiltus, o prie didžiosios stoties įlipa dar daugiau žmonių, atsiskaitančių kortelėmis ar ieškančių monetų. Vakare, autobusui pasiekus paskutinę stotelę, visi keleiviai išlipa. Vairuotojas sustoja parke, išjungia variklį, patikrina dokumentus ir užpildo dienos žurnalą.
+                <br>• Klausimas: kokios spalvos yra autobuso vairuotojo plaukai?</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="rugileKaniusaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="rugileKaniusaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Rugilė Kaniušaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Šmaikšti ir drąsi stand up atlikėja, užpildanti pertraukas humoru, improvizacija ir palaikanti publikos energiją viso renginio metu.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Išlenda Rugilė ir Justina Stand Up'ui#
+                <br>• #Rugilės ir Justinos reklama#</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="rugileTamasauskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="rugileTamasauskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Rugilė Tamašauskaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Emocinga ekstrasensė, kurios „galios“ nuolat stringa, sukeldamos juokingus nesusipratimus ir netikėtus sceninius momentus.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="pasiruosimas">
+            <i class="fa-solid fa-suitcase simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Rekvizitai</p>
+            <p class="antrTekstas">Žibintas</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas">Juodas kostiumas su gobtuvu (užsakytas)</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Jaučiu… kažką labai keisto!“
+                <br>• „Ačiū jums už pagalbą, dabar galime tęsti savo tyrimą. O jūs - tęsti šventę!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Į sceną įžengia ekstrasensų komanda (4), visi atrodo labai rimti, susikaupę)
+                <br>• (Ekstrasensai susėda ratu)
+                <br>• (Ekstrasensė 1 mojuoja žibintu - jis nustoja veikti ir ekstrasensė pradeda daužyti neveikiantį žibintą)
+                <br>• (Ekstrasensai apsimeta, kad išsigando)
+                <br>• (Ekstrasensai ima vaikščioti ratu, tarsi „skenuotų“ publiką)
+                <br>• (Ekstrasensė 1 nusimeta apsiaustą ir suvaidina energijos sugrįžimą (su šviesos efektais garsiniu signalu))</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="samantaKurec" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="samantaKurecRole">*****</p>
+            <p class="vardasAntrTekstas">Samanta Kurec</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Charakteringa parodija, vaizduojanti pasipūtusią influencerę, kuri per dialogus ir šokį kuria konkurenciją bei komiškas situacijas.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Mes esame žinomiausios ir jūsų mylimiausios..“
+                <br>• „Tiktoko žvaigždės!“
+                <br>• „Mes, kadangi esame tokios nuostabios, su savo šokiu jums išnešime smegenis!!“
+                <br>• „Aš juk sakiau mokytis normaliai, bet ne, tu gi viską moki!“
+                <br>• „Padėkite mums laimėti!!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Užeina Paulinos ir Gabrielės parodijos)
+                <br>• (Pasileidžia muzika ir merginos šoka, kai staiga, viena iš jų paslysta ir nukrenta)
+                <br>• (Merginos atsisuka į žiūrovus)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="sauleBabaliauskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="sauleBabaliauskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Saulė Babaliauskaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas"><i>Žinių vedėja 2: </i>Šilta, įkvepianti ir nuoširdi žinių vedėja, pabrėžianti akimirkos svarbą, dvyliktokų kelią ir emocinę šimtadienio reikšmę visai bendruomenei.
+                <br>
+                <br><i>Vienuoliktokė: </i>Jautri ir nuoširdi pasakotoja, apibendrinanti dvyliktokų kelią, primenanti prisiminimus ir emociškai užbaigianti šimtadienio renginį.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Šiandien renginyje matysite: daug juoko, šmaikštumo, konkurencijos ir vikrumo. Tai ypatinga diena – tokia būna tik kartą gyvenime. Todėl kiekviena akimirka šiandien yra svarbi, kiekviena šypsena, kiekvienas aplodismentas, būtent dėl to verta gyventi čia ir dabar.“
+                <br>• „Jūsų laukia vienas įtakingiausių metų renginių, kuris tikrai nepaliks abejingų. Na, o dabar įsikibkite į kėdes, nes faruose bus tikrai karšta!“
+                <br>
+                <br>• „Mieli dvyliktokai, šiandien, žiūrėdami į jūsų nuotraukas, matėme ne tik kadrus iš praeities - matėme istoriją, kurią jūs kūrėte daugelį metų. Istoriją, kurioje yra ir juoko, ir pokštų, ir naktų prieš kontrolinius, ir draugų, su kuriais išmokote būti ne tik klasės, bet ir gyvenimo komanda. Dabar jūs jau dvyliktoje klasėje. Tai skamba didingai - ir kartu truputėlį graudžiai. Likę vos šimtas dienų iki pirmojo egzamino, o po vasaros… suprasite, kad mokyklos durys užsivers jau nebe kaip mokiniams, o kaip žmonėms, keliaujantiems į visiškai naują gyvenimo etapą. Norisi jums palinkėti vieno: gyvenkite taip, kaip norėsite šiuos metus prisiminti. Išgyvenkite kiekvieną paskutinę dieną mokykloje pilnai - su juoku, su pokalbiais koridoriuose, su tais pačiais mokytojais, kurie kartais erzina, bet vis tiek tikėjo jumis labiau nei jūs patys. Branginkite draugus, nes būtent jie dar ilgai primins jums, kas buvote prieš visus egzaminus, universitetus, darbus ir planus. Liko tik 100 dienų. Tai mažai… ir kartu tiek daug. Leiskite kiekvienai iš jų būti prasmingai. Mes, vienuoliktokai, tikimės, kad finišą pasieksite stiprūs, drąsūs ir laimingi. O šiandien - džiaugiamės kartu su jumis ir iš visos širdies sveikiname šia ypatinga proga. Su šimtadieniu!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Žinių intro, iš už užuolaidų išeina žinių vedėjos)
+                <br>
+                <br>• (Ateina vienuoliktokė, fone tėvų balsai (lyg po mokyklos grįžus namo). Vienuoliktokė atsisėda ant sofos, atsidaro skardinę (dėl garso) ir įjungia projektorių)
+                <br>• (Vienuoliktokė atsistoja, prieina arčiau scenos priekio)
+                <br>• (Vienuoliktokei kalbant paryškintą tekstą, visi likę vienuoliktokai turi užeiti į sceną, sustoti puslankiu ir sudainuoti dainą)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="simonaSmatauskaite" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="simonaSmatauskaiteRole">*****</p>
+            <p class="vardasAntrTekstas">Simona Šmatauskaitė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas"><i>Žinių vedėja 1: </i>Charizmatiška ir užtikrinta žinių vedėja, kuri profesionaliai atidaro renginį, sukuria šventinę atmosferą ir kviečia žiūrovus pasinerti į nepamirštamą šimtadienio kelionę.
+                <br>
+                <br><i>Beata: </i>Linksma ir nevėkšliška kulinarinės laidos vedėja, kuri chaotiškai gamina tortą, kurdama komiškas situacijas ir įtraukdama abiturientus į iššūkį.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>Beata: </i>Rožinė prijuostė gaminimui (užsakyta)</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Laba diena, mieli Grigiškių „Šviesos“ gimnazijos abiturientai, mokytojai ir mokinių tėveliai!“
+                <br>• „Dvyliktokai, laikas bėga labai greitai, o tokios akimirkos lieka širdyje visam gyvenimui, tad mėgaukitės kiekviena minute ir leiskite sau išgyventi šią dieną pilnai.“
+                <br>
+                <br>• „<i>(sutrikusi, bet labai pozityviu balsu)</i> Uoj, tikriausiai bus netoleruojantis rožinės spalvos… Na, ką gi, užteks vienai man čia darbuotis, metas pakviesti pastiprinimą. Su džiaugsmu kviečiu pirmos komandos atstovus: 1. Akvilė Molytė; 2. Dominyka Varnaitė; 3. Karina Barkovskaja; 4. Patricija Šostakaitė; ir aplodismentais pasitikime antros komandos atstovus: 1. Martyna Jankauskaitė; 2. Martynas Tendzegolskis; 3. Martyna Vaitkevičiūtė; 4. Martyna Bareikaitė“<br>• „Atminkite, kad vertinamas bus ne tik galutinis rezultatas, bet ir visų narių įsitraukimas“<br>• „Šauniai padirbėjote, abiturientai, dabar kažkam reikės įvertinti jūsų pastangas! <i>(atsisuka į asistentą)</i> Kaip gerai, kad būtent dėl to tu ir gauni algą, mano mielas asistente!“<br>• „Nepagailėkite aplodismentų mūsų nugalėtojams! Didelis ačiū jums už jūsų pastangas ir tariu jums atia, iki kito karto!“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• TAISYKLĖS: pasunkinimai: 2 – nemato, 1 – negirdi, 1 – nekalba; nekalbantis – turi receptą; negirdintis – turi atpasakoti receptą nematantiems; nematantys – gamina; turės pagaminti keistą produktų derinį (trintų braškių košė su agurkų ir šokolado gabaliukais); skiriamos 5 minutės</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Žinių intro, iš už užuolaidų išeina žinių vedėjos)
+                <br>
+                <br>• (Beata gamina „Šimtadienio tortą“)
+                <br>• (Jai baisiai nesigauna – kiaušiniai krenta, miltai skraido, jinai pati šiek tiek nevėkšliška (kartais krenta), įdeda labai daug cukraus ir rožinių dažų)
+                <br>• (Įdeda tortą į orkaitę, ištraukia sudegusį, bet matosi, kad rožinis)
+                <br>• (Beata mojuoja ranka ir išeina)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+
+    <div id="smilteBazeviciute" class="langas">
+        <div class="vardas">
+            <i class="fa-regular fa-user-circle vardasIcon"></i>
+            <p class="pagrTekstas" id="smilteBazeviciuteRole">*****</p>
+            <p class="vardasAntrTekstas">Smiltė Bazevičiūtė</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apie">
+            <i class="fa-regular fa-circle-question simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apie rolę</p><picture class="chatgpt"><source srcset="images/chatgpt-black.png" media="(prefers-color-scheme: dark)"><img src="images/chatgpt-white.png" alt="Sugeneruota naudojant „ChatGPT“"></picture>
+            <p class="antrTekstas">Elegantiška ir iškilminga vakaro vedėja, kurianti šventinę nuotaiką, pabrėžianti nominacijų svarbą ir dvyliktokų pasiekimus.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="apranga">
+            <i class="fa-solid fa-shirt simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Apranga</p>
+            <p class="antrTekstas"><i>bus papildyta...</i></p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="zodziai">
+            <i class="fa-regular fa-comments simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Žodžiai</p>
+            <p class="antrTekstas">• „Ponios ir Ponai, sveiki atvykę į iškilmingiausią metų vakarą.“
+                <br>• „Šį vakarą abiturientai grumsis tarp pačių karščiausių nominacijų. Delsti nėra ko, tad kviečiame į sceną pirmuosius nominantus: 1. Adrija Garnatkevičiūtė; 2. Titas Garnatkevičius. Nominantai kovos dėl metų dvynio nominacijos.“
+                <br>• Metų apdovanojimų vedėja: „Na, tikėkimės, dvyniai namuose nesusimuš, o dabar į sceną kviečiame: 1. Nojus Šukys; 2. Nikita Skibickij; 3. Mikas Titas Jakubonis; 4. Karolis Rudys“
+                <br>• „Šį lemtingą vakarą metų sportininko nominaciją iškovojo: …“
+                <br>• „Suskaičiavę taškus, galime paskelbti, kad protingiausio dvyliktoko nominaciją iškovojo: …“
+                <br>• „Merginos šiandien kovos dėl metų stiliaus nominacijos, žiūrovai, įsikibkite į kėdes, nes bus tikrai karšta!“
+                <br>• „Dvyliktokai, jūs visi esate nepaprasti. Šie metai buvo jūsų bendras kelias – pilnas iššūkių, juoko ir akimirkų, kurios sujungė jus į vieną stiprią bendruomenę. Kiekvienas iš jūsų paliko pėdsaką šioje mokykloje, ir būtent todėl ši paskutinė nominacija yra ypatinga.“
+                <br>• „Todėl šįkart nugalėtoją rinksime atsitiktiniu būdu. Renginio pradžioje gavote lapelius su skaičių kombinacijomis – dabar vienas iš jų taps simboliniu laimėtojo numeriu. 2026 metų „Metų dvyliktoko“ nominacija atitenka žmogui, kurio lapelyje parašytas skaičius – *. Kviečiame į sceną atsiimti prizo – pasitikime aplodismentais!“
+            </p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Žodžių mintinai mokėti nereikia, juos galima pasakyti panašiai. Dalį žodžių gali reikti improvizuoti.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="uzduotys">
+            <i class="fa-solid fa-thumbtack simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Užduotys</p>
+            <p class="antrTekstas">• 1 UŽDUOTIS: taisyklės: estafetė – kas perneš daugiau kamuoliukų tarp smakro ir alkūnės, nuo vieno taško iki kito; 1 kamuoliukas – 1 taškas; 1 minutė.
+                <br>• 2 UŽDUOTIS: taisyklės: atminties iššūkis – ekrane rodomas daiktų sąrašas, dvyniai nematydami vienas kito lapo turi užrašyti kuo daugiau paminėtų daiktų; sąrašas rodomas 30 s; 1 minutė užrašymui.
+                <br>• 1 UŽDUOTIS: taisyklės: rašymo užduotis – išvardinti kuo daugiau sporto šakų; 30 s; 1 sporto šaka – 1 taškas.
+                <br>• 2 UŽDUOTIS: taisyklės: pusiausvyros užduotis – uždengtom akim kuo ilgiau išstovėti ant vienos kojos; pirmas nukritęs -1 taškas / antras -2 / trečias -3 / ketvirtas -4.
+                <br>• 1 UŽDUOTIS: taisyklės: trivia – vedėjas skaito 10 trumpų klausimų ir dalyviai turi kuo greičiau atsakyti į klausimą; teisingas atsakymas – 1 taškas.
+                <br>• 2 UŽDUOTIS: taisyklės: svorio spėjimas – ant stalo padėti 5 įvairūs daiktai, dvyliktokai užrašo atsakymą ant lapo ir vienu metu parodo savo atsakymus; arčiausias spėjimas – 1 taškas.
+                <br>• 1 UŽDUOTIS: taisyklės: stiliaus mix’as - viduryje scenos padėta dėžė su įvairiais rūbais, aksesuarais ir papuošalais; dalyvės turi kuo gražiau aprengti priskirtą modelį; 1 min 30 s; darbą įvertins Teisėja 3 (iš talentų); laimėtoja gauna tašką.
+                <br>• 2 UŽDUOTIS: taisyklės: stiliaus reakcijos iššūkis – merginoms skaitomi sakiniai su įvairiais scenarijais, jos turi kuo išraiškingiau parodyti emociją atitinkančią situaciją (iš nuotraukų); emocijas įvertins Teisėja 3 (iš talentų); 1 laimėjusi emocija – 1 taškas.
+                <br>• SAKINIAI: „Eini gatve ir pamatai savo ‘ex’ su tokia pačia striuke kaip tavo“; „Ant podiumo paslydai, bet turi suvaidinti, kad taip ir buvo suplanuota“; „Fotografas sako: ‘daugiau dramos!’“; „Tavo draugė ateina į mokyklą apsirengusi identiškai kaip tu… vėl“; „Vėjas tau sugadina šukuoseną, bet tu privalai išlikti elegantiška“</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="vaidinimas">
+            <i class="fa-solid fa-people-group simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Veiksmai</p>
+            <p class="antrTekstas">• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)
+                <br>• (Įteikiamas apdovanojimas)</p>
+            <p class="pastabaTekstas"><span class="sauktukas">!</span> Surašytos tik ištraukos. Dėl detalesnės informacijos žiūrėti visą scenarijų.</p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="songLyrics">
+            <i class="fa-solid fa-guitar simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Daina</p>
+            <p class="antrTekstas"><b style="font-weight: 800;">Foje – „Vaikystės stogas“</b>
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Norėjau pajusti svaigų orą dangaus
+                <br>Nuo jo užsimerkti ir savęs paklaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Dar būdamas vaikas aš užlipdavau čia
+                <br>Ir kojas nukaręs svajojau nakčia
+                <br>Džiaugiaus, kad esu taip arti prie dangaus
+                <br>Kad ranką prie čerpių galiu priglaust
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk
+                <br>
+                <br>Tą vakarą tamsų aš ant stogo lipau
+                <br>Norėjau išvysti, ką seniai užmiršau
+                <br>Džiaugiaus, kad esu vėl čionai
+                <br>Vaikystė sugrįžo lyg seni sapnai
+                <br>
+                <br>Klausyk, žmogau
+                <br>Klausyk, nenusisuk
+                <br>Ko ieškai čia?
+                <br>Vaikystė baigės juk (2x)
+            </p>
+        </div>
+        <div class="separationLine1"><hr></div>
+        <div class="papildomai">
+            <i class="fa-regular fa-circle-dot simtadienisIcon" style="display: flex;"></i>
+            <p class="pagrTekstas">Papildomai</p>
+            <button onclick="openSoundTracks()" ontouchstart><i class="fa-solid fa-sliders" style="margin-right: 5px; cursor: pointer;"></i>Valdymo skydas</button>
+        </div>
+    </div>
+    
+
+
+    <a id="download_script" href="*****" download style="display: none;">download_script</a>
 
     <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
