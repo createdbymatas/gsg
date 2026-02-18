@@ -1251,7 +1251,6 @@ function playSoundDaina(){
     document.getElementById('l9').style.marginTop = '100%';
     document.getElementById('l9').style.transform = 'scale(1)';
     document.getElementById('l9').style.fontWeight = '400';
-    document.getElementById('l9').style.color = 'black';
     document.getElementById('l10').style.marginTop = '100%';
     document.getElementById('l10').style.transform = 'scale(1)';
     document.getElementById('l10').style.fontWeight = '400';
@@ -1279,7 +1278,6 @@ function playSoundDaina(){
     document.getElementById('l18').style.marginTop = '100%';
     document.getElementById('l18').style.transform = 'scale(1)';
     document.getElementById('l18').style.fontWeight = '400';
-    document.getElementById('l18').style.color = 'black';
     document.getElementById('l19').style.marginTop = '100%';
     document.getElementById('l19').style.transform = 'scale(1)';
     document.getElementById('l19').style.fontWeight = '400';
