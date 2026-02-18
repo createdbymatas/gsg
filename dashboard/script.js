@@ -164,6 +164,9 @@ document.body.onkeydown = function(e){
         e.preventDefault();
         playPause();
     }
+    if (e.keyCode === 80) {
+        playPause();
+    }
     if (e.keyCode === 77) {
         pauseWithMute();
     }
