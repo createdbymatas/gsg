@@ -1111,7 +1111,7 @@ function playSoundEkstrasensuFonas(){
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'ekstrasensu-fonas.mp3';
-    document.getElementById("soundDuration").innerText = '30:02';
+    document.getElementById("soundDuration").innerText = '17:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
