@@ -308,7 +308,7 @@ function backgroundSound(){
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
 }
 function changeVolumeGraduallyBg(){
-    if(vol.value>30){
+    if(vol.value>20){
         vol.value = vol.value - 1;
         progressBarVol.value = vol.value;
         sound.volume = vol.value / 100;
@@ -316,7 +316,7 @@ function changeVolumeGraduallyBg(){
         finishChangingVolumeBg();
     }
     else{
-        vol.value = 30;
+        vol.value = 20;
         progressBarVol.value = vol.value;
         sound.volume = vol.value / 100;
         changeVolumeIcon();
@@ -324,7 +324,7 @@ function changeVolumeGraduallyBg(){
     }
 }
 function finishChangingVolumeBg(){
-    if(vol.value == 30){
+    if(vol.value == 20){
         clearInterval(intervalId);
         intervalId = null;
         document.getElementById('loadingAudio').style.display = "none";
@@ -1387,15 +1387,26 @@ function closeVisuals() {
     document.getElementById("scriptBtn").style.pointerEvents = "all";
 }
 
-function auksinisProtas(){
-    document.getElementById("auksinisProtasDiv").style.pointerEvents = "none";
-    document.getElementById("auksinisProtasWait").style.display = "flex";
+let isDownloading = false;
+function auksinisProtas() {
+    if (isDownloading) return;
+    isDownloading = true;
+
+    const div = document.getElementById("auksinisProtasDiv");
+    const wait = document.getElementById("auksinisProtasWait");
+    const download = document.getElementById("download_auksinis-protas");
+
+    div.style.pointerEvents = "none";
+    wait.style.display = "flex";
+
     setTimeout(() => {
-        document.getElementById("download_auksinis-protas").click();
+        download.click();
     }, 1000);
+
     setTimeout(() => {
-        document.getElementById("auksinisProtasDiv").style.pointerEvents = "all";
-        document.getElementById("auksinisProtasWait").style.display = "none";
+        div.style.pointerEvents = "all";
+        wait.style.display = "none";
+        isDownloading = false;
     }, 3000);
 }
 
