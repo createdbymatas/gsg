@@ -987,7 +987,7 @@ function playSoundFaruSokis(){
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'Farų šokis';
-    document.getElementById("soundDuration").innerText = '1:25';
+    document.getElementById("soundDuration").innerText = '4:18';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     sound.addEventListener("canplaythrough", (event) => {
