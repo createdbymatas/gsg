@@ -217,14 +217,6 @@ hr{
     align-items: center;
     transform: scale(0.7);
 }
-#downloadAudioSpinnerDiv{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.7);
-}
 
 /* ekrano ispejimas */
 #screenSize{
@@ -1041,231 +1033,6 @@ hr{
 #klaidosPranesimas form{
     display: none;
 }
-#soundManager{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -100%;
-    z-index: 18;
-    background-color: #f2f2f2;
-    transition: 0.2s;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    /* padding-bottom: 100px; */
-    padding-top: 75px;
-}
-#soundManagerNav{
-    width: 100%;
-    height: 60px;
-    top: 100%;
-    left: 0;
-    right: 0;
-    position: fixed;
-    z-index: 20;
-    background-color: #f2f2f2;
-    transition: 0.2s;
-}
-#soundManager h1{
-    font-weight: 600;
-    font-size: 22px;
-    padding-top: 16px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    color: black;
-}
-.soundTrackDiv{
-    width: 95%;
-    height: 50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    color: black;
-    padding-left: 15px;
-    margin-bottom: 15px;
-    margin-left: 2.5%;
-    border-radius: 30px;
-    position: relative;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s;
-}
-.soundTrackDiv:active{
-    opacity: 0.2;
-}
-.trackNo{
-    padding-right: 5px;
-    cursor: pointer;
-}
-.trackName{
-    font-size: 16px;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    text-overflow: ellipsis;
-    width: 100%;
-    padding-right: 95px;
-    cursor: pointer;
-}
-.trackDuration{
-    position: absolute;
-    right: 15px;
-    cursor: pointer;
-}
-#soundPlayer{
-    width: 95%;
-    height: 85px;
-    background-color: white;
-    box-shadow: 0 0 10px lightgrey;
-    position: fixed;
-    bottom: -100%;
-    left: 2.5%;
-    right: 2.5%;
-    border-radius: 25px;
-    padding: 15px;
-    padding-right: 60px;
-    z-index: 21;
-}
-#playingTrackName{
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: black;
-}
-#playingTrackName i {
-    padding-right: 5px;
-}
-#loadingAudioBg{
-    width: 50px;
-    height: 85px;
-    background-color: white;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 5px;
-    z-index: 1;
-    border-radius: 25px;
-}
-#loadingAudio{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(0.6);
-}
-#playBtn{
-    font-size: 15px;
-    transition: 0.15s;
-    position: absolute;
-    right: 15px;
-    top: 9px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background-color: #DEDEDE;
-    color: black;
-}
-#playBtn i{
-    cursor: pointer;
-}
-#playBtn:active{
-    opacity: 0.2;
-}
-#endBtn{
-    font-size: 15px;
-    transition: 0.15s;
-    position: absolute;
-    right: 15px;
-    bottom: 9px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background-color: #DEDEDE;
-    color: black;
-}
-#endBtn i{
-    cursor: pointer;
-}
-#endBtn:active{
-    opacity: 0.2;
-}
-#downloadAudioBtn{
-    font-size: 12px;
-    transition: 0.15s;
-    position: absolute;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #DEDEDE;
-    color: black;
-    text-align: center;
-    padding: 4px;
-    margin-left: 5px;
-}
-#downloadAudioBtn:active{
-    opacity: 0.2;
-}
-#progressBg{
-    width: 100%;
-    height: 5px;
-    background-color: #e6e6e6;
-    border-radius: 25px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.1s;
-}
-#playProgress{
-    width: 0;
-    height: 5px;
-    background-color: darkgrey;
-    cursor: pointer;
-    transition: 0.1s;
-}
-#timePlayed {
-    font-size: 13px;
-    color: darkgrey;
-    margin-top: 5px;
-}
-#soundDuration {
-    font-size: 13px;
-    color: darkgrey;
-    position: absolute;
-    top: 57px;
-    right: 60px;
-}
-#closeSoundManager{
-    font-size: 15px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    z-index: 11;
-    transition: 0.15s;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background-color: #DEDEDE;
-    color: black;
-}
-#closeSoundManager:active{
-    opacity: 0.2;
-}
 @keyframes blink{
     0%{
         opacity: 1;
@@ -1412,37 +1179,6 @@ hr{
 }
 #rodomaDaugiau button:active{
     transform: scale(0.95);
-}
-#atsisiunciamasAudioBg{
-    width: 20px;
-    height: 20px;
-    position: fixed;
-    bottom: 65px;
-    left: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
-    opacity: 0;
-    overflow: hidden;
-    border-radius: 25px;
-}
-#atsisiunciamasAudio{
-    width: auto;
-    max-width: 95%;
-    height: 100px;
-    font-size: 15px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 10px lightgrey;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
 }
 #pinnedBottom{
     width: 95%;
@@ -2019,48 +1755,6 @@ hr{
         border-color: white;
         color: white;
     }
-    #soundManager{
-        background-color: #141414;
-    }
-    #soundManagerNav{
-        background-color: #141414;
-    }
-    #soundManager h1{
-        color: white;
-    }
-    .soundTrackDiv{
-        background-color: black;
-        color: white;
-    }
-    #soundPlayer{
-        background-color: black;
-        box-shadow: 0 0 10px #464646;
-    }
-    #playingTrackName{
-        color: white;
-    }
-    #loadingAudioBg{
-        background-color: black;
-    }
-    #playBtn{
-        background-color: #282828;
-        color: white;
-    }
-    #endBtn{
-        background-color: #282828;
-        color: white;
-    }
-    #downloadAudioBtn{
-        background-color: #282828;
-        color: white;
-    }
-    #progressBg{
-        background-color: #191919;
-    }
-    #closeSoundManager{
-        background-color: #282828;
-        color: white;
-    }
     .atsisiustiScenariju{
         color: white;
         border: 2px solid white;
@@ -2081,11 +1775,6 @@ hr{
         color: white;
     }
     #rodomaDaugiau{
-        background-color: #141414;
-        box-shadow: 0 0 10px #464646;
-        color: white;
-    }
-    #atsisiunciamasAudio{
         background-color: #141414;
         box-shadow: 0 0 10px #464646;
         color: white;
