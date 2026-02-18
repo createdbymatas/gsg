@@ -901,7 +901,7 @@ function playSoundZiniuPradzia(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'ziniu-pradzia.mp3';
+    document.getElementById("currentTrackName").innerText = 'Žinių pradžia';
     document.getElementById("soundDuration").innerText = '0:14';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -920,7 +920,7 @@ function playSoundZiniuPabaiga(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'ziniu-pabaiga.mp3';
+    document.getElementById("currentTrackName").innerText = 'Žinių pabaiga';
     document.getElementById("soundDuration").innerText = '0:07';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -939,7 +939,7 @@ function playSoundFarai(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'farai.mp3';
+    document.getElementById("currentTrackName").innerText = 'Farai';
     document.getElementById("soundDuration").innerText = '0:17';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -958,7 +958,7 @@ function playSoundFaruSokis(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'faru-sokis.mp3';
+    document.getElementById("currentTrackName").innerText = 'Farų šokis';
     document.getElementById("soundDuration").innerText = '1:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -977,7 +977,7 @@ function playSoundAuksinisProtas(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'auksinis-protas.mp3';
+    document.getElementById("currentTrackName").innerText = 'Auksinis protas';
     document.getElementById("soundDuration").innerText = '0:19';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -996,7 +996,7 @@ function playSoundLietuvosTalentai(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'lietuvos-talentai.mp3';
+    document.getElementById("currentTrackName").innerText = 'Lietuvos talentai';
     document.getElementById("soundDuration").innerText = '0:24';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1015,7 +1015,7 @@ function playSoundMerginuSokis(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'merginu-sokis.mp3';
+    document.getElementById("currentTrackName").innerText = 'Merginų šokis';
     document.getElementById("soundDuration").innerText = '1:40';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1034,7 +1034,7 @@ function playSoundParodijuSokis(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'parodiju-sokis.mp3';
+    document.getElementById("currentTrackName").innerText = 'Parodijų šokis';
     document.getElementById("soundDuration").innerText = '2:19';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1053,7 +1053,7 @@ function playSoundGangnamStyle(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'gangnam-style.mp3';
+    document.getElementById("currentTrackName").innerText = 'Gangnam style';
     document.getElementById("soundDuration").innerText = '4:08';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1072,7 +1072,7 @@ function playSoundBeatosVirtuve(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'beatos-virtuve.mp3';
+    document.getElementById("currentTrackName").innerText = 'Beatos virtuvė';
     document.getElementById("soundDuration").innerText = '12:23';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1091,7 +1091,7 @@ function playSoundEkstrasensuPradzia(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'ekstrasensu-pradzia.mp3';
+    document.getElementById("currentTrackName").innerText = 'Ekstrasensų pradžia';
     document.getElementById("soundDuration").innerText = '0:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1110,7 +1110,7 @@ function playSoundEkstrasensuFonas(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'ekstrasensu-fonas.mp3';
+    document.getElementById("currentTrackName").innerText = 'Ekstrasensų fonas';
     document.getElementById("soundDuration").innerText = '17:25';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1129,7 +1129,7 @@ function playSoundMetuApdovanojimai(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'metu-apdovanojimai.mp3';
+    document.getElementById("currentTrackName").innerText = 'Metų apdovanojimai';
     document.getElementById("soundDuration").innerText = '17:21';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1148,7 +1148,7 @@ function playSoundCatwalk(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'catwalk.mp3';
+    document.getElementById("currentTrackName").innerText = 'Catwalk';
     document.getElementById("soundDuration").innerText = '00:34';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1167,7 +1167,7 @@ function playSoundDrumRoll(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'drum-roll.mp3';
+    document.getElementById("currentTrackName").innerText = 'Drum roll';
     document.getElementById("soundDuration").innerText = '0:10';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1186,7 +1186,7 @@ function playSoundDaina(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'daina.mp3';
+    document.getElementById("currentTrackName").innerText = 'Daina';
     document.getElementById("soundDuration").innerText = '2:46';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
