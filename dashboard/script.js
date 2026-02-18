@@ -1318,14 +1318,17 @@ function playSoundDaina(){
     document.getElementById('l31').style.transform = 'scale(1)';
     document.getElementById('l31').style.fontWeight = '400';
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.getElementById('l0').style.color = 'black';
-        document.getElementById('l9').style.color = 'black';
-        document.getElementById('l18').style.color = 'black';
+        document.getElementById('l0').style.color = 'white';
+        document.getElementById('l9').style.color = 'white';
+        document.getElementById('l18').style.color = 'white';
     }
     else{
         document.getElementById('l0').style.color = 'white';
         document.getElementById('l9').style.color = 'white';
         document.getElementById('l18').style.color = 'white';
+        document.getElementById('l0').style.color = 'black';
+        document.getElementById('l9').style.color = 'black';
+        document.getElementById('l18').style.color = 'black';
     }
     openLyrics();
     sound.addEventListener("canplaythrough", (event) => {
