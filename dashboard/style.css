@@ -617,6 +617,9 @@ hr{
 #dashboardNav div p{
     position: absolute;
 }
+.fa-radio{
+    cursor: pointer;
+}
 #dashboard h1{
     font-weight: 600;
     font-size: 22px;
