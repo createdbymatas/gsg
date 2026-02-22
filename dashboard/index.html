@@ -68,7 +68,7 @@
         <div id="dashboardNav">
             <h1>Valdymo skydas</h1>
             <button id="fullScreenBtn" onclick="fullScreen()"><i id="fullScreenBtnI" class="fa-solid fa-expand"></i></button>
-            <button id="visualsBtn" onclick="openVisuals()"><i class="fa-regular fa-file-powerpoint"></i> Vizualai</button>
+            <button id="instructionsBtn" onclick="openInstructions()"><i class="fa-regular fa-address-book"></i> Instrukcijos</button>
             <button id="scriptBtn" onclick="openScript()"><i class="fa-regular fa-file-word"></i> Scenarijus</button>
             <hr>
             <div id="barBelowNav">
@@ -129,18 +129,11 @@
         <div></div>
         <iframe src="https://docs.google.com/file/d/1xFtpr0ocCW525L3jTgMg4hsvWSNQRKmh/preview" id="docsIframe" frameborder="0"></iframe>
     </div>
-    <div id="vizualai">
-        <nav id="vizualaiNav">
-            <h1>Vizualai</h1>
-            <i id="closeVizualai" class="fa-solid fa-chevron-down" onclick="closeVisuals()" ontouchstart></i>
-        </nav>
-        <p style="font-size: 15px;"><i class="fa-solid fa-download"></i> Pasirinkus vizualą, jis bus atsiųstas <b style="font-weight: 600;">.pptx</b> formatu</p>
-        <div onclick="auksinisProtas()" id="auksinisProtasDiv">
-            <section id="auksinisProtasWait"><i class="fa-solid fa-hourglass-half"></i></section>
-            <img src="visuals/auksinis-protas.png" alt="Auksinis protas">
-            <p>Auksinis protas</p>
-            <a id="download_auksinis-protas" href="visuals/auksinis-protas.pptx" download=""></a>
-        </div>
+    <div id="instrukcijos">
+        <h1>Instrukcijos</h1>
+        <i id="closeInstrukcijos" class="fa-solid fa-chevron-down" onclick="closeInstructions()" ontouchstart></i>
+        <div></div>
+        <iframe src="https://docs.google.com/file/d/1FYHy9tOxv2CjHqhPpkAQYb5Y6GY3LpSNp4Qu0zQLW1o/preview" id="docsIframe" frameborder="0"></iframe>
     </div>
     <div id="lyrics">
         <h1>Dainos žodžiai</h1>

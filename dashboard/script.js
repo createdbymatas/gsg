@@ -174,8 +174,17 @@ document.body.onkeydown = function(e){
     if (e.keyCode === 49) {
         maxSound();
     }
+    if (e.keyCode === 86) {
+        maxSound();
+    }
     if (e.keyCode === 50) {
         backgroundSound();
+    }
+    if (e.keyCode === 66) {
+        backgroundSound();
+    }
+    if (e.keyCode === 70) {
+        fullScreen();
     }
 }
 
@@ -1483,52 +1492,27 @@ function closeScript() {
     document.getElementById("visualsBtn").style.pointerEvents = "all";
 }
 
-function openVisuals() {
-    document.getElementById("vizualai").style.bottom = "0";
+function openInstructions() {
+    document.getElementById("instrukcijos").style.bottom = "0";
     document.getElementById("dashboard").style.width = "70%";
-    document.getElementById("visualsBtn").style.opacity = "0";
-    document.getElementById("visualsBtn").style.pointerEvents = "none";
-    document.getElementById("vizualaiNav").style.top = "4.9%";
+    document.getElementById("scriptBtn").style.opacity = "0";
+    document.getElementById("scriptBtn").style.pointerEvents = "none";
     document.getElementById("barBelowNav").style.width = "70%";
     document.getElementById("soundPlayer").style.width = "70%";
     document.getElementById("playingTrackName").style.width = "18%";
-    document.getElementById("scriptBtn").style.opacity = "0";
-    document.getElementById("scriptBtn").style.pointerEvents = "none";
+    document.getElementById("instructionsBtn").style.opacity = "0";
+    document.getElementById("instructionsBtn").style.pointerEvents = "none";
 }
-function closeVisuals() {
-    document.getElementById("vizualai").style.bottom = "-100%";
+function closeInstructions() {
+    document.getElementById("instrukcijos").style.bottom = "-100%";
     document.getElementById("dashboard").style.width = "100%";
-    document.getElementById("visualsBtn").style.opacity = "1";
-    document.getElementById("visualsBtn").style.pointerEvents = "all";
-    document.getElementById("vizualaiNav").style.top = "100%";
+    document.getElementById("scriptBtn").style.opacity = "1";
+    document.getElementById("scriptBtn").style.pointerEvents = "all";
     document.getElementById("barBelowNav").style.width = "100%";
     document.getElementById("soundPlayer").style.width = "100%";
     document.getElementById("playingTrackName").style.width = "20%";
-    document.getElementById("scriptBtn").style.opacity = "1";
-    document.getElementById("scriptBtn").style.pointerEvents = "all";
-}
-
-let isDownloading = false;
-function auksinisProtas() {
-    if (isDownloading) return;
-    isDownloading = true;
-
-    const div = document.getElementById("auksinisProtasDiv");
-    const wait = document.getElementById("auksinisProtasWait");
-    const download = document.getElementById("download_auksinis-protas");
-
-    div.style.pointerEvents = "none";
-    wait.style.display = "flex";
-
-    setTimeout(() => {
-        download.click();
-    }, 1000);
-
-    setTimeout(() => {
-        div.style.pointerEvents = "all";
-        wait.style.display = "none";
-        isDownloading = false;
-    }, 3000);
+    document.getElementById("instructionsBtn").style.opacity = "1";
+    document.getElementById("instructionsBtn").style.pointerEvents = "all";
 }
 
 function openLyrics() {

@@ -533,7 +533,7 @@ hr{
 #fullScreenBtn:active{
     opacity: 0.2;
 }
-#visualsBtn{
+#instructionsBtn{
     font-size: 15px;
     position: absolute;
     top: 12.5px;
@@ -541,7 +541,7 @@ hr{
     z-index: 11;
     transition: 0.2s;
     cursor: pointer;
-    width: 95px;
+    width: 130px;
     height: 30px;
     display: flex;
     justify-content: center;
@@ -551,15 +551,15 @@ hr{
     color: black;
     border: none;
 }
-#visualsBtn i{
+#instructionsBtn i{
     cursor: pointer;
     margin-right: 5px;
 }
-#visualsBtn:hover{
+#instructionsBtn:hover{
     opacity: 0.5;
     transform: scale(1.03);
 }
-#visualsBtn:active{
+#instructionsBtn:active{
     opacity: 0.2;
 }
 #scriptBtn{
@@ -1047,7 +1047,7 @@ hr{
     opacity: 0.2;
 }
 
-#vizualai{
+#instrukcijos{
     width: 30%;
     height: 95%;
     position: fixed;
@@ -1058,63 +1058,35 @@ hr{
     transition: 0.2s;
     box-shadow: 0 0 10px lightgrey;
     border-radius: 25px 25px 0 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 70px;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
-#vizualai nav{
-    width: 30%;
-    height: 55px;
-    position: fixed;
-    top: 100%;
-    background-color: #f2f2f2;
-    z-index: 20;
-    margin-left: -15px;
-    padding-left: 15px;
-    border-radius: 25px 25px 0 0;
-    border-bottom: 1px solid lightgrey;
-    transition: 0.2s;
-}
-#vizualai h1{
+#instrukcijos h1{
     font-weight: 600;
     font-size: 22px;
     margin-top: 16px;
+    margin-left: 15px;
     margin-bottom: 15px;
     color: black;
 }
-#vizualai p{
-    color: black;
-}
-#vizualai div{
+#instrukcijos div{
+    position: absolute;
     width: 100%;
-    margin-top: 15px;
+    height: 100%;
+    top: 60px;
+    left: 0;
+    right: 0;
     background-color: white;
-    border-radius: 25px;
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
 }
-#vizualai div:hover{
-    opacity: 0.8;
-    transform: scale(1.01);
-}
-#vizualai div:active{
-    opacity: 0.5;
-}
-#vizualai div img{
+#instrukcijos iframe{
     width: 100%;
-    border-radius: 25px;
-    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 60px;
 }
-#vizualai div p{
-    font-size: 17px;
-    margin-top: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-#closeVizualai{
+#closeInstrukcijos{
     font-size: 15px;
     position: absolute;
     top: 15px;
@@ -1131,41 +1103,12 @@ hr{
     background-color: #DEDEDE;
     color: black;
 }
-#closeVizualai:hover{
+#closeInstrukcijos:hover{
     opacity: 0.5;
     transform: scale(1.03);
 }
-#closeVizualai:active{
+#closeInstrukcijos:active{
     opacity: 0.2;
-}
-#auksinisProtasWait{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 50px;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 25px;
-}
-#auksinisProtasWait i{
-    animation: spinGlass 1s ease-in-out infinite;
-}
-
-@keyframes spinGlass {
-    0%{
-        transform: rotate(0);
-    }
-    70%{
-        transform: rotate(360deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 }
 
 #lyrics{
@@ -1346,7 +1289,7 @@ hr{
         background-color: #282828;
         color: white;
     }
-    #visualsBtn{
+    #instructionsBtn{
         background-color: #282828;
         color: white;
     }
@@ -1425,24 +1368,14 @@ hr{
         background-color: #282828;
         color: white;
     }
-    #vizualai{
+    #instrukcijos{
         background-color: #141414;
         box-shadow: 0 0 10px #464646;
     }
-    #vizualai nav{
-        background-color: #141414;
-        border-bottom: 1px solid #464646;
-    }
-    #vizualai h1{
+    #instrukcijos h1{
         color: white;
     }
-    #vizualai p{
-        color: white;
-    }
-    #vizualai div{
-        background-color: black;
-    }
-    #closeVizualai{
+    #closeInstrukcijos{
         background-color: #282828;
         color: white;
     }
