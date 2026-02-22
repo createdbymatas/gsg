@@ -469,7 +469,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l0').style.transform = 'scale(1)';
             document.getElementById('l0').style.fontWeight = '400';
             document.getElementById('l1').style.marginTop = '0';
-            document.getElementById('l1').style.transform = 'scale(1.8)';
+            document.getElementById('l1').style.transform = 'scale(2)';
             document.getElementById('l1').style.fontWeight = '600';
             document.getElementById('l2').style.marginTop = '25%';
         }
@@ -479,7 +479,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l1').style.transform = 'scale(1)';
             document.getElementById('l1').style.fontWeight = '400';
             document.getElementById('l2').style.marginTop = '0';
-            document.getElementById('l2').style.transform = 'scale(1.8)';
+            document.getElementById('l2').style.transform = 'scale(2)';
             document.getElementById('l2').style.fontWeight = '600';
             document.getElementById('l3').style.marginTop = '25%';
         }
@@ -489,7 +489,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l2').style.transform = 'scale(1)';
             document.getElementById('l2').style.fontWeight = '400';
             document.getElementById('l3').style.marginTop = '0';
-            document.getElementById('l3').style.transform = 'scale(1.8)';
+            document.getElementById('l3').style.transform = 'scale(2)';
             document.getElementById('l3').style.fontWeight = '600';
             document.getElementById('l4').style.marginTop = '25%';
         }
@@ -499,7 +499,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l3').style.transform = 'scale(1)';
             document.getElementById('l3').style.fontWeight = '400';
             document.getElementById('l4').style.marginTop = '0';
-            document.getElementById('l4').style.transform = 'scale(1.8)';
+            document.getElementById('l4').style.transform = 'scale(2)';
             document.getElementById('l4').style.fontWeight = '600';
             document.getElementById('l5').style.marginTop = '25%';
         }
@@ -509,7 +509,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l4').style.transform = 'scale(1)';
             document.getElementById('l4').style.fontWeight = '400';
             document.getElementById('l5').style.marginTop = '0';
-            document.getElementById('l5').style.transform = 'scale(1.8)';
+            document.getElementById('l5').style.transform = 'scale(2)';
             document.getElementById('l5').style.fontWeight = '600';
             document.getElementById('l6').style.marginTop = '25%';
         }
@@ -519,7 +519,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l5').style.transform = 'scale(1)';
             document.getElementById('l5').style.fontWeight = '400';
             document.getElementById('l6').style.marginTop = '0';
-            document.getElementById('l6').style.transform = 'scale(1.8)';
+            document.getElementById('l6').style.transform = 'scale(2)';
             document.getElementById('l6').style.fontWeight = '600';
             document.getElementById('l7').style.marginTop = '25%';
         }
@@ -529,7 +529,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l6').style.transform = 'scale(1)';
             document.getElementById('l6').style.fontWeight = '400';
             document.getElementById('l7').style.marginTop = '0';
-            document.getElementById('l7').style.transform = 'scale(1.8)';
+            document.getElementById('l7').style.transform = 'scale(2)';
             document.getElementById('l7').style.fontWeight = '600';
             document.getElementById('l8').style.marginTop = '25%';
         }
@@ -539,7 +539,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l7').style.transform = 'scale(1)';
             document.getElementById('l7').style.fontWeight = '400';
             document.getElementById('l8').style.marginTop = '0';
-            document.getElementById('l8').style.transform = 'scale(1.8)';
+            document.getElementById('l8').style.transform = 'scale(2)';
             document.getElementById('l8').style.fontWeight = '600';
             document.getElementById('l9').style.marginTop = '25%';
         }
@@ -549,7 +549,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l8').style.transform = 'scale(1)';
             document.getElementById('l8').style.fontWeight = '400';
             document.getElementById('l9').style.marginTop = '0';
-            document.getElementById('l9').style.transform = 'scale(1.8)';
+            document.getElementById('l9').style.transform = 'scale(2)';
             document.getElementById('l9').style.fontWeight = '600';
             document.getElementById('l9').innerHTML = '4...';
             document.getElementById('l10').style.marginTop = '25%';
@@ -571,7 +571,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l9').style.fontWeight = '400';
             document.getElementById('l9').innerHTML = '   ';
             document.getElementById('l10').style.marginTop = '0';
-            document.getElementById('l10').style.transform = 'scale(1.8)';
+            document.getElementById('l10').style.transform = 'scale(2)';
             document.getElementById('l10').style.fontWeight = '600';
             document.getElementById('l11').style.marginTop = '25%';
         }
@@ -581,7 +581,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l10').style.transform = 'scale(1)';
             document.getElementById('l10').style.fontWeight = '400';
             document.getElementById('l11').style.marginTop = '0';
-            document.getElementById('l11').style.transform = 'scale(1.8)';
+            document.getElementById('l11').style.transform = 'scale(2)';
             document.getElementById('l11').style.fontWeight = '600';
             document.getElementById('l12').style.marginTop = '25%';
         }
@@ -591,7 +591,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l11').style.transform = 'scale(1)';
             document.getElementById('l11').style.fontWeight = '400';
             document.getElementById('l12').style.marginTop = '0';
-            document.getElementById('l12').style.transform = 'scale(1.8)';
+            document.getElementById('l12').style.transform = 'scale(2)';
             document.getElementById('l12').style.fontWeight = '600';
             document.getElementById('l13').style.marginTop = '25%';
         }
@@ -601,7 +601,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l12').style.transform = 'scale(1)';
             document.getElementById('l12').style.fontWeight = '400';
             document.getElementById('l13').style.marginTop = '0';
-            document.getElementById('l13').style.transform = 'scale(1.8)';
+            document.getElementById('l13').style.transform = 'scale(2)';
             document.getElementById('l13').style.fontWeight = '600';
             document.getElementById('l14').style.marginTop = '25%';
         }
@@ -611,7 +611,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l13').style.transform = 'scale(1)';
             document.getElementById('l13').style.fontWeight = '400';
             document.getElementById('l14').style.marginTop = '0';
-            document.getElementById('l14').style.transform = 'scale(1.8)';
+            document.getElementById('l14').style.transform = 'scale(2)';
             document.getElementById('l14').style.fontWeight = '600';
             document.getElementById('l15').style.marginTop = '25%';
         }
@@ -621,7 +621,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l14').style.transform = 'scale(1)';
             document.getElementById('l14').style.fontWeight = '400';
             document.getElementById('l15').style.marginTop = '0';
-            document.getElementById('l15').style.transform = 'scale(1.8)';
+            document.getElementById('l15').style.transform = 'scale(2)';
             document.getElementById('l15').style.fontWeight = '600';
             document.getElementById('l16').style.marginTop = '25%';
         }
@@ -631,7 +631,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l15').style.transform = 'scale(1)';
             document.getElementById('l15').style.fontWeight = '400';
             document.getElementById('l16').style.marginTop = '0';
-            document.getElementById('l16').style.transform = 'scale(1.8)';
+            document.getElementById('l16').style.transform = 'scale(2)';
             document.getElementById('l16').style.fontWeight = '600';
             document.getElementById('l17').style.marginTop = '25%';
         }
@@ -641,7 +641,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l16').style.transform = 'scale(1)';
             document.getElementById('l16').style.fontWeight = '400';
             document.getElementById('l17').style.marginTop = '0';
-            document.getElementById('l17').style.transform = 'scale(1.8)';
+            document.getElementById('l17').style.transform = 'scale(2)';
             document.getElementById('l17').style.fontWeight = '600';
             document.getElementById('l18').style.marginTop = '25%';
         }
@@ -651,7 +651,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l17').style.transform = 'scale(1)';
             document.getElementById('l17').style.fontWeight = '400';
             document.getElementById('l18').style.marginTop = '0';
-            document.getElementById('l18').style.transform = 'scale(1.8)';
+            document.getElementById('l18').style.transform = 'scale(2)';
             document.getElementById('l18').style.fontWeight = '600';
             document.getElementById('l18').innerHTML = '30...';
             document.getElementById('l19').style.marginTop = '25%';
@@ -751,7 +751,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l18').style.fontWeight = '400';
             document.getElementById('l18').innerHTML = '   ';
             document.getElementById('l19').style.marginTop = '0';
-            document.getElementById('l19').style.transform = 'scale(1.8)';
+            document.getElementById('l19').style.transform = 'scale(2)';
             document.getElementById('l19').style.fontWeight = '600';
             document.getElementById('l20').style.marginTop = '25%';
         }
@@ -761,7 +761,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l19').style.transform = 'scale(1)';
             document.getElementById('l19').style.fontWeight = '400';
             document.getElementById('l20').style.marginTop = '0';
-            document.getElementById('l20').style.transform = 'scale(1.8)';
+            document.getElementById('l20').style.transform = 'scale(2)';
             document.getElementById('l20').style.fontWeight = '600';
             document.getElementById('l21').style.marginTop = '25%';
         }
@@ -771,7 +771,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l20').style.transform = 'scale(1)';
             document.getElementById('l20').style.fontWeight = '400';
             document.getElementById('l21').style.marginTop = '0';
-            document.getElementById('l21').style.transform = 'scale(1.8)';
+            document.getElementById('l21').style.transform = 'scale(2)';
             document.getElementById('l21').style.fontWeight = '600';
             document.getElementById('l22').style.marginTop = '25%';
         }
@@ -781,7 +781,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l21').style.transform = 'scale(1)';
             document.getElementById('l21').style.fontWeight = '400';
             document.getElementById('l22').style.marginTop = '0';
-            document.getElementById('l22').style.transform = 'scale(1.8)';
+            document.getElementById('l22').style.transform = 'scale(2)';
             document.getElementById('l22').style.fontWeight = '600';
             document.getElementById('l23').style.marginTop = '25%';
         }
@@ -791,7 +791,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l22').style.transform = 'scale(1)';
             document.getElementById('l22').style.fontWeight = '400';
             document.getElementById('l23').style.marginTop = '0';
-            document.getElementById('l23').style.transform = 'scale(1.8)';
+            document.getElementById('l23').style.transform = 'scale(2)';
             document.getElementById('l23').style.fontWeight = '600';
             document.getElementById('l24').style.marginTop = '25%';
         }
@@ -801,7 +801,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l23').style.transform = 'scale(1)';
             document.getElementById('l23').style.fontWeight = '400';
             document.getElementById('l24').style.marginTop = '0';
-            document.getElementById('l24').style.transform = 'scale(1.8)';
+            document.getElementById('l24').style.transform = 'scale(2)';
             document.getElementById('l24').style.fontWeight = '600';
             document.getElementById('l25').style.marginTop = '25%';
         }
@@ -811,7 +811,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l24').style.transform = 'scale(1)';
             document.getElementById('l24').style.fontWeight = '400';
             document.getElementById('l25').style.marginTop = '0';
-            document.getElementById('l25').style.transform = 'scale(1.8)';
+            document.getElementById('l25').style.transform = 'scale(2)';
             document.getElementById('l25').style.fontWeight = '600';
             document.getElementById('l26').style.marginTop = '25%';
         }
@@ -821,7 +821,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l25').style.transform = 'scale(1)';
             document.getElementById('l25').style.fontWeight = '400';
             document.getElementById('l26').style.marginTop = '0';
-            document.getElementById('l26').style.transform = 'scale(1.8)';
+            document.getElementById('l26').style.transform = 'scale(2)';
             document.getElementById('l26').style.fontWeight = '600';
             document.getElementById('l27').style.marginTop = '25%';
         }
@@ -831,7 +831,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l26').style.transform = 'scale(1)';
             document.getElementById('l26').style.fontWeight = '400';
             document.getElementById('l27').style.marginTop = '0';
-            document.getElementById('l27').style.transform = 'scale(1.8)';
+            document.getElementById('l27').style.transform = 'scale(2)';
             document.getElementById('l27').style.fontWeight = '600';
             document.getElementById('l28').style.marginTop = '25%';
         }
@@ -841,7 +841,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l27').style.transform = 'scale(1)';
             document.getElementById('l27').style.fontWeight = '400';
             document.getElementById('l28').style.marginTop = '0';
-            document.getElementById('l28').style.transform = 'scale(1.8)';
+            document.getElementById('l28').style.transform = 'scale(2)';
             document.getElementById('l28').style.fontWeight = '600';
             document.getElementById('l29').style.marginTop = '25%';
         }
@@ -851,7 +851,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l28').style.transform = 'scale(1)';
             document.getElementById('l28').style.fontWeight = '400';
             document.getElementById('l29').style.marginTop = '0';
-            document.getElementById('l29').style.transform = 'scale(1.8)';
+            document.getElementById('l29').style.transform = 'scale(2)';
             document.getElementById('l29').style.fontWeight = '600';
             document.getElementById('l30').style.marginTop = '25%';
         }
@@ -861,7 +861,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l29').style.transform = 'scale(1)';
             document.getElementById('l29').style.fontWeight = '400';
             document.getElementById('l30').style.marginTop = '0';
-            document.getElementById('l30').style.transform = 'scale(1.8)';
+            document.getElementById('l30').style.transform = 'scale(2)';
             document.getElementById('l30').style.fontWeight = '600';
             document.getElementById('l31').style.marginTop = '25%';
         }
@@ -871,7 +871,7 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l30').style.transform = 'scale(1)';
             document.getElementById('l30').style.fontWeight = '400';
             document.getElementById('l31').style.marginTop = '0';
-            document.getElementById('l31').style.transform = 'scale(1.8)';
+            document.getElementById('l31').style.transform = 'scale(2)';
             document.getElementById('l31').style.fontWeight = '600';
             document.getElementById('l32').style.marginTop = '25%';
         }
@@ -1091,7 +1091,7 @@ function playSoundLietuvosTalentuUzduotys(){
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'Lietuvos talentų užduotys';
-    document.getElementById("soundDuration").innerText = '9:53';
+    document.getElementById("soundDuration").innerText = '9:17';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     document.getElementById("nowPlayingLietuvosTalentuUzduotys").style.display = "inline";
@@ -1351,7 +1351,7 @@ function playSoundDaina(){
     document.getElementById('l9').innerHTML = '   ';
     document.getElementById('l18').innerHTML = '   ';
     document.getElementById('l0').style.marginTop = '0';
-    document.getElementById('l0').style.transform = 'scale(1.8)';
+    document.getElementById('l0').style.transform = 'scale(2)';
     document.getElementById('l0').style.fontWeight = '600';
     document.getElementById('l1').style.marginTop = '25%';
     document.getElementById('l1').style.transform = 'scale(1)';
