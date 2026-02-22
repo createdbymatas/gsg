@@ -552,11 +552,11 @@ sound.addEventListener("timeupdate", (e)=>{
             document.getElementById('l9').style.transform = 'scale(1.8)';
             document.getElementById('l9').style.fontWeight = '600';
             document.getElementById('l9').innerHTML = '4...';
-            document.getElementById('l9').style.color = 'red';
             document.getElementById('l10').style.marginTop = '25%';
         }
         else if(musicCurrentTime.innerText == "0:59"){
             document.getElementById('l9').innerHTML = '3...';
+            document.getElementById('l9').style.color = 'red';
         }
         else if(musicCurrentTime.innerText == "1:00"){
             document.getElementById('l9').innerHTML = '2...';
