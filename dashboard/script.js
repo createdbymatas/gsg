@@ -1165,6 +1165,155 @@ function playSoundGangnamStyle(){
         }, 300);
     });
 }
+
+function playSoundHipsDontLie(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/hips-dont-lie.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Shakira - Hips don't lie";
+    document.getElementById("soundDuration").innerText = '3:38';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingHipsDontLie").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundGolden(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/golden.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Huntrix - Golden";
+    document.getElementById("soundDuration").innerText = '3:12';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingGolden").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundVelSvieski(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/vel-svieski.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Stasys Povilaitis - Vėl švieski";
+    document.getElementById("soundDuration").innerText = '3:32';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingVelSvieski").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundOnTheFloor(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/on-the-floor.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Jennifer Lopez, Pitbull - On the floor";
+    document.getElementById("soundDuration").innerText = '4:45';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingOnTheFloor").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundDelTaves(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/del-taves.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Džordana Butkutė - Dėl tavęs";
+    document.getElementById("soundDuration").innerText = '3:37';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingDelTaves").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundAciuTauVeryga(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/aciu-tau-veryga.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "XVII - Ačiū tau, Veryga";
+    document.getElementById("soundDuration").innerText = '3:27';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingAciuTauVeryga").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundLietuvosIstorijosRepas(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/lietuvos-istorijos-repas.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = "Šventinis bankuchenas - Lietuvos istorijos repas";
+    document.getElementById("soundDuration").innerText = '5:45';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingLietuvosIstorijosRepas").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+
 function playSoundBeatosVirtuve(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
@@ -1480,6 +1629,13 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingMerginuSokis').style.display = "none";
     document.getElementById('nowPlayingParodijuSokis').style.display = "none";
     document.getElementById('nowPlayingGangnamStyle').style.display = "none";
+    document.getElementById('nowPlayingHipsDontLie').style.display = "none";
+    document.getElementById('nowPlayingGolden').style.display = "none";
+    document.getElementById('nowPlayingVelSvieski').style.display = "none";
+    document.getElementById('nowPlayingOnTheFloor').style.display = "none";
+    document.getElementById('nowPlayingDelTaves').style.display = "none";
+    document.getElementById('nowPlayingAciuTauVeryga').style.display = "none";
+    document.getElementById('nowPlayingLietuvosIstorijosRepas').style.display = "none";
     document.getElementById('nowPlayingBeatosVirtuve').style.display = "none";
     document.getElementById('nowPlayingDumuDetektorius').style.display = "none";
     document.getElementById('nowPlayingEkstrasensuPradzia').style.display = "none";
@@ -1499,8 +1655,8 @@ function openScript() {
     document.getElementById("barBelowNav").style.width = "70%";
     document.getElementById("soundPlayer").style.width = "70%";
     document.getElementById("playingTrackName").style.width = "18%";
-    document.getElementById("visualsBtn").style.opacity = "0";
-    document.getElementById("visualsBtn").style.pointerEvents = "none";
+    document.getElementById("instructionsBtn").style.opacity = "0";
+    document.getElementById("instructionsBtn").style.pointerEvents = "none";
     document.getElementById("volumeMutedBg").style.width = "70%";
 }
 function closeScript() {
@@ -1511,8 +1667,8 @@ function closeScript() {
     document.getElementById("barBelowNav").style.width = "100%";
     document.getElementById("soundPlayer").style.width = "100%";
     document.getElementById("playingTrackName").style.width = "20%";
-    document.getElementById("visualsBtn").style.opacity = "1";
-    document.getElementById("visualsBtn").style.pointerEvents = "all";
+    document.getElementById("instructionsBtn").style.opacity = "1";
+    document.getElementById("instructionsBtn").style.pointerEvents = "all";
     document.getElementById("volumeMutedBg").style.width = "100%";
 }
 
