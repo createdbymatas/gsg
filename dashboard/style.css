@@ -422,7 +422,6 @@ hr{
     position: fixed;
     bottom: -50%;
     left: 0;
-    right: 0;
     z-index: 101;
     display: flex;
     justify-content: center;
