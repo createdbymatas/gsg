@@ -1419,27 +1419,6 @@ function playSoundDrumRoll(){
         }, 300);
     });
 }
-function playSoundCatwalk(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/catwalk.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Catwalk';
-    document.getElementById("soundDuration").innerText = '00:21';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingCatwalk").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
 function playSoundDaina(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
@@ -1599,7 +1578,6 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingVejoGarsas').style.display = "none";
     document.getElementById('nowPlayingMetuApdovanojimai').style.display = "none";
     document.getElementById('nowPlayingDrumRoll').style.display = "none";
-    document.getElementById('nowPlayingCatwalk').style.display = "none";
     document.getElementById('nowPlayingDaina').style.display = "none";
 }
 
