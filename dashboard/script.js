@@ -1187,27 +1187,6 @@ function playSoundHipsDontLie(){
         }, 300);
     });
 }
-function playSoundGolden(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/golden.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Huntrix - Golden";
-    document.getElementById("soundDuration").innerText = '3:12';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingGolden").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
 function playSoundVelSvieski(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
@@ -1243,27 +1222,6 @@ function playSoundOnTheFloor(){
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     document.getElementById("nowPlayingOnTheFloor").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundDelTaves(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/del-taves.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Džordana Butkutė - Dėl tavęs";
-    document.getElementById("soundDuration").innerText = '3:37';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingDelTaves").style.display = "inline";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -1630,10 +1588,8 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingParodijuSokis').style.display = "none";
     document.getElementById('nowPlayingGangnamStyle').style.display = "none";
     document.getElementById('nowPlayingHipsDontLie').style.display = "none";
-    document.getElementById('nowPlayingGolden').style.display = "none";
     document.getElementById('nowPlayingVelSvieski').style.display = "none";
     document.getElementById('nowPlayingOnTheFloor').style.display = "none";
-    document.getElementById('nowPlayingDelTaves').style.display = "none";
     document.getElementById('nowPlayingAciuTauVeryga').style.display = "none";
     document.getElementById('nowPlayingLietuvosIstorijosRepas').style.display = "none";
     document.getElementById('nowPlayingBeatosVirtuve').style.display = "none";
