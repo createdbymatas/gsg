@@ -1229,20 +1229,20 @@ function playSoundOnTheFloor(){
         }, 300);
     });
 }
-function playSoundAciuTauVeryga(){
+function playSoundDelTaves(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     hideNowPlaying();
-    sound.src = 'sounds/aciu-tau-veryga.mp3';
+    sound.src = 'sounds/del-taves.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "XVII - Ačiū tau, Veryga";
-    document.getElementById("soundDuration").innerText = '3:27';
+    document.getElementById("currentTrackName").innerText = "Džordana Butkutė - Dėl tavęs";
+    document.getElementById("soundDuration").innerText = '3:37';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingAciuTauVeryga").style.display = "inline";
+    document.getElementById("nowPlayingDelTaves").style.display = "inline";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -1590,7 +1590,7 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingHipsDontLie').style.display = "none";
     document.getElementById('nowPlayingVelSvieski').style.display = "none";
     document.getElementById('nowPlayingOnTheFloor').style.display = "none";
-    document.getElementById('nowPlayingAciuTauVeryga').style.display = "none";
+    document.getElementById('nowPlayingDelTaves').style.display = "none";
     document.getElementById('nowPlayingLietuvosIstorijosRepas').style.display = "none";
     document.getElementById('nowPlayingBeatosVirtuve').style.display = "none";
     document.getElementById('nowPlayingDumuDetektorius').style.display = "none";
