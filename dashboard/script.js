@@ -1165,6 +1165,27 @@ function playSoundGangnamStyle(){
         }, 300);
     });
 }
+function playSoundRepas(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/repas.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Repas';
+    document.getElementById("soundDuration").innerText = '3:17';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingRepas").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
 
 function playSoundHipsDontLie(){
     document.getElementById('loadingAudio').style.display = "flex";
@@ -1566,6 +1587,7 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingMerginuSokis').style.display = "none";
     document.getElementById('nowPlayingParodijuSokis').style.display = "none";
     document.getElementById('nowPlayingGangnamStyle').style.display = "none";
+    document.getElementById('nowPlayingRepas').style.display = "none";
     document.getElementById('nowPlayingHipsDontLie').style.display = "none";
     document.getElementById('nowPlayingVelSvieski').style.display = "none";
     document.getElementById('nowPlayingOnTheFloor').style.display = "none";
