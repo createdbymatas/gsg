@@ -1027,7 +1027,7 @@ function playSoundReklama(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklama';
+    document.getElementById("currentTrackName").innerText = 'Reklamos intro';
     document.getElementById("soundDuration").innerText = '0:07';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1574,6 +1574,69 @@ function playSoundDaina(){
         }, 300);
     });
 }
+function playSoundReklama1(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/reklama1.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Reklama 1';
+    document.getElementById("soundDuration").innerText = '3:14';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingReklama1").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundReklama2(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/reklama2.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Reklama 2';
+    document.getElementById("soundDuration").innerText = '2:53';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingReklama2").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
+function playSoundReklama3(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/reklama3.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Reklama 3';
+    document.getElementById("soundDuration").innerText = '3:02';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingReklama3").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
 
 function hideNowPlaying(){
     document.getElementById('nowPlayingZiniuPradzia').style.display = "none";
@@ -1601,6 +1664,9 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingMetuApdovanojimai').style.display = "none";
     document.getElementById('nowPlayingDrumRoll').style.display = "none";
     document.getElementById('nowPlayingDaina').style.display = "none";
+    document.getElementById('nowPlayingReklama1').style.display = "none";
+    document.getElementById('nowPlayingReklama2').style.display = "none";
+    document.getElementById('nowPlayingReklama3').style.display = "none";
 }
 
 function openScript() {
