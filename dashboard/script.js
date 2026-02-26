@@ -1018,6 +1018,27 @@ function playSoundFaruSokis(){
         }, 300);
     });
 }
+function playSoundReklama(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/x';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Reklama';
+    document.getElementById("soundDuration").innerText = 'x:xx';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingReklama").style.display = "inline";
+    sound.addEventListener("canplaythrough", (event) => {
+        setTimeout(() => {
+            document.getElementById('loadingAudio').style.display = "none";
+            document.getElementById("pauseWithMute").style.transform = "scale(1)";
+        }, 300);
+    });
+}
 function playSoundAuksinioProtoPradzia(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
@@ -1580,6 +1601,7 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingZiniuPabaiga').style.display = "none";
     document.getElementById('nowPlayingFarai').style.display = "none";
     document.getElementById('nowPlayingFaruSokis').style.display = "none";
+    document.getElementById('nowPlayingReklama').style.display = "none";
     document.getElementById('nowPlayingAuksinioProtoPradzia').style.display = "none";
     document.getElementById('nowPlayingAuksinioProtoFonas').style.display = "none";
     document.getElementById('nowPlayingLietuvosTalentuPradzia').style.display = "none";
