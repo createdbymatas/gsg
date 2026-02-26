@@ -1022,13 +1022,13 @@ function playSoundReklama(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     hideNowPlaying();
-    sound.src = 'sounds/x';
+    sound.src = 'sounds/reklama.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
     document.getElementById("currentTrackName").innerText = 'Reklama';
-    document.getElementById("soundDuration").innerText = 'x:xx';
+    document.getElementById("soundDuration").innerText = '0:07';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     document.getElementById("nowPlayingReklama").style.display = "inline";
