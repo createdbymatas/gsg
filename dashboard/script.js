@@ -1102,20 +1102,20 @@ function playSoundLietuvosTalentuPradzia(){
         }, 300);
     });
 }
-function playSoundLietuvosTalentuUzduotys(){
+function playSoundLietuvosTalentuFonas(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     hideNowPlaying();
-    sound.src = 'sounds/lietuvos-talentu-uzduotys.mp3';
+    sound.src = 'sounds/lietuvos-talentu-fonas.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Lietuvos talentų užduotys';
-    document.getElementById("soundDuration").innerText = '9:17';
+    document.getElementById("currentTrackName").innerText = 'Lietuvos talentų fonas';
+    document.getElementById("soundDuration").innerText = '10:38';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingLietuvosTalentuUzduotys").style.display = "inline";
+    document.getElementById("nowPlayingLietuvosTalentuFonas").style.display = "inline";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -1583,8 +1583,8 @@ function playSoundReklama1(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklama 1';
-    document.getElementById("soundDuration").innerText = '3:14';
+    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 1';
+    document.getElementById("soundDuration").innerText = '2:53';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
     document.getElementById("nowPlayingReklama1").style.display = "inline";
@@ -1604,7 +1604,7 @@ function playSoundReklama2(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklama 2';
+    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 2';
     document.getElementById("soundDuration").innerText = '2:53';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1625,7 +1625,7 @@ function playSoundReklama3(){
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklama 3';
+    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 3';
     document.getElementById("soundDuration").innerText = '3:02';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
@@ -1647,7 +1647,7 @@ function hideNowPlaying(){
     document.getElementById('nowPlayingAuksinioProtoPradzia').style.display = "none";
     document.getElementById('nowPlayingAuksinioProtoFonas').style.display = "none";
     document.getElementById('nowPlayingLietuvosTalentuPradzia').style.display = "none";
-    document.getElementById('nowPlayingLietuvosTalentuUzduotys').style.display = "none";
+    document.getElementById('nowPlayingLietuvosTalentuFonas').style.display = "none";
     document.getElementById('nowPlayingMerginuSokis').style.display = "none";
     document.getElementById('nowPlayingParodijuSokis').style.display = "none";
     document.getElementById('nowPlayingRepas').style.display = "none";
