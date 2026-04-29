@@ -344,111 +344,169 @@ hr{
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
-#noConnectionBg{
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    bottom: -50%;
-    left: 0;
-    right: 0;
-    z-index: 101;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
 #noConnection{
-    width: 135px;
-    height: 50px;
-    background-color: red;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 0;
-    border-radius: 25px;
-    box-shadow: 0 0 5px red;
-}
-#noConnectionI{
-    font-size: 20px;
-    animation: none;
-}
-#noConnection p{
-    width: 100px;
-    text-align: center;
-    font-size: 15px;
-}
-
-#badConnectionBg{
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    bottom: -50%;
-    left: 0;
-    right: 0;
-    z-index: 101;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
-#badConnection{
-    width: 175px;
-    height: 50px;
-    background-color: red;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 0;
-    border-radius: 25px;
-    box-shadow: 0 0 5px red;
-}
-#badConnectionI{
-    font-size: 20px;
-    animation: none;
-}
-#badConnection p{
-    width: 150px;
-    text-align: center;
-    font-size: 15px;
-}
-
-#volumeMutedBg{
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    bottom: -50%;
-    left: 0;
-    z-index: 101;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-}
-#volumeMuted{
-    width: 180px;
-    height: 50px;
+    width: 335px;
+    height: 115px;
     background-color: white;
     color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 0;
+    display: block;
+    position: fixed;
+    right: -350px;
+    top: 15px;
     border-radius: 25px;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px lightgrey;
+    z-index: 101;
+    transition: 0.2s;
 }
-#volumeMutedI{
-    font-size: 20px;
+#connectionP1{
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#connectionP1 i{
     color: red;
 }
-#volumeMuted p{
-    width: 150px;
-    text-align: center;
+#connectionP2{
+    text-align: left;
     font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#noConnection div{
+    background-color: rgba(244, 244, 244, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    cursor: not-allowed;
+    transition: 0.2s;
+}
+#noConnection div p{
+    cursor: not-allowed;
+}
+#noConnection div i{
+    cursor: not-allowed;
+}
+#noConnection:hover div{
+    pointer-events: all;
+    opacity: 1;
+}
+#noConnection div .fa-ban{
+    color: black;
+}
+
+#badConnection{
+    width: 365px;
+    height: 95px;
+    background-color: white;
+    color: black;
+    display: block;
+    position: fixed;
+    right: -370px;
+    top: 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px lightgrey;
+    z-index: 101;
+    transition: 0.2s;
+}
+#bConnectionP1{
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#bConnectionP1 i{
+    color: red;
+}
+#bConnectionP2{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#volumeMuted{
+    width: 270px;
+    height: 95px;
+    background-color: white;
+    color: black;
+    display: block;
+    position: fixed;
+    right: -300px;
+    top: 15px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px lightgrey;
+    z-index: 101;
+    transition: 0.2s;
+}
+#volumeP1{
+    text-align: left;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#volumeP1 i{
+    color: red;
+}
+#volumeP2{
+    text-align: left;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#volumeMuted div{
+    background-color: rgba(244, 244, 244, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#volumeMuted div p{
+    cursor: pointer;
+}
+#volumeMuted div i{
+    cursor: pointer;
+}
+#volumeMuted:hover div{
+    pointer-events: all;
+    opacity: 1;
 }
 
 @keyframes connectionBlink{
@@ -1265,11 +1323,24 @@ hr{
     #uzdraustaRestart::before {
         border-color:white;
     }
-    #volumeMuted{
-        width: 180px;
-        height: 50px;
+    #noConnection{
         background-color: black;
         color: white;
+        box-shadow: 0 0 10px #464646;
+    }
+    #noConnection div{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    #noConnection div .fa-ban{
+        color: white;
+    }
+    #volumeMuted{
+        background-color: black;
+        color: white;
+        box-shadow: 0 0 10px #464646;
+    }
+    #volumeMuted div{
+        background-color: rgba(0, 0, 0, 0.2);
     }
 
     hr{

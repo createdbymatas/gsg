@@ -3,7 +3,7 @@ setTimeout(() => {
 }, 100);
 setTimeout(() => {
     if(document.getElementById("raide14").style.opacity != "0"){
-        document.getElementById("badConnectionBg").style.bottom = "25px";
+        document.getElementById("badConnection").style.right = "15px";
         document.getElementById("badConnectionI").style.animation = "connectionBlink 3s infinite";
     }
 }, 10000);
@@ -27,13 +27,15 @@ window.onload = ()=>{
     }
 
     function online(){
-        document.getElementById("noConnectionBg").style.bottom = "-50%";
+        document.getElementById("noConnection").style.right = "-350px";
         document.getElementById("noConnectionI").style.animation = "none";
+        document.getElementById("volumeMuted").style.top = "15px";
     }
     function offline(){
         setTimeout(() => {
-            document.getElementById("noConnectionBg").style.bottom = "25px";
+            document.getElementById("noConnection").style.right = "15px";
             document.getElementById("noConnectionI").style.animation = "connectionBlink 3s infinite";
+            document.getElementById("volumeMuted").style.top = "145px";
         }, 200);
     }
 
@@ -41,24 +43,15 @@ window.onload = ()=>{
         ajax();
     }, 100);
 
-    setInterval(()=>{
-        if(sound.volume == 0){
-            document.getElementById('volumeMutedBg').style.bottom = "110px";
-        }
-        else{
-            document.getElementById('volumeMutedBg').style.bottom = "-50%";
-        }
-    }, 100);
-
     function loaded(){
         setTimeout(() => {
             document.getElementById("raide14").style.opacity = "0";
-            document.getElementById("badConnectionBg").style.bottom = "-50%";
+            document.getElementById("badConnection").style.right = "-370px";
             document.getElementById("badConnectionI").style.animation = "none";
         }, 300);
         setTimeout(() => {
             document.getElementById("raide13").style.opacity = "0";
-            document.getElementById("badConnectionBg").style.bottom = "-50%";
+            document.getElementById("badConnection").style.right = "-370px";
             document.getElementById("badConnectionI").style.animation = "none";
         }, 400);
         setTimeout(() => {
@@ -283,6 +276,14 @@ function playPause(){
         }
     }
 }
+function pause(){
+    if(sound.src != ''){
+        sound.pause();
+        soundPlayPauseIcon.classList.remove("fa-pause");
+        soundPlayPauseIcon.classList.add("fa-play");
+        document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    }
+}
 
 let intervalId;
 function maxSound(){
@@ -291,6 +292,7 @@ function maxSound(){
     sound.volume = 1;
     changeVolumeIcon();
     mute();
+    checkIfMuted()
 }
 function pauseWithMute(){
     if(sound.src != ''){
@@ -298,6 +300,7 @@ function pauseWithMute(){
         document.getElementById('loadingAudio').style.display = "flex";
         document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     }
+    checkIfMuted()
 }
 function lowerVolumeGradually(){
     vol.value = vol.value - 1;
@@ -305,20 +308,23 @@ function lowerVolumeGradually(){
     sound.volume = vol.value / 100;
     changeVolumeIcon();
     finishLoweringVolume();
+    checkIfMuted()
 }
 function finishLoweringVolume(){
     if(vol.value == 0){
         clearInterval(intervalId);
         intervalId = null;
-        playPause();
+        pause();
         document.getElementById('loadingAudio').style.display = "none";
         mute();
+        checkIfMuted()
     }
 }
 function backgroundSound(){
     intervalId ??= setInterval(changeVolumeGraduallyBg, 10);
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    checkIfMuted()
 }
 function changeVolumeGraduallyBg(){
     if(vol.value>30){
@@ -327,6 +333,7 @@ function changeVolumeGraduallyBg(){
         sound.volume = vol.value / 100;
         changeVolumeIcon();
         finishChangingVolumeBg();
+        checkIfMuted()
     }
     else{
         vol.value = 30;
@@ -334,6 +341,7 @@ function changeVolumeGraduallyBg(){
         sound.volume = vol.value / 100;
         changeVolumeIcon();
         finishChangingVolumeBg();
+        checkIfMuted()
     }
 }
 function finishChangingVolumeBg(){
@@ -342,6 +350,7 @@ function finishChangingVolumeBg(){
         intervalId = null;
         document.getElementById('loadingAudio').style.display = "none";
         mute();
+        checkIfMuted()
     }
 }
 function mute(){
@@ -373,509 +382,6 @@ sound.addEventListener("timeupdate", (e)=>{
         currentSec = `0${currentSec}`;
     }
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
-
-    if(document.getElementById("currentTrackName").innerText == 'Daina'){
-        if(musicCurrentTime.innerText == "0:00"){
-            document.getElementById('l0').innerHTML = '29...';
-        }
-        else if(musicCurrentTime.innerText == "0:01"){
-            document.getElementById('l0').innerHTML = '28...';
-        }
-        else if(musicCurrentTime.innerText == "0:02"){
-            document.getElementById('l0').innerHTML = '27...';
-        }
-        else if(musicCurrentTime.innerText == "0:03"){
-            document.getElementById('l0').innerHTML = '26...';
-        }
-        else if(musicCurrentTime.innerText == "0:04"){
-            document.getElementById('l0').innerHTML = '25...';
-        }
-        else if(musicCurrentTime.innerText == "0:05"){
-            document.getElementById('l0').innerHTML = '24...';
-        }
-        else if(musicCurrentTime.innerText == "0:06"){
-            document.getElementById('l0').innerHTML = '23...';
-        }
-        else if(musicCurrentTime.innerText == "0:07"){
-            document.getElementById('l0').innerHTML = '22...';
-        }
-        else if(musicCurrentTime.innerText == "0:08"){
-            document.getElementById('l0').innerHTML = '21...';
-        }
-        else if(musicCurrentTime.innerText == "0:09"){
-            document.getElementById('l0').innerHTML = '20...';
-        }
-        else if(musicCurrentTime.innerText == "0:10"){
-            document.getElementById('l0').innerHTML = '19...';
-        }
-        else if(musicCurrentTime.innerText == "0:11"){
-            document.getElementById('l0').innerHTML = '18...';
-        }
-        else if(musicCurrentTime.innerText == "0:12"){
-            document.getElementById('l0').innerHTML = '17...';
-        }
-        else if(musicCurrentTime.innerText == "0:13"){
-            document.getElementById('l0').innerHTML = '16...';
-        }
-        else if(musicCurrentTime.innerText == "0:14"){
-            document.getElementById('l0').innerHTML = '15...';
-        }
-        else if(musicCurrentTime.innerText == "0:15"){
-            document.getElementById('l0').innerHTML = '14...';
-        }
-        else if(musicCurrentTime.innerText == "0:16"){
-            document.getElementById('l0').innerHTML = '13...';
-        }
-        else if(musicCurrentTime.innerText == "0:17"){
-            document.getElementById('l0').innerHTML = '12...';
-        }
-        else if(musicCurrentTime.innerText == "0:18"){
-            document.getElementById('l0').innerHTML = '11...';
-        }
-        else if(musicCurrentTime.innerText == "0:19"){
-            document.getElementById('l0').innerHTML = '10...';
-        }
-        else if(musicCurrentTime.innerText == "0:20"){
-            document.getElementById('l0').innerHTML = '9...';
-        }
-        else if(musicCurrentTime.innerText == "0:21"){
-            document.getElementById('l0').innerHTML = '8...';
-        }
-        else if(musicCurrentTime.innerText == "0:22"){
-            document.getElementById('l0').innerHTML = '7...';
-        }
-        else if(musicCurrentTime.innerText == "0:23"){
-            document.getElementById('l0').innerHTML = '6...';
-        }
-        else if(musicCurrentTime.innerText == "0:24"){
-            document.getElementById('l0').innerHTML = '5...';
-        }
-        else if(musicCurrentTime.innerText == "0:25"){
-            document.getElementById('l0').innerHTML = '4...';
-        }
-        else if(musicCurrentTime.innerText == "0:26"){
-            document.getElementById('l0').innerHTML = '3...';
-            document.getElementById('l0').style.color = 'red';
-        }
-        else if(musicCurrentTime.innerText == "0:27"){
-            document.getElementById('l0').innerHTML = '2...';
-        }
-        else if(musicCurrentTime.innerText == "0:28"){
-            document.getElementById('l0').innerHTML = '1...';
-        }
-        else if(musicCurrentTime.innerText == "0:29"){
-            document.getElementById('l0').innerHTML = '   ';
-            document.getElementById('l0').style.marginTop = '-25%';
-            document.getElementById('l0').style.transform = 'scale(1)';
-            document.getElementById('l0').style.fontWeight = '400';
-            document.getElementById('l1').style.marginTop = '0';
-            document.getElementById('l1').style.transform = 'scale(2)';
-            document.getElementById('l1').style.fontWeight = '600';
-            document.getElementById('l2').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:33"){
-            document.getElementById('l0').style.marginTop = '-100%';
-            document.getElementById('l1').style.marginTop = '-25%';
-            document.getElementById('l1').style.transform = 'scale(1)';
-            document.getElementById('l1').style.fontWeight = '400';
-            document.getElementById('l2').style.marginTop = '0';
-            document.getElementById('l2').style.transform = 'scale(2)';
-            document.getElementById('l2').style.fontWeight = '600';
-            document.getElementById('l3').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:37"){
-            document.getElementById('l1').style.marginTop = '-100%';
-            document.getElementById('l2').style.marginTop = '-25%';
-            document.getElementById('l2').style.transform = 'scale(1)';
-            document.getElementById('l2').style.fontWeight = '400';
-            document.getElementById('l3').style.marginTop = '0';
-            document.getElementById('l3').style.transform = 'scale(2)';
-            document.getElementById('l3').style.fontWeight = '600';
-            document.getElementById('l4').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:40"){
-            document.getElementById('l2').style.marginTop = '-100%';
-            document.getElementById('l3').style.marginTop = '-25%';
-            document.getElementById('l3').style.transform = 'scale(1)';
-            document.getElementById('l3').style.fontWeight = '400';
-            document.getElementById('l4').style.marginTop = '0';
-            document.getElementById('l4').style.transform = 'scale(2)';
-            document.getElementById('l4').style.fontWeight = '600';
-            document.getElementById('l5').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:44"){
-            document.getElementById('l3').style.marginTop = '-100%';
-            document.getElementById('l4').style.marginTop = '-25%';
-            document.getElementById('l4').style.transform = 'scale(1)';
-            document.getElementById('l4').style.fontWeight = '400';
-            document.getElementById('l5').style.marginTop = '0';
-            document.getElementById('l5').style.transform = 'scale(2)';
-            document.getElementById('l5').style.fontWeight = '600';
-            document.getElementById('l6').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:48"){
-            document.getElementById('l4').style.marginTop = '-100%';
-            document.getElementById('l5').style.marginTop = '-25%';
-            document.getElementById('l5').style.transform = 'scale(1)';
-            document.getElementById('l5').style.fontWeight = '400';
-            document.getElementById('l6').style.marginTop = '0';
-            document.getElementById('l6').style.transform = 'scale(2)';
-            document.getElementById('l6').style.fontWeight = '600';
-            document.getElementById('l7').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:51"){
-            document.getElementById('l5').style.marginTop = '-100%';
-            document.getElementById('l6').style.marginTop = '-25%';
-            document.getElementById('l6').style.transform = 'scale(1)';
-            document.getElementById('l6').style.fontWeight = '400';
-            document.getElementById('l7').style.marginTop = '0';
-            document.getElementById('l7').style.transform = 'scale(2)';
-            document.getElementById('l7').style.fontWeight = '600';
-            document.getElementById('l8').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:55"){
-            document.getElementById('l6').style.marginTop = '-100%';
-            document.getElementById('l7').style.marginTop = '-25%';
-            document.getElementById('l7').style.transform = 'scale(1)';
-            document.getElementById('l7').style.fontWeight = '400';
-            document.getElementById('l8').style.marginTop = '0';
-            document.getElementById('l8').style.transform = 'scale(2)';
-            document.getElementById('l8').style.fontWeight = '600';
-            document.getElementById('l9').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:58"){
-            document.getElementById('l7').style.marginTop = '-100%';
-            document.getElementById('l8').style.marginTop = '-25%';
-            document.getElementById('l8').style.transform = 'scale(1)';
-            document.getElementById('l8').style.fontWeight = '400';
-            document.getElementById('l9').style.marginTop = '0';
-            document.getElementById('l9').style.transform = 'scale(2)';
-            document.getElementById('l9').style.fontWeight = '600';
-            document.getElementById('l9').innerHTML = '4...';
-            document.getElementById('l10').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "0:59"){
-            document.getElementById('l9').innerHTML = '3...';
-            document.getElementById('l9').style.color = 'red';
-        }
-        else if(musicCurrentTime.innerText == "1:00"){
-            document.getElementById('l9').innerHTML = '2...';
-        }
-        else if(musicCurrentTime.innerText == "1:01"){
-            document.getElementById('l9').innerHTML = '1...';
-        }
-        else if(musicCurrentTime.innerText == "1:02"){
-            document.getElementById('l8').style.marginTop = '-100%';
-            document.getElementById('l9').style.marginTop = '-25%';
-            document.getElementById('l9').style.transform = 'scale(1)';
-            document.getElementById('l9').style.fontWeight = '400';
-            document.getElementById('l9').innerHTML = '   ';
-            document.getElementById('l10').style.marginTop = '0';
-            document.getElementById('l10').style.transform = 'scale(2)';
-            document.getElementById('l10').style.fontWeight = '600';
-            document.getElementById('l11').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:06"){
-            document.getElementById('l9').style.marginTop = '-100%';
-            document.getElementById('l10').style.marginTop = '-25%';
-            document.getElementById('l10').style.transform = 'scale(1)';
-            document.getElementById('l10').style.fontWeight = '400';
-            document.getElementById('l11').style.marginTop = '0';
-            document.getElementById('l11').style.transform = 'scale(2)';
-            document.getElementById('l11').style.fontWeight = '600';
-            document.getElementById('l12').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:09"){
-            document.getElementById('l10').style.marginTop = '-100%';
-            document.getElementById('l11').style.marginTop = '-25%';
-            document.getElementById('l11').style.transform = 'scale(1)';
-            document.getElementById('l11').style.fontWeight = '400';
-            document.getElementById('l12').style.marginTop = '0';
-            document.getElementById('l12').style.transform = 'scale(2)';
-            document.getElementById('l12').style.fontWeight = '600';
-            document.getElementById('l13').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:13"){
-            document.getElementById('l11').style.marginTop = '-100%';
-            document.getElementById('l12').style.marginTop = '-25%';
-            document.getElementById('l12').style.transform = 'scale(1)';
-            document.getElementById('l12').style.fontWeight = '400';
-            document.getElementById('l13').style.marginTop = '0';
-            document.getElementById('l13').style.transform = 'scale(2)';
-            document.getElementById('l13').style.fontWeight = '600';
-            document.getElementById('l14').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:17"){
-            document.getElementById('l12').style.marginTop = '-100%';
-            document.getElementById('l13').style.marginTop = '-25%';
-            document.getElementById('l13').style.transform = 'scale(1)';
-            document.getElementById('l13').style.fontWeight = '400';
-            document.getElementById('l14').style.marginTop = '0';
-            document.getElementById('l14').style.transform = 'scale(2)';
-            document.getElementById('l14').style.fontWeight = '600';
-            document.getElementById('l15').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:21"){
-            document.getElementById('l13').style.marginTop = '-100%';
-            document.getElementById('l14').style.marginTop = '-25%';
-            document.getElementById('l14').style.transform = 'scale(1)';
-            document.getElementById('l14').style.fontWeight = '400';
-            document.getElementById('l15').style.marginTop = '0';
-            document.getElementById('l15').style.transform = 'scale(2)';
-            document.getElementById('l15').style.fontWeight = '600';
-            document.getElementById('l16').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:24"){
-            document.getElementById('l14').style.marginTop = '-100%';
-            document.getElementById('l15').style.marginTop = '-25%';
-            document.getElementById('l15').style.transform = 'scale(1)';
-            document.getElementById('l15').style.fontWeight = '400';
-            document.getElementById('l16').style.marginTop = '0';
-            document.getElementById('l16').style.transform = 'scale(2)';
-            document.getElementById('l16').style.fontWeight = '600';
-            document.getElementById('l17').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:28"){
-            document.getElementById('l15').style.marginTop = '-100%';
-            document.getElementById('l16').style.marginTop = '-25%';
-            document.getElementById('l16').style.transform = 'scale(1)';
-            document.getElementById('l16').style.fontWeight = '400';
-            document.getElementById('l17').style.marginTop = '0';
-            document.getElementById('l17').style.transform = 'scale(2)';
-            document.getElementById('l17').style.fontWeight = '600';
-            document.getElementById('l18').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:31"){
-            document.getElementById('l16').style.marginTop = '-100%';
-            document.getElementById('l17').style.marginTop = '-25%';
-            document.getElementById('l17').style.transform = 'scale(1)';
-            document.getElementById('l17').style.fontWeight = '400';
-            document.getElementById('l18').style.marginTop = '0';
-            document.getElementById('l18').style.transform = 'scale(2)';
-            document.getElementById('l18').style.fontWeight = '600';
-            document.getElementById('l18').innerHTML = '30...';
-            document.getElementById('l19').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "1:32"){
-            document.getElementById('l18').innerHTML = '29...';
-        }
-        else if(musicCurrentTime.innerText == "1:33"){
-            document.getElementById('l18').innerHTML = '28...';
-        }
-        else if(musicCurrentTime.innerText == "1:34"){
-            document.getElementById('l18').innerHTML = '27...';
-        }
-        else if(musicCurrentTime.innerText == "1:35"){
-            document.getElementById('l18').innerHTML = '26...';
-        }
-        else if(musicCurrentTime.innerText == "1:36"){
-            document.getElementById('l18').innerHTML = '25...';
-        }
-        else if(musicCurrentTime.innerText == "1:37"){
-            document.getElementById('l18').innerHTML = '24...';
-        }
-        else if(musicCurrentTime.innerText == "1:38"){
-            document.getElementById('l18').innerHTML = '23...';
-        }
-        else if(musicCurrentTime.innerText == "1:39"){
-            document.getElementById('l18').innerHTML = '22...';
-        }
-        else if(musicCurrentTime.innerText == "1:40"){
-            document.getElementById('l18').innerHTML = '21...';
-        }
-        else if(musicCurrentTime.innerText == "1:41"){
-            document.getElementById('l18').innerHTML = '20...';
-        }
-        else if(musicCurrentTime.innerText == "1:42"){
-            document.getElementById('l18').innerHTML = '19...';
-        }
-        else if(musicCurrentTime.innerText == "1:43"){
-            document.getElementById('l18').innerHTML = '18...';
-        }
-        else if(musicCurrentTime.innerText == "1:44"){
-            document.getElementById('l18').innerHTML = '17...';
-        }
-        else if(musicCurrentTime.innerText == "1:45"){
-            document.getElementById('l18').innerHTML = '16...';
-        }
-        else if(musicCurrentTime.innerText == "1:46"){
-            document.getElementById('l18').innerHTML = '15...';
-        }
-        else if(musicCurrentTime.innerText == "1:47"){
-            document.getElementById('l18').innerHTML = '14...';
-        }
-        else if(musicCurrentTime.innerText == "1:48"){
-            document.getElementById('l18').innerHTML = '13...';
-        }
-        else if(musicCurrentTime.innerText == "1:49"){
-            document.getElementById('l18').innerHTML = '12...';
-        }
-        else if(musicCurrentTime.innerText == "1:50"){
-            document.getElementById('l18').innerHTML = '11...';
-        }
-        else if(musicCurrentTime.innerText == "1:51"){
-            document.getElementById('l18').innerHTML = '10...';
-        }
-        else if(musicCurrentTime.innerText == "1:52"){
-            document.getElementById('l18').innerHTML = '9...';
-        }
-        else if(musicCurrentTime.innerText == "1:53"){
-            document.getElementById('l18').innerHTML = '8...';
-        }
-        else if(musicCurrentTime.innerText == "1:54"){
-            document.getElementById('l18').innerHTML = '7...';
-        }
-        else if(musicCurrentTime.innerText == "1:55"){
-            document.getElementById('l18').innerHTML = '6...';
-        }
-        else if(musicCurrentTime.innerText == "1:56"){
-            document.getElementById('l18').innerHTML = '5...';
-        }
-        else if(musicCurrentTime.innerText == "1:57"){
-            document.getElementById('l18').innerHTML = '4...';
-        }
-        else if(musicCurrentTime.innerText == "1:58"){
-            document.getElementById('l18').innerHTML = '3...';
-            document.getElementById('l18').style.color = 'red';
-        }
-        else if(musicCurrentTime.innerText == "1:59"){
-            document.getElementById('l18').innerHTML = '2...';
-        }
-        else if(musicCurrentTime.innerText == "2:00"){
-            document.getElementById('l18').innerHTML = '1...';
-        }
-        else if(musicCurrentTime.innerText == "2:01"){
-            document.getElementById('l17').style.marginTop = '-100%';
-            document.getElementById('l18').style.marginTop = '-25%';
-            document.getElementById('l18').style.transform = 'scale(1)';
-            document.getElementById('l18').style.fontWeight = '400';
-            document.getElementById('l18').innerHTML = '   ';
-            document.getElementById('l19').style.marginTop = '0';
-            document.getElementById('l19').style.transform = 'scale(2)';
-            document.getElementById('l19').style.fontWeight = '600';
-            document.getElementById('l20').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:04"){
-            document.getElementById('l18').style.marginTop = '-100%';
-            document.getElementById('l19').style.marginTop = '-25%';
-            document.getElementById('l19').style.transform = 'scale(1)';
-            document.getElementById('l19').style.fontWeight = '400';
-            document.getElementById('l20').style.marginTop = '0';
-            document.getElementById('l20').style.transform = 'scale(2)';
-            document.getElementById('l20').style.fontWeight = '600';
-            document.getElementById('l21').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:08"){
-            document.getElementById('l19').style.marginTop = '-100%';
-            document.getElementById('l20').style.marginTop = '-25%';
-            document.getElementById('l20').style.transform = 'scale(1)';
-            document.getElementById('l20').style.fontWeight = '400';
-            document.getElementById('l21').style.marginTop = '0';
-            document.getElementById('l21').style.transform = 'scale(2)';
-            document.getElementById('l21').style.fontWeight = '600';
-            document.getElementById('l22').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:12"){
-            document.getElementById('l20').style.marginTop = '-100%';
-            document.getElementById('l21').style.marginTop = '-25%';
-            document.getElementById('l21').style.transform = 'scale(1)';
-            document.getElementById('l21').style.fontWeight = '400';
-            document.getElementById('l22').style.marginTop = '0';
-            document.getElementById('l22').style.transform = 'scale(2)';
-            document.getElementById('l22').style.fontWeight = '600';
-            document.getElementById('l23').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:16"){
-            document.getElementById('l21').style.marginTop = '-100%';
-            document.getElementById('l22').style.marginTop = '-25%';
-            document.getElementById('l22').style.transform = 'scale(1)';
-            document.getElementById('l22').style.fontWeight = '400';
-            document.getElementById('l23').style.marginTop = '0';
-            document.getElementById('l23').style.transform = 'scale(2)';
-            document.getElementById('l23').style.fontWeight = '600';
-            document.getElementById('l24').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:20"){
-            document.getElementById('l22').style.marginTop = '-100%';
-            document.getElementById('l23').style.marginTop = '-25%';
-            document.getElementById('l23').style.transform = 'scale(1)';
-            document.getElementById('l23').style.fontWeight = '400';
-            document.getElementById('l24').style.marginTop = '0';
-            document.getElementById('l24').style.transform = 'scale(2)';
-            document.getElementById('l24').style.fontWeight = '600';
-            document.getElementById('l25').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:23"){
-            document.getElementById('l23').style.marginTop = '-100%';
-            document.getElementById('l24').style.marginTop = '-25%';
-            document.getElementById('l24').style.transform = 'scale(1)';
-            document.getElementById('l24').style.fontWeight = '400';
-            document.getElementById('l25').style.marginTop = '0';
-            document.getElementById('l25').style.transform = 'scale(2)';
-            document.getElementById('l25').style.fontWeight = '600';
-            document.getElementById('l26').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:27"){
-            document.getElementById('l24').style.marginTop = '-100%';
-            document.getElementById('l25').style.marginTop = '-25%';
-            document.getElementById('l25').style.transform = 'scale(1)';
-            document.getElementById('l25').style.fontWeight = '400';
-            document.getElementById('l26').style.marginTop = '0';
-            document.getElementById('l26').style.transform = 'scale(2)';
-            document.getElementById('l26').style.fontWeight = '600';
-            document.getElementById('l27').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:30"){
-            document.getElementById('l25').style.marginTop = '-100%';
-            document.getElementById('l26').style.marginTop = '-25%';
-            document.getElementById('l26').style.transform = 'scale(1)';
-            document.getElementById('l26').style.fontWeight = '400';
-            document.getElementById('l27').style.marginTop = '0';
-            document.getElementById('l27').style.transform = 'scale(2)';
-            document.getElementById('l27').style.fontWeight = '600';
-            document.getElementById('l28').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:34"){
-            document.getElementById('l26').style.marginTop = '-100%';
-            document.getElementById('l27').style.marginTop = '-25%';
-            document.getElementById('l27').style.transform = 'scale(1)';
-            document.getElementById('l27').style.fontWeight = '400';
-            document.getElementById('l28').style.marginTop = '0';
-            document.getElementById('l28').style.transform = 'scale(2)';
-            document.getElementById('l28').style.fontWeight = '600';
-            document.getElementById('l29').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:37"){
-            document.getElementById('l27').style.marginTop = '-100%';
-            document.getElementById('l28').style.marginTop = '-25%';
-            document.getElementById('l28').style.transform = 'scale(1)';
-            document.getElementById('l28').style.fontWeight = '400';
-            document.getElementById('l29').style.marginTop = '0';
-            document.getElementById('l29').style.transform = 'scale(2)';
-            document.getElementById('l29').style.fontWeight = '600';
-            document.getElementById('l30').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:41"){
-            document.getElementById('l28').style.marginTop = '-100%';
-            document.getElementById('l29').style.marginTop = '-25%';
-            document.getElementById('l29').style.transform = 'scale(1)';
-            document.getElementById('l29').style.fontWeight = '400';
-            document.getElementById('l30').style.marginTop = '0';
-            document.getElementById('l30').style.transform = 'scale(2)';
-            document.getElementById('l30').style.fontWeight = '600';
-            document.getElementById('l31').style.marginTop = '25%';
-        }
-        else if(musicCurrentTime.innerText == "2:44"){
-            document.getElementById('l29').style.marginTop = '-100%';
-            document.getElementById('l30').style.marginTop = '-25%';
-            document.getElementById('l30').style.transform = 'scale(1)';
-            document.getElementById('l30').style.fontWeight = '400';
-            document.getElementById('l31').style.marginTop = '0';
-            document.getElementById('l31').style.transform = 'scale(2)';
-            document.getElementById('l31').style.fontWeight = '600';
-            document.getElementById('l32').style.marginTop = '25%';
-        }
-    }
 });
 
 progressBg.addEventListener("click", (e)=>{
@@ -896,6 +402,7 @@ vol.oninput = function() {
     sound.volume = vol.value / 100;
     changeVolumeIcon();
     mute();
+    checkIfMuted()
 }
 progressBarVol.addEventListener("click", (e)=>{
     let progressWidthval = progressBarVol.clientWidth;
@@ -906,6 +413,7 @@ progressBarVol.addEventListener("click", (e)=>{
     sound.volume = vol.value / 100;
     changeVolumeIcon();
     mute();
+    checkIfMuted();
 });
 function changeVolumeIcon(){
     if(vol.value>=40){
@@ -933,682 +441,32 @@ function changeVolumeIcon(){
         document.getElementById('volumeIcon').classList.add("fa-volume-xmark");
     }
 }
-
-function playSoundZiniuPradzia(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/ziniu-pradzia.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Žinių pradžia';
-    document.getElementById("soundDuration").innerText = '0:14';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingZiniuPradzia").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundZiniuPabaiga(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/ziniu-pabaiga.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Žinių pabaiga';
-    document.getElementById("soundDuration").innerText = '0:07';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingZiniuPabaiga").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundFarai(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/farai.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Farai';
-    document.getElementById("soundDuration").innerText = '0:17';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingFarai").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundFaruSokis(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/faru-sokis.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Farų šokis';
-    document.getElementById("soundDuration").innerText = '4:09';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingFaruSokis").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundReklama(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/reklama.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklamos intro';
-    document.getElementById("soundDuration").innerText = '0:07';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingReklama").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundAuksinioProtoPradzia(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/auksinio-proto-pradzia.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Auksinio proto pradžia';
-    document.getElementById("soundDuration").innerText = '0:19';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingAuksinioProtoPradzia").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundAuksinioProtoFonas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/auksinio-proto-fonas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Auksinio proto fonas';
-    document.getElementById("soundDuration").innerText = '16:01';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingAuksinioProtoFonas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundLietuvosTalentuPradzia(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/lietuvos-talentu-pradzia.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Lietuvos talentų pradžia';
-    document.getElementById("soundDuration").innerText = '0:24';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingLietuvosTalentuPradzia").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundLietuvosTalentuFonas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/lietuvos-talentu-fonas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Lietuvos talentų fonas';
-    document.getElementById("soundDuration").innerText = '10:38';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingLietuvosTalentuFonas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundMerginuSokis(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/merginu-sokis.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Merginų šokis';
-    document.getElementById("soundDuration").innerText = '1:40';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingMerginuSokis").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundParodijuSokis(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/parodiju-sokis.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Parodijų šokis';
-    document.getElementById("soundDuration").innerText = '2:19';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingParodijuSokis").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundMerginuIejimas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/merginu-iejimas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Merginų įėjimas';
-    document.getElementById("soundDuration").innerText = '0:26';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingMerginuIejimas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundVaikinuIejimas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/vaikinu-iejimas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Vaikinų įėjimas';
-    document.getElementById("soundDuration").innerText = '0:19';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingVaikinuIejimas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundRepas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/repas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Repas';
-    document.getElementById("soundDuration").innerText = '3:17';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingRepas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-
-function playSoundHipsDontLie(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/hips-dont-lie.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Shakira - Hips don't lie";
-    document.getElementById("soundDuration").innerText = '3:38';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingHipsDontLie").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundVelSvieski(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/vel-svieski.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Stasys Povilaitis - Vėl švieski";
-    document.getElementById("soundDuration").innerText = '3:32';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingVelSvieski").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundOnTheFloor(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/on-the-floor.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Jennifer Lopez, Pitbull - On the floor";
-    document.getElementById("soundDuration").innerText = '4:45';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingOnTheFloor").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundDelTaves(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/del-taves.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Džordana Butkutė - Dėl tavęs";
-    document.getElementById("soundDuration").innerText = '3:37';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingDelTaves").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundLietuvosIstorijosRepas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/lietuvos-istorijos-repas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = "Šventinis bankuchenas - Lietuvos istorijos repas";
-    document.getElementById("soundDuration").innerText = '5:45';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingLietuvosIstorijosRepas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-
-function playSoundBeatosVirtuve(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/beatos-virtuve.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Beatos virtuvė';
-    document.getElementById("soundDuration").innerText = '12:23';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingBeatosVirtuve").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundDumuDetektorius(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/dumu-detektorius.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Dūmų detektorius';
-    document.getElementById("soundDuration").innerText = '00:07';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingDumuDetektorius").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundEkstrasensuPradzia(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/ekstrasensu-pradzia.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Ekstrasensų pradžia';
-    document.getElementById("soundDuration").innerText = '0:25';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingEkstrasensuPradzia").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundEkstrasensuFonas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/ekstrasensu-fonas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Ekstrasensų fonas';
-    document.getElementById("soundDuration").innerText = '17:25';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingEkstrasensuFonas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundVejoGarsas(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/vejo-garsas.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Vėjo garsas';
-    document.getElementById("soundDuration").innerText = '00:13';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingVejoGarsas").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundMetuApdovanojimai(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/metu-apdovanojimai.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Metų apdovanojimai';
-    document.getElementById("soundDuration").innerText = '17:21';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingMetuApdovanojimai").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundDrumRoll(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/drum-roll.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Drum roll';
-    document.getElementById("soundDuration").innerText = '0:10';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingDrumRoll").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundDaina(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/daina.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Daina';
-    document.getElementById("soundDuration").innerText = '2:46';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingDaina").style.display = "inline";
-    document.getElementById('l0').innerHTML = '   ';
-    document.getElementById('l9').innerHTML = '   ';
-    document.getElementById('l18').innerHTML = '   ';
-    document.getElementById('l0').style.marginTop = '0';
-    document.getElementById('l0').style.transform = 'scale(2)';
-    document.getElementById('l0').style.fontWeight = '600';
-    document.getElementById('l1').style.marginTop = '25%';
-    document.getElementById('l1').style.transform = 'scale(1)';
-    document.getElementById('l1').style.fontWeight = '400';
-    document.getElementById('l2').style.marginTop = '100%';
-    document.getElementById('l2').style.transform = 'scale(1)';
-    document.getElementById('l2').style.fontWeight = '400';
-    document.getElementById('l3').style.marginTop = '100%';
-    document.getElementById('l3').style.transform = 'scale(1)';
-    document.getElementById('l3').style.fontWeight = '400';
-    document.getElementById('l4').style.marginTop = '100%';
-    document.getElementById('l4').style.transform = 'scale(1)';
-    document.getElementById('l4').style.fontWeight = '400';
-    document.getElementById('l5').style.marginTop = '100%';
-    document.getElementById('l5').style.transform = 'scale(1)';
-    document.getElementById('l5').style.fontWeight = '400';
-    document.getElementById('l6').style.marginTop = '100%';
-    document.getElementById('l6').style.transform = 'scale(1)';
-    document.getElementById('l6').style.fontWeight = '400';
-    document.getElementById('l7').style.marginTop = '100%';
-    document.getElementById('l7').style.transform = 'scale(1)';
-    document.getElementById('l7').style.fontWeight = '400';
-    document.getElementById('l8').style.marginTop = '100%';
-    document.getElementById('l8').style.transform = 'scale(1)';
-    document.getElementById('l8').style.fontWeight = '400';
-    document.getElementById('l9').style.marginTop = '100%';
-    document.getElementById('l9').style.transform = 'scale(1)';
-    document.getElementById('l9').style.fontWeight = '400';
-    document.getElementById('l10').style.marginTop = '100%';
-    document.getElementById('l10').style.transform = 'scale(1)';
-    document.getElementById('l10').style.fontWeight = '400';
-    document.getElementById('l11').style.marginTop = '100%';
-    document.getElementById('l11').style.transform = 'scale(1)';
-    document.getElementById('l11').style.fontWeight = '400';
-    document.getElementById('l12').style.marginTop = '100%';
-    document.getElementById('l12').style.transform = 'scale(1)';
-    document.getElementById('l12').style.fontWeight = '400';
-    document.getElementById('l13').style.marginTop = '100%';
-    document.getElementById('l13').style.transform = 'scale(1)';
-    document.getElementById('l13').style.fontWeight = '400';
-    document.getElementById('l14').style.marginTop = '100%';
-    document.getElementById('l14').style.transform = 'scale(1)';
-    document.getElementById('l14').style.fontWeight = '400';
-    document.getElementById('l15').style.marginTop = '100%';
-    document.getElementById('l15').style.transform = 'scale(1)';
-    document.getElementById('l15').style.fontWeight = '400';
-    document.getElementById('l16').style.marginTop = '100%';
-    document.getElementById('l16').style.transform = 'scale(1)';
-    document.getElementById('l16').style.fontWeight = '400';
-    document.getElementById('l17').style.marginTop = '100%';
-    document.getElementById('l17').style.transform = 'scale(1)';
-    document.getElementById('l17').style.fontWeight = '400';
-    document.getElementById('l18').style.marginTop = '100%';
-    document.getElementById('l18').style.transform = 'scale(1)';
-    document.getElementById('l18').style.fontWeight = '400';
-    document.getElementById('l19').style.marginTop = '100%';
-    document.getElementById('l19').style.transform = 'scale(1)';
-    document.getElementById('l19').style.fontWeight = '400';
-    document.getElementById('l20').style.marginTop = '100%';
-    document.getElementById('l20').style.transform = 'scale(1)';
-    document.getElementById('l20').style.fontWeight = '400';
-    document.getElementById('l21').style.marginTop = '100%';
-    document.getElementById('l21').style.transform = 'scale(1)';
-    document.getElementById('l21').style.fontWeight = '400';
-    document.getElementById('l22').style.marginTop = '100%';
-    document.getElementById('l22').style.transform = 'scale(1)';
-    document.getElementById('l22').style.fontWeight = '400';
-    document.getElementById('l23').style.marginTop = '100%';
-    document.getElementById('l23').style.transform = 'scale(1)';
-    document.getElementById('l23').style.fontWeight = '400';
-    document.getElementById('l24').style.marginTop = '100%';
-    document.getElementById('l24').style.transform = 'scale(1)';
-    document.getElementById('l24').style.fontWeight = '400';
-    document.getElementById('l25').style.marginTop = '100%';
-    document.getElementById('l25').style.transform = 'scale(1)';
-    document.getElementById('l25').style.fontWeight = '400';
-    document.getElementById('l26').style.marginTop = '100%';
-    document.getElementById('l26').style.transform = 'scale(1)';
-    document.getElementById('l26').style.fontWeight = '400';
-    document.getElementById('l27').style.marginTop = '100%';
-    document.getElementById('l27').style.transform = 'scale(1)';
-    document.getElementById('l27').style.fontWeight = '400';
-    document.getElementById('l28').style.marginTop = '100%';
-    document.getElementById('l28').style.transform = 'scale(1)';
-    document.getElementById('l28').style.fontWeight = '400';
-    document.getElementById('l29').style.marginTop = '100%';
-    document.getElementById('l29').style.transform = 'scale(1)';
-    document.getElementById('l29').style.fontWeight = '400';
-    document.getElementById('l30').style.marginTop = '100%';
-    document.getElementById('l30').style.transform = 'scale(1)';
-    document.getElementById('l30').style.fontWeight = '400';
-    document.getElementById('l31').style.marginTop = '100%';
-    document.getElementById('l31').style.transform = 'scale(1)';
-    document.getElementById('l31').style.fontWeight = '400';
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.getElementById('l0').style.color = 'white';
-        document.getElementById('l9').style.color = 'white';
-        document.getElementById('l18').style.color = 'white';
+function checkIfMuted(){
+    if(sound.volume == 0){
+        document.getElementById('volumeMuted').style.right = "15px";
     }
     else{
-        document.getElementById('l0').style.color = 'white';
-        document.getElementById('l9').style.color = 'white';
-        document.getElementById('l18').style.color = 'white';
-        document.getElementById('l0').style.color = 'black';
-        document.getElementById('l9').style.color = 'black';
-        document.getElementById('l18').style.color = 'black';
+        document.getElementById('volumeMuted').style.right = "-300px";
     }
-    openLyrics();
+}
+function hideVolumeMuted(){
+    document.getElementById('volumeMuted').style.right = "-300px";
+}
+
+function playSoundSokis(){
+    document.getElementById('loadingAudio').style.display = "flex";
+    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
+    hideNowPlaying();
+    sound.src = 'sounds/sokis.mp3';
+    sound.currentTime = 0;
+    sound.play();
+    soundPlayPauseIcon.classList.add("fa-pause");
+    soundPlayPauseIcon.classList.remove("fa-play");
+    document.getElementById("currentTrackName").innerText = 'Šokis';
+    document.getElementById("soundDuration").innerText = '3:23';
+    document.getElementById("pauseWithMute").style.transform = "scale(0)";
+    document.getElementById("progressBg").style.pointerEvents = "all";
+    document.getElementById("nowPlayingSokis").style.display = "inline";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -1616,62 +474,20 @@ function playSoundDaina(){
         }, 300);
     });
 }
-function playSoundReklama1(){
+function playSoundJura(){
     document.getElementById('loadingAudio').style.display = "flex";
     document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
     hideNowPlaying();
-    sound.src = 'sounds/reklama1.mp3';
+    sound.src = 'sounds/jura.mp3';
     sound.currentTime = 0;
     sound.play();
     soundPlayPauseIcon.classList.add("fa-pause");
     soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 1';
-    document.getElementById("soundDuration").innerText = '2:53';
+    document.getElementById("currentTrackName").innerText = 'Jūra';
+    document.getElementById("soundDuration").innerText = '6:36';
     document.getElementById("pauseWithMute").style.transform = "scale(0)";
     document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingReklama1").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundReklama2(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/reklama2.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 2';
-    document.getElementById("soundDuration").innerText = '2:53';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingReklama2").style.display = "inline";
-    sound.addEventListener("canplaythrough", (event) => {
-        setTimeout(() => {
-            document.getElementById('loadingAudio').style.display = "none";
-            document.getElementById("pauseWithMute").style.transform = "scale(1)";
-        }, 300);
-    });
-}
-function playSoundReklama3(){
-    document.getElementById('loadingAudio').style.display = "flex";
-    document.getElementById('loadingAudio').style.animation = "spin3 0.65s linear infinite";
-    hideNowPlaying();
-    sound.src = 'sounds/reklama3.mp3';
-    sound.currentTime = 0;
-    sound.play();
-    soundPlayPauseIcon.classList.add("fa-pause");
-    soundPlayPauseIcon.classList.remove("fa-play");
-    document.getElementById("currentTrackName").innerText = 'Reklamos intarpas 3';
-    document.getElementById("soundDuration").innerText = '3:02';
-    document.getElementById("pauseWithMute").style.transform = "scale(0)";
-    document.getElementById("progressBg").style.pointerEvents = "all";
-    document.getElementById("nowPlayingReklama3").style.display = "inline";
+    document.getElementById("nowPlayingJura").style.display = "inline";
     sound.addEventListener("canplaythrough", (event) => {
         setTimeout(() => {
             document.getElementById('loadingAudio').style.display = "none";
@@ -1681,36 +497,8 @@ function playSoundReklama3(){
 }
 
 function hideNowPlaying(){
-    document.getElementById('nowPlayingZiniuPradzia').style.display = "none";
-    document.getElementById('nowPlayingZiniuPabaiga').style.display = "none";
-    document.getElementById('nowPlayingFarai').style.display = "none";
-    document.getElementById('nowPlayingFaruSokis').style.display = "none";
-    document.getElementById('nowPlayingReklama').style.display = "none";
-    document.getElementById('nowPlayingAuksinioProtoPradzia').style.display = "none";
-    document.getElementById('nowPlayingAuksinioProtoFonas').style.display = "none";
-    document.getElementById('nowPlayingLietuvosTalentuPradzia').style.display = "none";
-    document.getElementById('nowPlayingLietuvosTalentuFonas').style.display = "none";
-    document.getElementById('nowPlayingMerginuSokis').style.display = "none";
-    document.getElementById('nowPlayingParodijuSokis').style.display = "none";
-    document.getElementById('nowPlayingMerginuIejimas').style.display = "none";
-    document.getElementById('nowPlayingVaikinuIejimas').style.display = "none";
-    document.getElementById('nowPlayingRepas').style.display = "none";
-    document.getElementById('nowPlayingHipsDontLie').style.display = "none";
-    document.getElementById('nowPlayingVelSvieski').style.display = "none";
-    document.getElementById('nowPlayingOnTheFloor').style.display = "none";
-    document.getElementById('nowPlayingDelTaves').style.display = "none";
-    document.getElementById('nowPlayingLietuvosIstorijosRepas').style.display = "none";
-    document.getElementById('nowPlayingBeatosVirtuve').style.display = "none";
-    document.getElementById('nowPlayingDumuDetektorius').style.display = "none";
-    document.getElementById('nowPlayingEkstrasensuPradzia').style.display = "none";
-    document.getElementById('nowPlayingEkstrasensuFonas').style.display = "none";
-    document.getElementById('nowPlayingVejoGarsas').style.display = "none";
-    document.getElementById('nowPlayingMetuApdovanojimai').style.display = "none";
-    document.getElementById('nowPlayingDrumRoll').style.display = "none";
-    document.getElementById('nowPlayingDaina').style.display = "none";
-    document.getElementById('nowPlayingReklama1').style.display = "none";
-    document.getElementById('nowPlayingReklama2').style.display = "none";
-    document.getElementById('nowPlayingReklama3').style.display = "none";
+    document.getElementById('nowPlayingSokis').style.display = "none";
+    document.getElementById('nowPlayingJura').style.display = "none";
 }
 
 function openScript() {
@@ -1723,7 +511,6 @@ function openScript() {
     document.getElementById("playingTrackName").style.width = "18%";
     document.getElementById("instructionsBtn").style.opacity = "0";
     document.getElementById("instructionsBtn").style.pointerEvents = "none";
-    document.getElementById("volumeMutedBg").style.width = "70%";
 }
 function closeScript() {
     document.getElementById("scenarijus").style.bottom = "-100%";
@@ -1735,7 +522,6 @@ function closeScript() {
     document.getElementById("playingTrackName").style.width = "20%";
     document.getElementById("instructionsBtn").style.opacity = "1";
     document.getElementById("instructionsBtn").style.pointerEvents = "all";
-    document.getElementById("volumeMutedBg").style.width = "100%";
 }
 
 function openInstructions() {
@@ -1748,7 +534,6 @@ function openInstructions() {
     document.getElementById("playingTrackName").style.width = "18%";
     document.getElementById("instructionsBtn").style.opacity = "0";
     document.getElementById("instructionsBtn").style.pointerEvents = "none";
-    document.getElementById("volumeMutedBg").style.width = "70%";
 }
 function closeInstructions() {
     document.getElementById("instrukcijos").style.bottom = "-100%";
@@ -1760,7 +545,6 @@ function closeInstructions() {
     document.getElementById("playingTrackName").style.width = "20%";
     document.getElementById("instructionsBtn").style.opacity = "1";
     document.getElementById("instructionsBtn").style.pointerEvents = "all";
-    document.getElementById("volumeMutedBg").style.width = "100%";
 }
 
 function openLyrics() {
